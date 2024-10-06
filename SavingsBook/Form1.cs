@@ -7,6 +7,12 @@ namespace SavingsBook
     {
         // Chú ý: Code này chỉ dùng để kiểm tra kết nối với database MySQL
         /**
+         * Các bước để tạo local database MySQL:
+         * - Cài đặt MySQL.Data thông qua NuGet Package Manager
+         * - Cài đặt XAMPP
+         * - Bật Apache và MySQL trong XAMPP
+         */
+        /**
          * Trước khi kết nối với database, cần tạo bảng user trong database saving_books_management
          * Bảng user có cấu trúc như sau:
          * - id: int, primary key, auto increment
