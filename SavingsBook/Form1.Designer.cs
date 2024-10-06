@@ -95,7 +95,6 @@ namespace SavingsBook
             tbNameAdd.Name = "tbNameAdd";
             tbNameAdd.Size = new Size(250, 27);
             tbNameAdd.TabIndex = 5;
-            tbNameAdd.TextChanged += textBox1_TextChanged;
             // 
             // tbNameUpdate
             // 
@@ -157,7 +156,6 @@ namespace SavingsBook
             lbId.Size = new Size(22, 20);
             lbId.TabIndex = 12;
             lbId.Text = "Id";
-            lbId.Click += label4_Click;
             // 
             // tbIdUpdate
             // 
