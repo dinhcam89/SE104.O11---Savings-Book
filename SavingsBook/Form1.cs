@@ -44,7 +44,8 @@ namespace SavingsBook
         {
             connection.Open();
             dataTable = new DataTable();
-            dataTable.Load(command.ExecuteReader());
+            SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+            adapter.Fill(dataTable);
             connection.Close();
             dataGridView.DataSource = dataTable;
         }
@@ -72,8 +73,6 @@ namespace SavingsBook
             int numberOfRows = command.ExecuteNonQuery();
             connection.Close();
             ReadDatabase();
-            MessageBox.Show($"Đã thêm {numberOfRows} dòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -93,17 +92,49 @@ namespace SavingsBook
                     MessageBox.Show("Số tiền gởi phải là số thực", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+
+                string queryAddress = "";
+                if (tbAddress.Text != "")
+                {
+                    queryAddress = $"DiaChi = N'{tbAddress.Text}', ";
+                }
+
                 // Sửa dữ liệu trong bảng
                 connection.Open();
-                string query = $"UPDATE SoTietKiem SET DiaChi = N'{tbAddress.Text}', SoTienGoi = {deposit} WHERE MaSo = {id}";
+
+                string query = $"UPDATE SoTietKiem SET {queryAddress} SoTienGoi = {deposit} WHERE MaSo = {id}";
                 command = new SqlCommand(query, connection);
                 int numberOfRows = command.ExecuteNonQuery();
+
                 connection.Close();
                 ReadDatabase();
-                MessageBox.Show($"Đã sửa {numberOfRows} dòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
             }
 
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra Mã số có điền đầy đủ hay không
+            if (tbId.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập mã số", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Kiểm tra Mã số có phải là số nguyên không
+            if (!int.TryParse(tbId.Text, out int id))
+            {
+                MessageBox.Show("Mã số phải là số nguyên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Xóa dữ liệu trong bảng
+            connection.Open();
+            string query = $"DELETE FROM SoTietKiem WHERE MaSo = {id}";
+            command = new SqlCommand(query, connection);
+            int numberOfRows = command.ExecuteNonQuery();
+            connection.Close();
+            ReadDatabase();
         }
     }
 }

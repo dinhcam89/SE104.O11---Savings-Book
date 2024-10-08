@@ -120,6 +120,7 @@
             btnDelete.TabIndex = 9;
             btnDelete.Text = "Xóa";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // tbDeposit
             // 
