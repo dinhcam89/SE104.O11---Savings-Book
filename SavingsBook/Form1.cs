@@ -18,7 +18,8 @@ namespace SavingsBook
          */
 
         // Mẫu connection string: "Server=[tên máy chủ];Database=[tên cơ sở dữ liệu];Integrated Security=[hình thức xác thực];"
-        // Hình thức xác thực: "Integrated Security=sspi" (Windows Authentication)
+        // - Nếu sử dụng Windows Authentication: "Integrated Security=sspi"
+        // - Nếu sử dụng SQL Server Authentication: "User Id=[tên người dùng];Password=[mật khẩu];"
         string connectionString = "Server=LT49\\SQLEXPRESS;Database=master;Integrated Security=sspi;";
         string query = "SELECT * FROM SoTietKiem";
 
@@ -46,6 +47,63 @@ namespace SavingsBook
             dataTable.Load(command.ExecuteReader());
             connection.Close();
             dataGridView.DataSource = dataTable;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra Số tiền gới có điền đầy đủ hay không
+            if (tbDeposit.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Kiểm tra Số tiền gởi có phải là số thực không
+            if (!decimal.TryParse(tbDeposit.Text, out decimal deposit))
+            {
+                MessageBox.Show("Số tiền gởi phải là số thực", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Thêm dữ liệu vào bảng
+            connection.Open();
+            string query = $"INSERT INTO SoTietKiem VALUES (N'{tbAddress.Text}', {deposit}, GETDATE())";
+            command = new SqlCommand(query, connection);
+            int numberOfRows = command.ExecuteNonQuery();
+            connection.Close();
+            ReadDatabase();
+            MessageBox.Show($"Đã thêm {numberOfRows} dòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra Mã số có điền đầy đủ hay không
+            if (!int.TryParse(tbId.Text, out int id))
+            {
+                MessageBox.Show("Vui lòng nhập mã số", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Kiểm tra nếu Số điền được điền thì Số tiền gởi có phải là số thực không
+            if (tbDeposit.Text != "")
+            {
+                if (!decimal.TryParse(tbDeposit.Text, out decimal deposit))
+                {
+                    MessageBox.Show("Số tiền gởi phải là số thực", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                // Sửa dữ liệu trong bảng
+                connection.Open();
+                string query = $"UPDATE SoTietKiem SET DiaChi = N'{tbAddress.Text}', SoTienGoi = {deposit} WHERE MaSo = {id}";
+                command = new SqlCommand(query, connection);
+                int numberOfRows = command.ExecuteNonQuery();
+                connection.Close();
+                ReadDatabase();
+                MessageBox.Show($"Đã sửa {numberOfRows} dòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+            }
+
         }
     }
 }
