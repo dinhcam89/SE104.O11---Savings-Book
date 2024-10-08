@@ -30,8 +30,8 @@
         {
             dataGridView = new DataGridView();
             lbId = new Label();
-            lbName = new Label();
-            lbBirthday = new Label();
+            lbAddress = new Label();
+            lbDeposit = new Label();
             tbId = new TextBox();
             tbName = new TextBox();
             btnAdd = new Button();
@@ -59,23 +59,23 @@
             lbId.TabIndex = 1;
             lbId.Text = "Id";
             // 
-            // lbName
+            // lbAddress
             // 
-            lbName.AutoSize = true;
-            lbName.Location = new Point(57, 137);
-            lbName.Name = "lbName";
-            lbName.Size = new Size(54, 20);
-            lbName.TabIndex = 2;
-            lbName.Text = "Họ tên";
+            lbAddress.AutoSize = true;
+            lbAddress.Location = new Point(57, 137);
+            lbAddress.Name = "lbAddress";
+            lbAddress.Size = new Size(55, 20);
+            lbAddress.TabIndex = 2;
+            lbAddress.Text = "Địa chỉ";
             // 
-            // lbBirthday
+            // lbDeposit
             // 
-            lbBirthday.AutoSize = true;
-            lbBirthday.Location = new Point(57, 215);
-            lbBirthday.Name = "lbBirthday";
-            lbBirthday.Size = new Size(74, 20);
-            lbBirthday.TabIndex = 3;
-            lbBirthday.Text = "Ngày sinh";
+            lbDeposit.AutoSize = true;
+            lbDeposit.Location = new Point(57, 215);
+            lbDeposit.Name = "lbDeposit";
+            lbDeposit.Size = new Size(81, 20);
+            lbDeposit.TabIndex = 3;
+            lbDeposit.Text = "Số tiền gởi";
             // 
             // tbId
             // 
@@ -136,8 +136,8 @@
             Controls.Add(btnAdd);
             Controls.Add(tbName);
             Controls.Add(tbId);
-            Controls.Add(lbBirthday);
-            Controls.Add(lbName);
+            Controls.Add(lbDeposit);
+            Controls.Add(lbAddress);
             Controls.Add(lbId);
             Controls.Add(dataGridView);
             Name = "Form1";
@@ -151,8 +151,8 @@
 
         private DataGridView dataGridView;
         private Label lbId;
-        private Label lbName;
-        private Label lbBirthday;
+        private Label lbAddress;
+        private Label lbDeposit;
         private TextBox tbId;
         private TextBox tbName;
         private Button btnAdd;
