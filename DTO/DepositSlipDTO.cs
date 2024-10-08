@@ -9,6 +9,7 @@ namespace DTO
     public class DepositSlipDTO
     {
         #region Properties
+        public string DepositSlipId { get; set; }
         public string SavingBookId { get; set; }
         public string CustomerName { get; set; }
         public DateOnly DepositDate { get; set; }
