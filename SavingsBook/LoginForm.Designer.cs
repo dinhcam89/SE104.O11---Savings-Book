@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             lblLogin = new Label();
-            txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
-            lblEmail = new Label();
+            txtUsername = new Guna.UI2.WinForms.Guna2TextBox();
+            lblUsername = new Label();
             txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             lblPassword = new Label();
             linklblForgotPassword = new LinkLabel();
@@ -60,47 +60,47 @@
             lblLogin.Text = "LOG IN";
             lblLogin.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // txtEmail
+            // txtUsername
             // 
-            txtEmail.BackColor = Color.Transparent;
-            txtEmail.BorderColor = Color.Transparent;
-            txtEmail.BorderRadius = 10;
-            txtEmail.CustomizableEdges = customizableEdges1;
-            txtEmail.DefaultText = "";
-            txtEmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtEmail.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtEmail.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtEmail.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtEmail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtEmail.Font = new Font("Segoe UI", 9F);
-            txtEmail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtEmail.Location = new Point(171, 185);
-            txtEmail.Name = "txtEmail";
-            txtEmail.PasswordChar = '\0';
-            txtEmail.PlaceholderText = "";
-            txtEmail.SelectedText = "";
-            txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            txtEmail.Size = new Size(543, 41);
-            txtEmail.TabIndex = 4;
+            txtUsername.BackColor = Color.Transparent;
+            txtUsername.BorderColor = Color.Transparent;
+            txtUsername.BorderRadius = 10;
+            txtUsername.CustomizableEdges = customizableEdges9;
+            txtUsername.DefaultText = "";
+            txtUsername.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtUsername.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtUsername.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtUsername.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtUsername.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtUsername.Font = new Font("Segoe UI", 9F);
+            txtUsername.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtUsername.Location = new Point(171, 185);
+            txtUsername.Name = "txtUsername";
+            txtUsername.PasswordChar = '\0';
+            txtUsername.PlaceholderText = "";
+            txtUsername.SelectedText = "";
+            txtUsername.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            txtUsername.Size = new Size(543, 41);
+            txtUsername.TabIndex = 4;
             // 
-            // lblEmail
+            // lblUsername
             // 
-            lblEmail.AutoSize = true;
-            lblEmail.BackColor = Color.Transparent;
-            lblEmail.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            lblEmail.ForeColor = Color.Coral;
-            lblEmail.Location = new Point(171, 162);
-            lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(46, 20);
-            lblEmail.TabIndex = 3;
-            lblEmail.Text = "Email";
+            lblUsername.AutoSize = true;
+            lblUsername.BackColor = Color.Transparent;
+            lblUsername.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            lblUsername.ForeColor = Color.Coral;
+            lblUsername.Location = new Point(171, 162);
+            lblUsername.Name = "lblUsername";
+            lblUsername.Size = new Size(78, 20);
+            lblUsername.TabIndex = 3;
+            lblUsername.Text = "Username";
             // 
             // txtPassword
             // 
             txtPassword.BackColor = Color.Transparent;
             txtPassword.BorderColor = Color.Transparent;
             txtPassword.BorderRadius = 10;
-            txtPassword.CustomizableEdges = customizableEdges3;
+            txtPassword.CustomizableEdges = customizableEdges11;
             txtPassword.DefaultText = "";
             txtPassword.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtPassword.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -115,7 +115,7 @@
             txtPassword.PasswordChar = '\0';
             txtPassword.PlaceholderText = "";
             txtPassword.SelectedText = "";
-            txtPassword.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            txtPassword.ShadowDecoration.CustomizableEdges = customizableEdges12;
             txtPassword.Size = new Size(543, 41);
             txtPassword.TabIndex = 8;
             // 
@@ -147,7 +147,7 @@
             // 
             btnLogin.BackColor = Color.Transparent;
             btnLogin.BorderRadius = 15;
-            btnLogin.CustomizableEdges = customizableEdges5;
+            btnLogin.CustomizableEdges = customizableEdges13;
             btnLogin.DisabledState.BorderColor = Color.DarkGray;
             btnLogin.DisabledState.CustomBorderColor = Color.DarkGray;
             btnLogin.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -160,7 +160,7 @@
             btnLogin.ImeMode = ImeMode.Off;
             btnLogin.Location = new Point(480, 387);
             btnLogin.Name = "btnLogin";
-            btnLogin.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnLogin.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnLogin.Size = new Size(180, 45);
             btnLogin.TabIndex = 12;
             btnLogin.Text = "Login";
@@ -169,7 +169,7 @@
             // 
             btnRegister.BackColor = Color.Transparent;
             btnRegister.BorderRadius = 15;
-            btnRegister.CustomizableEdges = customizableEdges7;
+            btnRegister.CustomizableEdges = customizableEdges15;
             btnRegister.DisabledState.BorderColor = Color.DarkGray;
             btnRegister.DisabledState.CustomBorderColor = Color.DarkGray;
             btnRegister.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -181,7 +181,7 @@
             btnRegister.ImeMode = ImeMode.Off;
             btnRegister.Location = new Point(225, 387);
             btnRegister.Name = "btnRegister";
-            btnRegister.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnRegister.ShadowDecoration.CustomizableEdges = customizableEdges16;
             btnRegister.Size = new Size(180, 45);
             btnRegister.TabIndex = 11;
             btnRegister.Text = "Register";
@@ -197,8 +197,8 @@
             Controls.Add(linklblForgotPassword);
             Controls.Add(txtPassword);
             Controls.Add(lblPassword);
-            Controls.Add(txtEmail);
-            Controls.Add(lblEmail);
+            Controls.Add(txtUsername);
+            Controls.Add(lblUsername);
             Controls.Add(lblLogin);
             Name = "LoginForm";
             Text = "LoginForm";
@@ -209,8 +209,8 @@
         #endregion
 
         private Label lblLogin;
-        private Guna.UI2.WinForms.Guna2TextBox txtEmail;
-        private Label lblEmail;
+        private Guna.UI2.WinForms.Guna2TextBox txtUsername;
+        private Label lblUsername;
         private Guna.UI2.WinForms.Guna2TextBox txtPassword;
         private Label lblPassword;
         private LinkLabel linklblForgotPassword;

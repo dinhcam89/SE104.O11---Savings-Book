@@ -8,31 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI
+namespace GUI.DashboardApp
 {
-    public partial class RegisterForm : Form
+    public partial class ucSearch : UserControl
     {
-        public RegisterForm()
+        public ucSearch()
         {
             InitializeComponent();
         }
 
-        private void lblEmail_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RegisterForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEmail_TextChanged(object sender, EventArgs e)
         {
 
         }
