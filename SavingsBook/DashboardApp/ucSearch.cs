@@ -21,5 +21,22 @@ namespace GUI.DashboardApp
         {
 
         }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblCustomerName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
