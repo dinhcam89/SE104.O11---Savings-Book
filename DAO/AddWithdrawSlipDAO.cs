@@ -63,5 +63,46 @@ namespace DAO
                 }
             }
         }
+
+        public (DepositSlipDTO, BookType) SavingBookInfo(string savingBookID)
+        {
+            DepositSlipDTO depositSlip = null;
+            BookType bookType = null;
+            
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                // Truy vấn thông tin từ DepositSlipDTO và BookType
+                string query = @"
+                    SELECT ds.DepositDate, bt.BookTerm
+                    FROM DepositSlips ds
+                    INNER JOIN SavingBooks sb ON ds.SavingBookId = sb.SavingBookId
+                    INNER JOIN BookTypes bt ON sb.BookTypeId = bt.BookTypeId
+                    WHERE sb.SavingBookId = @SavingBookId";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@SavingBookId", savingBookID);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            depositSlip = new DepositSlipDTO
+                            {
+                                DepositDate = DateOnly.FromDateTime(Convert.ToDateTime(reader["DepositDate"]))
+                            };
+
+                            bookType = new BookType
+                            {
+                                BookTerm = reader["BookTerm"].ToString()
+                            };
+                        }
+                    }
+                }
+            }
+            return (depositSlip, bookType);
+        }
     }
 }
