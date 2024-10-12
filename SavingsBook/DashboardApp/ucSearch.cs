@@ -37,6 +37,5 @@ namespace GUI.DashboardApp
 
         }
 
-
     }
 }
