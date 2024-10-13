@@ -14,7 +14,7 @@ namespace GUI
     public partial class Dashboard : Form
     {
 
-        private ucSearch ucSearch;
+        private ucManageSavingBooks ucSearch;
         private ucAddEditSavingBooks ucAddEditSavingBooks;
         private ucManageSavingBooks ucManageSavingBooks;
         private ucManageCustomers ucManageCustomers;
@@ -30,8 +30,8 @@ namespace GUI
 
         private void btnResetColor()
         {
-            this.btnSearch.BackColor = Color.Transparent;
-            this.btnAddEditSavingBooks.BackColor = Color.Transparent;
+            this.btnManageSavingBooks.BackColor = Color.Transparent;
+            //this.btnAddEditSavingBooks.BackColor = Color.Transparent;
             this.btnManageSavingBooks.BackColor = Color.Transparent;
             this.btnManageCustomers.BackColor = Color.Transparent;
             this.btnStats.BackColor = Color.Transparent;
@@ -41,45 +41,45 @@ namespace GUI
 
         }
 
-        internal void tongglepanelMain (string panelMain)
+        internal void tongglepanelMain(string panelMain)
         {
             this.btnResetColor();
             this.panelMain.Controls.Clear();
             switch (panelMain)
             {
-                case "search":
-                    if(this.ucSearch == null)
-                    {
-                        this.ucSearch = new ucSearch();
-                        this.panelMain.Controls.Add(ucSearch);
-                        this.ucSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-                        this.ucSearch.Location = new System.Drawing.Point(0, 0);
-                        this.ucSearch.Name = "ucSearch";
-                        this.Size = new System.Drawing.Size(698, 508);
-                        this.ucSearch.TabIndex = 0;
-                    } 
-                    else
-                    {
-                        this.panelMain.Controls.Add(ucSearch);
-                    }
-                    break;
+                //case "search":
+                //    if(this.ucSearch == null)
+                //    {
+                //        this.ucSearch = new ucSearch();
+                //        this.panelMain.Controls.Add(ucSearch);
+                //        this.ucSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+                //        this.ucSearch.Location = new System.Drawing.Point(0, 0);
+                //        this.ucSearch.Name = "ucSearch";
+                //        this.Size = new System.Drawing.Size(698, 508);
+                //        this.ucSearch.TabIndex = 0;
+                //    } 
+                //    else
+                //    {
+                //        this.panelMain.Controls.Add(ucSearch);
+                //    }
+                //    break;
 
-                case "add":
-                    if (this.ucAddEditSavingBooks == null)
-                    {
-                        this.ucAddEditSavingBooks = new ucAddEditSavingBooks();
-                        this.panelMain.Controls.Add(ucAddEditSavingBooks);
-                        this.ucAddEditSavingBooks.Dock = System.Windows.Forms.DockStyle.Fill;
-                        this.ucAddEditSavingBooks.Location = new System.Drawing.Point(0, 0);
-                        this.ucAddEditSavingBooks.Name = "ucAddEditSavingBooks";
-                        this.Size = new System.Drawing.Size(698, 508);
-                        this.ucAddEditSavingBooks.TabIndex = 0;
-                    }
-                    else
-                    {
-                        this.panelMain.Controls.Add(ucAddEditSavingBooks);
-                    }
-                    break;
+                //case "add":
+                //    if (this.ucAddEditSavingBooks == null)
+                //    {
+                //        this.ucAddEditSavingBooks = new ucAddEditSavingBooks();
+                //        this.panelMain.Controls.Add(ucAddEditSavingBooks);
+                //        this.ucAddEditSavingBooks.Dock = System.Windows.Forms.DockStyle.Fill;
+                //        this.ucAddEditSavingBooks.Location = new System.Drawing.Point(0, 0);
+                //        this.ucAddEditSavingBooks.Name = "ucAddEditSavingBooks";
+                //        this.Size = new System.Drawing.Size(698, 508);
+                //        this.ucAddEditSavingBooks.TabIndex = 0;
+                //    }
+                //    else
+                //    {
+                //        this.panelMain.Controls.Add(ucAddEditSavingBooks);
+                //    }
+                //    break;
 
                 case "manageSavingBooks":
                     if (this.ucManageSavingBooks == null)
@@ -189,24 +189,19 @@ namespace GUI
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            this.panelMenuActive.Location = new Point(btnSearch.Location.X, btnSearch.Location.Y);
-            this.tongglepanelMain("search");
+        //private void btnSearch_Click(object sender, EventArgs e)
+        //{
+        //    this.panelMenuActive.Location = new Point(btnSearch.Location.X, btnSearch.Location.Y);
+        //    this.tongglepanelMain("search");
 
-        }
+        //}
 
-        private void btnAddEditSavingBooks_Click(object sender, EventArgs e)
-        {
-            this.panelMenuActive.Location = new Point(btnAddEditSavingBooks.Location.X, btnAddEditSavingBooks.Location.Y);
-            this.tongglepanelMain("add");
-        }
+        //private void btnAddEditSavingBooks_Click(object sender, EventArgs e)
+        //{
+        //    this.panelMenuActive.Location = new Point(btnAddEditSavingBooks.Location.X, btnAddEditSavingBooks.Location.Y);
+        //    this.tongglepanelMain("add");
+        //}
 
-        private void btnManageSavingBooks_Click(object sender, EventArgs e)
-        {
-            this.panelMenuActive.Location = new Point(btnManageSavingBooks.Location.X, btnManageSavingBooks.Location.Y);
-            this.tongglepanelMain("manageSavingBooks");
-        }
 
         private void btnManageCustomers_Click(object sender, EventArgs e)
         {
@@ -236,6 +231,19 @@ namespace GUI
         {
             this.panelMenuActive.Location = new Point(btnEditRules.Location.X, btnEditRules.Location.Y);
             this.tongglepanelMain("editRules");
+        }
+
+
+        private void btnManageSavingBooks_Click(object sender, EventArgs e)
+        {
+            this.panelMenuActive.Location = new Point(btnManageSavingBooks.Location.X, btnManageSavingBooks.Location.Y);
+            this.tongglepanelMain("manageSavingBooks");
+        }
+
+        private void btnManageSavingBooks_Click_1(object sender, EventArgs e)
+        {
+            this.panelMenuActive.Location = new Point(btnManageSavingBooks.Location.X, btnManageSavingBooks.Location.Y);
+            this.tongglepanelMain("manageSavingBooks");
         }
     }
 }
