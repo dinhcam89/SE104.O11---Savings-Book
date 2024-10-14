@@ -28,19 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            btnAdd = new Guna.UI2.WinForms.Guna2GradientButton();
+            lblTitle = new Label();
             txtDate = new Guna.UI2.WinForms.Guna2TextBox();
             lblDate = new Label();
             txtMoney = new Guna.UI2.WinForms.Guna2TextBox();
@@ -49,8 +51,6 @@
             txtID = new Guna.UI2.WinForms.Guna2TextBox();
             lblID = new Label();
             lblIDReceipt = new Label();
-            lblTitle = new Label();
-            btnAdd = new Guna.UI2.WinForms.Guna2GradientButton();
             guna2GradientPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -66,23 +66,57 @@
             guna2GradientPanel1.Controls.Add(txtID);
             guna2GradientPanel1.Controls.Add(lblID);
             guna2GradientPanel1.Controls.Add(lblIDReceipt);
-            guna2GradientPanel1.CustomizableEdges = customizableEdges23;
+            guna2GradientPanel1.CustomizableEdges = customizableEdges11;
             guna2GradientPanel1.Dock = DockStyle.Fill;
             guna2GradientPanel1.FillColor = Color.FromArgb(140, 82, 255);
             guna2GradientPanel1.FillColor2 = Color.FromArgb(255, 87, 87);
             guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
             guna2GradientPanel1.Location = new Point(0, 0);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
-            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
             guna2GradientPanel1.Size = new Size(541, 480);
             guna2GradientPanel1.TabIndex = 0;
+            // 
+            // btnAdd
+            // 
+            btnAdd.BackColor = Color.Transparent;
+            btnAdd.BorderRadius = 10;
+            btnAdd.CustomizableEdges = customizableEdges1;
+            btnAdd.DisabledState.BorderColor = Color.DarkGray;
+            btnAdd.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnAdd.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnAdd.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
+            btnAdd.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnAdd.FillColor = Color.White;
+            btnAdd.FillColor2 = Color.White;
+            btnAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdd.ForeColor = Color.Coral;
+            btnAdd.ImeMode = ImeMode.Off;
+            btnAdd.Location = new Point(394, 410);
+            btnAdd.Name = "btnAdd";
+            btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnAdd.Size = new Size(121, 45);
+            btnAdd.TabIndex = 22;
+            btnAdd.Text = "Tạo phiếu";
+            // 
+            // lblTitle
+            // 
+            lblTitle.AutoSize = true;
+            lblTitle.BackColor = Color.Transparent;
+            lblTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitle.ForeColor = Color.Snow;
+            lblTitle.Location = new Point(136, 21);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(256, 32);
+            lblTitle.TabIndex = 46;
+            lblTitle.Text = "TẠO PHIẾU RÚT TIỀN";
             // 
             // txtDate
             // 
             txtDate.BackColor = Color.Transparent;
             txtDate.BorderColor = Color.Transparent;
             txtDate.BorderRadius = 10;
-            txtDate.CustomizableEdges = customizableEdges15;
+            txtDate.CustomizableEdges = customizableEdges3;
             txtDate.DefaultText = "";
             txtDate.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtDate.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -97,7 +131,7 @@
             txtDate.PasswordChar = '\0';
             txtDate.PlaceholderText = "";
             txtDate.SelectedText = "";
-            txtDate.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            txtDate.ShadowDecoration.CustomizableEdges = customizableEdges4;
             txtDate.Size = new Size(480, 41);
             txtDate.TabIndex = 45;
             // 
@@ -118,7 +152,7 @@
             txtMoney.BackColor = Color.Transparent;
             txtMoney.BorderColor = Color.Transparent;
             txtMoney.BorderRadius = 10;
-            txtMoney.CustomizableEdges = customizableEdges17;
+            txtMoney.CustomizableEdges = customizableEdges5;
             txtMoney.DefaultText = "";
             txtMoney.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtMoney.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -133,7 +167,7 @@
             txtMoney.PasswordChar = '\0';
             txtMoney.PlaceholderText = "";
             txtMoney.SelectedText = "";
-            txtMoney.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            txtMoney.ShadowDecoration.CustomizableEdges = customizableEdges6;
             txtMoney.Size = new Size(480, 41);
             txtMoney.TabIndex = 43;
             // 
@@ -142,7 +176,7 @@
             txtIDReceipt.BackColor = Color.Transparent;
             txtIDReceipt.BorderColor = Color.Transparent;
             txtIDReceipt.BorderRadius = 10;
-            txtIDReceipt.CustomizableEdges = customizableEdges19;
+            txtIDReceipt.CustomizableEdges = customizableEdges7;
             txtIDReceipt.DefaultText = "";
             txtIDReceipt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtIDReceipt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -157,7 +191,7 @@
             txtIDReceipt.PasswordChar = '\0';
             txtIDReceipt.PlaceholderText = "";
             txtIDReceipt.SelectedText = "";
-            txtIDReceipt.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            txtIDReceipt.ShadowDecoration.CustomizableEdges = customizableEdges8;
             txtIDReceipt.Size = new Size(480, 41);
             txtIDReceipt.TabIndex = 39;
             // 
@@ -178,7 +212,7 @@
             txtID.BackColor = Color.Transparent;
             txtID.BorderColor = Color.Transparent;
             txtID.BorderRadius = 10;
-            txtID.CustomizableEdges = customizableEdges21;
+            txtID.CustomizableEdges = customizableEdges9;
             txtID.DefaultText = "";
             txtID.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtID.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -193,7 +227,7 @@
             txtID.PasswordChar = '\0';
             txtID.PlaceholderText = "";
             txtID.SelectedText = "";
-            txtID.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            txtID.ShadowDecoration.CustomizableEdges = customizableEdges10;
             txtID.Size = new Size(480, 41);
             txtID.TabIndex = 37;
             // 
@@ -220,40 +254,6 @@
             lblIDReceipt.Size = new Size(94, 20);
             lblIDReceipt.TabIndex = 38;
             lblIDReceipt.Text = "Mã số phiếu";
-            // 
-            // lblTitle
-            // 
-            lblTitle.AutoSize = true;
-            lblTitle.BackColor = Color.Transparent;
-            lblTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitle.ForeColor = Color.Snow;
-            lblTitle.Location = new Point(136, 21);
-            lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(256, 32);
-            lblTitle.TabIndex = 46;
-            lblTitle.Text = "TẠO PHIẾU RÚT TIỀN";
-            // 
-            // btnAdd
-            // 
-            btnAdd.BackColor = Color.Transparent;
-            btnAdd.BorderRadius = 10;
-            btnAdd.CustomizableEdges = customizableEdges13;
-            btnAdd.DisabledState.BorderColor = Color.DarkGray;
-            btnAdd.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnAdd.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnAdd.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
-            btnAdd.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnAdd.FillColor = Color.White;
-            btnAdd.FillColor2 = Color.White;
-            btnAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAdd.ForeColor = Color.Coral;
-            btnAdd.ImeMode = ImeMode.Off;
-            btnAdd.Location = new Point(394, 410);
-            btnAdd.Name = "btnAdd";
-            btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            btnAdd.Size = new Size(121, 45);
-            btnAdd.TabIndex = 22;
-            btnAdd.Text = "Tạo phiếu";
             // 
             // WithdrawalReceiptForm
             // 

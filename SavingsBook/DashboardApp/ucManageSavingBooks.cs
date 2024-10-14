@@ -46,7 +46,7 @@ namespace GUI.DashboardApp
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            EditCustomerInfor editCustomerInfor = new EditCustomerInfor();
+            AddSavingBooks editCustomerInfor = new AddSavingBooks();
             editCustomerInfor.Show();
         }
     }

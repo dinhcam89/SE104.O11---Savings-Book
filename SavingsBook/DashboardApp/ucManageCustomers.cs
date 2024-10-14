@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SavingsBook;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace GUI.DashboardApp
         public ucManageCustomers()
         {
             InitializeComponent();
+        }
+
+        private void btnCustomer1_Click(object sender, EventArgs e)
+        {
+            EditCustomerInfor editcustomerInfor = new EditCustomerInfor();
+            editcustomerInfor.Show();
         }
     }
 }

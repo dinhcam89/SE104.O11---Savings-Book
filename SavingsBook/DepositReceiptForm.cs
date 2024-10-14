@@ -15,6 +15,9 @@ namespace GUI
         public DepositReceiptForm()
         {
             InitializeComponent();
+            // Thiết lập không cho phép thay đổi kích thước Form
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
+
     }
 }

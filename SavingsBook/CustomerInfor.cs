@@ -7,12 +7,14 @@ namespace SavingsBook
         public CustomerInfor()
         {
             InitializeComponent();
+            // Thiet lap khong thay doi kich thuoc form
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            EditCustomerInfor editCustomerInfor = new EditCustomerInfor();
-            editCustomerInfor.Show();
+            EditSavingBook editSavingBook = new EditSavingBook();
+            editSavingBook.Show();
         }
 
         private void btnAdd1_Click(object sender, EventArgs e)

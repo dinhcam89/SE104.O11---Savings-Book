@@ -15,6 +15,16 @@ namespace GUI
         public WithdrawalReceiptForm()
         {
             InitializeComponent();
+            // Thiết lập không cho phép thay đổi kích thước Form
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+
         }
+
+
+
+        //private void btnAdd_Click(object sender, EventArgs e)
+        //{
+
+        //}
     }
 }
