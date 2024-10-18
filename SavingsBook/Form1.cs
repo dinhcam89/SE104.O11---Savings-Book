@@ -8,7 +8,7 @@ namespace SavingsBook
         /**
          * Trước khi chạy chương trình, cần đảm bảo các yêu cầu sau:
          * - SQL Server đang chạy.
-         * - Có cơ sở dữ liệu có tên "master".
+         * - Có cơ sở dữ liệu có tên "saving_books_management".
          * - Có bảng có tên "SoTietKiem" trong cơ sở dữ liệu "master".
          * - Bảng "SoTietKiem" có cấu trúc như sau:
          * + MaSo: int, primary key, identity(1, 1)
