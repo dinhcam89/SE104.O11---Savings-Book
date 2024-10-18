@@ -98,23 +98,25 @@
             // 
             lblSDT.AutoSize = true;
             lblSDT.BackColor = Color.Transparent;
-            lblSDT.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            lblSDT.ForeColor = Color.Coral;
-            lblSDT.Location = new Point(178, 266);
+            lblSDT.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            lblSDT.ForeColor = Color.FromArgb(135, 92, 254);
+            lblSDT.Location = new Point(360, 266);
             lblSDT.Name = "lblSDT";
-            lblSDT.Size = new Size(118, 25);
+            lblSDT.RightToLeft = RightToLeft.Yes;
+            lblSDT.Size = new Size(110, 25);
             lblSDT.TabIndex = 36;
-            lblSDT.Text = "Ngày mở sổ";
+            lblSDT.Text = "10/10/2024";
+            lblSDT.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblSDTTitle
             // 
             lblSDTTitle.AutoSize = true;
             lblSDTTitle.BackColor = Color.Transparent;
-            lblSDTTitle.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            lblSDTTitle.ForeColor = Color.Coral;
-            lblSDTTitle.Location = new Point(16, 266);
+            lblSDTTitle.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            lblSDTTitle.ForeColor = Color.FromArgb(135, 92, 254);
+            lblSDTTitle.Location = new Point(35, 266);
             lblSDTTitle.Name = "lblSDTTitle";
-            lblSDTTitle.Size = new Size(118, 25);
+            lblSDTTitle.Size = new Size(116, 25);
             lblSDTTitle.TabIndex = 35;
             lblSDTTitle.Text = "Ngày mở sổ";
             // 
@@ -122,95 +124,110 @@
             // 
             lblType.AutoSize = true;
             lblType.BackColor = Color.Transparent;
-            lblType.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            lblType.ForeColor = Color.Coral;
-            lblType.Location = new Point(178, 424);
+            lblType.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            lblType.ForeColor = Color.FromArgb(135, 92, 254);
+            lblType.Location = new Point(392, 424);
             lblType.Name = "lblType";
-            lblType.Size = new Size(113, 25);
+            lblType.RightToLeft = RightToLeft.No;
+            lblType.Size = new Size(78, 25);
             lblType.TabIndex = 34;
-            lblType.Text = "Loại kỳ hạn";
+            lblType.Text = "3 tháng";
+            lblType.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblMoney
             // 
             lblMoney.AutoSize = true;
             lblMoney.BackColor = Color.Transparent;
-            lblMoney.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            lblMoney.ForeColor = Color.Coral;
-            lblMoney.Location = new Point(178, 372);
+            lblMoney.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            lblMoney.ForeColor = Color.FromArgb(135, 92, 254);
+            lblMoney.Location = new Point(303, 372);
             lblMoney.Name = "lblMoney";
-            lblMoney.Size = new Size(168, 25);
+            lblMoney.RightToLeft = RightToLeft.Yes;
+            lblMoney.Size = new Size(167, 25);
             lblMoney.TabIndex = 33;
             lblMoney.Text = "500.000.000 VND";
+            lblMoney.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblDate
             // 
             lblDate.AutoSize = true;
             lblDate.BackColor = Color.Transparent;
-            lblDate.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            lblDate.ForeColor = Color.Coral;
-            lblDate.Location = new Point(178, 318);
+            lblDate.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            lblDate.ForeColor = Color.FromArgb(135, 92, 254);
+            lblDate.Location = new Point(339, 318);
             lblDate.Name = "lblDate";
-            lblDate.Size = new Size(133, 25);
+            lblDate.RightToLeft = RightToLeft.Yes;
+            lblDate.Size = new Size(131, 25);
             lblDate.TabIndex = 32;
             lblDate.Text = "09772949843";
+            lblDate.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblAddress
             // 
+            lblAddress.AllowDrop = true;
             lblAddress.AutoSize = true;
             lblAddress.BackColor = Color.Transparent;
-            lblAddress.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            lblAddress.ForeColor = Color.Coral;
-            lblAddress.Location = new Point(178, 215);
+            lblAddress.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            lblAddress.ForeColor = Color.FromArgb(135, 92, 254);
+            lblAddress.Location = new Point(232, 215);
             lblAddress.Name = "lblAddress";
-            lblAddress.Size = new Size(71, 25);
+            lblAddress.RightToLeft = RightToLeft.Yes;
+            lblAddress.Size = new Size(238, 25);
             lblAddress.TabIndex = 31;
-            lblAddress.Text = "Địa chỉ";
+            lblAddress.Text = "Phước Long B, TP Thủ Đức";
+            lblAddress.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblCustomerID
             // 
             lblCustomerID.AutoSize = true;
             lblCustomerID.BackColor = Color.Transparent;
-            lblCustomerID.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            lblCustomerID.ForeColor = Color.Coral;
-            lblCustomerID.Location = new Point(178, 170);
+            lblCustomerID.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            lblCustomerID.ForeColor = Color.FromArgb(135, 92, 254);
+            lblCustomerID.Location = new Point(343, 170);
             lblCustomerID.Name = "lblCustomerID";
+            lblCustomerID.RightToLeft = RightToLeft.Yes;
             lblCustomerID.Size = new Size(127, 25);
             lblCustomerID.TabIndex = 30;
             lblCustomerID.Text = "CMND/CCCD";
+            lblCustomerID.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblID
             // 
             lblID.AutoSize = true;
             lblID.BackColor = Color.Transparent;
-            lblID.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            lblID.ForeColor = Color.Coral;
-            lblID.Location = new Point(178, 122);
+            lblID.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            lblID.ForeColor = Color.FromArgb(135, 92, 254);
+            lblID.Location = new Point(325, 122);
             lblID.Name = "lblID";
-            lblID.Size = new Size(147, 25);
+            lblID.RightToLeft = RightToLeft.Yes;
+            lblID.Size = new Size(145, 25);
             lblID.TabIndex = 29;
             lblID.Text = "Mã sổ tiết kiệm";
+            lblID.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblName
             // 
             lblName.AutoSize = true;
             lblName.BackColor = Color.Transparent;
-            lblName.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            lblName.ForeColor = Color.Coral;
-            lblName.Location = new Point(178, 71);
+            lblName.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            lblName.ForeColor = Color.FromArgb(135, 92, 254);
+            lblName.Location = new Point(188, 71);
             lblName.Name = "lblName";
-            lblName.Size = new Size(297, 25);
+            lblName.RightToLeft = RightToLeft.Yes;
+            lblName.Size = new Size(282, 25);
             lblName.TabIndex = 28;
             lblName.Text = "Nguyễn Hoàng Trần Đặng Phan";
+            lblName.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblTypeTitle
             // 
             lblTypeTitle.AutoSize = true;
             lblTypeTitle.BackColor = Color.Transparent;
-            lblTypeTitle.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            lblTypeTitle.ForeColor = Color.Coral;
-            lblTypeTitle.Location = new Point(16, 424);
+            lblTypeTitle.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            lblTypeTitle.ForeColor = Color.FromArgb(135, 92, 254);
+            lblTypeTitle.Location = new Point(35, 424);
             lblTypeTitle.Name = "lblTypeTitle";
-            lblTypeTitle.Size = new Size(113, 25);
+            lblTypeTitle.Size = new Size(109, 25);
             lblTypeTitle.TabIndex = 27;
             lblTypeTitle.Text = "Loại kỳ hạn";
             // 
@@ -218,11 +235,11 @@
             // 
             lblMoneyTitle.AutoSize = true;
             lblMoneyTitle.BackColor = Color.Transparent;
-            lblMoneyTitle.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            lblMoneyTitle.ForeColor = Color.Coral;
-            lblMoneyTitle.Location = new Point(16, 372);
+            lblMoneyTitle.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            lblMoneyTitle.ForeColor = Color.FromArgb(135, 92, 254);
+            lblMoneyTitle.Location = new Point(35, 372);
             lblMoneyTitle.Name = "lblMoneyTitle";
-            lblMoneyTitle.Size = new Size(109, 25);
+            lblMoneyTitle.Size = new Size(104, 25);
             lblMoneyTitle.TabIndex = 26;
             lblMoneyTitle.Text = "Số tiền gửi";
             // 
@@ -230,11 +247,11 @@
             // 
             lblDateTitle.AutoSize = true;
             lblDateTitle.BackColor = Color.Transparent;
-            lblDateTitle.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            lblDateTitle.ForeColor = Color.Coral;
-            lblDateTitle.Location = new Point(16, 318);
+            lblDateTitle.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            lblDateTitle.ForeColor = Color.FromArgb(135, 92, 254);
+            lblDateTitle.Location = new Point(35, 318);
             lblDateTitle.Name = "lblDateTitle";
-            lblDateTitle.Size = new Size(129, 25);
+            lblDateTitle.Size = new Size(125, 25);
             lblDateTitle.TabIndex = 25;
             lblDateTitle.Text = "Số điện thoại";
             // 
@@ -242,9 +259,9 @@
             // 
             lblAddressTitle.AutoSize = true;
             lblAddressTitle.BackColor = Color.Transparent;
-            lblAddressTitle.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            lblAddressTitle.ForeColor = Color.Coral;
-            lblAddressTitle.Location = new Point(16, 215);
+            lblAddressTitle.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            lblAddressTitle.ForeColor = Color.FromArgb(135, 92, 254);
+            lblAddressTitle.Location = new Point(35, 215);
             lblAddressTitle.Name = "lblAddressTitle";
             lblAddressTitle.Size = new Size(71, 25);
             lblAddressTitle.TabIndex = 24;
@@ -254,9 +271,9 @@
             // 
             lblCustomerIDTitle.AutoSize = true;
             lblCustomerIDTitle.BackColor = Color.Transparent;
-            lblCustomerIDTitle.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            lblCustomerIDTitle.ForeColor = Color.Coral;
-            lblCustomerIDTitle.Location = new Point(16, 170);
+            lblCustomerIDTitle.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            lblCustomerIDTitle.ForeColor = Color.FromArgb(135, 92, 254);
+            lblCustomerIDTitle.Location = new Point(35, 170);
             lblCustomerIDTitle.Name = "lblCustomerIDTitle";
             lblCustomerIDTitle.Size = new Size(127, 25);
             lblCustomerIDTitle.TabIndex = 23;
@@ -266,11 +283,11 @@
             // 
             lblIDTitle.AutoSize = true;
             lblIDTitle.BackColor = Color.Transparent;
-            lblIDTitle.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            lblIDTitle.ForeColor = Color.Coral;
-            lblIDTitle.Location = new Point(16, 122);
+            lblIDTitle.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            lblIDTitle.ForeColor = Color.FromArgb(135, 92, 254);
+            lblIDTitle.Location = new Point(35, 122);
             lblIDTitle.Name = "lblIDTitle";
-            lblIDTitle.Size = new Size(147, 25);
+            lblIDTitle.Size = new Size(145, 25);
             lblIDTitle.TabIndex = 22;
             lblIDTitle.Text = "Mã sổ tiết kiệm";
             // 
@@ -284,7 +301,7 @@
             btnAdd1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnAdd1.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
             btnAdd1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnAdd1.FillColor = Color.FromArgb(255, 77, 165);
+            btnAdd1.FillColor = Color.FromArgb(91, 185, 250);
             btnAdd1.FillColor2 = Color.FromArgb(140, 82, 255);
             btnAdd1.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             btnAdd1.ForeColor = Color.White;
@@ -307,7 +324,7 @@
             btnAdd.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnAdd.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
             btnAdd.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnAdd.FillColor = Color.FromArgb(255, 77, 165);
+            btnAdd.FillColor = Color.FromArgb(91, 185, 250);
             btnAdd.FillColor2 = Color.FromArgb(140, 82, 255);
             btnAdd.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             btnAdd.ForeColor = Color.White;
@@ -330,7 +347,8 @@
             btnEdit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnEdit.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
             btnEdit.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnEdit.FillColor = Color.FromArgb(255, 87, 87);
+            btnEdit.FillColor = Color.FromArgb(91, 185, 250);
+            btnEdit.FillColor2 = Color.FromArgb(140, 82, 255);
             btnEdit.Font = new Font("Segoe UI Semibold", 13F, FontStyle.Bold);
             btnEdit.ForeColor = Color.White;
             btnEdit.ImeMode = ImeMode.Off;
@@ -346,11 +364,11 @@
             // 
             lblNameTitle.AutoSize = true;
             lblNameTitle.BackColor = Color.Transparent;
-            lblNameTitle.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            lblNameTitle.ForeColor = Color.Coral;
-            lblNameTitle.Location = new Point(16, 71);
+            lblNameTitle.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            lblNameTitle.ForeColor = Color.FromArgb(135, 92, 254);
+            lblNameTitle.Location = new Point(35, 71);
             lblNameTitle.Name = "lblNameTitle";
-            lblNameTitle.Size = new Size(98, 25);
+            lblNameTitle.Size = new Size(95, 25);
             lblNameTitle.TabIndex = 15;
             lblNameTitle.Text = "Họ và tên";
             // 
@@ -359,7 +377,7 @@
             lblTitle.AutoSize = true;
             lblTitle.BackColor = Color.Transparent;
             lblTitle.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            lblTitle.ForeColor = Color.Coral;
+            lblTitle.ForeColor = Color.FromArgb(135, 92, 254);
             lblTitle.Location = new Point(158, 11);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(167, 37);
@@ -371,7 +389,7 @@
             guna2GradientPanel1.Controls.Add(guna2Panel1);
             guna2GradientPanel1.CustomizableEdges = customizableEdges9;
             guna2GradientPanel1.Dock = DockStyle.Fill;
-            guna2GradientPanel1.FillColor = Color.FromArgb(255, 77, 165);
+            guna2GradientPanel1.FillColor = Color.FromArgb(91, 185, 250);
             guna2GradientPanel1.FillColor2 = Color.FromArgb(140, 82, 255);
             guna2GradientPanel1.Location = new Point(0, 0);
             guna2GradientPanel1.Name = "guna2GradientPanel1";

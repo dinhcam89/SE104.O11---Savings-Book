@@ -51,6 +51,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            lblTitle = new Label();
             txtSDT = new Guna.UI2.WinForms.Guna2TextBox();
             lblSDT = new Label();
             txtDate = new Guna.UI2.WinForms.Guna2TextBox();
@@ -71,7 +72,6 @@
             lblPassword = new Label();
             label2 = new Label();
             label1 = new Label();
-            lblTitle = new Label();
             guna2Panel1.SuspendLayout();
             guna2GradientPanel1.SuspendLayout();
             panelTypeMenu.SuspendLayout();
@@ -87,7 +87,7 @@
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            guna2Panel1.Size = new Size(552, 793);
+            guna2Panel1.Size = new Size(552, 779);
             guna2Panel1.TabIndex = 1;
             // 
             // guna2GradientPanel1
@@ -113,13 +113,26 @@
             guna2GradientPanel1.Controls.Add(label1);
             guna2GradientPanel1.CustomizableEdges = customizableEdges17;
             guna2GradientPanel1.Dock = DockStyle.Fill;
-            guna2GradientPanel1.FillColor = Color.FromArgb(255, 87, 87);
+            guna2GradientPanel1.FillColor = Color.FromArgb(91, 185, 250);
             guna2GradientPanel1.FillColor2 = Color.FromArgb(140, 82, 255);
+            guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             guna2GradientPanel1.Location = new Point(0, 0);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            guna2GradientPanel1.Size = new Size(552, 793);
+            guna2GradientPanel1.Size = new Size(552, 779);
             guna2GradientPanel1.TabIndex = 27;
+            // 
+            // lblTitle
+            // 
+            lblTitle.AutoSize = true;
+            lblTitle.BackColor = Color.Transparent;
+            lblTitle.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            lblTitle.ForeColor = Color.White;
+            lblTitle.Location = new Point(181, 19);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(204, 30);
+            lblTitle.TabIndex = 35;
+            lblTitle.Text = "TẠO SỔ TIẾT KIỆM";
             // 
             // txtSDT
             // 
@@ -201,7 +214,7 @@
             btnTypeMenu.ForeColor = Color.FromArgb(140, 82, 255);
             btnTypeMenu.Image = (Image)resources.GetObject("btnTypeMenu.Image");
             btnTypeMenu.ImageAlign = ContentAlignment.MiddleRight;
-            btnTypeMenu.Location = new Point(34, 615);
+            btnTypeMenu.Location = new Point(34, 612);
             btnTypeMenu.Margin = new Padding(0);
             btnTypeMenu.Name = "btnTypeMenu";
             btnTypeMenu.Size = new Size(480, 41);
@@ -216,7 +229,7 @@
             panelTypeMenu.Controls.Add(btnType1);
             panelTypeMenu.Controls.Add(btnType2);
             panelTypeMenu.Controls.Add(btnType3);
-            panelTypeMenu.Location = new Point(34, 656);
+            panelTypeMenu.Location = new Point(34, 653);
             panelTypeMenu.Name = "panelTypeMenu";
             panelTypeMenu.Size = new Size(480, 128);
             panelTypeMenu.TabIndex = 28;
@@ -278,9 +291,9 @@
             btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnSave.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnSave.FillColor = Color.White;
-            btnSave.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSave.ForeColor = Color.FromArgb(255, 77, 165);
-            btnSave.Location = new Point(405, 728);
+            btnSave.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSave.ForeColor = Color.FromArgb(91, 185, 250);
+            btnSave.Location = new Point(405, 698);
             btnSave.Name = "btnSave";
             btnSave.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnSave.Size = new Size(109, 45);
@@ -466,23 +479,11 @@
             label1.TabIndex = 20;
             label1.Text = "CCCD/CMND";
             // 
-            // lblTitle
-            // 
-            lblTitle.AutoSize = true;
-            lblTitle.BackColor = Color.Transparent;
-            lblTitle.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            lblTitle.ForeColor = Color.White;
-            lblTitle.Location = new Point(181, 19);
-            lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(204, 30);
-            lblTitle.TabIndex = 35;
-            lblTitle.Text = "TẠO SỔ TIẾT KIỆM";
-            // 
             // AddSavingBooks
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(552, 793);
+            ClientSize = new Size(552, 779);
             Controls.Add(guna2Panel1);
             MaximizeBox = false;
             Name = "AddSavingBooks";

@@ -19,5 +19,9 @@ namespace GUI
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

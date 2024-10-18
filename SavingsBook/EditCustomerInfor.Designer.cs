@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -40,7 +40,11 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            txtAddress = new Guna.UI2.WinForms.Guna2TextBox();
+            lblAddress = new Label();
             txtIDBook = new Guna.UI2.WinForms.Guna2TextBox();
             lblIDBook = new Label();
             lblTitle = new Label();
@@ -57,6 +61,8 @@
             // guna2GradientPanel1
             // 
             guna2GradientPanel1.BackColor = Color.Transparent;
+            guna2GradientPanel1.Controls.Add(txtAddress);
+            guna2GradientPanel1.Controls.Add(lblAddress);
             guna2GradientPanel1.Controls.Add(txtIDBook);
             guna2GradientPanel1.Controls.Add(lblIDBook);
             guna2GradientPanel1.Controls.Add(lblTitle);
@@ -67,22 +73,59 @@
             guna2GradientPanel1.Controls.Add(txtName);
             guna2GradientPanel1.Controls.Add(lblName);
             guna2GradientPanel1.Controls.Add(btnSave);
-            guna2GradientPanel1.CustomizableEdges = customizableEdges11;
+            guna2GradientPanel1.CustomizableEdges = customizableEdges13;
             guna2GradientPanel1.Dock = DockStyle.Fill;
-            guna2GradientPanel1.FillColor = Color.FromArgb(255, 87, 87);
+            guna2GradientPanel1.FillColor = Color.FromArgb(91, 185, 250);
             guna2GradientPanel1.FillColor2 = Color.FromArgb(140, 82, 255);
+            guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             guna2GradientPanel1.Location = new Point(0, 0);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
-            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2GradientPanel1.Size = new Size(533, 438);
+            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            guna2GradientPanel1.Size = new Size(533, 507);
             guna2GradientPanel1.TabIndex = 29;
+            // 
+            // txtAddress
+            // 
+            txtAddress.BackColor = Color.Transparent;
+            txtAddress.BorderColor = Color.Transparent;
+            txtAddress.BorderRadius = 10;
+            txtAddress.CustomizableEdges = customizableEdges1;
+            txtAddress.DefaultText = "";
+            txtAddress.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtAddress.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtAddress.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtAddress.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtAddress.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtAddress.Font = new Font("Segoe UI", 9F);
+            txtAddress.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtAddress.ImeMode = ImeMode.On;
+            txtAddress.Location = new Point(24, 310);
+            txtAddress.Name = "txtAddress";
+            txtAddress.PasswordChar = '\0';
+            txtAddress.PlaceholderText = "";
+            txtAddress.SelectedText = "";
+            txtAddress.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            txtAddress.Size = new Size(480, 41);
+            txtAddress.TabIndex = 40;
+            // 
+            // lblAddress
+            // 
+            lblAddress.AutoSize = true;
+            lblAddress.BackColor = Color.Transparent;
+            lblAddress.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            lblAddress.ForeColor = Color.White;
+            lblAddress.Location = new Point(24, 287);
+            lblAddress.Name = "lblAddress";
+            lblAddress.Size = new Size(56, 20);
+            lblAddress.TabIndex = 39;
+            lblAddress.Text = "Địa chỉ";
             // 
             // txtIDBook
             // 
             txtIDBook.BackColor = Color.Transparent;
             txtIDBook.BorderColor = Color.Transparent;
             txtIDBook.BorderRadius = 10;
-            txtIDBook.CustomizableEdges = customizableEdges1;
+            txtIDBook.CustomizableEdges = customizableEdges3;
             txtIDBook.DefaultText = "";
             txtIDBook.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtIDBook.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -92,12 +135,12 @@
             txtIDBook.Font = new Font("Segoe UI", 9F);
             txtIDBook.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtIDBook.ImeMode = ImeMode.On;
-            txtIDBook.Location = new Point(24, 313);
+            txtIDBook.Location = new Point(24, 388);
             txtIDBook.Name = "txtIDBook";
             txtIDBook.PasswordChar = '\0';
             txtIDBook.PlaceholderText = "";
             txtIDBook.SelectedText = "";
-            txtIDBook.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            txtIDBook.ShadowDecoration.CustomizableEdges = customizableEdges4;
             txtIDBook.Size = new Size(480, 41);
             txtIDBook.TabIndex = 38;
             // 
@@ -107,7 +150,7 @@
             lblIDBook.BackColor = Color.Transparent;
             lblIDBook.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             lblIDBook.ForeColor = Color.White;
-            lblIDBook.Location = new Point(24, 290);
+            lblIDBook.Location = new Point(24, 365);
             lblIDBook.Name = "lblIDBook";
             lblIDBook.Size = new Size(117, 20);
             lblIDBook.TabIndex = 37;
@@ -130,7 +173,7 @@
             txtID.BackColor = Color.Transparent;
             txtID.BorderColor = Color.Transparent;
             txtID.BorderRadius = 10;
-            txtID.CustomizableEdges = customizableEdges3;
+            txtID.CustomizableEdges = customizableEdges5;
             txtID.DefaultText = "";
             txtID.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtID.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -145,7 +188,7 @@
             txtID.PasswordChar = '\0';
             txtID.PlaceholderText = "";
             txtID.SelectedText = "";
-            txtID.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            txtID.ShadowDecoration.CustomizableEdges = customizableEdges6;
             txtID.Size = new Size(480, 41);
             txtID.TabIndex = 33;
             // 
@@ -166,7 +209,7 @@
             guna2TextBox3.BackColor = Color.Transparent;
             guna2TextBox3.BorderColor = Color.Transparent;
             guna2TextBox3.BorderRadius = 10;
-            guna2TextBox3.CustomizableEdges = customizableEdges5;
+            guna2TextBox3.CustomizableEdges = customizableEdges7;
             guna2TextBox3.DefaultText = "";
             guna2TextBox3.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             guna2TextBox3.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -181,7 +224,7 @@
             guna2TextBox3.PasswordChar = '\0';
             guna2TextBox3.PlaceholderText = "";
             guna2TextBox3.SelectedText = "";
-            guna2TextBox3.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2TextBox3.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2TextBox3.Size = new Size(480, 41);
             guna2TextBox3.TabIndex = 25;
             // 
@@ -202,7 +245,7 @@
             txtName.BackColor = Color.Transparent;
             txtName.BorderColor = Color.Transparent;
             txtName.BorderRadius = 10;
-            txtName.CustomizableEdges = customizableEdges7;
+            txtName.CustomizableEdges = customizableEdges9;
             txtName.DefaultText = "";
             txtName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -217,7 +260,7 @@
             txtName.PasswordChar = '\0';
             txtName.PlaceholderText = "";
             txtName.SelectedText = "";
-            txtName.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            txtName.ShadowDecoration.CustomizableEdges = customizableEdges10;
             txtName.Size = new Size(480, 41);
             txtName.TabIndex = 16;
             // 
@@ -236,17 +279,17 @@
             // btnSave
             // 
             btnSave.BorderRadius = 15;
-            btnSave.CustomizableEdges = customizableEdges9;
+            btnSave.CustomizableEdges = customizableEdges11;
             btnSave.DisabledState.BorderColor = Color.DarkGray;
             btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnSave.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnSave.FillColor = Color.White;
-            btnSave.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSave.ForeColor = Color.FromArgb(255, 77, 165);
-            btnSave.Location = new Point(395, 371);
+            btnSave.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSave.ForeColor = Color.FromArgb(91, 185, 250);
+            btnSave.Location = new Point(395, 444);
             btnSave.Name = "btnSave";
-            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnSave.Size = new Size(109, 45);
             btnSave.TabIndex = 27;
             btnSave.Text = "Lưu";
@@ -255,7 +298,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(533, 438);
+            ClientSize = new Size(533, 507);
             Controls.Add(guna2GradientPanel1);
             MaximizeBox = false;
             Name = "EditCustomerInfor";
@@ -278,5 +321,7 @@
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2TextBox txtIDBook;
         private Label lblIDBook;
+        private Guna.UI2.WinForms.Guna2TextBox txtAddress;
+        private Label lblAddress;
     }
 }
