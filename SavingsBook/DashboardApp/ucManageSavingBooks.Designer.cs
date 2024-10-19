@@ -563,7 +563,7 @@
             lblNumber1.TabIndex = 1;
             lblNumber1.Text = "Mã số tiết kiệm";
             // 
-            // ucSearch
+            // ucManageSavingBooks
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -571,7 +571,7 @@
             Controls.Add(guna2Panel2);
             Controls.Add(guna2Panel1);
             ForeColor = Color.FromArgb(255, 87, 87);
-            Name = "ucSearch";
+            Name = "ucManageSavingBooks";
             Size = new Size(966, 634);
             guna2Panel1.ResumeLayout(false);
             guna2Panel2.ResumeLayout(false);
