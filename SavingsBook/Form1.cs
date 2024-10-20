@@ -9,7 +9,7 @@ namespace SavingsBook
          * Trước khi chạy chương trình, cần đảm bảo các yêu cầu sau:
          * - SQL Server đang chạy.
          * - Có cơ sở dữ liệu có tên "saving_books_management".
-         * - Có bảng có tên "SoTietKiem" trong cơ sở dữ liệu "master".
+         * - Có bảng có tên "SoTietKiem" trong cơ sở dữ liệu "saving_books_management".
          * - Bảng "SoTietKiem" có cấu trúc như sau:
          * + MaSo: int, primary key, identity(1, 1)
          * + DiaChi: varchar(255), not null
@@ -20,7 +20,7 @@ namespace SavingsBook
         // Mẫu connection string: "Server=[tên máy chủ];Database=[tên cơ sở dữ liệu];Integrated Security=[hình thức xác thực];"
         // - Nếu sử dụng Windows Authentication: "Integrated Security=sspi"
         // - Nếu sử dụng SQL Server Authentication: "User Id=[tên người dùng];Password=[mật khẩu];"
-        string connectionString = "Server=LT49\\SQLEXPRESS;Database=master;Integrated Security=sspi;";
+        string connectionString = "Server=LT49\\SQLEXPRESS;Database=saving_books_management;Integrated Security=sspi;";
         string query = "SELECT * FROM SoTietKiem";
 
         SqlConnection connection;
