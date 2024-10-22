@@ -9,9 +9,9 @@ namespace DTO
     public class EmployeeDTO
     {
         #region Properties
-        public string StaffId { get; set; }
-        public string StaffName { get; set; }
-        public string Department { get; set; }
+        public string EmployeeID { get; set; }
+        public string EmployeeName { get; set; }
+        public string EmployeePWD { get; set; }
         public string Position { get; set; }
         public string EmailAddress { get; set; }
         #endregion
@@ -20,9 +20,9 @@ namespace DTO
         public EmployeeDTO() { }
         public EmployeeDTO(string staffId, string staffName, string department, string position, string emailAddress)
         {
-            StaffId = staffId;
-            StaffName = staffName;
-            Department = department;
+            EmployeeID = staffId;
+            EmployeeName = staffName;
+            EmployeePWD = department;
             Position = position;
             EmailAddress = emailAddress;
         }
