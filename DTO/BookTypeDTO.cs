@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class BookType
+    public class BookTypeDTO
     {
         #region Properties
         public string BookTypeId { get; set; }
@@ -17,8 +17,8 @@ namespace DTO
         #endregion
 
         #region Constructors
-        public BookType() { }
-        public BookType(string bookTypeId, string bookTerm, double interestRate, string minimumBalance, string minimumDepositBalance)
+        public BookTypeDTO() { }
+        public BookTypeDTO(string bookTypeId, string bookTerm, double interestRate, string minimumBalance, string minimumDepositBalance)
         {
             BookTypeId = bookTypeId;
             BookTerm = bookTerm;

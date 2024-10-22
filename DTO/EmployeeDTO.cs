@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class StaffDTO
+    public class EmployeeDTO
     {
         #region Properties
         public string StaffId { get; set; }
@@ -17,8 +17,8 @@ namespace DTO
         #endregion
 
         #region Constructors
-        public StaffDTO() { }
-        public StaffDTO(string staffId, string staffName, string department, string position, string emailAddress)
+        public EmployeeDTO() { }
+        public EmployeeDTO(string staffId, string staffName, string department, string position, string emailAddress)
         {
             StaffId = staffId;
             StaffName = staffName;
