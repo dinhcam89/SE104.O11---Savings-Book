@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace GUI.DashboardApp
 {
-    public partial class ucStats : UserControl
+    public partial class ucBookReports : UserControl
     {
-        public ucStats()
+        public ucBookReports()
         {
             InitializeComponent();
         }
+
     }
 }
