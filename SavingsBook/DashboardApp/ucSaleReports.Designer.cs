@@ -183,12 +183,12 @@
             // 
             chartDifference.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             chartDifference.AutoSize = true;
-            chartDifference.BackColor = Color.FromArgb(255, 244, 244);
+            chartDifference.BackColor = Color.FromArgb(208, 232, 255);
             chartFont1.FontName = "Arial";
             chartDifference.Legend.LabelFont = chartFont1;
             chartDifference.Location = new Point(450, 498);
             chartDifference.Name = "chartDifference";
-            chartDifference.PaletteCustomColors.FillColors.AddRange(new Color[] { Color.FromArgb(118, 46, 6), Color.FromArgb(255, 131, 52), Color.FromArgb(168, 138, 39), Color.FromArgb(249, 255, 199) });
+            chartDifference.PaletteCustomColors.FillColors.AddRange(new Color[] { Color.FromArgb(39, 20, 85), Color.FromArgb(37, 10, 128), Color.FromArgb(61, 78, 178), Color.FromArgb(118, 129, 253), Color.FromArgb(96, 176, 250) });
             chartDifference.Size = new Size(541, 171);
             chartDifference.TabIndex = 10;
             chartFont2.FontName = "Arial";
@@ -228,7 +228,7 @@
             cboxDateType.CustomizableEdges = customizableEdges1;
             cboxDateType.DrawMode = DrawMode.OwnerDrawFixed;
             cboxDateType.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboxDateType.FillColor = Color.FromArgb(217, 74, 74);
+            cboxDateType.FillColor = Color.FromArgb(61, 78, 178);
             cboxDateType.FocusedColor = Color.FromArgb(94, 148, 255);
             cboxDateType.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             cboxDateType.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -245,12 +245,12 @@
             // 
             chartExpenditure.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             chartExpenditure.AutoSize = true;
-            chartExpenditure.BackColor = Color.FromArgb(255, 244, 244);
+            chartExpenditure.BackColor = Color.FromArgb(208, 232, 255);
             chartFont9.FontName = "Arial";
             chartExpenditure.Legend.LabelFont = chartFont9;
             chartExpenditure.Location = new Point(450, 302);
             chartExpenditure.Name = "chartExpenditure";
-            chartExpenditure.PaletteCustomColors.FillColors.AddRange(new Color[] { Color.FromArgb(118, 46, 6), Color.FromArgb(255, 131, 52), Color.FromArgb(168, 138, 39), Color.FromArgb(249, 255, 199) });
+            chartExpenditure.PaletteCustomColors.FillColors.AddRange(new Color[] { Color.FromArgb(39, 20, 85), Color.FromArgb(37, 10, 128), Color.FromArgb(61, 78, 178), Color.FromArgb(118, 129, 253), Color.FromArgb(96, 176, 250) });
             chartExpenditure.Size = new Size(541, 171);
             chartExpenditure.TabIndex = 7;
             chartFont10.FontName = "Arial";
@@ -286,12 +286,12 @@
             // 
             chartRevenue.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             chartRevenue.AutoSize = true;
-            chartRevenue.BackColor = Color.FromArgb(255, 244, 244);
+            chartRevenue.BackColor = Color.FromArgb(208, 232, 255);
             chartFont17.FontName = "Arial";
             chartRevenue.Legend.LabelFont = chartFont17;
             chartRevenue.Location = new Point(450, 105);
             chartRevenue.Name = "chartRevenue";
-            chartRevenue.PaletteCustomColors.FillColors.AddRange(new Color[] { Color.FromArgb(118, 46, 6), Color.FromArgb(255, 131, 52), Color.FromArgb(168, 138, 39), Color.FromArgb(249, 255, 199) });
+            chartRevenue.PaletteCustomColors.FillColors.AddRange(new Color[] { Color.FromArgb(39, 20, 85), Color.FromArgb(37, 10, 128), Color.FromArgb(61, 78, 178), Color.FromArgb(118, 129, 253), Color.FromArgb(96, 176, 250) });
             chartRevenue.Size = new Size(541, 171);
             chartRevenue.TabIndex = 6;
             chartFont18.FontName = "Arial";
@@ -334,7 +334,7 @@
             guna2Panel4.Controls.Add(lblDifferenceTitle);
             guna2Panel4.Controls.Add(guna2Panel6);
             guna2Panel4.CustomizableEdges = customizableEdges9;
-            guna2Panel4.FillColor = Color.FromArgb(255, 208, 198);
+            guna2Panel4.FillColor = Color.FromArgb(154, 198, 251);
             guna2Panel4.Location = new Point(17, 498);
             guna2Panel4.Name = "guna2Panel4";
             guna2Panel4.ShadowDecoration.Color = Color.LightGray;
@@ -351,7 +351,7 @@
             guna2Panel13.Controls.Add(lblDifferenceTitleType2);
             guna2Panel13.Controls.Add(lblDifferenceType2);
             guna2Panel13.CustomizableEdges = customizableEdges3;
-            guna2Panel13.FillColor = Color.FromArgb(255, 244, 244);
+            guna2Panel13.FillColor = Color.FromArgb(208, 232, 255);
             guna2Panel13.Location = new Point(141, 53);
             guna2Panel13.Name = "guna2Panel13";
             guna2Panel13.ShadowDecoration.Color = Color.Gray;
@@ -365,7 +365,7 @@
             // 
             lblDifferenceTitleType2.AutoSize = true;
             lblDifferenceTitleType2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            lblDifferenceTitleType2.ForeColor = Color.FromArgb(249, 115, 39);
+            lblDifferenceTitleType2.ForeColor = Color.FromArgb(29, 0, 122);
             lblDifferenceTitleType2.Location = new Point(0, 19);
             lblDifferenceTitleType2.Name = "lblDifferenceTitleType2";
             lblDifferenceTitleType2.Size = new Size(114, 20);
@@ -376,7 +376,7 @@
             // 
             lblDifferenceType2.AutoSize = true;
             lblDifferenceType2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
-            lblDifferenceType2.ForeColor = Color.FromArgb(249, 115, 39);
+            lblDifferenceType2.ForeColor = Color.FromArgb(29, 0, 122);
             lblDifferenceType2.Location = new Point(39, 49);
             lblDifferenceType2.Name = "lblDifferenceType2";
             lblDifferenceType2.Size = new Size(37, 30);
@@ -390,7 +390,7 @@
             guna2Panel12.Controls.Add(lblDifferenceTitleType1);
             guna2Panel12.Controls.Add(lblDifferenceType1);
             guna2Panel12.CustomizableEdges = customizableEdges5;
-            guna2Panel12.FillColor = Color.FromArgb(255, 244, 244);
+            guna2Panel12.FillColor = Color.FromArgb(208, 232, 255);
             guna2Panel12.Location = new Point(12, 53);
             guna2Panel12.Name = "guna2Panel12";
             guna2Panel12.ShadowDecoration.Color = Color.Gray;
@@ -404,7 +404,7 @@
             // 
             lblDifferenceTitleType1.AutoSize = true;
             lblDifferenceTitleType1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            lblDifferenceTitleType1.ForeColor = Color.FromArgb(118, 46, 6);
+            lblDifferenceTitleType1.ForeColor = Color.FromArgb(30, 3, 94);
             lblDifferenceTitleType1.Location = new Point(5, 17);
             lblDifferenceTitleType1.Name = "lblDifferenceTitleType1";
             lblDifferenceTitleType1.Size = new Size(105, 20);
@@ -415,7 +415,7 @@
             // 
             lblDifferenceType1.AutoSize = true;
             lblDifferenceType1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
-            lblDifferenceType1.ForeColor = Color.FromArgb(118, 46, 6);
+            lblDifferenceType1.ForeColor = Color.FromArgb(30, 3, 94);
             lblDifferenceType1.Location = new Point(40, 49);
             lblDifferenceType1.Name = "lblDifferenceType1";
             lblDifferenceType1.Size = new Size(25, 30);
@@ -427,7 +427,7 @@
             lblDifferenceTitle.Anchor = AnchorStyles.Top;
             lblDifferenceTitle.AutoSize = true;
             lblDifferenceTitle.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            lblDifferenceTitle.ForeColor = Color.FromArgb(217, 74, 74);
+            lblDifferenceTitle.ForeColor = Color.FromArgb(37, 10, 128);
             lblDifferenceTitle.Location = new Point(102, 9);
             lblDifferenceTitle.Name = "lblDifferenceTitle";
             lblDifferenceTitle.Size = new Size(181, 25);
@@ -441,7 +441,7 @@
             guna2Panel6.Controls.Add(lblDifferenceTitleType3);
             guna2Panel6.Controls.Add(lblDifferenceType3);
             guna2Panel6.CustomizableEdges = customizableEdges7;
-            guna2Panel6.FillColor = Color.FromArgb(255, 244, 244);
+            guna2Panel6.FillColor = Color.FromArgb(208, 232, 255);
             guna2Panel6.Location = new Point(267, 53);
             guna2Panel6.Name = "guna2Panel6";
             guna2Panel6.ShadowDecoration.Color = Color.Gray;
@@ -455,7 +455,7 @@
             // 
             lblDifferenceTitleType3.AutoSize = true;
             lblDifferenceTitleType3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            lblDifferenceTitleType3.ForeColor = Color.FromArgb(168, 138, 39);
+            lblDifferenceTitleType3.ForeColor = Color.FromArgb(28, 52, 186);
             lblDifferenceTitleType3.Location = new Point(0, 19);
             lblDifferenceTitleType3.Name = "lblDifferenceTitleType3";
             lblDifferenceTitleType3.Size = new Size(114, 20);
@@ -466,7 +466,7 @@
             // 
             lblDifferenceType3.AutoSize = true;
             lblDifferenceType3.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
-            lblDifferenceType3.ForeColor = Color.FromArgb(168, 138, 39);
+            lblDifferenceType3.ForeColor = Color.FromArgb(28, 52, 186);
             lblDifferenceType3.Location = new Point(40, 49);
             lblDifferenceType3.Name = "lblDifferenceType3";
             lblDifferenceType3.Size = new Size(37, 30);
@@ -484,7 +484,7 @@
             guna2Panel3.Controls.Add(guna2Panel9);
             guna2Panel3.Controls.Add(lblExpenditureTitle);
             guna2Panel3.CustomizableEdges = customizableEdges17;
-            guna2Panel3.FillColor = Color.FromArgb(255, 208, 198);
+            guna2Panel3.FillColor = Color.FromArgb(154, 198, 251);
             guna2Panel3.Location = new Point(17, 302);
             guna2Panel3.Name = "guna2Panel3";
             guna2Panel3.ShadowDecoration.Color = Color.LightGray;
@@ -502,7 +502,7 @@
             guna2Panel11.Controls.Add(lblExpenditureTitleType3);
             guna2Panel11.Controls.Add(lblExpenditureType3);
             guna2Panel11.CustomizableEdges = customizableEdges11;
-            guna2Panel11.FillColor = Color.FromArgb(255, 244, 244);
+            guna2Panel11.FillColor = Color.FromArgb(208, 232, 255);
             guna2Panel11.Location = new Point(267, 53);
             guna2Panel11.Name = "guna2Panel11";
             guna2Panel11.ShadowDecoration.Color = Color.Gray;
@@ -516,7 +516,7 @@
             // 
             lblExpenditureTitleType3.AutoSize = true;
             lblExpenditureTitleType3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            lblExpenditureTitleType3.ForeColor = Color.FromArgb(168, 138, 39);
+            lblExpenditureTitleType3.ForeColor = Color.FromArgb(28, 52, 186);
             lblExpenditureTitleType3.Location = new Point(-1, 18);
             lblExpenditureTitleType3.Name = "lblExpenditureTitleType3";
             lblExpenditureTitleType3.Size = new Size(114, 20);
@@ -527,7 +527,7 @@
             // 
             lblExpenditureType3.AutoSize = true;
             lblExpenditureType3.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
-            lblExpenditureType3.ForeColor = Color.FromArgb(168, 138, 39);
+            lblExpenditureType3.ForeColor = Color.FromArgb(28, 52, 186);
             lblExpenditureType3.Location = new Point(48, 54);
             lblExpenditureType3.Name = "lblExpenditureType3";
             lblExpenditureType3.Size = new Size(25, 30);
@@ -541,7 +541,7 @@
             guna2Panel10.Controls.Add(lblExpenditureTitleType2);
             guna2Panel10.Controls.Add(lblExpenditureType2);
             guna2Panel10.CustomizableEdges = customizableEdges13;
-            guna2Panel10.FillColor = Color.FromArgb(255, 244, 244);
+            guna2Panel10.FillColor = Color.FromArgb(208, 232, 255);
             guna2Panel10.Location = new Point(140, 53);
             guna2Panel10.Name = "guna2Panel10";
             guna2Panel10.ShadowDecoration.Color = Color.Gray;
@@ -555,7 +555,7 @@
             // 
             lblExpenditureTitleType2.AutoSize = true;
             lblExpenditureTitleType2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            lblExpenditureTitleType2.ForeColor = Color.FromArgb(249, 115, 39);
+            lblExpenditureTitleType2.ForeColor = Color.FromArgb(29, 0, 122);
             lblExpenditureTitleType2.Location = new Point(0, 18);
             lblExpenditureTitleType2.Name = "lblExpenditureTitleType2";
             lblExpenditureTitleType2.Size = new Size(114, 20);
@@ -566,7 +566,7 @@
             // 
             lblExpenditureType2.AutoSize = true;
             lblExpenditureType2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
-            lblExpenditureType2.ForeColor = Color.FromArgb(249, 115, 39);
+            lblExpenditureType2.ForeColor = Color.FromArgb(29, 0, 122);
             lblExpenditureType2.Location = new Point(41, 54);
             lblExpenditureType2.Name = "lblExpenditureType2";
             lblExpenditureType2.Size = new Size(37, 30);
@@ -580,7 +580,7 @@
             guna2Panel9.Controls.Add(lblExpenditureTitleType1);
             guna2Panel9.Controls.Add(lblExpenditureType1);
             guna2Panel9.CustomizableEdges = customizableEdges15;
-            guna2Panel9.FillColor = Color.FromArgb(255, 244, 244);
+            guna2Panel9.FillColor = Color.FromArgb(208, 232, 255);
             guna2Panel9.Location = new Point(12, 53);
             guna2Panel9.Name = "guna2Panel9";
             guna2Panel9.ShadowDecoration.Color = Color.Gray;
@@ -594,7 +594,7 @@
             // 
             lblExpenditureTitleType1.AutoSize = true;
             lblExpenditureTitleType1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            lblExpenditureTitleType1.ForeColor = Color.FromArgb(118, 46, 6);
+            lblExpenditureTitleType1.ForeColor = Color.FromArgb(30, 3, 94);
             lblExpenditureTitleType1.Location = new Point(5, 18);
             lblExpenditureTitleType1.Name = "lblExpenditureTitleType1";
             lblExpenditureTitleType1.Size = new Size(105, 20);
@@ -605,7 +605,7 @@
             // 
             lblExpenditureType1.AutoSize = true;
             lblExpenditureType1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
-            lblExpenditureType1.ForeColor = Color.FromArgb(118, 46, 6);
+            lblExpenditureType1.ForeColor = Color.FromArgb(30, 3, 94);
             lblExpenditureType1.Location = new Point(40, 54);
             lblExpenditureType1.Name = "lblExpenditureType1";
             lblExpenditureType1.Size = new Size(37, 30);
@@ -617,7 +617,7 @@
             lblExpenditureTitle.Anchor = AnchorStyles.Top;
             lblExpenditureTitle.AutoSize = true;
             lblExpenditureTitle.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            lblExpenditureTitle.ForeColor = Color.FromArgb(217, 74, 74);
+            lblExpenditureTitle.ForeColor = Color.FromArgb(37, 10, 128);
             lblExpenditureTitle.Location = new Point(124, 11);
             lblExpenditureTitle.Name = "lblExpenditureTitle";
             lblExpenditureTitle.Size = new Size(150, 25);
@@ -635,7 +635,7 @@
             guna2Panel2.Controls.Add(guna2Panel7);
             guna2Panel2.Controls.Add(guna2Panel8);
             guna2Panel2.CustomizableEdges = customizableEdges25;
-            guna2Panel2.FillColor = Color.FromArgb(255, 208, 198);
+            guna2Panel2.FillColor = Color.FromArgb(154, 198, 251);
             guna2Panel2.Location = new Point(17, 105);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.Color = Color.LightGray;
@@ -650,7 +650,7 @@
             lblRevenueTitle.Anchor = AnchorStyles.Top;
             lblRevenueTitle.AutoSize = true;
             lblRevenueTitle.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblRevenueTitle.ForeColor = Color.FromArgb(217, 74, 74);
+            lblRevenueTitle.ForeColor = Color.FromArgb(37, 10, 128);
             lblRevenueTitle.Location = new Point(103, 12);
             lblRevenueTitle.Name = "lblRevenueTitle";
             lblRevenueTitle.Size = new Size(187, 25);
@@ -664,7 +664,7 @@
             guna2Panel5.Controls.Add(lblRevenueType1);
             guna2Panel5.Controls.Add(lblRevenueTitleType1);
             guna2Panel5.CustomizableEdges = customizableEdges19;
-            guna2Panel5.FillColor = Color.FromArgb(255, 244, 244);
+            guna2Panel5.FillColor = Color.FromArgb(208, 232, 255);
             guna2Panel5.Location = new Point(12, 51);
             guna2Panel5.Name = "guna2Panel5";
             guna2Panel5.ShadowDecoration.Color = Color.Gray;
@@ -679,7 +679,7 @@
             lblRevenueType1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblRevenueType1.AutoSize = true;
             lblRevenueType1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
-            lblRevenueType1.ForeColor = Color.FromArgb(118, 46, 6);
+            lblRevenueType1.ForeColor = Color.FromArgb(30, 3, 94);
             lblRevenueType1.Location = new Point(40, 52);
             lblRevenueType1.Name = "lblRevenueType1";
             lblRevenueType1.Size = new Size(37, 30);
@@ -690,7 +690,7 @@
             // 
             lblRevenueTitleType1.AutoSize = true;
             lblRevenueTitleType1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            lblRevenueTitleType1.ForeColor = Color.FromArgb(118, 46, 6);
+            lblRevenueTitleType1.ForeColor = Color.FromArgb(30, 3, 94);
             lblRevenueTitleType1.Location = new Point(5, 15);
             lblRevenueTitleType1.Name = "lblRevenueTitleType1";
             lblRevenueTitleType1.Size = new Size(105, 20);
@@ -704,7 +704,7 @@
             guna2Panel7.Controls.Add(lblRevenueTitleType2);
             guna2Panel7.Controls.Add(lblRevenueType2);
             guna2Panel7.CustomizableEdges = customizableEdges21;
-            guna2Panel7.FillColor = Color.FromArgb(255, 244, 244);
+            guna2Panel7.FillColor = Color.FromArgb(208, 232, 255);
             guna2Panel7.Location = new Point(139, 51);
             guna2Panel7.Name = "guna2Panel7";
             guna2Panel7.ShadowDecoration.Color = Color.Gray;
@@ -718,7 +718,7 @@
             // 
             lblRevenueTitleType2.AutoSize = true;
             lblRevenueTitleType2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            lblRevenueTitleType2.ForeColor = Color.FromArgb(249, 115, 39);
+            lblRevenueTitleType2.ForeColor = Color.FromArgb(29, 0, 122);
             lblRevenueTitleType2.Location = new Point(0, 15);
             lblRevenueTitleType2.Name = "lblRevenueTitleType2";
             lblRevenueTitleType2.Size = new Size(114, 20);
@@ -730,7 +730,7 @@
             lblRevenueType2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblRevenueType2.AutoSize = true;
             lblRevenueType2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
-            lblRevenueType2.ForeColor = Color.FromArgb(249, 115, 39);
+            lblRevenueType2.ForeColor = Color.FromArgb(29, 0, 122);
             lblRevenueType2.Location = new Point(41, 52);
             lblRevenueType2.Name = "lblRevenueType2";
             lblRevenueType2.Size = new Size(37, 30);
@@ -744,7 +744,7 @@
             guna2Panel8.Controls.Add(lblRevenueTitleType3);
             guna2Panel8.Controls.Add(lblRevenueType3);
             guna2Panel8.CustomizableEdges = customizableEdges23;
-            guna2Panel8.FillColor = Color.FromArgb(255, 244, 244);
+            guna2Panel8.FillColor = Color.FromArgb(208, 232, 255);
             guna2Panel8.Location = new Point(266, 51);
             guna2Panel8.Name = "guna2Panel8";
             guna2Panel8.ShadowDecoration.Color = Color.Gray;
@@ -758,7 +758,7 @@
             // 
             lblRevenueTitleType3.AutoSize = true;
             lblRevenueTitleType3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            lblRevenueTitleType3.ForeColor = Color.FromArgb(168, 138, 39);
+            lblRevenueTitleType3.ForeColor = Color.FromArgb(28, 52, 186);
             lblRevenueTitleType3.Location = new Point(0, 15);
             lblRevenueTitleType3.Name = "lblRevenueTitleType3";
             lblRevenueTitleType3.Size = new Size(114, 20);
@@ -770,7 +770,7 @@
             lblRevenueType3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblRevenueType3.AutoSize = true;
             lblRevenueType3.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
-            lblRevenueType3.ForeColor = Color.FromArgb(168, 138, 39);
+            lblRevenueType3.ForeColor = Color.FromArgb(28, 52, 186);
             lblRevenueType3.Location = new Point(41, 52);
             lblRevenueType3.Name = "lblRevenueType3";
             lblRevenueType3.Size = new Size(37, 30);
@@ -782,7 +782,7 @@
             DateTimePicker.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             DateTimePicker.Checked = true;
             DateTimePicker.CustomizableEdges = customizableEdges27;
-            DateTimePicker.FillColor = Color.FromArgb(255, 87, 87);
+            DateTimePicker.FillColor = Color.FromArgb(61, 78, 178);
             DateTimePicker.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DateTimePicker.ForeColor = Color.White;
             DateTimePicker.Format = DateTimePickerFormat.Long;
@@ -800,7 +800,7 @@
             lblTitle.Anchor = AnchorStyles.Top;
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitle.ForeColor = Color.FromArgb(255, 87, 87);
+            lblTitle.ForeColor = Color.FromArgb(37, 10, 128);
             lblTitle.Location = new Point(381, 16);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(295, 32);
