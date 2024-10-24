@@ -54,6 +54,8 @@
             guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             lblMoney = new Label();
             lblType = new Label();
+            lblAdjustRate = new Label();
+            label1 = new Label();
             panel1.SuspendLayout();
             guna2Panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
@@ -104,6 +106,7 @@
             guna2Panel11.BackColor = Color.White;
             guna2Panel11.BorderColor = Color.Transparent;
             guna2Panel11.BorderRadius = 10;
+            guna2Panel11.Controls.Add(label1);
             guna2Panel11.Controls.Add(cboxOption);
             guna2Panel11.Controls.Add(guna2CirclePictureBox1);
             guna2Panel11.Controls.Add(btnCustomer1);
@@ -216,7 +219,7 @@
             lblMoney1.BackColor = Color.Transparent;
             lblMoney1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblMoney1.ForeColor = Color.FromArgb(37, 10, 128);
-            lblMoney1.Location = new Point(408, 23);
+            lblMoney1.Location = new Point(356, 23);
             lblMoney1.Name = "lblMoney1";
             lblMoney1.Size = new Size(108, 20);
             lblMoney1.TabIndex = 2;
@@ -227,6 +230,7 @@
             guna2Panel5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             guna2Panel5.BorderColor = Color.Transparent;
             guna2Panel5.BorderRadius = 10;
+            guna2Panel5.Controls.Add(lblAdjustRate);
             guna2Panel5.Controls.Add(lblMoney);
             guna2Panel5.Controls.Add(lblType);
             guna2Panel5.CustomizableEdges = customizableEdges12;
@@ -243,7 +247,7 @@
             lblMoney.BackColor = Color.Transparent;
             lblMoney.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblMoney.ForeColor = Color.FromArgb(37, 10, 128);
-            lblMoney.Location = new Point(408, 11);
+            lblMoney.Location = new Point(356, 11);
             lblMoney.Name = "lblMoney";
             lblMoney.Size = new Size(82, 20);
             lblMoney.TabIndex = 4;
@@ -260,6 +264,30 @@
             lblType.Size = new Size(100, 20);
             lblType.TabIndex = 4;
             lblType.Text = "Loại tiết kiệm";
+            // 
+            // lblAdjustRate
+            // 
+            lblAdjustRate.AutoSize = true;
+            lblAdjustRate.BackColor = Color.Transparent;
+            lblAdjustRate.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAdjustRate.ForeColor = Color.FromArgb(37, 10, 128);
+            lblAdjustRate.Location = new Point(625, 11);
+            lblAdjustRate.Name = "lblAdjustRate";
+            lblAdjustRate.Size = new Size(60, 20);
+            lblAdjustRate.TabIndex = 5;
+            lblAdjustRate.Text = "Lãi suất";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(37, 10, 128);
+            label1.Location = new Point(625, 23);
+            label1.Name = "label1";
+            label1.Size = new Size(42, 20);
+            label1.TabIndex = 26;
+            label1.Text = "0.5%";
             // 
             // ucEditAdjustRate
             // 
@@ -291,5 +319,7 @@
         private Label lblMoney;
         private Label lblType;
         private Guna.UI2.WinForms.Guna2ComboBox cboxOption;
+        private Label label1;
+        private Label lblAdjustRate;
     }
 }
