@@ -9,20 +9,28 @@ namespace DTO
     public class DepositSlipDTO
     {
         #region Properties
-        public string SavingBookId { get; set; }
-        public string CustomerName { get; set; }
-        public DateOnly DepositDate { get; set; }
-        public double DepositAmount { get; set; }
+        public int MaSo { get; set; }
+        public string TenKhachHang { get; set; }
+        public int MaSoSoTietKiem { get; set; }
+        public DateOnly NgayGui { get; set; }
+        public double SoTienGui { get; set; }
         #endregion
 
         #region Constructors
-        public DepositSlipDTO() { }
-        public DepositSlipDTO(string savingBookId, string customerName, DateOnly depositDate, double depositAmount)
+        public DepositSlipDTO() {
+            MaSo = 0;
+            TenKhachHang = "";
+            MaSoSoTietKiem = 0;
+            NgayGui = new DateOnly();
+            SoTienGui = 0;
+        }
+        public DepositSlipDTO(int maSo, string tenKhachHang, int maSoSoTietKiem, DateOnly ngayGui, double soTienDui)
         {
-            SavingBookId = savingBookId;
-            CustomerName = customerName;
-            DepositDate = depositDate;
-            DepositAmount = depositAmount;
+            MaSo = maSo;
+            TenKhachHang = tenKhachHang;
+            MaSoSoTietKiem = maSoSoTietKiem;
+            NgayGui = ngayGui;
+            SoTienGui = soTienDui;
         }
         #endregion
     }

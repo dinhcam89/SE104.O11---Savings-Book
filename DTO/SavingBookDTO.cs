@@ -16,7 +16,13 @@ namespace DTO
         #endregion
 
         #region Constructors
-        public SavingBookDTO() { }
+        public SavingBookDTO() 
+        {
+            SavingsBookId = "";
+            Customer = new CustomerDTO();
+            AccountType = "";
+            IsClosed = false;
+        }
 
         public SavingBookDTO(string savingsBookId, CustomerDTO customer, string accountType, string Address, DateTime openDate, bool isClosed)
         {

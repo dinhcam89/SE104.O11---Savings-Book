@@ -11,9 +11,9 @@ namespace DTO
         #region Properties
         public int  MaSo { get; set; }
         public int ThoiHan { get; set; }
-        public float LaiSuatNam { get; set; }
-        public float SoTienBanDauToiThieu { get; set; }
-        public float SoTienGoiThemToiThieu { get; set; }
+        public double LaiSuatNam { get; set; }
+        public double SoTienBanDauToiThieu { get; set; }
+        public double SoTienGoiThemToiThieu { get; set; }
         public int ThoiGianGoiThemToiThieu { get; set; }
         #endregion
 

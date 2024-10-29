@@ -9,24 +9,24 @@ namespace DTO
     public class CustomerDTO
     {
         #region Properties
-        public string CustomerId { get; set; }
-        public string CustomerName { get; set; }
-        public DateOnly DateOfBirth { get; set; }
-        public string Address { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Identification { get; set; }
+        public int MaSo { get; set; }
+        public string TenKhachHang { get; set; }
+        public DateOnly SinhNhat { get; set; }
+        public string DiaChi { get; set; }
+        public string SoDienThoai { get; set; }
+        public string CCCD { get; set; }
         #endregion
 
         #region Constructors
         public CustomerDTO() { }
-        public CustomerDTO(string customerId, string customerName, DateOnly dateOfBirth, string address, string phoneNumber, string identification)
+        public CustomerDTO(int maSo, string tenKhachHang, DateOnly ngaySinh, string diaChi, string soDienThoai, string cccd)
         {
-            CustomerId = customerId;
-            CustomerName = customerName;
-            DateOfBirth = dateOfBirth;
-            Address = address;
-            PhoneNumber = phoneNumber;
-            Identification = identification;
+            MaSo = maSo;
+            TenKhachHang = tenKhachHang;
+            SinhNhat = ngaySinh;
+            DiaChi = diaChi;
+            SoDienThoai = soDienThoai;
+            CCCD = cccd;
         }
         #endregion
     }

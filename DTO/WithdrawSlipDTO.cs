@@ -9,21 +9,28 @@ namespace DTO
     public class WithdrawSlipDTO
     {
         #region Properties
-        public string SavingBookId { get; set; }
-        public string SlipId { get; set; }
-        public string CustomerName { get; set; }
-        public DateOnly WithdrawDate { get; set; }
-        public double WithdrawAmount { get; set; }
+        public int MaSo { get; set; }
+        public int MaSoSoTietKiem { get; set; }
+        public string TenKhachHang { get; set; }
+        public DateOnly NgayRut { get; set; }
+        public double SoTienRut { get; set; }
         #endregion
 
         #region Constructors
-        public WithdrawSlipDTO() { }
-        public WithdrawSlipDTO(string savingBookId, string customerName, DateOnly withdrawDate, double withdrawAmount)
+        public WithdrawSlipDTO() {
+            MaSo = 0;
+            MaSoSoTietKiem = 0;
+            TenKhachHang = "";
+            NgayRut = new DateOnly();
+            SoTienRut = 0;
+        }
+        public WithdrawSlipDTO(int maSo, string tenKhachHang, int maSoSoTietKiem, DateOnly ngayRut, double soTienRut)
         {
-            SavingBookId = savingBookId;
-            CustomerName = customerName;
-            WithdrawDate = withdrawDate;
-            WithdrawAmount = withdrawAmount;
+            MaSo = maSo;
+            TenKhachHang = tenKhachHang;
+            MaSoSoTietKiem = maSoSoTietKiem;
+            NgayRut = ngayRut;
+            SoTienRut = soTienRut;
         }
         #endregion
     }
