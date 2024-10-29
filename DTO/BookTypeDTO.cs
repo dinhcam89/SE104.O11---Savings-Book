@@ -9,22 +9,32 @@ namespace DTO
     public class BookTypeDTO
     {
         #region Properties
-        public string BookTypeId { get; set; }
-        public string BookTerm { get; set; }
-        public double InterestRate { get; set; }
-        public string MinimumBalance { get; set; }
-        public string MinimumDepositBalance { get; set; }
+        public int  MaSo { get; set; }
+        public int ThoiHan { get; set; }
+        public float LaiSuatNam { get; set; }
+        public float SoTienBanDauToiThieu { get; set; }
+        public float SoTienGoiThemToiThieu { get; set; }
+        public int ThoiGianGoiThemToiThieu { get; set; }
         #endregion
 
         #region Constructors
-        public BookTypeDTO() { }
-        public BookTypeDTO(string bookTypeId, string bookTerm, double interestRate, string minimumBalance, string minimumDepositBalance)
+        public BookTypeDTO() 
         {
-            BookTypeId = bookTypeId;
-            BookTerm = bookTerm;
-            InterestRate = interestRate;
-            MinimumBalance = minimumBalance;
-            MinimumDepositBalance = minimumDepositBalance;
+            MaSo = 0;
+            ThoiHan = 0;
+            LaiSuatNam = 0;
+            SoTienBanDauToiThieu = 0;
+            SoTienGoiThemToiThieu = 0;
+            ThoiGianGoiThemToiThieu = 0;
+        }
+        public BookTypeDTO(int maSo, int thoiHan, float laiSuatNam, float soTienBanDauToiThieu, float soTienGoiThemToiThieu, int thoiGianGoiThemToiThieu)
+        {
+            MaSo = maSo;
+            ThoiHan = thoiHan;
+            LaiSuatNam = laiSuatNam;
+            SoTienBanDauToiThieu = soTienBanDauToiThieu;
+            SoTienGoiThemToiThieu = soTienGoiThemToiThieu;
+            ThoiGianGoiThemToiThieu = thoiGianGoiThemToiThieu;
         }
         #endregion
     }

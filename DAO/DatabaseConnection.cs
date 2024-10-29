@@ -1,17 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
 
 namespace DAO
 {
     internal class DatabaseConnection
     {
-        private SqlDataAdapter adapter = new SqlDataAdapter();
-        private SqlConnection connection = new SqlConnection();
+        private SqlDataAdapter adapter = new();
+        private SqlConnection connection = new();
+
+        public DatabaseConnection()
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["dbConnectionString"].ConnectionString;
+            connection = new SqlConnection(connectionString);
+        }
 
         private SqlConnection openConnection()
         {
@@ -38,8 +40,9 @@ namespace DAO
                 adapter.Fill(ds);
                 dataTable = ds.Tables[0];
             }
-            catch (SqlException)
+            catch (SqlException e)
             {
+                Console.WriteLine(e.Message);
                 return null;
             }
             finally
