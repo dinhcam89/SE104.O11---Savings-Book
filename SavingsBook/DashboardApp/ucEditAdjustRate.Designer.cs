@@ -45,17 +45,18 @@
             panel1 = new Panel();
             btnAdd = new Guna.UI2.WinForms.Guna2GradientButton();
             guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
-            cboxOption = new Guna.UI2.WinForms.Guna2ComboBox();
+            btnDelete = new Guna.UI2.WinForms.Guna2ImageButton();
+            btnEdit = new Guna.UI2.WinForms.Guna2ImageButton();
+            label1 = new Label();
             guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             btnCustomer1 = new Guna.UI2.WinForms.Guna2GradientButton();
             lblType1 = new Label();
             guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             lblMoney1 = new Label();
             guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            lblAdjustRate = new Label();
             lblMoney = new Label();
             lblType = new Label();
-            lblAdjustRate = new Label();
-            label1 = new Label();
             panel1.SuspendLayout();
             guna2Panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
@@ -106,8 +107,9 @@
             guna2Panel11.BackColor = Color.White;
             guna2Panel11.BorderColor = Color.Transparent;
             guna2Panel11.BorderRadius = 10;
+            guna2Panel11.Controls.Add(btnDelete);
+            guna2Panel11.Controls.Add(btnEdit);
             guna2Panel11.Controls.Add(label1);
-            guna2Panel11.Controls.Add(cboxOption);
             guna2Panel11.Controls.Add(guna2CirclePictureBox1);
             guna2Panel11.Controls.Add(btnCustomer1);
             guna2Panel11.Controls.Add(lblType1);
@@ -121,28 +123,52 @@
             guna2Panel11.Size = new Size(975, 65);
             guna2Panel11.TabIndex = 24;
             // 
-            // cboxOption
+            // btnDelete
             // 
-            cboxOption.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            cboxOption.BackColor = Color.Transparent;
-            cboxOption.BorderColor = Color.FromArgb(208, 232, 255);
-            cboxOption.BorderRadius = 5;
-            cboxOption.CustomizableEdges = customizableEdges3;
-            cboxOption.DrawMode = DrawMode.OwnerDrawFixed;
-            cboxOption.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboxOption.FillColor = Color.FromArgb(208, 232, 255);
-            cboxOption.FocusedColor = Color.FromArgb(94, 148, 255);
-            cboxOption.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cboxOption.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cboxOption.ForeColor = Color.Navy;
-            cboxOption.ItemHeight = 30;
-            cboxOption.Location = new Point(822, 14);
-            cboxOption.Name = "cboxOption";
-            cboxOption.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            cboxOption.Size = new Size(132, 36);
-            cboxOption.TabIndex = 26;
-            cboxOption.TextAlign = HorizontalAlignment.Center;
-            cboxOption.SelectedIndexChanged += cboxOption_SelectedIndexChanged;
+            btnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnDelete.BackColor = Color.Transparent;
+            btnDelete.CheckedState.ImageSize = new Size(64, 64);
+            btnDelete.HoverState.ImageSize = new Size(64, 64);
+            btnDelete.Image = (Image)resources.GetObject("btnDelete.Image");
+            btnDelete.ImageOffset = new Point(0, 0);
+            btnDelete.ImageRotate = 0F;
+            btnDelete.ImageSize = new Size(25, 25);
+            btnDelete.Location = new Point(931, 21);
+            btnDelete.Name = "btnDelete";
+            btnDelete.PressedState.ImageSize = new Size(64, 64);
+            btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            btnDelete.Size = new Size(25, 25);
+            btnDelete.TabIndex = 58;
+            // 
+            // btnEdit
+            // 
+            btnEdit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnEdit.BackColor = Color.Transparent;
+            btnEdit.CheckedState.ImageSize = new Size(64, 64);
+            btnEdit.HoverState.ImageSize = new Size(64, 64);
+            btnEdit.Image = (Image)resources.GetObject("btnEdit.Image");
+            btnEdit.ImageOffset = new Point(0, 0);
+            btnEdit.ImageRotate = 0F;
+            btnEdit.ImageSize = new Size(20, 20);
+            btnEdit.Location = new Point(891, 23);
+            btnEdit.Name = "btnEdit";
+            btnEdit.PressedState.ImageSize = new Size(64, 64);
+            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnEdit.Size = new Size(20, 20);
+            btnEdit.TabIndex = 57;
+            btnEdit.Click += btnEdit_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(37, 10, 128);
+            label1.Location = new Point(625, 23);
+            label1.Name = "label1";
+            label1.Size = new Size(42, 20);
+            label1.TabIndex = 26;
+            label1.Text = "0.5%";
             // 
             // guna2CirclePictureBox1
             // 
@@ -241,6 +267,18 @@
             guna2Panel5.Size = new Size(975, 42);
             guna2Panel5.TabIndex = 23;
             // 
+            // lblAdjustRate
+            // 
+            lblAdjustRate.AutoSize = true;
+            lblAdjustRate.BackColor = Color.Transparent;
+            lblAdjustRate.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAdjustRate.ForeColor = Color.FromArgb(37, 10, 128);
+            lblAdjustRate.Location = new Point(625, 11);
+            lblAdjustRate.Name = "lblAdjustRate";
+            lblAdjustRate.Size = new Size(60, 20);
+            lblAdjustRate.TabIndex = 5;
+            lblAdjustRate.Text = "Lãi suất";
+            // 
             // lblMoney
             // 
             lblMoney.AutoSize = true;
@@ -264,30 +302,6 @@
             lblType.Size = new Size(100, 20);
             lblType.TabIndex = 4;
             lblType.Text = "Loại tiết kiệm";
-            // 
-            // lblAdjustRate
-            // 
-            lblAdjustRate.AutoSize = true;
-            lblAdjustRate.BackColor = Color.Transparent;
-            lblAdjustRate.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAdjustRate.ForeColor = Color.FromArgb(37, 10, 128);
-            lblAdjustRate.Location = new Point(625, 11);
-            lblAdjustRate.Name = "lblAdjustRate";
-            lblAdjustRate.Size = new Size(60, 20);
-            lblAdjustRate.TabIndex = 5;
-            lblAdjustRate.Text = "Lãi suất";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(37, 10, 128);
-            label1.Location = new Point(625, 23);
-            label1.Name = "label1";
-            label1.Size = new Size(42, 20);
-            label1.TabIndex = 26;
-            label1.Text = "0.5%";
             // 
             // ucEditAdjustRate
             // 
@@ -318,8 +332,9 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private Label lblMoney;
         private Label lblType;
-        private Guna.UI2.WinForms.Guna2ComboBox cboxOption;
         private Label label1;
         private Label lblAdjustRate;
+        private Guna.UI2.WinForms.Guna2ImageButton btnEdit;
+        private Guna.UI2.WinForms.Guna2ImageButton btnDelete;
     }
 }

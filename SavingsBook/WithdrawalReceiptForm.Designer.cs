@@ -28,16 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             btnAdd = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -50,6 +52,7 @@
             lblIDTitle = new Label();
             lblMoney = new Label();
             lblIDReceiptTitle = new Label();
+            btnClose = new Guna.UI2.WinForms.Guna2GradientButton();
             guna2GradientPanel1.SuspendLayout();
             guna2Panel1.SuspendLayout();
             SuspendLayout();
@@ -57,20 +60,21 @@
             // guna2GradientPanel1
             // 
             guna2GradientPanel1.Controls.Add(guna2Panel1);
-            guna2GradientPanel1.CustomizableEdges = customizableEdges9;
+            guna2GradientPanel1.CustomizableEdges = customizableEdges11;
             guna2GradientPanel1.Dock = DockStyle.Fill;
             guna2GradientPanel1.FillColor = Color.FromArgb(140, 82, 255);
             guna2GradientPanel1.FillColor2 = Color.FromArgb(91, 185, 250);
             guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
             guna2GradientPanel1.Location = new Point(0, 0);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
-            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
             guna2GradientPanel1.Size = new Size(393, 395);
             guna2GradientPanel1.TabIndex = 2;
             // 
             // guna2Panel1
             // 
             guna2Panel1.BackColor = Color.White;
+            guna2Panel1.Controls.Add(btnClose);
             guna2Panel1.Controls.Add(btnAdd);
             guna2Panel1.Controls.Add(lblIDReceipt);
             guna2Panel1.Controls.Add(txtDate);
@@ -81,10 +85,10 @@
             guna2Panel1.Controls.Add(lblIDTitle);
             guna2Panel1.Controls.Add(lblMoney);
             guna2Panel1.Controls.Add(lblIDReceiptTitle);
-            guna2Panel1.CustomizableEdges = customizableEdges7;
+            guna2Panel1.CustomizableEdges = customizableEdges9;
             guna2Panel1.Location = new Point(12, 12);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges10;
             guna2Panel1.Size = new Size(368, 370);
             guna2Panel1.TabIndex = 47;
             // 
@@ -92,7 +96,7 @@
             // 
             btnAdd.BackColor = Color.Transparent;
             btnAdd.BorderRadius = 10;
-            btnAdd.CustomizableEdges = customizableEdges1;
+            btnAdd.CustomizableEdges = customizableEdges3;
             btnAdd.DisabledState.BorderColor = Color.DarkGray;
             btnAdd.DisabledState.CustomBorderColor = Color.DarkGray;
             btnAdd.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -105,7 +109,7 @@
             btnAdd.ImeMode = ImeMode.Off;
             btnAdd.Location = new Point(230, 308);
             btnAdd.Name = "btnAdd";
-            btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnAdd.Size = new Size(121, 45);
             btnAdd.TabIndex = 22;
             btnAdd.Text = "Tạo phiếu";
@@ -127,7 +131,7 @@
             txtDate.BackColor = Color.Transparent;
             txtDate.BorderColor = Color.FromArgb(61, 66, 250);
             txtDate.BorderRadius = 10;
-            txtDate.CustomizableEdges = customizableEdges3;
+            txtDate.CustomizableEdges = customizableEdges5;
             txtDate.DefaultText = "";
             txtDate.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtDate.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -142,7 +146,7 @@
             txtDate.PasswordChar = '\0';
             txtDate.PlaceholderText = "";
             txtDate.SelectedText = "";
-            txtDate.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            txtDate.ShadowDecoration.CustomizableEdges = customizableEdges6;
             txtDate.Size = new Size(337, 41);
             txtDate.TabIndex = 45;
             // 
@@ -187,7 +191,7 @@
             txtMoney.BackColor = Color.Transparent;
             txtMoney.BorderColor = Color.FromArgb(61, 66, 250);
             txtMoney.BorderRadius = 10;
-            txtMoney.CustomizableEdges = customizableEdges5;
+            txtMoney.CustomizableEdges = customizableEdges7;
             txtMoney.DefaultText = "";
             txtMoney.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtMoney.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -202,7 +206,7 @@
             txtMoney.PasswordChar = '\0';
             txtMoney.PlaceholderText = "";
             txtMoney.SelectedText = "";
-            txtMoney.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            txtMoney.ShadowDecoration.CustomizableEdges = customizableEdges8;
             txtMoney.Size = new Size(337, 41);
             txtMoney.TabIndex = 43;
             // 
@@ -242,12 +246,37 @@
             lblIDReceiptTitle.TabIndex = 38;
             lblIDReceiptTitle.Text = "Mã số phiếu";
             // 
+            // btnClose
+            // 
+            btnClose.BackColor = Color.Transparent;
+            btnClose.BorderRadius = 10;
+            btnClose.CustomizableEdges = customizableEdges1;
+            btnClose.DisabledState.BorderColor = Color.DarkGray;
+            btnClose.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnClose.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnClose.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
+            btnClose.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnClose.FillColor = Color.FromArgb(92, 183, 250);
+            btnClose.FillColor2 = Color.FromArgb(139, 84, 255);
+            btnClose.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnClose.ForeColor = Color.White;
+            btnClose.ImeMode = ImeMode.Off;
+            btnClose.Location = new Point(14, 308);
+            btnClose.Name = "btnClose";
+            btnClose.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnClose.Size = new Size(121, 45);
+            btnClose.TabIndex = 50;
+            btnClose.Text = "Hủy";
+            btnClose.Click += btnClose_Click;
+            // 
             // WithdrawalReceiptForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(393, 395);
+            ControlBox = false;
             Controls.Add(guna2GradientPanel1);
+            FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             Name = "WithdrawalReceiptForm";
             Text = "WithdrawalReceiptForm";
@@ -271,5 +300,6 @@
         private Label lblIDTitle;
         private Label lblMoney;
         private Label lblIDReceiptTitle;
+        private Guna.UI2.WinForms.Guna2GradientButton btnClose;
     }
 }
