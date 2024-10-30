@@ -17,7 +17,13 @@ namespace DTO
         #endregion
 
         #region Constructors
-        public EmployeeDTO() { }
+        public EmployeeDTO() { 
+            EmployeeID = "";
+            EmployeeName = "";
+            EmployeePWD = "";
+            Position = "";
+            EmailAddress = "";
+        }
         public EmployeeDTO(string staffId, string staffName, string department, string position, string emailAddress)
         {
             EmployeeID = staffId;

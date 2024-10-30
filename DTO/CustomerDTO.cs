@@ -18,7 +18,14 @@ namespace DTO
         #endregion
 
         #region Constructors
-        public CustomerDTO() { }
+        public CustomerDTO() {
+            MaSo = 0;
+            TenKhachHang = "";
+            SinhNhat = new DateOnly();
+            DiaChi = "";
+            SoDienThoai = "";
+            CCCD = "";
+        }
         public CustomerDTO(int maSo, string tenKhachHang, DateOnly ngaySinh, string diaChi, string soDienThoai, string cccd)
         {
             MaSo = maSo;
