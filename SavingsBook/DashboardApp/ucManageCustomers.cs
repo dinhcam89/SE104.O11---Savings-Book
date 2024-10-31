@@ -23,5 +23,31 @@ namespace GUI.DashboardApp
             EditCustomerInfor editcustomerInfor = new EditCustomerInfor();
             editcustomerInfor.Show();
         }
+
+
+
+        private void ucManageCustomers_Load(object sender, EventArgs e)
+        {
+            populateItems();
+
+        }
+
+        private void populateItems()
+        {
+            ListItem[] listItems = new ListItem[20];
+
+            for (int i = 0; i < listItems.Length; i++)
+            {
+                listItems[i] = new ListItem();
+                listItems[i].CustomerName = "Tên khách hàng";
+                listItems[i].Id = "Mã khách hàng";
+                listItems[i].Type = "Loại kỳ hạn";
+
+                flowLayoutPanel1.Controls.Add(listItems[i]);
+
+            }
+        }
+
+
     }
 }
