@@ -67,13 +67,16 @@ namespace GUI
             // Get the month and year
             DateTime date = dtpReport.Value;
 
-            // Show the report
-            dataGridView1.DataSource = monthlySavingBookReportBUS.getMonthlySavingBookReportByMonthAndBookType(date, bookTypeId);
-            dataGridView1.Columns[0].HeaderText = "Ngày";
-            dataGridView1.Columns[1].HeaderText = "Số sổ mở";
-            dataGridView1.Columns[2].HeaderText = "Số sổ đóng";
-            dataGridView1.Columns[3].HeaderText = "Chênh lệch";
-            dataGridView1.Refresh();
+            // Show the report data
+            dgvReport.DataSource = monthlySavingBookReportBUS.getMonthlySavingBookReportByMonthAndBookType(date, bookTypeId);
+            dgvReport.Columns[0].HeaderText = "Ngày";
+            dgvReport.Columns[1].HeaderText = "Số sổ mở";
+            dgvReport.Columns[2].HeaderText = "Số sổ đóng";
+            dgvReport.Columns[3].HeaderText = "Chênh lệch";
+            dgvReport.Refresh();
+
+            // Show the total
+
         }
     }
 }

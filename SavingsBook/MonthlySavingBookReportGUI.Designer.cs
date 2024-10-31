@@ -29,12 +29,16 @@
         private void InitializeComponent()
         {
             btnLoad = new Button();
-            dataGridView1 = new DataGridView();
+            dgvReport = new DataGridView();
             dtpReport = new DateTimePicker();
             label1 = new Label();
             label2 = new Label();
             cbBookType = new ComboBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            label3 = new Label();
+            label4 = new Label();
+            dgvChart = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvReport).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvChart).BeginInit();
             SuspendLayout();
             // 
             // btnLoad
@@ -47,14 +51,14 @@
             btnLoad.UseVisualStyleBackColor = true;
             btnLoad.Click += btnLoad_Click;
             // 
-            // dataGridView1
+            // dgvReport
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 45);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1224, 537);
-            dataGridView1.TabIndex = 1;
+            dgvReport.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvReport.Location = new Point(12, 84);
+            dgvReport.Name = "dgvReport";
+            dgvReport.RowHeadersWidth = 51;
+            dgvReport.Size = new Size(1224, 324);
+            dgvReport.TabIndex = 1;
             // 
             // dtpReport
             // 
@@ -91,20 +95,53 @@
             cbBookType.Size = new Size(151, 28);
             cbBookType.TabIndex = 6;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(496, 53);
+            label3.Name = "label3";
+            label3.Size = new Size(254, 28);
+            label3.TabIndex = 7;
+            label3.Text = "Dữ liệu cho bảng báo cáo";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(515, 411);
+            label4.Name = "label4";
+            label4.Size = new Size(199, 28);
+            label4.TabIndex = 9;
+            label4.Text = "Dữ liệu cho biểu đồ";
+            // 
+            // dgvChart
+            // 
+            dgvChart.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvChart.Location = new Point(12, 442);
+            dgvChart.Name = "dgvChart";
+            dgvChart.RowHeadersWidth = 51;
+            dgvChart.Size = new Size(1224, 140);
+            dgvChart.TabIndex = 8;
+            // 
             // MonthlySavingBookReportGUI
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1248, 640);
+            Controls.Add(label4);
+            Controls.Add(dgvChart);
+            Controls.Add(label3);
             Controls.Add(cbBookType);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(dtpReport);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvReport);
             Controls.Add(btnLoad);
             Name = "MonthlySavingBookReportGUI";
             Text = "MonthlySavingBookReportGUI";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvReport).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvChart).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -112,10 +149,13 @@
         #endregion
 
         private Button btnLoad;
-        private DataGridView dataGridView1;
+        private DataGridView dgvReport;
         private DateTimePicker dtpReport;
         private Label label1;
         private Label label2;
         private ComboBox cbBookType;
+        private Label label3;
+        private Label label4;
+        private DataGridView dgvChart;
     }
 }
