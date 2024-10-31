@@ -21,9 +21,9 @@ namespace DAO
                 BookTypeDTO bookType = new BookTypeDTO();
                 bookType.MaSo = (int)dr["MaSo"];
                 bookType.ThoiHan = (int)dr["ThoiHan"];
-                bookType.LaiSuatNam = (float)dr["LaiSuatNam"];
-                bookType.SoTienBanDauToiThieu = (float)dr["SoTienBanDauToiThieu"];
-                bookType.SoTienGoiThemToiThieu = (float)dr["SoTienGoiThemToiThieu"];
+                bookType.LaiSuatNam = (double)dr["LaiSuatNam"];
+                bookType.SoTienBanDauToiThieu = (double)dr["SoTienBanDauToiThieu"];
+                bookType.SoTienGoiThemToiThieu = (double)dr["SoTienGoiThemToiThieu"];
                 bookType.ThoiGianGoiThemToiThieu = (int)dr["ThoiGianGoiThemToiThieu"];
                 bookTypeList.Add(bookType);
             }

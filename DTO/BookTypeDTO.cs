@@ -27,7 +27,7 @@ namespace DTO
             SoTienGoiThemToiThieu = 0;
             ThoiGianGoiThemToiThieu = 0;
         }
-        public BookTypeDTO(int maSo, int thoiHan, float laiSuatNam, float soTienBanDauToiThieu, float soTienGoiThemToiThieu, int thoiGianGoiThemToiThieu)
+        public BookTypeDTO(int maSo, int thoiHan, double laiSuatNam, double soTienBanDauToiThieu, double soTienGoiThemToiThieu, int thoiGianGoiThemToiThieu)
         {
             MaSo = maSo;
             ThoiHan = thoiHan;
