@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,11 @@ namespace BUS
         }
         public List<DTO.MonthlySavingBookReportDTO>? getMonthlySavingBookReportByMonthAndBookType(DateTime date, int bookTypeId)
         {
-            return monthlySavingBookReportDAO.getMonthlySavingBookReportByMonthAndBookType(date, bookTypeId);
+            return monthlySavingBookReportDAO.getByMonthAndBookType(date, bookTypeId);
+        }
+        public DataTable? getTotalMonthlySavingBookReport(DateTime date, int bookTypeId)
+        {
+            return monthlySavingBookReportDAO.getTotalReport(date, bookTypeId);
         }
     }
 }

@@ -105,7 +105,7 @@ namespace DAO
 
             return mapMonthlySavingBookReportDTO(result);
         }
-        public List<DTO.MonthlySavingBookReportDTO>? getTotalReport(DateTime date, int bookTypeId)
+        public DataTable? getTotalReport(DateTime date, int bookTypeId)
         {
             string query = string.Format("" +
                 "SELECT " +
@@ -134,7 +134,7 @@ namespace DAO
             sqlParameters[2].Value = bookTypeId;
             DataTable? result = dbConnection.executeSelectQuery(query, sqlParameters);
 
-            return mapMonthlySavingBookReportDTO(result);
+            return result;
 
 
         }

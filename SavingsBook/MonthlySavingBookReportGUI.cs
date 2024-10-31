@@ -76,7 +76,11 @@ namespace GUI
             dgvReport.Refresh();
 
             // Show the total
-
+            dgvChart.DataSource = monthlySavingBookReportBUS.getTotalMonthlySavingBookReport(date, bookTypeId);
+            dgvChart.Columns[0].HeaderText = "Số sổ mở";
+            dgvChart.Columns[1].HeaderText = "Số sổ đóng";
+            dgvChart.Columns[2].HeaderText = "Chênh lệch";
+            dgvChart.Refresh();
         }
     }
 }
