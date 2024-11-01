@@ -38,7 +38,7 @@ namespace GUI.DashboardApp
 
         private void populateItems()
         {
-            ListItem[] listItems = new ListItem[20];
+            ListItem[] listItems = new ListItem[10];
 
             for (int i = 0; i < listItems.Length; i++)
             {
@@ -53,10 +53,11 @@ namespace GUI.DashboardApp
             }
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+
+
+        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
         {
             populateItems();
         }
- 
     }
 }

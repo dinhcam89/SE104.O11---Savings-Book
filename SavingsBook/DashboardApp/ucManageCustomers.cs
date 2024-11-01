@@ -49,7 +49,9 @@ namespace GUI.DashboardApp
             }
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+
+
+        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
         {
             populateItems();
         }

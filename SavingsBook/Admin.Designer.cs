@@ -57,6 +57,7 @@
             btnAdd = new Guna.UI2.WinForms.Guna2Button();
             btnSearch = new Guna.UI2.WinForms.Guna2CircleButton();
             txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            panel1 = new Panel();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             lblTitle = new Label();
             guna2Panel1.SuspendLayout();
@@ -87,6 +88,7 @@
             guna2Panel2.Controls.Add(btnAdd);
             guna2Panel2.Controls.Add(btnSearch);
             guna2Panel2.Controls.Add(txtSearch);
+            guna2Panel2.Controls.Add(panel1);
             guna2Panel2.CustomizableEdges = customizableEdges11;
             guna2Panel2.Dock = DockStyle.Fill;
             guna2Panel2.Location = new Point(0, 69);
@@ -118,12 +120,12 @@
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.BackColor = Color.Transparent;
             flowLayoutPanel1.Location = new Point(12, 148);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(799, 248);
             flowLayoutPanel1.TabIndex = 20;
-            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // guna2Panel4
             // 
@@ -269,6 +271,16 @@
             txtSearch.TabIndex = 5;
             txtSearch.TextOffset = new Point(10, 0);
             // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.BackColor = Color.Transparent;
+            panel1.Location = new Point(3, 148);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(817, 248);
+            panel1.TabIndex = 21;
+            panel1.Paint += panel1_Paint;
+            // 
             // guna2GradientPanel1
             // 
             guna2GradientPanel1.Controls.Add(lblTitle);
@@ -330,5 +342,6 @@
         private Label lblPositionTitle;
         private Label lblNameTitle;
         private FlowLayoutPanel flowLayoutPanel1;
+        private Panel panel1;
     }
 }

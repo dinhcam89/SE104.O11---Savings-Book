@@ -23,19 +23,17 @@ namespace GUI
             addAccount.Show();
         }
 
-        private void Admin_Load(object sender, EventArgs e)
-        {
-            populateItems();
-        }
+        //private void Admin_Load(object sender, EventArgs e)
+        //{
+        //    populateItems();
+        //}
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-            populateItems();
-        }
+
+
 
         private void populateItems()
         {
-            ListItem[] listItems = new ListItem[5];
+            ListItem[] listItems = new ListItem[10];
 
             for (int i = 0; i < listItems.Length; i++)
             {
@@ -51,5 +49,10 @@ namespace GUI
         }
 
 
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            populateItems();
+        }
     }
 }

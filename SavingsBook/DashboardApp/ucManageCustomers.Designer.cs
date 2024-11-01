@@ -86,6 +86,7 @@
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges11;
             guna2Panel2.Size = new Size(1032, 651);
             guna2Panel2.TabIndex = 0;
+            guna2Panel2.Paint += guna2Panel2_Paint;
             // 
             // flowLayoutPanel1
             // 
@@ -95,7 +96,6 @@
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(997, 404);
             flowLayoutPanel1.TabIndex = 24;
-            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // btnAdd
             // 
