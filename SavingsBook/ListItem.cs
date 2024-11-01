@@ -12,6 +12,8 @@ namespace GUI
 {
     public partial class ListItem : UserControl
     {
+        public event EventHandler ButtonClick;
+
         public ListItem()
         {
             InitializeComponent();
@@ -22,6 +24,14 @@ namespace GUI
         private string _type;
         private Image _image;
 
+        [Category("Custom")]
+        private void btnCustom_Click(object sender, EventArgs e)
+        {
+            if (ButtonClick != null)
+            {
+                ButtonClick(this, EventArgs.Empty);
+            }
+        }
 
         [Category("Custom")]
         [Browsable(true)]
@@ -41,14 +51,14 @@ namespace GUI
 
         [Category("Custom")]
         public string Type
-        { 
+        {
             get { return _type; }
             set { _type = value; lblType.Text = value; }
         }
 
         [Category("Custom")]
         public Image Avatar
-        { 
+        {
             get { return _image; }
             set { _image = value; picAvatar.Image = value; }
         }

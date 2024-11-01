@@ -39,6 +39,7 @@ namespace GUI.DashboardApp
             for (int i = 0; i < listItems.Length; i++)
             {
                 listItems[i] = new ListItem();
+                listItems[i].Width = flowLayoutPanel1.ClientSize.Width;
                 listItems[i].CustomerName = "Tên khách hàng";
                 listItems[i].Id = "Mã khách hàng";
                 listItems[i].Type = "Loại kỳ hạn";
@@ -48,6 +49,9 @@ namespace GUI.DashboardApp
             }
         }
 
-
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+            populateItems();
+        }
     }
 }

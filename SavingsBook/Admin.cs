@@ -23,18 +23,33 @@ namespace GUI
             addAccount.Show();
         }
 
-        //private void guna2Panel3_Paint(object sender, PaintEventArgs e)
-        //{
-        //    // Thiết lập màu sắc và độ dày của viền
-        //    Color borderColor = Color.Black;
-        //    int borderWidth = 2;
+        private void Admin_Load(object sender, EventArgs e)
+        {
+            populateItems();
+        }
 
-        //    // Vẽ viền xung quanh Panel
-        //    ControlPaint.DrawBorder(e.Graphics, guna2GradientPanel1.ClientRectangle,
-        //        borderColor, borderWidth, ButtonBorderStyle.Solid,
-        //        borderColor, borderWidth, ButtonBorderStyle.Solid,
-        //        borderColor, borderWidth, ButtonBorderStyle.Solid,
-        //        borderColor, borderWidth, ButtonBorderStyle.Solid);
-        //}
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+            populateItems();
+        }
+
+        private void populateItems()
+        {
+            ListItem[] listItems = new ListItem[5];
+
+            for (int i = 0; i < listItems.Length; i++)
+            {
+                listItems[i] = new ListItem();
+                listItems[i].Width = flowLayoutPanel1.ClientSize.Width;
+                listItems[i].CustomerName = "Tên Nhân viên";
+                listItems[i].Id = "Chức vụ nhân viên";
+                listItems[i].Type = "Phòng ban nhân viên";
+
+                flowLayoutPanel1.Controls.Add(listItems[i]);
+
+            }
+        }
+
+
     }
 }
