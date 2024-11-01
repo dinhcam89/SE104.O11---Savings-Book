@@ -101,8 +101,8 @@
             // 
             // guna2Panel11
             // 
-            guna2Panel11.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            guna2Panel11.BackColor = Color.White;
+            guna2Panel11.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            guna2Panel11.BackColor = Color.Transparent;
             guna2Panel11.BorderColor = Color.Transparent;
             guna2Panel11.BorderRadius = 10;
             guna2Panel11.Controls.Add(btnCustom);
@@ -175,8 +175,9 @@
             // 
             // ListItem
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            AutoScroll = true;
             BackColor = Color.Transparent;
             Controls.Add(guna2Panel11);
             Name = "ListItem";

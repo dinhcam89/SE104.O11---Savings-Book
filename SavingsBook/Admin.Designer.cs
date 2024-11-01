@@ -274,12 +274,12 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.AutoScroll = true;
             panel1.BackColor = Color.Transparent;
             panel1.Location = new Point(3, 148);
             panel1.Name = "panel1";
             panel1.Size = new Size(817, 248);
             panel1.TabIndex = 21;
-            panel1.Paint += panel1_Paint;
             // 
             // guna2GradientPanel1
             // 
@@ -317,6 +317,7 @@
             Controls.Add(guna2Panel1);
             Name = "Admin";
             Text = "Admin";
+            Load += Admin_Load;
             guna2Panel1.ResumeLayout(false);
             guna2Panel2.ResumeLayout(false);
             guna2Panel4.ResumeLayout(false);

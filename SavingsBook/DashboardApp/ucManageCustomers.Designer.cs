@@ -86,12 +86,12 @@
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges11;
             guna2Panel2.Size = new Size(1032, 651);
             guna2Panel2.TabIndex = 0;
-            guna2Panel2.Paint += guna2Panel2_Paint;
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.BackColor = Color.Transparent;
             flowLayoutPanel1.Location = new Point(19, 183);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(997, 404);
@@ -247,6 +247,7 @@
             Controls.Add(guna2Panel1);
             Name = "ucManageCustomers";
             Size = new Size(1069, 682);
+            Load += ucManageCustomers_Load;
             guna2Panel1.ResumeLayout(false);
             guna2Panel2.ResumeLayout(false);
             guna2Panel5.ResumeLayout(false);

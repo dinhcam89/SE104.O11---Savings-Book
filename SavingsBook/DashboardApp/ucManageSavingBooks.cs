@@ -32,13 +32,13 @@ namespace GUI.DashboardApp
 
         private void ucManageSavingBooks_Load(object sender, EventArgs e)
         {
-            populateItems();
+           populateItems();
 
         }
 
         private void populateItems()
         {
-            ListItem[] listItems = new ListItem[10];
+            ListItem[] listItems = new ListItem[20];
 
             for (int i = 0; i < listItems.Length; i++)
             {
@@ -50,14 +50,25 @@ namespace GUI.DashboardApp
 
                 flowLayoutPanel1.Controls.Add(listItems[i]);
 
+                flowLayoutPanel1.Resize += (s, e) => {
+                    foreach (ListItem item in flowLayoutPanel1.Controls)
+                    {
+                        item.Width = flowLayoutPanel1.ClientSize.Width;
+                    }
+                };
+
+
             }
+            //AdjustItemWidths();
         }
 
+        //private void AdjustItemWidths()
+        //{
+        //    foreach (ListItem item in flowLayoutPanel1.Controls.OfType<ListItem>())
+        //    {
+        //        item.Size = new Size(flowLayoutPanel1.ClientSize.Width, item.Height);
+        //    }
+        //}
 
-
-        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
-        {
-            populateItems();
-        }
     }
 }

@@ -23,14 +23,6 @@ namespace GUI
             addAccount.Show();
         }
 
-        //private void Admin_Load(object sender, EventArgs e)
-        //{
-        //    populateItems();
-        //}
-
-
-
-
         private void populateItems()
         {
             ListItem[] listItems = new ListItem[10];
@@ -39,18 +31,27 @@ namespace GUI
             {
                 listItems[i] = new ListItem();
                 listItems[i].Width = flowLayoutPanel1.ClientSize.Width;
-                listItems[i].CustomerName = "Tên Nhân viên";
-                listItems[i].Id = "Chức vụ nhân viên";
-                listItems[i].Type = "Phòng ban nhân viên";
+                listItems[i].CustomerName = "Tên Nhân viên" + i;
+                listItems[i].Id = "Chức vụ nhân viên" + i;
+                listItems[i].Type = "Phòng ban nhân viên" + i;
+                listItems[i].Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+
 
                 flowLayoutPanel1.Controls.Add(listItems[i]);
+                flowLayoutPanel1.Resize += (s, e) => {
+                    foreach (ListItem item in flowLayoutPanel1.Controls)
+                    {
+                        item.Width = flowLayoutPanel1.ClientSize.Width;
+                    }
+                };
+
+
 
             }
         }
 
 
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void Admin_Load(object sender, EventArgs e)
         {
             populateItems();
         }

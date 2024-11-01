@@ -34,7 +34,7 @@ namespace GUI.DashboardApp
 
         private void populateItems()
         {
-            ListItem[] listItems = new ListItem[20];
+            ListItem[] listItems = new ListItem[10];
 
             for (int i = 0; i < listItems.Length; i++)
             {
@@ -46,14 +46,15 @@ namespace GUI.DashboardApp
 
                 flowLayoutPanel1.Controls.Add(listItems[i]);
 
+                flowLayoutPanel1.Resize += (s, e) => {
+                    foreach (ListItem item in flowLayoutPanel1.Controls)
+                    {
+                        item.Width = flowLayoutPanel1.ClientSize.Width;
+                    }
+                };
+
+
             }
-        }
-
-
-
-        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
-        {
-            populateItems();
         }
     }
 }

@@ -121,7 +121,6 @@
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges13;
             guna2Panel2.Size = new Size(923, 599);
             guna2Panel2.TabIndex = 2;
-            guna2Panel2.Paint += guna2Panel2_Paint;
             // 
             // flowLayoutPanel1
             // 
@@ -130,7 +129,7 @@
             flowLayoutPanel1.BackColor = Color.Transparent;
             flowLayoutPanel1.Location = new Point(12, 170);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(896, 364);
+            flowLayoutPanel1.Size = new Size(898, 364);
             flowLayoutPanel1.TabIndex = 19;
             // 
             // btnCustomer1
@@ -262,6 +261,7 @@
             ForeColor = Color.FromArgb(255, 87, 87);
             Name = "ucManageSavingBooks";
             Size = new Size(966, 634);
+            Load += ucManageSavingBooks_Load;
             guna2Panel2.ResumeLayout(false);
             guna2Panel3.ResumeLayout(false);
             guna2Panel3.PerformLayout();
