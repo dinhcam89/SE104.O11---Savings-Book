@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -39,17 +41,18 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            btnAdd = new Guna.UI2.WinForms.Guna2GradientButton();
-            lblTitle = new Label();
-            txtDate = new Guna.UI2.WinForms.Guna2TextBox();
-            lblDate = new Label();
-            txtMoney = new Guna.UI2.WinForms.Guna2TextBox();
-            lblMoney = new Label();
-            lblIDTitle = new Label();
-            lblIDReceiptTitle = new Label();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            lblID = new Label();
+            btnClose = new Guna.UI2.WinForms.Guna2GradientButton();
+            btnAdd = new Guna.UI2.WinForms.Guna2GradientButton();
             lblIDReceipt = new Label();
+            txtDate = new Guna.UI2.WinForms.Guna2TextBox();
+            lblID = new Label();
+            lblDate = new Label();
+            lblTitle = new Label();
+            txtMoney = new Guna.UI2.WinForms.Guna2TextBox();
+            lblIDTitle = new Label();
+            lblMoney = new Label();
+            lblIDReceiptTitle = new Label();
             guna2GradientPanel1.SuspendLayout();
             guna2Panel1.SuspendLayout();
             SuspendLayout();
@@ -57,22 +60,67 @@
             // guna2GradientPanel1
             // 
             guna2GradientPanel1.Controls.Add(guna2Panel1);
-            guna2GradientPanel1.CustomizableEdges = customizableEdges9;
+            guna2GradientPanel1.CustomizableEdges = customizableEdges11;
             guna2GradientPanel1.Dock = DockStyle.Fill;
             guna2GradientPanel1.FillColor = Color.FromArgb(140, 82, 255);
             guna2GradientPanel1.FillColor2 = Color.FromArgb(91, 185, 250);
             guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
             guna2GradientPanel1.Location = new Point(0, 0);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
-            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
             guna2GradientPanel1.Size = new Size(392, 392);
             guna2GradientPanel1.TabIndex = 1;
+            // 
+            // guna2Panel1
+            // 
+            guna2Panel1.BackColor = Color.White;
+            guna2Panel1.Controls.Add(btnClose);
+            guna2Panel1.Controls.Add(btnAdd);
+            guna2Panel1.Controls.Add(lblIDReceipt);
+            guna2Panel1.Controls.Add(txtDate);
+            guna2Panel1.Controls.Add(lblID);
+            guna2Panel1.Controls.Add(lblDate);
+            guna2Panel1.Controls.Add(lblTitle);
+            guna2Panel1.Controls.Add(txtMoney);
+            guna2Panel1.Controls.Add(lblIDTitle);
+            guna2Panel1.Controls.Add(lblMoney);
+            guna2Panel1.Controls.Add(lblIDReceiptTitle);
+            guna2Panel1.CustomizableEdges = customizableEdges9;
+            guna2Panel1.Location = new Point(12, 12);
+            guna2Panel1.Name = "guna2Panel1";
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            guna2Panel1.Size = new Size(368, 370);
+            guna2Panel1.TabIndex = 47;
+            guna2Panel1.Paint += guna2Panel1_Paint;
+            // 
+            // btnClose
+            // 
+            btnClose.BackColor = Color.Transparent;
+            btnClose.BorderRadius = 10;
+            btnClose.CustomizableEdges = customizableEdges1;
+            btnClose.DisabledState.BorderColor = Color.DarkGray;
+            btnClose.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnClose.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnClose.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
+            btnClose.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnClose.FillColor = Color.FromArgb(92, 183, 250);
+            btnClose.FillColor2 = Color.FromArgb(139, 84, 255);
+            btnClose.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnClose.ForeColor = Color.White;
+            btnClose.ImeMode = ImeMode.Off;
+            btnClose.Location = new Point(14, 308);
+            btnClose.Name = "btnClose";
+            btnClose.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnClose.Size = new Size(121, 45);
+            btnClose.TabIndex = 49;
+            btnClose.Text = "Hủy";
+            btnClose.Click += btnClose_Click;
             // 
             // btnAdd
             // 
             btnAdd.BackColor = Color.Transparent;
             btnAdd.BorderRadius = 10;
-            btnAdd.CustomizableEdges = customizableEdges1;
+            btnAdd.CustomizableEdges = customizableEdges3;
             btnAdd.DisabledState.BorderColor = Color.DarkGray;
             btnAdd.DisabledState.CustomBorderColor = Color.DarkGray;
             btnAdd.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -85,29 +133,30 @@
             btnAdd.ImeMode = ImeMode.Off;
             btnAdd.Location = new Point(230, 308);
             btnAdd.Name = "btnAdd";
-            btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnAdd.Size = new Size(121, 45);
             btnAdd.TabIndex = 22;
             btnAdd.Text = "Tạo phiếu";
+            btnAdd.Click += btnAdd_Click;
             // 
-            // lblTitle
+            // lblIDReceipt
             // 
-            lblTitle.AutoSize = true;
-            lblTitle.BackColor = Color.Transparent;
-            lblTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitle.ForeColor = Color.FromArgb(135, 92, 254);
-            lblTitle.Location = new Point(56, 16);
-            lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(253, 32);
-            lblTitle.TabIndex = 46;
-            lblTitle.Text = "TẠO PHIẾU GỬI TIỀN";
+            lblIDReceipt.AutoSize = true;
+            lblIDReceipt.BackColor = Color.Transparent;
+            lblIDReceipt.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            lblIDReceipt.ForeColor = Color.FromArgb(135, 92, 254);
+            lblIDReceipt.Location = new Point(261, 107);
+            lblIDReceipt.Name = "lblIDReceipt";
+            lblIDReceipt.Size = new Size(90, 20);
+            lblIDReceipt.TabIndex = 48;
+            lblIDReceipt.Text = "123255433";
             // 
             // txtDate
             // 
             txtDate.BackColor = Color.Transparent;
             txtDate.BorderColor = Color.FromArgb(61, 66, 250);
             txtDate.BorderRadius = 10;
-            txtDate.CustomizableEdges = customizableEdges3;
+            txtDate.CustomizableEdges = customizableEdges5;
             txtDate.DefaultText = "";
             txtDate.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtDate.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -122,9 +171,21 @@
             txtDate.PasswordChar = '\0';
             txtDate.PlaceholderText = "";
             txtDate.SelectedText = "";
-            txtDate.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            txtDate.ShadowDecoration.CustomizableEdges = customizableEdges6;
             txtDate.Size = new Size(337, 41);
             txtDate.TabIndex = 45;
+            // 
+            // lblID
+            // 
+            lblID.AutoSize = true;
+            lblID.BackColor = Color.Transparent;
+            lblID.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            lblID.ForeColor = Color.FromArgb(135, 92, 254);
+            lblID.Location = new Point(243, 67);
+            lblID.Name = "lblID";
+            lblID.Size = new Size(108, 20);
+            lblID.TabIndex = 47;
+            lblID.Text = "09876543234";
             // 
             // lblDate
             // 
@@ -138,12 +199,24 @@
             lblDate.TabIndex = 44;
             lblDate.Text = "Ngày giao dịch";
             // 
+            // lblTitle
+            // 
+            lblTitle.AutoSize = true;
+            lblTitle.BackColor = Color.Transparent;
+            lblTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitle.ForeColor = Color.FromArgb(135, 92, 254);
+            lblTitle.Location = new Point(56, 16);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(253, 32);
+            lblTitle.TabIndex = 46;
+            lblTitle.Text = "TẠO PHIẾU GỬI TIỀN";
+            // 
             // txtMoney
             // 
             txtMoney.BackColor = Color.Transparent;
             txtMoney.BorderColor = Color.FromArgb(61, 66, 250);
             txtMoney.BorderRadius = 10;
-            txtMoney.CustomizableEdges = customizableEdges5;
+            txtMoney.CustomizableEdges = customizableEdges7;
             txtMoney.DefaultText = "";
             txtMoney.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtMoney.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -158,21 +231,9 @@
             txtMoney.PasswordChar = '\0';
             txtMoney.PlaceholderText = "";
             txtMoney.SelectedText = "";
-            txtMoney.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            txtMoney.ShadowDecoration.CustomizableEdges = customizableEdges8;
             txtMoney.Size = new Size(337, 41);
             txtMoney.TabIndex = 43;
-            // 
-            // lblMoney
-            // 
-            lblMoney.AutoSize = true;
-            lblMoney.BackColor = Color.Transparent;
-            lblMoney.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            lblMoney.ForeColor = Color.FromArgb(135, 92, 254);
-            lblMoney.Location = new Point(14, 146);
-            lblMoney.Name = "lblMoney";
-            lblMoney.Size = new Size(57, 20);
-            lblMoney.TabIndex = 42;
-            lblMoney.Text = "Số tiền";
             // 
             // lblIDTitle
             // 
@@ -186,6 +247,18 @@
             lblIDTitle.TabIndex = 36;
             lblIDTitle.Text = "Mã số tiết kiệm";
             // 
+            // lblMoney
+            // 
+            lblMoney.AutoSize = true;
+            lblMoney.BackColor = Color.Transparent;
+            lblMoney.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            lblMoney.ForeColor = Color.FromArgb(135, 92, 254);
+            lblMoney.Location = new Point(14, 146);
+            lblMoney.Name = "lblMoney";
+            lblMoney.Size = new Size(57, 20);
+            lblMoney.TabIndex = 42;
+            lblMoney.Text = "Số tiền";
+            // 
             // lblIDReceiptTitle
             // 
             lblIDReceiptTitle.AutoSize = true;
@@ -198,57 +271,14 @@
             lblIDReceiptTitle.TabIndex = 38;
             lblIDReceiptTitle.Text = "Mã số phiếu";
             // 
-            // guna2Panel1
-            // 
-            guna2Panel1.BackColor = Color.White;
-            guna2Panel1.Controls.Add(btnAdd);
-            guna2Panel1.Controls.Add(lblIDReceipt);
-            guna2Panel1.Controls.Add(txtDate);
-            guna2Panel1.Controls.Add(lblID);
-            guna2Panel1.Controls.Add(lblDate);
-            guna2Panel1.Controls.Add(lblTitle);
-            guna2Panel1.Controls.Add(txtMoney);
-            guna2Panel1.Controls.Add(lblIDTitle);
-            guna2Panel1.Controls.Add(lblMoney);
-            guna2Panel1.Controls.Add(lblIDReceiptTitle);
-            guna2Panel1.CustomizableEdges = customizableEdges7;
-            guna2Panel1.Location = new Point(12, 12);
-            guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2Panel1.Size = new Size(368, 370);
-            guna2Panel1.TabIndex = 47;
-            guna2Panel1.Paint += guna2Panel1_Paint;
-            // 
-            // lblID
-            // 
-            lblID.AutoSize = true;
-            lblID.BackColor = Color.Transparent;
-            lblID.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            lblID.ForeColor = Color.FromArgb(135, 92, 254);
-            lblID.Location = new Point(243, 67);
-            lblID.Name = "lblID";
-            lblID.Size = new Size(108, 20);
-            lblID.TabIndex = 47;
-            lblID.Text = "09876543234";
-            // 
-            // lblIDReceipt
-            // 
-            lblIDReceipt.AutoSize = true;
-            lblIDReceipt.BackColor = Color.Transparent;
-            lblIDReceipt.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            lblIDReceipt.ForeColor = Color.FromArgb(135, 92, 254);
-            lblIDReceipt.Location = new Point(261, 107);
-            lblIDReceipt.Name = "lblIDReceipt";
-            lblIDReceipt.Size = new Size(90, 20);
-            lblIDReceipt.TabIndex = 48;
-            lblIDReceipt.Text = "123255433";
-            // 
             // DepositReceiptForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(392, 392);
+            ControlBox = false;
             Controls.Add(guna2GradientPanel1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "DepositReceiptForm";
             Text = "DepositReceiptForm";
             guna2GradientPanel1.ResumeLayout(false);
@@ -273,5 +303,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Label lblID;
         private Label lblIDReceipt;
+        private Guna.UI2.WinForms.Guna2GradientButton btnClose;
     }
 }
