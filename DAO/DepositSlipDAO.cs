@@ -8,7 +8,7 @@ using DTO;
 
 namespace DAO
 {
-    internal class DepositReceiptDAO
+    public class DepositSlipDAO
     {
         private string connectionString = "Data Source=CONALNGUYEN\\NGUYENCHAU;Initial Catalog=saving_books_management;Integrated Security=True;Trust Server Certificate=True";
 
