@@ -25,7 +25,7 @@ namespace SavingsBook
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            DepositReceiptForm form = new DepositReceiptForm();
+            DepositReceiptForm form = new DepositReceiptForm(lblID.Text);
             form.Show();
         }
     }

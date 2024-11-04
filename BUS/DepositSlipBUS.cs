@@ -10,11 +10,11 @@ namespace BUS
 {
     public class DepositSlipBUS
     {
-        private DepositSlipDAO depositReceiptDAO;
+        private DepositSlipDAO depositSlipDAO;
 
         public DepositSlipBUS()
         {
-            depositReceiptDAO = new DepositSlipDAO();
+            depositSlipDAO = new DepositSlipDAO();
         }
 
         public bool AddDepositReceipt(DepositSlipDTO receipt)
@@ -30,7 +30,7 @@ namespace BUS
             }
 
             // Gọi DAO để thực hiện việc thêm phiếu gửi tiền
-            return depositReceiptDAO.AddDepositReceipt(receipt);
+            return depositSlipDAO.AddDepositReceipt(receipt);
         }
     }
 }
