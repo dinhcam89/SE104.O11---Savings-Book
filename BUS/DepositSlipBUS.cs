@@ -32,5 +32,9 @@ namespace BUS
             // Gọi DAO để thực hiện việc thêm phiếu gửi tiền
             return depositSlipDAO.AddDepositReceipt(receipt);
         }
+        public string GetNextReceiptID()
+        {
+            return depositSlipDAO.GetNextReceiptID(); // Lấy ID qua DAO
+        }
     }
 }

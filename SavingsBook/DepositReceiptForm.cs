@@ -11,18 +11,13 @@ using System.Data;
 using System.Data.SqlClient;
 using BUS;
 using DTO;
+using DAO;
 
 namespace GUI
 {
     public partial class DepositReceiptForm : Form
     {
         private DepositSlipBUS depositSlipBUS;
-        //string connectionString = "Data Source=CONALNGUYEN\\NGUYENCHAU;Initial Catalog=saving_books_management;Integrated Security=True;Trust Server Certificate=True";
-        //string query = "SELECT * FROM SoTietKiem";
-
-        //SqlConnection connection;
-        //SqlCommand command;
-        //DataTable dataTable;
 
         public DepositReceiptForm(string savingsBookID)
         {
@@ -31,10 +26,7 @@ namespace GUI
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
             depositSlipBUS = new DepositSlipBUS();
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
-
-            lblID.Text = lblID.Text;
-            //lblID.ReadOnly = true;
+            lblIDReceipt.Text = depositSlipBUS.GetNextReceiptID();
         }
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
