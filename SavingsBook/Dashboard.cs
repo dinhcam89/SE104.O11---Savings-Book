@@ -18,8 +18,8 @@ namespace GUI
         private ucAddEditSavingBooks ucAddEditSavingBooks;
         private ucManageSavingBooks ucManageSavingBooks;
         private ucManageCustomers ucManageCustomers;
-        private ucSaleReports ucSaleReport;
-        private ucBookReports ucReports;
+        private ucStats ucStats;
+        private ucReports ucReports;
         private ucEditAdjustRate ucEditAdjustRate;
         private ucEditRules ucEditRules;
 
@@ -34,8 +34,8 @@ namespace GUI
             //this.btnAddEditSavingBooks.BackColor = Color.Transparent;
             this.btnManageSavingBooks.BackColor = Color.Transparent;
             this.btnManageCustomers.BackColor = Color.Transparent;
-            this.btnSaleReports.BackColor = Color.Transparent;
-            this.btnBookReports.BackColor = Color.Transparent;
+            this.btnStats.BackColor = Color.Transparent;
+            this.btnReports.BackColor = Color.Transparent;
             this.btnEditAdjustRate.BackColor = Color.Transparent;
             this.btnEditRules.BackColor = Color.Transparent;
 
@@ -115,27 +115,27 @@ namespace GUI
                     }
                     break;
 
-                case "sale":
-                    if (this.ucSaleReport == null)
+                case "stats":
+                    if (this.ucStats == null)
                     {
-                        this.ucSaleReport = new ucSaleReports();
-                        this.panelMain.Controls.Add(ucSaleReport);
-                        this.ucSaleReport.Dock = System.Windows.Forms.DockStyle.Fill;
-                        this.ucSaleReport.Location = new System.Drawing.Point(0, 0);
-                        this.ucSaleReport.Name = "ucSaleReport";
+                        this.ucStats = new ucStats();
+                        this.panelMain.Controls.Add(ucStats);
+                        this.ucStats.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.ucStats.Location = new System.Drawing.Point(0, 0);
+                        this.ucStats.Name = "ucStats";
                         this.Size = new System.Drawing.Size(698, 508);
-                        this.ucSaleReport.TabIndex = 0;
+                        this.ucStats.TabIndex = 0;
                     }
                     else
                     {
-                        this.panelMain.Controls.Add(ucSaleReport);
+                        this.panelMain.Controls.Add(ucStats);
                     }
                     break;
 
                 case "reports":
                     if (this.ucReports == null)
                     {
-                        this.ucReports = new ucBookReports();
+                        this.ucReports = new ucReports();
                         this.panelMain.Controls.Add(ucReports);
                         this.ucReports.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.ucReports.Location = new System.Drawing.Point(0, 0);
@@ -209,15 +209,15 @@ namespace GUI
             this.tongglepanelMain("manageCustomers");
         }
 
-        private void btnSaleReports_Click(object sender, EventArgs e)
+        private void btnStats_Click(object sender, EventArgs e)
         {
-            this.panelMenuActive.Location = new Point(btnSaleReports.Location.X, btnSaleReports.Location.Y);
-            this.tongglepanelMain("sale");
+            this.panelMenuActive.Location = new Point(btnStats.Location.X, btnStats.Location.Y);
+            this.tongglepanelMain("stats");
         }
 
-        private void btnBookReports_Click(object sender, EventArgs e)
+        private void btnReports_Click(object sender, EventArgs e)
         {
-            this.panelMenuActive.Location = new Point(btnBookReports.Location.X, btnBookReports.Location.Y);
+            this.panelMenuActive.Location = new Point(btnReports.Location.X, btnReports.Location.Y);
             this.tongglepanelMain("reports");
         }
 

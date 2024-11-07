@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI
+namespace GUI.DashboardApp
 {
-    public partial class AddAjustRateForm : Form
+    public partial class ucStats : UserControl
     {
-        public AddAjustRateForm()
+        public ucStats()
         {
             InitializeComponent();
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

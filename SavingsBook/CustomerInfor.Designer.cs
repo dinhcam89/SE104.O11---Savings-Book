@@ -28,39 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            lblDate = new Label();
-            lblDateTitle = new Label();
+            lblSDT = new Label();
+            lblSDTTitle = new Label();
             lblType = new Label();
             lblMoney = new Label();
-            lblPhone = new Label();
+            lblDate = new Label();
             lblAddress = new Label();
             lblCustomerID = new Label();
             lblID = new Label();
             lblName = new Label();
             lblTypeTitle = new Label();
             lblMoneyTitle = new Label();
-            lblPhoneTitle = new Label();
+            lblDateTitle = new Label();
             lblAddressTitle = new Label();
             lblCustomerIDTitle = new Label();
             lblIDTitle = new Label();
@@ -70,11 +60,6 @@
             lblNameTitle = new Label();
             lblTitle = new Label();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            txtName = new Guna.UI2.WinForms.Guna2TextBox();
-            txtID = new Guna.UI2.WinForms.Guna2TextBox();
-            txtCustomerID = new Guna.UI2.WinForms.Guna2TextBox();
-            txtAddress = new Guna.UI2.WinForms.Guna2TextBox();
-            txtPhone = new Guna.UI2.WinForms.Guna2TextBox();
             guna2Panel1.SuspendLayout();
             guna2GradientPanel1.SuspendLayout();
             SuspendLayout();
@@ -82,18 +67,18 @@
             // guna2Panel1
             // 
             guna2Panel1.BackColor = Color.White;
-            guna2Panel1.Controls.Add(lblDate);
-            guna2Panel1.Controls.Add(lblDateTitle);
+            guna2Panel1.Controls.Add(lblSDT);
+            guna2Panel1.Controls.Add(lblSDTTitle);
             guna2Panel1.Controls.Add(lblType);
             guna2Panel1.Controls.Add(lblMoney);
-            guna2Panel1.Controls.Add(lblPhone);
+            guna2Panel1.Controls.Add(lblDate);
             guna2Panel1.Controls.Add(lblAddress);
             guna2Panel1.Controls.Add(lblCustomerID);
             guna2Panel1.Controls.Add(lblID);
             guna2Panel1.Controls.Add(lblName);
             guna2Panel1.Controls.Add(lblTypeTitle);
             guna2Panel1.Controls.Add(lblMoneyTitle);
-            guna2Panel1.Controls.Add(lblPhoneTitle);
+            guna2Panel1.Controls.Add(lblDateTitle);
             guna2Panel1.Controls.Add(lblAddressTitle);
             guna2Panel1.Controls.Add(lblCustomerIDTitle);
             guna2Panel1.Controls.Add(lblIDTitle);
@@ -102,54 +87,46 @@
             guna2Panel1.Controls.Add(btnEdit);
             guna2Panel1.Controls.Add(lblNameTitle);
             guna2Panel1.Controls.Add(lblTitle);
-            guna2Panel1.Controls.Add(txtName);
-            guna2Panel1.Controls.Add(txtID);
-            guna2Panel1.Controls.Add(txtCustomerID);
-            guna2Panel1.Controls.Add(txtAddress);
-            guna2Panel1.Controls.Add(txtPhone);
-            guna2Panel1.CustomizableEdges = customizableEdges17;
+            guna2Panel1.CustomizableEdges = customizableEdges7;
             guna2Panel1.Location = new Point(12, 12);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2Panel1.Size = new Size(510, 546);
             guna2Panel1.TabIndex = 0;
-
             // 
-            // lblDate
+            // lblSDT
             // 
-            lblDate.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblDate.AutoSize = true;
-            lblDate.BackColor = Color.Transparent;
-            lblDate.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            lblDate.ForeColor = Color.FromArgb(135, 92, 254);
-            lblDate.Location = new Point(374, 321);
-            lblDate.Name = "lblDate";
-            lblDate.RightToLeft = RightToLeft.Yes;
-            lblDate.Size = new Size(110, 25);
-            lblDate.TabIndex = 36;
-            lblDate.Text = "10/10/2024";
-            lblDate.TextAlign = ContentAlignment.MiddleRight;
+            lblSDT.AutoSize = true;
+            lblSDT.BackColor = Color.Transparent;
+            lblSDT.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            lblSDT.ForeColor = Color.FromArgb(135, 92, 254);
+            lblSDT.Location = new Point(360, 266);
+            lblSDT.Name = "lblSDT";
+            lblSDT.RightToLeft = RightToLeft.Yes;
+            lblSDT.Size = new Size(110, 25);
+            lblSDT.TabIndex = 36;
+            lblSDT.Text = "10/10/2024";
+            lblSDT.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // lblDateTitle
+            // lblSDTTitle
             // 
-            lblDateTitle.AutoSize = true;
-            lblDateTitle.BackColor = Color.Transparent;
-            lblDateTitle.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            lblDateTitle.ForeColor = Color.FromArgb(135, 92, 254);
-            lblDateTitle.Location = new Point(25, 321);
-            lblDateTitle.Name = "lblDateTitle";
-            lblDateTitle.Size = new Size(116, 25);
-            lblDateTitle.TabIndex = 35;
-            lblDateTitle.Text = "Ngày mở sổ";
+            lblSDTTitle.AutoSize = true;
+            lblSDTTitle.BackColor = Color.Transparent;
+            lblSDTTitle.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            lblSDTTitle.ForeColor = Color.FromArgb(135, 92, 254);
+            lblSDTTitle.Location = new Point(35, 266);
+            lblSDTTitle.Name = "lblSDTTitle";
+            lblSDTTitle.Size = new Size(116, 25);
+            lblSDTTitle.TabIndex = 35;
+            lblSDTTitle.Text = "Ngày mở sổ";
             // 
             // lblType
             // 
-            lblType.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblType.AutoSize = true;
             lblType.BackColor = Color.Transparent;
             lblType.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
             lblType.ForeColor = Color.FromArgb(135, 92, 254);
-            lblType.Location = new Point(406, 421);
+            lblType.Location = new Point(392, 424);
             lblType.Name = "lblType";
             lblType.RightToLeft = RightToLeft.No;
             lblType.Size = new Size(78, 25);
@@ -159,43 +136,40 @@
             // 
             // lblMoney
             // 
-            lblMoney.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblMoney.AutoSize = true;
             lblMoney.BackColor = Color.Transparent;
             lblMoney.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
             lblMoney.ForeColor = Color.FromArgb(135, 92, 254);
-            lblMoney.Location = new Point(317, 371);
+            lblMoney.Location = new Point(303, 372);
             lblMoney.Name = "lblMoney";
-            lblMoney.RightToLeft = RightToLeft.No;
+            lblMoney.RightToLeft = RightToLeft.Yes;
             lblMoney.Size = new Size(167, 25);
             lblMoney.TabIndex = 33;
             lblMoney.Text = "500.000.000 VND";
             lblMoney.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // lblPhone
+            // lblDate
             // 
-            lblPhone.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblPhone.AutoSize = true;
-            lblPhone.BackColor = Color.Transparent;
-            lblPhone.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            lblPhone.ForeColor = Color.FromArgb(135, 92, 254);
-            lblPhone.Location = new Point(353, 271);
-            lblPhone.Name = "lblPhone";
-            lblPhone.RightToLeft = RightToLeft.Yes;
-            lblPhone.Size = new Size(131, 25);
-            lblPhone.TabIndex = 32;
-            lblPhone.Text = "09772949843";
-            lblPhone.TextAlign = ContentAlignment.MiddleRight;
+            lblDate.AutoSize = true;
+            lblDate.BackColor = Color.Transparent;
+            lblDate.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            lblDate.ForeColor = Color.FromArgb(135, 92, 254);
+            lblDate.Location = new Point(339, 318);
+            lblDate.Name = "lblDate";
+            lblDate.RightToLeft = RightToLeft.Yes;
+            lblDate.Size = new Size(131, 25);
+            lblDate.TabIndex = 32;
+            lblDate.Text = "09772949843";
+            lblDate.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblAddress
             // 
             lblAddress.AllowDrop = true;
-            lblAddress.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblAddress.AutoSize = true;
             lblAddress.BackColor = Color.Transparent;
             lblAddress.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
             lblAddress.ForeColor = Color.FromArgb(135, 92, 254);
-            lblAddress.Location = new Point(246, 221);
+            lblAddress.Location = new Point(232, 215);
             lblAddress.Name = "lblAddress";
             lblAddress.RightToLeft = RightToLeft.Yes;
             lblAddress.Size = new Size(238, 25);
@@ -205,12 +179,11 @@
             // 
             // lblCustomerID
             // 
-            lblCustomerID.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblCustomerID.AutoSize = true;
             lblCustomerID.BackColor = Color.Transparent;
             lblCustomerID.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
             lblCustomerID.ForeColor = Color.FromArgb(135, 92, 254);
-            lblCustomerID.Location = new Point(357, 171);
+            lblCustomerID.Location = new Point(343, 170);
             lblCustomerID.Name = "lblCustomerID";
             lblCustomerID.RightToLeft = RightToLeft.Yes;
             lblCustomerID.Size = new Size(127, 25);
@@ -220,12 +193,11 @@
             // 
             // lblID
             // 
-            lblID.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblID.AutoSize = true;
             lblID.BackColor = Color.Transparent;
             lblID.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
             lblID.ForeColor = Color.FromArgb(135, 92, 254);
-            lblID.Location = new Point(339, 121);
+            lblID.Location = new Point(325, 122);
             lblID.Name = "lblID";
             lblID.RightToLeft = RightToLeft.Yes;
             lblID.Size = new Size(145, 25);
@@ -235,12 +207,11 @@
             // 
             // lblName
             // 
-            lblName.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblName.AutoSize = true;
             lblName.BackColor = Color.Transparent;
             lblName.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
             lblName.ForeColor = Color.FromArgb(135, 92, 254);
-            lblName.Location = new Point(202, 71);
+            lblName.Location = new Point(188, 71);
             lblName.Name = "lblName";
             lblName.RightToLeft = RightToLeft.Yes;
             lblName.Size = new Size(282, 25);
@@ -254,7 +225,7 @@
             lblTypeTitle.BackColor = Color.Transparent;
             lblTypeTitle.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
             lblTypeTitle.ForeColor = Color.FromArgb(135, 92, 254);
-            lblTypeTitle.Location = new Point(25, 421);
+            lblTypeTitle.Location = new Point(35, 424);
             lblTypeTitle.Name = "lblTypeTitle";
             lblTypeTitle.Size = new Size(109, 25);
             lblTypeTitle.TabIndex = 27;
@@ -266,23 +237,23 @@
             lblMoneyTitle.BackColor = Color.Transparent;
             lblMoneyTitle.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
             lblMoneyTitle.ForeColor = Color.FromArgb(135, 92, 254);
-            lblMoneyTitle.Location = new Point(25, 371);
+            lblMoneyTitle.Location = new Point(35, 372);
             lblMoneyTitle.Name = "lblMoneyTitle";
             lblMoneyTitle.Size = new Size(104, 25);
             lblMoneyTitle.TabIndex = 26;
             lblMoneyTitle.Text = "Số tiền gửi";
             // 
-            // lblPhoneTitle
+            // lblDateTitle
             // 
-            lblPhoneTitle.AutoSize = true;
-            lblPhoneTitle.BackColor = Color.Transparent;
-            lblPhoneTitle.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            lblPhoneTitle.ForeColor = Color.FromArgb(135, 92, 254);
-            lblPhoneTitle.Location = new Point(25, 271);
-            lblPhoneTitle.Name = "lblPhoneTitle";
-            lblPhoneTitle.Size = new Size(125, 25);
-            lblPhoneTitle.TabIndex = 25;
-            lblPhoneTitle.Text = "Số điện thoại";
+            lblDateTitle.AutoSize = true;
+            lblDateTitle.BackColor = Color.Transparent;
+            lblDateTitle.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            lblDateTitle.ForeColor = Color.FromArgb(135, 92, 254);
+            lblDateTitle.Location = new Point(35, 318);
+            lblDateTitle.Name = "lblDateTitle";
+            lblDateTitle.Size = new Size(125, 25);
+            lblDateTitle.TabIndex = 25;
+            lblDateTitle.Text = "Số điện thoại";
             // 
             // lblAddressTitle
             // 
@@ -290,7 +261,7 @@
             lblAddressTitle.BackColor = Color.Transparent;
             lblAddressTitle.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
             lblAddressTitle.ForeColor = Color.FromArgb(135, 92, 254);
-            lblAddressTitle.Location = new Point(25, 221);
+            lblAddressTitle.Location = new Point(35, 215);
             lblAddressTitle.Name = "lblAddressTitle";
             lblAddressTitle.Size = new Size(71, 25);
             lblAddressTitle.TabIndex = 24;
@@ -302,7 +273,7 @@
             lblCustomerIDTitle.BackColor = Color.Transparent;
             lblCustomerIDTitle.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
             lblCustomerIDTitle.ForeColor = Color.FromArgb(135, 92, 254);
-            lblCustomerIDTitle.Location = new Point(25, 171);
+            lblCustomerIDTitle.Location = new Point(35, 170);
             lblCustomerIDTitle.Name = "lblCustomerIDTitle";
             lblCustomerIDTitle.Size = new Size(127, 25);
             lblCustomerIDTitle.TabIndex = 23;
@@ -314,7 +285,7 @@
             lblIDTitle.BackColor = Color.Transparent;
             lblIDTitle.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
             lblIDTitle.ForeColor = Color.FromArgb(135, 92, 254);
-            lblIDTitle.Location = new Point(25, 121);
+            lblIDTitle.Location = new Point(35, 122);
             lblIDTitle.Name = "lblIDTitle";
             lblIDTitle.Size = new Size(145, 25);
             lblIDTitle.TabIndex = 22;
@@ -335,7 +306,7 @@
             btnAdd1.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             btnAdd1.ForeColor = Color.White;
             btnAdd1.ImeMode = ImeMode.Off;
-            btnAdd1.Location = new Point(363, 489);
+            btnAdd1.Location = new Point(379, 489);
             btnAdd1.Name = "btnAdd1";
             btnAdd1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnAdd1.Size = new Size(121, 45);
@@ -358,7 +329,7 @@
             btnAdd.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             btnAdd.ForeColor = Color.White;
             btnAdd.ImeMode = ImeMode.Off;
-            btnAdd.Location = new Point(194, 489);
+            btnAdd.Location = new Point(192, 489);
             btnAdd.Name = "btnAdd";
             btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnAdd.Size = new Size(121, 45);
@@ -381,7 +352,7 @@
             btnEdit.Font = new Font("Segoe UI Semibold", 13F, FontStyle.Bold);
             btnEdit.ForeColor = Color.White;
             btnEdit.ImeMode = ImeMode.Off;
-            btnEdit.Location = new Point(25, 489);
+            btnEdit.Location = new Point(8, 489);
             btnEdit.Name = "btnEdit";
             btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnEdit.Size = new Size(121, 45);
@@ -395,7 +366,7 @@
             lblNameTitle.BackColor = Color.Transparent;
             lblNameTitle.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
             lblNameTitle.ForeColor = Color.FromArgb(135, 92, 254);
-            lblNameTitle.Location = new Point(25, 71);
+            lblNameTitle.Location = new Point(35, 71);
             lblNameTitle.Name = "lblNameTitle";
             lblNameTitle.Size = new Size(95, 25);
             lblNameTitle.TabIndex = 15;
@@ -416,145 +387,15 @@
             // guna2GradientPanel1
             // 
             guna2GradientPanel1.Controls.Add(guna2Panel1);
-            guna2GradientPanel1.CustomizableEdges = customizableEdges19;
+            guna2GradientPanel1.CustomizableEdges = customizableEdges9;
             guna2GradientPanel1.Dock = DockStyle.Fill;
             guna2GradientPanel1.FillColor = Color.FromArgb(91, 185, 250);
             guna2GradientPanel1.FillColor2 = Color.FromArgb(140, 82, 255);
             guna2GradientPanel1.Location = new Point(0, 0);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
-            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges10;
             guna2GradientPanel1.Size = new Size(534, 570);
             guna2GradientPanel1.TabIndex = 37;
-            // 
-            // txtName
-            // 
-            txtName.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtName.BackColor = Color.Transparent;
-            txtName.BorderColor = Color.FromArgb(61, 66, 250);
-            txtName.BorderRadius = 10;
-            txtName.CustomizableEdges = customizableEdges7;
-            txtName.DefaultText = "";
-            txtName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtName.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtName.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtName.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtName.Font = new Font("Segoe UI", 9F);
-            txtName.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtName.ImeMode = ImeMode.On;
-            txtName.Location = new Point(202, 55);
-            txtName.Name = "txtName";
-            txtName.PasswordChar = '\0';
-            txtName.PlaceholderText = "";
-            txtName.SelectedText = "";
-            txtName.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            txtName.Size = new Size(281, 41);
-            txtName.TabIndex = 44;
-            txtName.Visible = false;
-            // 
-            // txtID
-            // 
-            txtID.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtID.BackColor = Color.Transparent;
-            txtID.BorderColor = Color.FromArgb(61, 66, 250);
-            txtID.BorderRadius = 10;
-            txtID.CustomizableEdges = customizableEdges9;
-            txtID.DefaultText = "";
-            txtID.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtID.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtID.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtID.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtID.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtID.Font = new Font("Segoe UI", 9F);
-            txtID.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtID.ImeMode = ImeMode.On;
-            txtID.Location = new Point(203, 105);
-            txtID.Name = "txtID";
-            txtID.PasswordChar = '\0';
-            txtID.PlaceholderText = "";
-            txtID.SelectedText = "";
-            txtID.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            txtID.Size = new Size(281, 41);
-            txtID.TabIndex = 45;
-            txtID.Visible = false;
-            // 
-            // txtCustomerID
-            // 
-            txtCustomerID.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtCustomerID.BackColor = Color.Transparent;
-            txtCustomerID.BorderColor = Color.FromArgb(61, 66, 250);
-            txtCustomerID.BorderRadius = 10;
-            txtCustomerID.CustomizableEdges = customizableEdges11;
-            txtCustomerID.DefaultText = "";
-            txtCustomerID.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtCustomerID.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtCustomerID.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtCustomerID.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtCustomerID.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtCustomerID.Font = new Font("Segoe UI", 9F);
-            txtCustomerID.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtCustomerID.ImeMode = ImeMode.On;
-            txtCustomerID.Location = new Point(203, 155);
-            txtCustomerID.Name = "txtCustomerID";
-            txtCustomerID.PasswordChar = '\0';
-            txtCustomerID.PlaceholderText = "";
-            txtCustomerID.SelectedText = "";
-            txtCustomerID.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            txtCustomerID.Size = new Size(281, 41);
-            txtCustomerID.TabIndex = 46;
-            txtCustomerID.Visible = false;
-            // 
-            // txtAddress
-            // 
-            txtAddress.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtAddress.BackColor = Color.Transparent;
-            txtAddress.BorderColor = Color.FromArgb(61, 66, 250);
-            txtAddress.BorderRadius = 10;
-            txtAddress.CustomizableEdges = customizableEdges13;
-            txtAddress.DefaultText = "";
-            txtAddress.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtAddress.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtAddress.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtAddress.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtAddress.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtAddress.Font = new Font("Segoe UI", 9F);
-            txtAddress.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtAddress.ImeMode = ImeMode.On;
-            txtAddress.Location = new Point(203, 205);
-            txtAddress.Name = "txtAddress";
-            txtAddress.PasswordChar = '\0';
-            txtAddress.PlaceholderText = "";
-            txtAddress.SelectedText = "";
-            txtAddress.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            txtAddress.Size = new Size(281, 41);
-            txtAddress.TabIndex = 47;
-            txtAddress.Visible = false;
-            // 
-            // txtPhone
-            // 
-            txtPhone.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtPhone.BackColor = Color.Transparent;
-            txtPhone.BorderColor = Color.FromArgb(61, 66, 250);
-            txtPhone.BorderRadius = 10;
-            txtPhone.CustomizableEdges = customizableEdges15;
-            txtPhone.DefaultText = "";
-            txtPhone.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtPhone.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtPhone.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtPhone.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtPhone.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtPhone.Font = new Font("Segoe UI", 9F);
-            txtPhone.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtPhone.ImeMode = ImeMode.On;
-            txtPhone.Location = new Point(203, 255);
-            txtPhone.Name = "txtPhone";
-            txtPhone.PasswordChar = '\0';
-            txtPhone.PlaceholderText = "";
-            txtPhone.SelectedText = "";
-            txtPhone.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            txtPhone.Size = new Size(281, 41);
-            txtPhone.TabIndex = 48;
-            txtPhone.Visible = false;
             // 
             // CustomerInfor
             // 
@@ -583,23 +424,18 @@
         private Label lblAddressTitle;
         private Label lblCustomerIDTitle;
         private Label lblIDTitle;
-        private Label lblPhoneTitle;
+        private Label lblDateTitle;
         private Label lblTypeTitle;
         private Label lblMoneyTitle;
         private Label lblType;
         private Label lblMoney;
-        private Label lblPhone;
+        private Label lblDate;
         private Label lblAddress;
         private Label lblCustomerID;
         private Label lblID;
         private Label lblName;
-        private Label lblDate;
-        private Label lblDateTitle;
+        private Label lblSDT;
+        private Label lblSDTTitle;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
-        private Guna.UI2.WinForms.Guna2TextBox txtName;
-        private Guna.UI2.WinForms.Guna2TextBox txtID;
-        private Guna.UI2.WinForms.Guna2TextBox txtCustomerID;
-        private Guna.UI2.WinForms.Guna2TextBox txtAddress;
-        private Guna.UI2.WinForms.Guna2TextBox txtPhone;
     }
 }

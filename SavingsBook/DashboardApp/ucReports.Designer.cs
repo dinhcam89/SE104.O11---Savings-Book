@@ -1,6 +1,6 @@
 ﻿namespace GUI.DashboardApp
 {
-    partial class ucEditAdjustRate
+    partial class ucReports
     {
         /// <summary> 
         /// Required designer variable.
@@ -34,19 +34,19 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(524, 337);
+            label1.Location = new Point(489, 234);
             label1.Name = "label1";
-            label1.Size = new Size(79, 15);
+            label1.Size = new Size(44, 15);
             label1.TabIndex = 1;
-            label1.Text = "editadjustrate";
+            label1.Text = "reports";
             // 
-            // ucEditAdjustRate
+            // ucReports
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(label1);
-            Name = "ucEditAdjustRate";
-            Size = new Size(1089, 688);
+            Name = "ucReports";
+            Size = new Size(1105, 687);
             ResumeLayout(false);
             PerformLayout();
         }

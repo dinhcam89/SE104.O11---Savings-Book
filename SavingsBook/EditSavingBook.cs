@@ -15,16 +15,9 @@ namespace GUI
         public EditSavingBook()
         {
             InitializeComponent();
-            //customizeDesign();
+            customizeDesign();
             // Thiết lập không cho phép thay đổi kích thước Form
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
-
-            cboxType.Text = "Loại kỳ hạn";
-
-            cboxType.Items.Add("Không kỳ hạn");
-            cboxType.Items.Add("Kỳ hạn 3 tháng");
-            cboxType.Items.Add("Kỳ hạn 6 tháng");
-            cboxType.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -32,15 +25,52 @@ namespace GUI
 
         }
 
-
-
-        private void cboxType_SelectedIndexChanged(object sender, EventArgs e)
+        private void customizeDesign()
         {
-            if (cboxType.SelectedIndex != -1)
+            // Ẩn submenu khi khởi động ứng dụng
+            panelTypeMenu.Visible = false;
+        }
+        private void hideSubMenu()
+        {
+            // Kiểm tra và ẩn các submenu nếu chúng đang hiển thị
+            if (panelTypeMenu.Visible == true)
+                panelTypeMenu.Visible = false;
+        }
+        private void showSubMenu(Panel subMenu)
+        {
+            // Kiểm tra nếu submenu đang bị ẩn thì hiển thị, nếu đang hiển thị thì ẩn nó
+            if (subMenu.Visible == false)
             {
-                
-                string selectedValue = cboxType.SelectedItem.ToString(); cboxType.SelectedIndex = -1;
+                hideSubMenu(); // Ẩn tất cả submenu khác trước khi hiển thị submenu hiện tại
+                subMenu.Visible = true;
             }
+            else
+            {
+                subMenu.Visible = false;
+            }
+        }
+
+        private void btnTypeMenu_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panelTypeMenu);
+        }
+
+        private void btnType1_Click(object sender, EventArgs e)
+        {
+            //
+            hideSubMenu();
+        }
+
+        private void btnType2_Click(object sender, EventArgs e)
+        {
+            //
+            hideSubMenu();
+        }
+
+        private void btnType3_Click(object sender, EventArgs e)
+        {
+            //
+            hideSubMenu();
         }
     }
 }

@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditSavingBook));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -38,10 +39,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            cboxType = new Guna.UI2.WinForms.Guna2ComboBox();
+            btnTypeMenu = new Button();
+            panelTypeMenu = new FlowLayoutPanel();
+            btnType1 = new Button();
+            btnType2 = new Button();
+            btnType3 = new Button();
             lblTitle = new Label();
             txtDate = new Guna.UI2.WinForms.Guna2TextBox();
             lblDate = new Label();
@@ -51,12 +54,14 @@
             lblIDBooks = new Label();
             btnSave = new Guna.UI2.WinForms.Guna2Button();
             guna2GradientPanel1.SuspendLayout();
+            panelTypeMenu.SuspendLayout();
             SuspendLayout();
             // 
             // guna2GradientPanel1
             // 
             guna2GradientPanel1.BackColor = Color.Transparent;
-            guna2GradientPanel1.Controls.Add(cboxType);
+            guna2GradientPanel1.Controls.Add(btnTypeMenu);
+            guna2GradientPanel1.Controls.Add(panelTypeMenu);
             guna2GradientPanel1.Controls.Add(lblTitle);
             guna2GradientPanel1.Controls.Add(txtDate);
             guna2GradientPanel1.Controls.Add(lblDate);
@@ -65,35 +70,88 @@
             guna2GradientPanel1.Controls.Add(txtIDBook);
             guna2GradientPanel1.Controls.Add(lblIDBooks);
             guna2GradientPanel1.Controls.Add(btnSave);
-            guna2GradientPanel1.CustomizableEdges = customizableEdges11;
+            guna2GradientPanel1.CustomizableEdges = customizableEdges9;
             guna2GradientPanel1.Dock = DockStyle.Fill;
             guna2GradientPanel1.FillColor = Color.FromArgb(91, 185, 250);
             guna2GradientPanel1.FillColor2 = Color.FromArgb(140, 82, 255);
             guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
             guna2GradientPanel1.Location = new Point(0, 0);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
-            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2GradientPanel1.Size = new Size(530, 429);
+            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            guna2GradientPanel1.Size = new Size(527, 468);
             guna2GradientPanel1.TabIndex = 28;
             // 
-            // cboxType
+            // btnTypeMenu
             // 
-            cboxType.BackColor = Color.Transparent;
-            cboxType.BorderRadius = 5;
-            cboxType.CustomizableEdges = customizableEdges1;
-            cboxType.DrawMode = DrawMode.OwnerDrawFixed;
-            cboxType.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboxType.FocusedColor = Color.FromArgb(94, 148, 255);
-            cboxType.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cboxType.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cboxType.ForeColor = Color.FromArgb(126, 111, 253);
-            cboxType.ItemHeight = 30;
-            cboxType.Location = new Point(24, 307);
-            cboxType.Name = "cboxType";
-            cboxType.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            cboxType.Size = new Size(480, 36);
-            cboxType.TabIndex = 37;
-            cboxType.SelectedIndexChanged += cboxType_SelectedIndexChanged;
+            btnTypeMenu.BackColor = Color.White;
+            btnTypeMenu.FlatStyle = FlatStyle.Flat;
+            btnTypeMenu.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnTypeMenu.ForeColor = Color.FromArgb(140, 82, 255);
+            btnTypeMenu.Image = (Image)resources.GetObject("btnTypeMenu.Image");
+            btnTypeMenu.ImageAlign = ContentAlignment.MiddleRight;
+            btnTypeMenu.Location = new Point(24, 299);
+            btnTypeMenu.Margin = new Padding(0);
+            btnTypeMenu.Name = "btnTypeMenu";
+            btnTypeMenu.Size = new Size(480, 41);
+            btnTypeMenu.TabIndex = 36;
+            btnTypeMenu.Text = "Loại kỳ hạn";
+            btnTypeMenu.TextAlign = ContentAlignment.MiddleLeft;
+            btnTypeMenu.UseVisualStyleBackColor = false;
+            // 
+            // panelTypeMenu
+            // 
+            panelTypeMenu.Controls.Add(btnType1);
+            panelTypeMenu.Controls.Add(btnType2);
+            panelTypeMenu.Controls.Add(btnType3);
+            panelTypeMenu.Location = new Point(24, 340);
+            panelTypeMenu.Name = "panelTypeMenu";
+            panelTypeMenu.Size = new Size(480, 128);
+            panelTypeMenu.TabIndex = 35;
+            // 
+            // btnType1
+            // 
+            btnType1.BackColor = Color.White;
+            btnType1.FlatStyle = FlatStyle.Flat;
+            btnType1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnType1.ForeColor = Color.FromArgb(140, 82, 255);
+            btnType1.Location = new Point(0, 0);
+            btnType1.Margin = new Padding(0);
+            btnType1.Name = "btnType1";
+            btnType1.Size = new Size(480, 41);
+            btnType1.TabIndex = 32;
+            btnType1.Text = "Kỳ hạn 1";
+            btnType1.TextAlign = ContentAlignment.MiddleLeft;
+            btnType1.UseVisualStyleBackColor = false;
+            // 
+            // btnType2
+            // 
+            btnType2.BackColor = Color.White;
+            btnType2.FlatStyle = FlatStyle.Flat;
+            btnType2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnType2.ForeColor = Color.FromArgb(140, 82, 255);
+            btnType2.Location = new Point(0, 41);
+            btnType2.Margin = new Padding(0);
+            btnType2.Name = "btnType2";
+            btnType2.Size = new Size(480, 41);
+            btnType2.TabIndex = 33;
+            btnType2.Text = "Kỳ hạn 2";
+            btnType2.TextAlign = ContentAlignment.MiddleLeft;
+            btnType2.UseVisualStyleBackColor = false;
+            // 
+            // btnType3
+            // 
+            btnType3.BackColor = Color.White;
+            btnType3.FlatStyle = FlatStyle.Flat;
+            btnType3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnType3.ForeColor = Color.FromArgb(140, 82, 255);
+            btnType3.Location = new Point(0, 82);
+            btnType3.Margin = new Padding(0);
+            btnType3.Name = "btnType3";
+            btnType3.Size = new Size(480, 41);
+            btnType3.TabIndex = 34;
+            btnType3.Text = "Kỳ hạn 3";
+            btnType3.TextAlign = ContentAlignment.MiddleLeft;
+            btnType3.UseVisualStyleBackColor = false;
             // 
             // lblTitle
             // 
@@ -112,7 +170,7 @@
             txtDate.BackColor = Color.Transparent;
             txtDate.BorderColor = Color.Transparent;
             txtDate.BorderRadius = 10;
-            txtDate.CustomizableEdges = customizableEdges3;
+            txtDate.CustomizableEdges = customizableEdges1;
             txtDate.DefaultText = "";
             txtDate.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtDate.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -127,7 +185,7 @@
             txtDate.PasswordChar = '\0';
             txtDate.PlaceholderText = "";
             txtDate.SelectedText = "";
-            txtDate.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            txtDate.ShadowDecoration.CustomizableEdges = customizableEdges2;
             txtDate.Size = new Size(480, 41);
             txtDate.TabIndex = 33;
             // 
@@ -148,7 +206,7 @@
             txtMoney.BackColor = Color.Transparent;
             txtMoney.BorderColor = Color.Transparent;
             txtMoney.BorderRadius = 10;
-            txtMoney.CustomizableEdges = customizableEdges5;
+            txtMoney.CustomizableEdges = customizableEdges3;
             txtMoney.DefaultText = "";
             txtMoney.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtMoney.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -163,7 +221,7 @@
             txtMoney.PasswordChar = '\0';
             txtMoney.PlaceholderText = "";
             txtMoney.SelectedText = "";
-            txtMoney.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            txtMoney.ShadowDecoration.CustomizableEdges = customizableEdges4;
             txtMoney.Size = new Size(480, 41);
             txtMoney.TabIndex = 25;
             // 
@@ -184,7 +242,7 @@
             txtIDBook.BackColor = Color.Transparent;
             txtIDBook.BorderColor = Color.Transparent;
             txtIDBook.BorderRadius = 10;
-            txtIDBook.CustomizableEdges = customizableEdges7;
+            txtIDBook.CustomizableEdges = customizableEdges5;
             txtIDBook.DefaultText = "";
             txtIDBook.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtIDBook.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -199,7 +257,7 @@
             txtIDBook.PasswordChar = '\0';
             txtIDBook.PlaceholderText = "";
             txtIDBook.SelectedText = "";
-            txtIDBook.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            txtIDBook.ShadowDecoration.CustomizableEdges = customizableEdges6;
             txtIDBook.Size = new Size(480, 41);
             txtIDBook.TabIndex = 16;
             // 
@@ -218,7 +276,7 @@
             // btnSave
             // 
             btnSave.BorderRadius = 15;
-            btnSave.CustomizableEdges = customizableEdges9;
+            btnSave.CustomizableEdges = customizableEdges7;
             btnSave.DisabledState.BorderColor = Color.DarkGray;
             btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -226,9 +284,9 @@
             btnSave.FillColor = Color.White;
             btnSave.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSave.ForeColor = Color.FromArgb(91, 185, 250);
-            btnSave.Location = new Point(395, 364);
+            btnSave.Location = new Point(395, 382);
             btnSave.Name = "btnSave";
-            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnSave.Size = new Size(109, 45);
             btnSave.TabIndex = 27;
             btnSave.Text = "Lưu";
@@ -238,12 +296,13 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(530, 429);
+            ClientSize = new Size(527, 468);
             Controls.Add(guna2GradientPanel1);
             Name = "EditSavingBook";
             Text = "EditSavingBook";
             guna2GradientPanel1.ResumeLayout(false);
             guna2GradientPanel1.PerformLayout();
+            panelTypeMenu.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -258,6 +317,10 @@
         private Guna.UI2.WinForms.Guna2TextBox txtIDBook;
         private Label lblIDBooks;
         private Label lblTitle;
-        private Guna.UI2.WinForms.Guna2ComboBox cboxType;
+        private Button btnTypeMenu;
+        private FlowLayoutPanel panelTypeMenu;
+        private Button btnType1;
+        private Button btnType2;
+        private Button btnType3;
     }
 }

@@ -20,11 +20,6 @@ namespace GUI
 
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
 
 
         //private void btnAdd_Click(object sender, EventArgs e)

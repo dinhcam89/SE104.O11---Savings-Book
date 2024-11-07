@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI.DashboardApp
 {
-    public partial class ucEditAdjustRate : UserControl
+    public partial class ucReports : UserControl
     {
-        public ucEditAdjustRate()
+        public ucReports()
         {
             InitializeComponent();
         }
