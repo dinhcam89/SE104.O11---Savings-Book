@@ -30,24 +30,20 @@ namespace GUI
             for (int i = 0; i < listItems.Length; i++)
             {
                 listItems[i] = new ListItem();
-                listItems[i].Width = flowLayoutPanel1.ClientSize.Width;
-                listItems[i].CustomerName = "Tên Nhân viên" + i;
-                listItems[i].Id = "Chức vụ nhân viên" + i;
-                listItems[i].Type = "Phòng ban nhân viên" + i;
-                listItems[i].Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+                listItems[i].CustomerName = "Tên Nhân viên " + i;
+                listItems[i].Id = "Chức vụ nhân viên " + i;
+                listItems[i].Type = "Phòng ban nhân viên " + i;
 
 
                 flowLayoutPanel1.Controls.Add(listItems[i]);
-                flowLayoutPanel1.Resize += (s, e) => {
-                    foreach (ListItem item in flowLayoutPanel1.Controls)
-                    {
-                        item.Width = flowLayoutPanel1.ClientSize.Width;
-                    }
-                };
-
-
 
             }
+            flowLayoutPanel1.Resize += (s, e) => {
+                foreach (ListItem item in flowLayoutPanel1.Controls)
+                {
+                    item.Width = flowLayoutPanel1.ClientSize.Width;
+                }
+            };
         }
 
 

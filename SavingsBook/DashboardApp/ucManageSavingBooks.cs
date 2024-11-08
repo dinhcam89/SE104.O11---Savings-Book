@@ -43,32 +43,23 @@ namespace GUI.DashboardApp
             for (int i = 0; i < listItems.Length; i++)
             {
                 listItems[i] = new ListItem();
-                listItems[i].Width = flowLayoutPanel1.ClientSize.Width;
-                listItems[i].CustomerName = "Tên khách hàng";
-                listItems[i].Id = "Mã khách hàng";
-                listItems[i].Type = "Loại kỳ hạn";
+                listItems[i].CustomerName = "Tên khách hàng " + i;
+                listItems[i].Id = "Mã khách hàng " + i;
+                listItems[i].Type = "Loại kỳ hạn " + i;
 
                 flowLayoutPanel1.Controls.Add(listItems[i]);
-
-                flowLayoutPanel1.Resize += (s, e) => {
-                    foreach (ListItem item in flowLayoutPanel1.Controls)
-                    {
-                        item.Width = flowLayoutPanel1.ClientSize.Width;
-                    }
-                };
-
-
             }
-            //AdjustItemWidths();
+
+            flowLayoutPanel1.Resize += (s, e) => {
+                foreach (ListItem item in flowLayoutPanel1.Controls)
+                {
+                    item.Width = flowLayoutPanel1.ClientSize.Width;
+                }
+            };
+
         }
 
-        //private void AdjustItemWidths()
-        //{
-        //    foreach (ListItem item in flowLayoutPanel1.Controls.OfType<ListItem>())
-        //    {
-        //        item.Size = new Size(flowLayoutPanel1.ClientSize.Width, item.Height);
-        //    }
-        //}
+
 
     }
 }
