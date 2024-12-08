@@ -10,14 +10,20 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class EditCustomerInfor : Form
+    public partial class AddCustomers : Form
     {
-        public EditCustomerInfor()
+        public AddCustomers()
         {
             InitializeComponent();
+            //customizeDesign();
             // Thiết lập không cho phép thay đổi kích thước Form
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
+

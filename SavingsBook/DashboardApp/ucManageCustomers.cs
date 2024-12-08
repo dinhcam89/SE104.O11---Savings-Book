@@ -18,13 +18,6 @@ namespace GUI.DashboardApp
             InitializeComponent();
         }
 
-        private void btnCustomer1_Click(object sender, EventArgs e)
-        {
-            EditCustomerInfor editcustomerInfor = new EditCustomerInfor();
-            editcustomerInfor.Show();
-        }
-
-
 
         private void ucManageCustomers_Load(object sender, EventArgs e)
         {
@@ -39,19 +32,32 @@ namespace GUI.DashboardApp
             for (int i = 0; i < listItems.Length; i++)
             {
                 listItems[i] = new ListItem();
-                listItems[i].CustomerName = "Tên khách hàng " +i;
-                listItems[i].Id = "Mã khách hàng " +i;
-                listItems[i].Type = "Loại kỳ hạn " +i;
+                listItems[i].CustomerName = "Tên khách hàng " + i;
+                listItems[i].Id = "Mã khách hàng " + i;
+                listItems[i].Type = "Loại kỳ hạn " + i;
 
                 flowLayoutPanel1.Controls.Add(listItems[i]);
 
             }
-            flowLayoutPanel1.Resize += (s, e) => {
+            flowLayoutPanel1.Resize += (s, e) =>
+            {
                 foreach (ListItem item in flowLayoutPanel1.Controls)
                 {
                     item.Width = flowLayoutPanel1.ClientSize.Width;
                 }
             };
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            AddCustomers addSavingBooks = new AddCustomers();
+            addSavingBooks.Show();
+        }
+
+        private void btn_Click(object sender, EventArgs e)
+        {
+            CustomerInfor customerInfor = new CustomerInfor();
+            customerInfor.Show();
         }
     }
 }

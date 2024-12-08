@@ -32,8 +32,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -42,12 +42,15 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnSearch = new Guna.UI2.WinForms.Guna2CircleButton();
             txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            btnRutTien = new Guna.UI2.WinForms.Guna2GradientButton();
             flowLayoutPanel1 = new FlowLayoutPanel();
             btnCustomer1 = new Guna.UI2.WinForms.Guna2GradientButton();
-            btn = new Guna.UI2.WinForms.Guna2GradientButton();
+            btnGuiTien = new Guna.UI2.WinForms.Guna2GradientButton();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             lblType = new Label();
             lblIDBooks = new Label();
@@ -108,19 +111,41 @@
             // 
             guna2Panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             guna2Panel2.BackColor = Color.White;
+            guna2Panel2.Controls.Add(btnRutTien);
             guna2Panel2.Controls.Add(flowLayoutPanel1);
             guna2Panel2.Controls.Add(btnSearch);
             guna2Panel2.Controls.Add(btnCustomer1);
-            guna2Panel2.Controls.Add(btn);
+            guna2Panel2.Controls.Add(btnGuiTien);
             guna2Panel2.Controls.Add(txtSearch);
             guna2Panel2.Controls.Add(guna2Panel3);
             guna2Panel2.Controls.Add(btnAdd);
-            guna2Panel2.CustomizableEdges = customizableEdges12;
+            guna2Panel2.CustomizableEdges = customizableEdges14;
             guna2Panel2.Location = new Point(20, 17);
             guna2Panel2.Name = "guna2Panel2";
-            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges15;
             guna2Panel2.Size = new Size(923, 599);
             guna2Panel2.TabIndex = 2;
+            // 
+            // btnRutTien
+            // 
+            btnRutTien.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnRutTien.BorderRadius = 10;
+            btnRutTien.CustomizableEdges = customizableEdges4;
+            btnRutTien.DisabledState.BorderColor = Color.DarkGray;
+            btnRutTien.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnRutTien.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnRutTien.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
+            btnRutTien.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnRutTien.FillColor2 = Color.FromArgb(168, 81, 234);
+            btnRutTien.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRutTien.ForeColor = Color.White;
+            btnRutTien.Location = new Point(814, 70);
+            btnRutTien.Name = "btnRutTien";
+            btnRutTien.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            btnRutTien.Size = new Size(82, 38);
+            btnRutTien.TabIndex = 20;
+            btnRutTien.Text = "Rút tiền";
+            btnRutTien.Click += btnRutTien_Click;
             // 
             // flowLayoutPanel1
             // 
@@ -137,7 +162,7 @@
             btnCustomer1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnCustomer1.BackColor = Color.Transparent;
             btnCustomer1.BorderRadius = 10;
-            btnCustomer1.CustomizableEdges = customizableEdges4;
+            btnCustomer1.CustomizableEdges = customizableEdges6;
             btnCustomer1.DisabledState.BorderColor = Color.DarkGray;
             btnCustomer1.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCustomer1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -146,33 +171,34 @@
             btnCustomer1.FillColor2 = Color.FromArgb(168, 81, 234);
             btnCustomer1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCustomer1.ForeColor = Color.White;
-            btnCustomer1.Location = new Point(714, 77);
+            btnCustomer1.Location = new Point(626, 71);
             btnCustomer1.Name = "btnCustomer1";
-            btnCustomer1.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            btnCustomer1.ShadowDecoration.CustomizableEdges = customizableEdges7;
             btnCustomer1.Size = new Size(81, 36);
             btnCustomer1.TabIndex = 2;
             btnCustomer1.Text = "Xem";
             btnCustomer1.Click += btnCustomer11_Click;
             // 
-            // btn
+            // btnGuiTien
             // 
-            btn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btn.BorderRadius = 10;
-            btn.CustomizableEdges = customizableEdges6;
-            btn.DisabledState.BorderColor = Color.DarkGray;
-            btn.DisabledState.CustomBorderColor = Color.DarkGray;
-            btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btn.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
-            btn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btn.FillColor2 = Color.FromArgb(168, 81, 234);
-            btn.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn.ForeColor = Color.White;
-            btn.Location = new Point(801, 77);
-            btn.Name = "btn";
-            btn.ShadowDecoration.CustomizableEdges = customizableEdges7;
-            btn.Size = new Size(82, 38);
-            btn.TabIndex = 6;
-            btn.Text = "button";
+            btnGuiTien.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnGuiTien.BorderRadius = 10;
+            btnGuiTien.CustomizableEdges = customizableEdges8;
+            btnGuiTien.DisabledState.BorderColor = Color.DarkGray;
+            btnGuiTien.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnGuiTien.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnGuiTien.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
+            btnGuiTien.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnGuiTien.FillColor2 = Color.FromArgb(168, 81, 234);
+            btnGuiTien.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGuiTien.ForeColor = Color.White;
+            btnGuiTien.Location = new Point(726, 70);
+            btnGuiTien.Name = "btnGuiTien";
+            btnGuiTien.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            btnGuiTien.Size = new Size(82, 38);
+            btnGuiTien.TabIndex = 6;
+            btnGuiTien.Text = "Gửi tiền";
+            btnGuiTien.Click += btnGuiTien_Click;
             // 
             // guna2Panel3
             // 
@@ -182,11 +208,11 @@
             guna2Panel3.Controls.Add(lblType);
             guna2Panel3.Controls.Add(lblIDBooks);
             guna2Panel3.Controls.Add(lblCustomerName);
-            guna2Panel3.CustomizableEdges = customizableEdges8;
+            guna2Panel3.CustomizableEdges = customizableEdges10;
             guna2Panel3.FillColor = Color.AliceBlue;
             guna2Panel3.Location = new Point(28, 122);
             guna2Panel3.Name = "guna2Panel3";
-            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges11;
             guna2Panel3.Size = new Size(868, 42);
             guna2Panel3.TabIndex = 18;
             // 
@@ -230,7 +256,7 @@
             // 
             btnAdd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btnAdd.BorderRadius = 10;
-            btnAdd.CustomizableEdges = customizableEdges10;
+            btnAdd.CustomizableEdges = customizableEdges12;
             btnAdd.DisabledState.BorderColor = Color.DarkGray;
             btnAdd.DisabledState.CustomBorderColor = Color.DarkGray;
             btnAdd.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -245,7 +271,7 @@
             btnAdd.ImageSize = new Size(30, 30);
             btnAdd.Location = new Point(28, 540);
             btnAdd.Name = "btnAdd";
-            btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges11;
+            btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges13;
             btnAdd.Size = new Size(868, 43);
             btnAdd.TabIndex = 17;
             btnAdd.Text = "Thêm mới";
@@ -279,7 +305,8 @@
         private Label lblIDBooks;
         private Label lblCustomerName;
         private Label lblType;
-        private Guna.UI2.WinForms.Guna2GradientButton btn;
+        private Guna.UI2.WinForms.Guna2GradientButton btnGuiTien;
         private FlowLayoutPanel flowLayoutPanel1;
+        private Guna.UI2.WinForms.Guna2GradientButton btnRutTien;
     }
 }

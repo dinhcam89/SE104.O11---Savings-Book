@@ -35,20 +35,29 @@ namespace GUI
             lbl.Visible = true;
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        private void btnSua_Click(object sender, EventArgs e)
         {
-            ToggleToEditMode(lblMoney, txtMoney);
-            ToggleToEditMode(lblAdjustRate, txtAdjustRate);
-            ToggleToEditMode(lblMinimumTime, txtMinimumTime);
-        }
+            if (btnSua.Text == "Sửa")
+            {
+                ToggleToEditMode(lblMoney, txtMoney);
+                ToggleToEditMode(lblAdjustRate, txtAdjustRate);
+                ToggleToEditMode(lblMinimumTime, txtMinimumTime);
+                ToggleToEditMode(lblSoTienRutToiThieu, txtSoTienRutToiThieu);
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            SaveFromTextBox(lblMoney, txtMoney);
-            SaveFromTextBox(lblAdjustRate, txtAdjustRate);
-            SaveFromTextBox(lblMinimumTime, txtMinimumTime);
-        }
+                btnSua.Text = "Cập nhật";}
 
+             else
+             {
+
+                 SaveFromTextBox(lblMoney, txtMoney);
+                 SaveFromTextBox(lblAdjustRate, txtAdjustRate);
+                 SaveFromTextBox(lblMinimumTime, txtMinimumTime);
+                 SaveFromTextBox(lblSoTienRutToiThieu, txtSoTienRutToiThieu);
+                
+                 btnSua.Text = "Sửa";
+             }
+            
+        }
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();

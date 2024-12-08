@@ -10,29 +10,18 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class DepositReceiptForm : Form
+    public partial class AddSlot : Form
     {
-        public DepositReceiptForm()
+        public AddSlot()
         {
             InitializeComponent();
             // Thiết lập không cho phép thay đổi kích thước Form
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnHuy_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
     }
 }

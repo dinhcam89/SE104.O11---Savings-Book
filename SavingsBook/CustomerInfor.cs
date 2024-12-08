@@ -1,68 +1,81 @@
-﻿using GUI;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace SavingsBook
+namespace GUI
 {
     public partial class CustomerInfor : Form
     {
         public CustomerInfor()
         {
             InitializeComponent();
-            // Thiet lap khong thay doi kich thuoc form
+            //customizeDesign();
+            // Thiết lập không cho phép thay đổi kích thước Form
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
+
+        }
+
+        private void ToggleToEditMode(Label lbl, Control editor)
+        {
+            lbl.Visible = false;
+            editor.Visible = true;
+
+            if (editor is Guna.UI2.WinForms.Guna2TextBox txt)
+            {
+                txt.Text = lbl.Text;
+                txt.Focus();
+            }
+            else if (editor is ComboBox cbox)
+            {
+                cbox.Text = lbl.Text;
+                cbox.Focus();
+            }
+        }
+
+
+
+        private void SaveFromEditor(Label lbl, Control editor)
+        {
+            if (editor is Guna.UI2.WinForms.Guna2TextBox txt)
+            {
+                lbl.Text = txt.Text;
+            }
+            else if (editor is ComboBox cbox)
+            {
+                lbl.Text = cbox.Text;
+            }
+
+            editor.Visible = false;
+            lbl.Visible = true;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (btnEdit.Text == "Sửa")
             {
-                ToggleToEditMode(lblName, txtName);
-                ToggleToEditMode(lblID, txtID);
-                ToggleToEditMode(lblCustomerID, txtCustomerID);
-                ToggleToEditMode(lblAddress, txtAddress);
-                ToggleToEditMode(lblPhone, txtPhone);
-              
-                btnEdit.Text = "Lưu";
+                ToggleToEditMode(lblSTKThanhToan, txtSTKThanhToan);
+                ToggleToEditMode(lblDiaChi, txtDiaChi);;
+
+                btnEdit.Text = "Cập nhật";
             }
             else
             {
-                SaveFromTextBox(lblName, txtName);
-                SaveFromTextBox(lblID, txtID);
-                SaveFromTextBox(lblCustomerID, txtCustomerID);
-                SaveFromTextBox(lblAddress, txtAddress);
-                SaveFromTextBox(lblPhone, txtPhone);
+                SaveFromEditor(lblSTKThanhToan, txtSTKThanhToan);
+                SaveFromEditor(lblDiaChi, txtDiaChi);
 
                 btnEdit.Text = "Sửa";
             }
         }
 
-        private void ToggleToEditMode(Label lbl, Guna.UI2.WinForms.Guna2TextBox txt)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            lbl.Visible = false;
-            txt.Visible = true;
-            txt.Text = lbl.Text;
-            txt.Focus();
+            this.Close();
         }
-
-        private void SaveFromTextBox(Label lbl, Guna.UI2.WinForms.Guna2TextBox txt)
-        {
-            lbl.Text = txt.Text;
-            txt.Visible = false;
-            lbl.Visible = true;
-        }
-
-        //Tạo phiếu rút tiền
-        private void btnAdd1_Click(object sender, EventArgs e)
-        {
-            WithdrawalReceiptForm form = new WithdrawalReceiptForm();
-            form.Show();
-        }
-
-        //Tạo phiếu gửi tiền
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            DepositReceiptForm form = new DepositReceiptForm();
-            form.Show();
-        }
-
     }
 }

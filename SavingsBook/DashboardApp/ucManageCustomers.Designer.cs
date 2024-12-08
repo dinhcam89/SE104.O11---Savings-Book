@@ -121,6 +121,7 @@
             btnAdd.TabIndex = 22;
             btnAdd.Text = "Thêm mới";
             btnAdd.TextOffset = new Point(-20, 0);
+            btnAdd.Click += btnAdd_Click;
             // 
             // guna2Panel5
             // 
@@ -238,7 +239,8 @@
             btn.ShadowDecoration.CustomizableEdges = customizableEdges9;
             btn.Size = new Size(82, 38);
             btn.TabIndex = 0;
-            btn.Text = "button";
+            btn.Text = "Xem";
+            btn.Click += btn_Click;
             // 
             // ucManageCustomers
             // 

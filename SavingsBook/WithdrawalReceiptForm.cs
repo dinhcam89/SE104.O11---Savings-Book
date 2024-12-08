@@ -20,16 +20,12 @@ namespace GUI
 
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
 
 
 
-        //private void btnAdd_Click(object sender, EventArgs e)
-        //{
-
-        //}
     }
 }

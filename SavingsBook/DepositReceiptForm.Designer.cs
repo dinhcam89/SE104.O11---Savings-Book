@@ -42,17 +42,15 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             btnClose = new Guna.UI2.WinForms.Guna2GradientButton();
             btnAdd = new Guna.UI2.WinForms.Guna2GradientButton();
-            lblIDReceipt = new Label();
-            txtDate = new Guna.UI2.WinForms.Guna2TextBox();
             lblID = new Label();
             lblDate = new Label();
             lblTitle = new Label();
             txtMoney = new Guna.UI2.WinForms.Guna2TextBox();
             lblIDTitle = new Label();
             lblMoney = new Label();
-            lblIDReceiptTitle = new Label();
             guna2GradientPanel1.SuspendLayout();
             guna2Panel1.SuspendLayout();
             SuspendLayout();
@@ -68,36 +66,52 @@
             guna2GradientPanel1.Location = new Point(0, 0);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2GradientPanel1.Size = new Size(392, 392);
+            guna2GradientPanel1.Size = new Size(392, 350);
             guna2GradientPanel1.TabIndex = 1;
             // 
             // guna2Panel1
             // 
             guna2Panel1.BackColor = Color.White;
+            guna2Panel1.Controls.Add(guna2DateTimePicker1);
             guna2Panel1.Controls.Add(btnClose);
             guna2Panel1.Controls.Add(btnAdd);
-            guna2Panel1.Controls.Add(lblIDReceipt);
-            guna2Panel1.Controls.Add(txtDate);
             guna2Panel1.Controls.Add(lblID);
             guna2Panel1.Controls.Add(lblDate);
             guna2Panel1.Controls.Add(lblTitle);
             guna2Panel1.Controls.Add(txtMoney);
             guna2Panel1.Controls.Add(lblIDTitle);
             guna2Panel1.Controls.Add(lblMoney);
-            guna2Panel1.Controls.Add(lblIDReceiptTitle);
             guna2Panel1.CustomizableEdges = customizableEdges9;
-            guna2Panel1.Location = new Point(12, 12);
+            guna2Panel1.Location = new Point(12, 10);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2Panel1.Size = new Size(368, 370);
+            guna2Panel1.Size = new Size(368, 328);
             guna2Panel1.TabIndex = 47;
             guna2Panel1.Paint += guna2Panel1_Paint;
+            // 
+            // guna2DateTimePicker1
+            // 
+            guna2DateTimePicker1.BorderColor = Color.FromArgb(98, 171, 251);
+            guna2DateTimePicker1.Checked = true;
+            guna2DateTimePicker1.CustomizableEdges = customizableEdges1;
+            guna2DateTimePicker1.FillColor = Color.FromArgb(98, 171, 251);
+            guna2DateTimePicker1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2DateTimePicker1.ForeColor = Color.White;
+            guna2DateTimePicker1.Format = DateTimePickerFormat.Short;
+            guna2DateTimePicker1.Location = new Point(14, 210);
+            guna2DateTimePicker1.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            guna2DateTimePicker1.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            guna2DateTimePicker1.Name = "guna2DateTimePicker1";
+            guna2DateTimePicker1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2DateTimePicker1.Size = new Size(337, 36);
+            guna2DateTimePicker1.TabIndex = 50;
+            guna2DateTimePicker1.Value = new DateTime(2024, 12, 1, 3, 15, 49, 556);
             // 
             // btnClose
             // 
             btnClose.BackColor = Color.Transparent;
             btnClose.BorderRadius = 10;
-            btnClose.CustomizableEdges = customizableEdges1;
+            btnClose.CustomizableEdges = customizableEdges3;
             btnClose.DisabledState.BorderColor = Color.DarkGray;
             btnClose.DisabledState.CustomBorderColor = Color.DarkGray;
             btnClose.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -108,9 +122,9 @@
             btnClose.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnClose.ForeColor = Color.White;
             btnClose.ImeMode = ImeMode.Off;
-            btnClose.Location = new Point(14, 308);
+            btnClose.Location = new Point(14, 263);
             btnClose.Name = "btnClose";
-            btnClose.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnClose.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnClose.Size = new Size(121, 45);
             btnClose.TabIndex = 49;
             btnClose.Text = "Hủy";
@@ -120,7 +134,7 @@
             // 
             btnAdd.BackColor = Color.Transparent;
             btnAdd.BorderRadius = 10;
-            btnAdd.CustomizableEdges = customizableEdges3;
+            btnAdd.CustomizableEdges = customizableEdges5;
             btnAdd.DisabledState.BorderColor = Color.DarkGray;
             btnAdd.DisabledState.CustomBorderColor = Color.DarkGray;
             btnAdd.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -131,49 +145,13 @@
             btnAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAdd.ForeColor = Color.White;
             btnAdd.ImeMode = ImeMode.Off;
-            btnAdd.Location = new Point(230, 308);
+            btnAdd.Location = new Point(230, 263);
             btnAdd.Name = "btnAdd";
-            btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnAdd.Size = new Size(121, 45);
             btnAdd.TabIndex = 22;
-            btnAdd.Text = "Tạo phiếu";
+            btnAdd.Text = "Gửi tiền";
             btnAdd.Click += btnAdd_Click;
-            // 
-            // lblIDReceipt
-            // 
-            lblIDReceipt.AutoSize = true;
-            lblIDReceipt.BackColor = Color.Transparent;
-            lblIDReceipt.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            lblIDReceipt.ForeColor = Color.FromArgb(135, 92, 254);
-            lblIDReceipt.Location = new Point(261, 107);
-            lblIDReceipt.Name = "lblIDReceipt";
-            lblIDReceipt.Size = new Size(90, 20);
-            lblIDReceipt.TabIndex = 48;
-            lblIDReceipt.Text = "123255433";
-            // 
-            // txtDate
-            // 
-            txtDate.BackColor = Color.Transparent;
-            txtDate.BorderColor = Color.FromArgb(61, 66, 250);
-            txtDate.BorderRadius = 10;
-            txtDate.CustomizableEdges = customizableEdges5;
-            txtDate.DefaultText = "";
-            txtDate.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtDate.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtDate.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtDate.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtDate.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtDate.Font = new Font("Segoe UI", 9F);
-            txtDate.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtDate.ImeMode = ImeMode.On;
-            txtDate.Location = new Point(14, 248);
-            txtDate.Name = "txtDate";
-            txtDate.PasswordChar = '\0';
-            txtDate.PlaceholderText = "";
-            txtDate.SelectedText = "";
-            txtDate.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            txtDate.Size = new Size(337, 41);
-            txtDate.TabIndex = 45;
             // 
             // lblID
             // 
@@ -193,7 +171,7 @@
             lblDate.BackColor = Color.Transparent;
             lblDate.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             lblDate.ForeColor = Color.FromArgb(135, 92, 254);
-            lblDate.Location = new Point(14, 225);
+            lblDate.Location = new Point(14, 180);
             lblDate.Name = "lblDate";
             lblDate.Size = new Size(113, 20);
             lblDate.TabIndex = 44;
@@ -205,11 +183,11 @@
             lblTitle.BackColor = Color.Transparent;
             lblTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = Color.FromArgb(135, 92, 254);
-            lblTitle.Location = new Point(56, 16);
+            lblTitle.Location = new Point(130, 16);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(253, 32);
+            lblTitle.Size = new Size(119, 32);
             lblTitle.TabIndex = 46;
-            lblTitle.Text = "TẠO PHIẾU GỬI TIỀN";
+            lblTitle.Text = "GỬI TIỀN";
             // 
             // txtMoney
             // 
@@ -226,7 +204,7 @@
             txtMoney.Font = new Font("Segoe UI", 9F);
             txtMoney.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtMoney.ImeMode = ImeMode.On;
-            txtMoney.Location = new Point(14, 169);
+            txtMoney.Location = new Point(14, 124);
             txtMoney.Name = "txtMoney";
             txtMoney.PasswordChar = '\0';
             txtMoney.PlaceholderText = "";
@@ -243,9 +221,9 @@
             lblIDTitle.ForeColor = Color.FromArgb(135, 92, 254);
             lblIDTitle.Location = new Point(14, 67);
             lblIDTitle.Name = "lblIDTitle";
-            lblIDTitle.Size = new Size(117, 20);
+            lblIDTitle.Size = new Size(95, 20);
             lblIDTitle.TabIndex = 36;
-            lblIDTitle.Text = "Mã số tiết kiệm";
+            lblIDTitle.Text = "Số tài khoản";
             // 
             // lblMoney
             // 
@@ -253,29 +231,17 @@
             lblMoney.BackColor = Color.Transparent;
             lblMoney.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             lblMoney.ForeColor = Color.FromArgb(135, 92, 254);
-            lblMoney.Location = new Point(14, 146);
+            lblMoney.Location = new Point(14, 101);
             lblMoney.Name = "lblMoney";
             lblMoney.Size = new Size(57, 20);
             lblMoney.TabIndex = 42;
             lblMoney.Text = "Số tiền";
             // 
-            // lblIDReceiptTitle
-            // 
-            lblIDReceiptTitle.AutoSize = true;
-            lblIDReceiptTitle.BackColor = Color.Transparent;
-            lblIDReceiptTitle.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            lblIDReceiptTitle.ForeColor = Color.FromArgb(135, 92, 254);
-            lblIDReceiptTitle.Location = new Point(14, 107);
-            lblIDReceiptTitle.Name = "lblIDReceiptTitle";
-            lblIDReceiptTitle.Size = new Size(94, 20);
-            lblIDReceiptTitle.TabIndex = 38;
-            lblIDReceiptTitle.Text = "Mã số phiếu";
-            // 
             // DepositReceiptForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(392, 392);
+            ClientSize = new Size(392, 350);
             ControlBox = false;
             Controls.Add(guna2GradientPanel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -292,17 +258,15 @@
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2GradientButton btnAdd;
         private Label lblTitle;
-        private Guna.UI2.WinForms.Guna2TextBox txtDate;
         private Label lblDate;
         private Guna.UI2.WinForms.Guna2TextBox txtMoney;
         private Guna.UI2.WinForms.Guna2TextBox txtIDReceipt;
         private Label lblMoney;
         private Guna.UI2.WinForms.Guna2TextBox txtID;
         private Label lblIDTitle;
-        private Label lblIDReceiptTitle;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Label lblID;
-        private Label lblIDReceipt;
         private Guna.UI2.WinForms.Guna2GradientButton btnClose;
+        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
     }
 }
