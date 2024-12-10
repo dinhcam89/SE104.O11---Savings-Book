@@ -14,6 +14,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="CMSPhieuGoiTien.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="CMSChiTietRutTien.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="CMSLoaiTietKiem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="CMSKhachHang.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

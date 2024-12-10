@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,53 +9,64 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+public enum ObjectType
+{
+    KhachHang,
+    PhieuGoiTien,
+    ChiTietRutTien,
+    LoaiTietKiem
+}
+
 namespace GUI
 {
     public partial class ListItem : UserControl
     {
         public event EventHandler ButtonClick;
+        public int clickCount = 0;
 
         public ListItem()
         {
             InitializeComponent();
-            //btnCustom.Click += (s, e) => ButtonClick?.Invoke(this, e);
-
-
-            contextMenuStrip1 = new ContextMenuStrip();
-            contextMenuStrip1.Items.Add("Quản lý");
-            contextMenuStrip1.Items.Add("Gửi tiền");
-            contextMenuStrip1.Items.Add("Rút tiền");
-            contextMenuStrip1.Items.Add("Xóa");
-
-            btnCustom.Click += (s, e) =>
-            {
-                Point screenPoint = this.PointToScreen(new Point(0, this.Height));
-                contextMenuStrip1.Show(screenPoint);
-            };
         }
 
         private string _name;
         private string _id;
         private string _type;
         private Image _image;
+        private ObjectType _formType;
 
         [Category("Custom")]
         private void btnCustom_Click(object sender, EventArgs e)
         {
-
-            // Lấy ListItem chứa nút và tính toán vị trí để hiển thị ContextMenuStrip
-            //ListItem item = sender as ListItem;
-            //Point screenPoint = item.PointToScreen(new Point(0, item.Height));
-            //contextMenuStrip1.Show(screenPoint);
-
             // Lấy đối tượng ListItem từ nút được click
-            var button = sender as Button;
-            var item = button?.Parent as ListItem;
+            var button = sender as Guna2GradientButton;
 
-            if (item != null)
+            if (button != null)
             {
-                Point screenPoint = item.PointToScreen(new Point(0, item.Height));
-                contextMenuStrip1.Show(screenPoint);
+                Point screenPoint = button!.PointToScreen(new Point(0, button.Height));
+
+                switch (_formType)
+                {
+                    case ObjectType.KhachHang:
+                        CMSKhachHang cmsKhachHang = new CMSKhachHang();
+                        cmsKhachHang.Show(screenPoint);
+                        break;
+                    case ObjectType.ChiTietRutTien:
+                        CMSChiTietRutTien cmsChiTietRutTien = new CMSChiTietRutTien();
+                        cmsChiTietRutTien.Show(screenPoint);
+                        break;
+                    case ObjectType.PhieuGoiTien:
+                        CMSPhieuGoiTien cmsPhieuGoiTien = new CMSPhieuGoiTien();
+                        cmsPhieuGoiTien.Show(screenPoint);
+                        break;
+                    case ObjectType.LoaiTietKiem:
+                        CMSLoaiTietKiem cmsLoaiTietKiem = new CMSLoaiTietKiem();
+                        cmsLoaiTietKiem.Show(screenPoint);
+                        break;
+                    default:
+                        MessageBox.Show("Thông tin loại form không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                }
             }
             else
             {
@@ -91,6 +103,15 @@ namespace GUI
         {
             get { return _image; }
             set { _image = value; picAvatar.Image = value; }
+        }
+
+        // Property: Form type
+        [Category("Custom")]
+        [Description("Thiết lập context menu strip nút options")]
+        public ObjectType FormType
+        {
+            get => _formType;
+            set => _formType = value;
         }
 
     }

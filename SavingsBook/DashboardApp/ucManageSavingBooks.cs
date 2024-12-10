@@ -16,23 +16,7 @@ namespace GUI.DashboardApp
         public ucManageSavingBooks()
         {
             InitializeComponent();
-
-            contextMenuStrip1 = new ContextMenuStrip();
-            contextMenuStrip1.Items.Add("Quản lý");
-            contextMenuStrip1.Items.Add("Gửi tiền");
-            contextMenuStrip1.Items.Add("Rút tiền");
-            contextMenuStrip1.Items.Add("Xóa");
-
-            contextMenuStrip1.ItemClicked += contextMenuStrip1_ItemClick;
-
-            foreach (var item in flowLayoutPanel1.Controls.OfType<ListItem>())
-            {
-                item.ButtonClick += ListItem_ButtonClick;
-            }
         }
-
-        private ContextMenuStrip contextMenuStrip1;
-
 
         private void btnCustomer11_Click(object sender, EventArgs e)
         {
@@ -54,39 +38,13 @@ namespace GUI.DashboardApp
 
         private void ListItem_ButtonClick(object sender, EventArgs e)
         {
-            // Tạo và hiển thị ContextMenuStrip
-            //ListItem item = sender as ListItem;
-            //Point screenPoint = item.PointToScreen(new Point(0, item.Height));
-            //contextMenuStrip1.Show(screenPoint);
-
-            ListItem item = sender as ListItem;
+            var item = sender as Button;
             if (item != null)
             {
                 Point screenPoint = item.PointToScreen(new Point(0, item.Height));
-                contextMenuStrip1.Show(screenPoint);
+                //contextMenuStrip1.Show(screenPoint);
             }
         }
-
-        private void contextMenuStrip1_ItemClick(object sender, ToolStripItemClickedEventArgs e)
-        {
-            // Xử lý khi chọn item trong menu
-            switch (e.ClickedItem.Text)
-            {
-                case "Quản lý":
-                    OpenManagementForm();
-                    break;
-                case "Gửi tiền":
-                    OpenDepositForm();
-                    break;
-                case "Rút tiền":
-                    OpenWithdrawalForm();
-                    break;
-                case "Xóa":
-                    DeleteItem();
-                    break;
-            }
-        }
-
 
         private void OpenManagementForm()
         {
@@ -124,6 +82,7 @@ namespace GUI.DashboardApp
                 listItems[i].Id = "Mã khách hàng " + i;
                 listItems[i].Type = "Loại kỳ hạn " + i;
                 //listItems[i].btnCustom.Text = "Xem";
+                listItems[i].FormType = ObjectType.PhieuGoiTien;
 
                 //listItems[i].ButtonClick += ListItem_ButtonClick;
 
@@ -140,9 +99,6 @@ namespace GUI.DashboardApp
             };
 
         }
-
-
-
 
         private void btnGuiTien_Click(object sender, EventArgs e)
         {
