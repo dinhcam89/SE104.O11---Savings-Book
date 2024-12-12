@@ -32,9 +32,10 @@ namespace GUI.DashboardApp
             for (int i = 0; i < listItems.Length; i++)
             {
                 listItems[i] = new ListItem();
-                listItems[i].CustomerName = "Tên khách hàng " + i;
-                listItems[i].Id = "Mã khách hàng " + i;
-                listItems[i].Type = "Loại kỳ hạn " + i;
+                listItems[i].Ten1 = "Tên khách hàng " + i;
+                listItems[i].Ten2 = "Mã khách hàng " + i;
+                listItems[i].Ten3 = "Số dư " + i;
+                listItems[i].Ten4 = "Số phiếu tiết kiệm " + i;
 
                 flowLayoutPanel1.Controls.Add(listItems[i]);
 

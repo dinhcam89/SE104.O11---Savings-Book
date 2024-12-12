@@ -36,9 +36,10 @@ namespace GUI.DashboardApp
             for (int i = 0; i < listItems.Length; i++)
             {
                 listItems[i] = new ListItem();
-                listItems[i].CustomerName = "Loại tiết kiệm " + i;
-                listItems[i].Id = "Lãi suất " + i;
-                listItems[i].Type = "Loại kỳ hạn " + i;
+                listItems[i].Ten1 = "Loại tiết kiệm " + i;
+                listItems[i].Ten2 = "Số tiền gởi " + i;
+                listItems[i].Ten3 = "Lãi suất " + i;
+                listItems[i].Ten4 = "";
                 //listItems[i].btnCustom.Text = "Xem";
                 listItems[i].FormType = ObjectType.LoaiTietKiem;
 

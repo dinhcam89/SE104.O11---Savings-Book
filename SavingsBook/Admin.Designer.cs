@@ -149,7 +149,7 @@
             lblDepartmentTitle.BackColor = Color.Transparent;
             lblDepartmentTitle.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDepartmentTitle.ForeColor = Color.FromArgb(37, 10, 128);
-            lblDepartmentTitle.Location = new Point(540, 11);
+            lblDepartmentTitle.Location = new Point(452, 10);
             lblDepartmentTitle.Name = "lblDepartmentTitle";
             lblDepartmentTitle.Size = new Size(84, 20);
             lblDepartmentTitle.TabIndex = 4;
@@ -161,7 +161,7 @@
             lblPositionTitle.BackColor = Color.Transparent;
             lblPositionTitle.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPositionTitle.ForeColor = Color.FromArgb(37, 10, 128);
-            lblPositionTitle.Location = new Point(309, 11);
+            lblPositionTitle.Location = new Point(240, 10);
             lblPositionTitle.Name = "lblPositionTitle";
             lblPositionTitle.Size = new Size(64, 20);
             lblPositionTitle.TabIndex = 5;
@@ -173,7 +173,7 @@
             lblNameTitle.BackColor = Color.Transparent;
             lblNameTitle.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNameTitle.ForeColor = Color.FromArgb(37, 10, 128);
-            lblNameTitle.Location = new Point(104, 11);
+            lblNameTitle.Location = new Point(17, 10);
             lblNameTitle.Name = "lblNameTitle";
             lblNameTitle.Size = new Size(75, 20);
             lblNameTitle.TabIndex = 4;

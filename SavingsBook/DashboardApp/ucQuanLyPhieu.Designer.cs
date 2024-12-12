@@ -146,7 +146,7 @@
             lblLoaiTietKiem0.BackColor = Color.Transparent;
             lblLoaiTietKiem0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblLoaiTietKiem0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblLoaiTietKiem0.Location = new Point(451, 12);
+            lblLoaiTietKiem0.Location = new Point(437, 10);
             lblLoaiTietKiem0.Name = "lblLoaiTietKiem0";
             lblLoaiTietKiem0.Size = new Size(100, 20);
             lblLoaiTietKiem0.TabIndex = 4;
@@ -158,7 +158,7 @@
             lblMaPhieuTietKiem0.BackColor = Color.Transparent;
             lblMaPhieuTietKiem0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblMaPhieuTietKiem0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblMaPhieuTietKiem0.Location = new Point(227, 12);
+            lblMaPhieuTietKiem0.Location = new Point(229, 10);
             lblMaPhieuTietKiem0.Name = "lblMaPhieuTietKiem0";
             lblMaPhieuTietKiem0.Size = new Size(137, 20);
             lblMaPhieuTietKiem0.TabIndex = 5;
@@ -170,7 +170,7 @@
             lblTenKhachHang0.BackColor = Color.Transparent;
             lblTenKhachHang0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTenKhachHang0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblTenKhachHang0.Location = new Point(21, 12);
+            lblTenKhachHang0.Location = new Point(27, 10);
             lblTenKhachHang0.Name = "lblTenKhachHang0";
             lblTenKhachHang0.Size = new Size(117, 20);
             lblTenKhachHang0.TabIndex = 4;
