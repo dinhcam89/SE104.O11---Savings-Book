@@ -14,12 +14,10 @@ namespace GUI
     public partial class Dashboard : Form
     {
 
-        private ucQuanLySoTietKiem ucSearch;
-        private ucAddEditSavingBooks ucAddEditSavingBooks;
+        private ucQuanLySoTietKiem ucSearch;        
         private ucQuanLySoTietKiem ucManageSavingBooks;
         private ucQuanLyKhachHang ucManageCustomers;
         private ucDoanhSoHoatDong ucSaleReport;
-        private ucBookReports ucReports;
         private ucQuanLyLoaiTietKiem ucEditAdjustRate;
         private ucChinhSuaQuyDinh ucEditRules;
 
@@ -96,24 +94,7 @@ namespace GUI
                         this.panelMain.Controls.Add(ucSaleReport);
                     }
                     break;
-
-                case "reports":
-                    if (this.ucReports == null)
-                    {
-                        this.ucReports = new ucBookReports();
-                        this.panelMain.Controls.Add(ucReports);
-                        this.ucReports.Dock = System.Windows.Forms.DockStyle.Fill;
-                        this.ucReports.Location = new System.Drawing.Point(0, 0);
-                        this.ucReports.Name = "ucReports";
-                        this.Size = new System.Drawing.Size(698, 508);
-                        this.ucReports.TabIndex = 0;
-                    }
-                    else
-                    {
-                        this.panelMain.Controls.Add(ucReports);
-                    }
-                    break;
-
+                                   
                 case "editAdjustRate":
                     if (this.ucEditAdjustRate == null)
                     {

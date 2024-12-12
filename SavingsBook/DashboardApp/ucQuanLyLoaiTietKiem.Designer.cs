@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucQuanLyLoaiTietKiem));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             btnAdd = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -70,7 +70,7 @@
             // 
             btnAdd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btnAdd.BorderRadius = 10;
-            btnAdd.CustomizableEdges = customizableEdges5;
+            btnAdd.CustomizableEdges = customizableEdges1;
             btnAdd.DisabledState.BorderColor = Color.DarkGray;
             btnAdd.DisabledState.CustomBorderColor = Color.DarkGray;
             btnAdd.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -85,7 +85,7 @@
             btnAdd.ImageSize = new Size(30, 30);
             btnAdd.Location = new Point(34, 629);
             btnAdd.Name = "btnAdd";
-            btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnAdd.Size = new Size(975, 43);
             btnAdd.TabIndex = 25;
             btnAdd.Text = "Thêm mới";
@@ -100,11 +100,11 @@
             guna2Panel5.Controls.Add(lblLaiSuat0);
             guna2Panel5.Controls.Add(lblSoTienGoi0);
             guna2Panel5.Controls.Add(lblLoaiTietKiem0);
-            guna2Panel5.CustomizableEdges = customizableEdges7;
+            guna2Panel5.CustomizableEdges = customizableEdges3;
             guna2Panel5.FillColor = Color.AliceBlue;
             guna2Panel5.Location = new Point(34, 22);
             guna2Panel5.Name = "guna2Panel5";
-            guna2Panel5.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2Panel5.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Panel5.Size = new Size(975, 42);
             guna2Panel5.TabIndex = 23;
             // 
@@ -114,7 +114,7 @@
             lblLaiSuat0.BackColor = Color.Transparent;
             lblLaiSuat0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblLaiSuat0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblLaiSuat0.Location = new Point(548, 11);
+            lblLaiSuat0.Location = new Point(544, 11);
             lblLaiSuat0.Name = "lblLaiSuat0";
             lblLaiSuat0.Size = new Size(60, 20);
             lblLaiSuat0.TabIndex = 5;
@@ -126,7 +126,7 @@
             lblSoTienGoi0.BackColor = Color.Transparent;
             lblSoTienGoi0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSoTienGoi0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblSoTienGoi0.Location = new Point(313, 11);
+            lblSoTienGoi0.Location = new Point(310, 11);
             lblSoTienGoi0.Name = "lblSoTienGoi0";
             lblSoTienGoi0.Size = new Size(82, 20);
             lblSoTienGoi0.TabIndex = 4;
@@ -138,7 +138,7 @@
             lblLoaiTietKiem0.BackColor = Color.Transparent;
             lblLoaiTietKiem0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblLoaiTietKiem0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblLoaiTietKiem0.Location = new Point(113, 11);
+            lblLoaiTietKiem0.Location = new Point(108, 11);
             lblLoaiTietKiem0.Name = "lblLoaiTietKiem0";
             lblLoaiTietKiem0.Size = new Size(100, 20);
             lblLoaiTietKiem0.TabIndex = 4;

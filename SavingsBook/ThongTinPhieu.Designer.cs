@@ -153,13 +153,13 @@
             lblKyHan.BackColor = Color.Transparent;
             lblKyHan.Font = new Font("iCiel Brandon Text Bold", 14.25F, FontStyle.Italic);
             lblKyHan.ForeColor = Color.FromArgb(127, 111, 180);
-            lblKyHan.Location = new Point(403, 216);
+            lblKyHan.Location = new Point(414, 216);
             lblKyHan.Margin = new Padding(3, 0, 25, 0);
             lblKyHan.Name = "lblKyHan";
             lblKyHan.RightToLeft = RightToLeft.Yes;
-            lblKyHan.Size = new Size(82, 24);
+            lblKyHan.Size = new Size(71, 24);
             lblKyHan.TabIndex = 53;
-            lblKyHan.Text = "1245678";
+            lblKyHan.Text = "3 tháng";
             lblKyHan.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblSTKThanhToan0
