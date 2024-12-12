@@ -19,7 +19,7 @@ namespace GUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AddAccount addAccount = new AddAccount();
+            ThemTaiKhoan addAccount = new ThemTaiKhoan();
             addAccount.Show();
         }
 

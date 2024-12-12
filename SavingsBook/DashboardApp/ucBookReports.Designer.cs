@@ -830,6 +830,7 @@
             DateTimePicker.Size = new Size(200, 36);
             DateTimePicker.TabIndex = 12;
             DateTimePicker.Value = new DateTime(2024, 10, 23, 10, 39, 1, 549);
+            DateTimePicker.Visible = false;
             // 
             // lblTitle
             // 

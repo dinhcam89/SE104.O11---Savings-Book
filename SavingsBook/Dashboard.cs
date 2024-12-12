@@ -14,14 +14,14 @@ namespace GUI
     public partial class Dashboard : Form
     {
 
-        private ucManageSavingBooks ucSearch;
+        private ucQuanLySoTietKiem ucSearch;
         private ucAddEditSavingBooks ucAddEditSavingBooks;
-        private ucManageSavingBooks ucManageSavingBooks;
-        private ucManageCustomers ucManageCustomers;
-        private ucSaleReports ucSaleReport;
+        private ucQuanLySoTietKiem ucManageSavingBooks;
+        private ucQuanLyKhachHang ucManageCustomers;
+        private ucDoanhSoHoatDong ucSaleReport;
         private ucBookReports ucReports;
-        private ucEditAdjustRate ucEditAdjustRate;
-        private ucEditRules ucEditRules;
+        private ucQuanLyLoaiTietKiem ucEditAdjustRate;
+        private ucChinhSuaQuyDinh ucEditRules;
 
         public Dashboard()
         {
@@ -30,14 +30,13 @@ namespace GUI
 
         private void btnResetColor()
         {
-            this.btnManageSavingBooks.BackColor = Color.Transparent;
+            this.btnQuanLyPhieu.BackColor = Color.Transparent;
             //this.btnAddEditSavingBooks.BackColor = Color.Transparent;
-            this.btnManageSavingBooks.BackColor = Color.Transparent;
-            this.btnManageCustomers.BackColor = Color.Transparent;
-            this.btnSaleReports.BackColor = Color.Transparent;
-            this.btnBookReports.BackColor = Color.Transparent;
-            this.btnEditAdjustRate.BackColor = Color.Transparent;
-            this.btnEditRules.BackColor = Color.Transparent;
+            this.btnQuanLyPhieu.BackColor = Color.Transparent;
+            this.btnQuanLyKhachHang.BackColor = Color.Transparent;
+            this.btnDoanhSoHoatDong.BackColor = Color.Transparent;
+            this.btnQuanLyLoaiTietKiem.BackColor = Color.Transparent;
+            this.btnChinhSuaQuyDinh.BackColor = Color.Transparent;
 
         }
 
@@ -47,44 +46,10 @@ namespace GUI
             this.panelMain.Controls.Clear();
             switch (panelMain)
             {
-                //case "search":
-                //    if(this.ucSearch == null)
-                //    {
-                //        this.ucSearch = new ucSearch();
-                //        this.panelMain.Controls.Add(ucSearch);
-                //        this.ucSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-                //        this.ucSearch.Location = new System.Drawing.Point(0, 0);
-                //        this.ucSearch.Name = "ucSearch";
-                //        this.Size = new System.Drawing.Size(698, 508);
-                //        this.ucSearch.TabIndex = 0;
-                //    } 
-                //    else
-                //    {
-                //        this.panelMain.Controls.Add(ucSearch);
-                //    }
-                //    break;
-
-                //case "add":
-                //    if (this.ucAddEditSavingBooks == null)
-                //    {
-                //        this.ucAddEditSavingBooks = new ucAddEditSavingBooks();
-                //        this.panelMain.Controls.Add(ucAddEditSavingBooks);
-                //        this.ucAddEditSavingBooks.Dock = System.Windows.Forms.DockStyle.Fill;
-                //        this.ucAddEditSavingBooks.Location = new System.Drawing.Point(0, 0);
-                //        this.ucAddEditSavingBooks.Name = "ucAddEditSavingBooks";
-                //        this.Size = new System.Drawing.Size(698, 508);
-                //        this.ucAddEditSavingBooks.TabIndex = 0;
-                //    }
-                //    else
-                //    {
-                //        this.panelMain.Controls.Add(ucAddEditSavingBooks);
-                //    }
-                //    break;
-
                 case "manageSavingBooks":
                     if (this.ucManageSavingBooks == null)
                     {
-                        this.ucManageSavingBooks = new ucManageSavingBooks();
+                        this.ucManageSavingBooks = new ucQuanLySoTietKiem();
                         this.panelMain.Controls.Add(ucManageSavingBooks);
                         this.ucManageSavingBooks.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.ucManageSavingBooks.Location = new System.Drawing.Point(0, 0);
@@ -101,7 +66,7 @@ namespace GUI
                 case "manageCustomers":
                     if (this.ucManageCustomers == null)
                     {
-                        this.ucManageCustomers = new ucManageCustomers();
+                        this.ucManageCustomers = new ucQuanLyKhachHang();
                         this.panelMain.Controls.Add(ucManageCustomers);
                         this.ucManageCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.ucManageCustomers.Location = new System.Drawing.Point(0, 0);
@@ -118,7 +83,7 @@ namespace GUI
                 case "sale":
                     if (this.ucSaleReport == null)
                     {
-                        this.ucSaleReport = new ucSaleReports();
+                        this.ucSaleReport = new ucDoanhSoHoatDong();
                         this.panelMain.Controls.Add(ucSaleReport);
                         this.ucSaleReport.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.ucSaleReport.Location = new System.Drawing.Point(0, 0);
@@ -152,7 +117,7 @@ namespace GUI
                 case "editAdjustRate":
                     if (this.ucEditAdjustRate == null)
                     {
-                        this.ucEditAdjustRate = new ucEditAdjustRate();
+                        this.ucEditAdjustRate = new ucQuanLyLoaiTietKiem();
                         this.panelMain.Controls.Add(ucEditAdjustRate);
                         this.ucEditAdjustRate.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.ucEditAdjustRate.Location = new System.Drawing.Point(0, 0);
@@ -169,7 +134,7 @@ namespace GUI
                 case "editRules":
                     if (this.ucEditRules == null)
                     {
-                        this.ucEditRules = new ucEditRules();
+                        this.ucEditRules = new ucChinhSuaQuyDinh();
                         this.panelMain.Controls.Add(ucEditRules);
                         this.ucEditRules.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.ucEditRules.Location = new System.Drawing.Point(0, 0);
@@ -189,61 +154,42 @@ namespace GUI
             }
         }
 
-        //private void btnSearch_Click(object sender, EventArgs e)
-        //{
-        //    this.panelMenuActive.Location = new Point(btnSearch.Location.X, btnSearch.Location.Y);
-        //    this.tongglepanelMain("search");
-
-        //}
-
-        //private void btnAddEditSavingBooks_Click(object sender, EventArgs e)
-        //{
-        //    this.panelMenuActive.Location = new Point(btnAddEditSavingBooks.Location.X, btnAddEditSavingBooks.Location.Y);
-        //    this.tongglepanelMain("add");
-        //}
-
-
         private void btnManageCustomers_Click(object sender, EventArgs e)
         {
-            this.panelMenuActive.Location = new Point(btnManageCustomers.Location.X, btnManageCustomers.Location.Y);
+            this.panelMenuActive.Location = new Point(btnQuanLyKhachHang.Location.X, btnQuanLyKhachHang.Location.Y);
             this.tongglepanelMain("manageCustomers");
         }
 
         private void btnSaleReports_Click(object sender, EventArgs e)
         {
-            this.panelMenuActive.Location = new Point(btnSaleReports.Location.X, btnSaleReports.Location.Y);
+            this.panelMenuActive.Location = new Point(btnDoanhSoHoatDong.Location.X, btnDoanhSoHoatDong.Location.Y);
             this.tongglepanelMain("sale");
-        }
-
-        private void btnBookReports_Click(object sender, EventArgs e)
-        {
-            this.panelMenuActive.Location = new Point(btnBookReports.Location.X, btnBookReports.Location.Y);
-            this.tongglepanelMain("reports");
         }
 
         private void btnEditAdjustRate_Click(object sender, EventArgs e)
         {
-            this.panelMenuActive.Location = new Point(btnEditAdjustRate.Location.X, btnEditAdjustRate.Location.Y);
+            this.panelMenuActive.Location = new Point(btnQuanLyLoaiTietKiem.Location.X, btnQuanLyLoaiTietKiem.Location.Y);
             this.tongglepanelMain("editAdjustRate");
         }
 
         private void btnEditRules_Click(object sender, EventArgs e)
         {
-            this.panelMenuActive.Location = new Point(btnEditRules.Location.X, btnEditRules.Location.Y);
+            this.panelMenuActive.Location = new Point(btnChinhSuaQuyDinh.Location.X, btnChinhSuaQuyDinh.Location.Y);
             this.tongglepanelMain("editRules");
         }
 
 
         private void btnManageSavingBooks_Click(object sender, EventArgs e)
         {
-            this.panelMenuActive.Location = new Point(btnManageSavingBooks.Location.X, btnManageSavingBooks.Location.Y);
+            this.panelMenuActive.Location = new Point(btnQuanLyPhieu.Location.X, btnQuanLyPhieu.Location.Y);
             this.tongglepanelMain("manageSavingBooks");
         }
 
         private void btnManageSavingBooks_Click_1(object sender, EventArgs e)
         {
-            this.panelMenuActive.Location = new Point(btnManageSavingBooks.Location.X, btnManageSavingBooks.Location.Y);
+            this.panelMenuActive.Location = new Point(btnQuanLyPhieu.Location.X, btnQuanLyPhieu.Location.Y);
             this.tongglepanelMain("manageSavingBooks");
         }
+
     }
 }
