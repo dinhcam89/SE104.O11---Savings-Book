@@ -24,7 +24,9 @@ namespace GUI
         }
         private void OpenManagementForm(object sender, EventArgs e)
         {
-            MessageBox.Show("Hiện thông tin chi tiết của loại tiết kiệm");
+            ChinhSuaLoaiTietKiem form = new ChinhSuaLoaiTietKiem();
+            form.Show();
+            //MessageBox.Show("Hiện thông tin chi tiết của loại tiết kiệm");
         }
         private void DeleteItem(object sender, EventArgs e)
         {

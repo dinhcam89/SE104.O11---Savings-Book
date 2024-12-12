@@ -2,18 +2,18 @@
 
 namespace SavingsBook
 {
-    public partial class SlotInfor : Form
+    public partial class ThongTinPhieu : Form
     {
-        public SlotInfor()
+        public ThongTinPhieu()
         {
             InitializeComponent();
             // Thiet lap khong thay doi kich thuoc form
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            string[] loaiTietKiem = { "Không kỳ hạn", "Kỳ hạn 3 tháng", "Kỳ hạn 6 tháng" };
-            cboxLoaiTietKiem.Items.AddRange(loaiTietKiem);
+            string[] hinhThucGiaHan = { "Không gia hạn", "Xoay vòng gốc", "Xoay vòng gốc lẫn lãi" };
+            cboxHinhThucGiaHan.Items.AddRange(hinhThucGiaHan);
 
-            string[] stkThanhToan = { "123456789", "987654321", "456123789" };
-            cboxSTKThanhToan.Items.AddRange(stkThanhToan);
+            string[] kyHan = { "Không kỳ hạn", "3 tháng", "6 tháng" };
+            cboxKyHan.Items.AddRange(kyHan);
         }
 
 
@@ -21,25 +21,23 @@ namespace SavingsBook
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (btnEdit.Text == "Sửa")
-            {
-                ToggleToEditMode(lblTongTienGoc, txtTongTienGoc);
-                ToggleToEditMode(lblLaiSuatPhatSinh, txtLaiSuatPhatSinh);
-                ToggleToEditMode(lblLaiSuatApDung, txtLaiSuatApDung);
-                ToggleToEditMode(lblSTKThanhToan, cboxSTKThanhToan); 
-                ToggleToEditMode(lblLoaiTietKiem, cboxLoaiTietKiem);
+            if (btnSua.Text == "Sửa")
+            {                
+                //ToggleToEditMode(lblLaiSuatPhatSinh, txtLaiSuatPhatSinh);
+                //ToggleToEditMode(lblLaiSuatApDung, txtLaiSuatApDung);
+                ToggleToEditMode(lblKyHan, cboxKyHan); 
+                ToggleToEditMode(lblHinhThucGiaHan, cboxHinhThucGiaHan);
 
-                btnEdit.Text = "Cập nhật";
+                btnSua.Text = "Cập nhật";
             }
             else
             {
-                SaveFromEditor(lblTongTienGoc, txtTongTienGoc);
-                SaveFromEditor(lblLaiSuatPhatSinh, txtLaiSuatPhatSinh);
-                SaveFromEditor(lblLaiSuatApDung, txtLaiSuatApDung);
-                SaveFromEditor(lblSTKThanhToan, cboxSTKThanhToan);
-                SaveFromEditor(lblLoaiTietKiem, cboxLoaiTietKiem);
+                //SaveFromEditor(lblLaiSuatPhatSinh, txtLaiSuatPhatSinh);
+                //SaveFromEditor(lblLaiSuatApDung, txtLaiSuatApDung);
+                SaveFromEditor(lblKyHan, cboxKyHan);
+                SaveFromEditor(lblHinhThucGiaHan, cboxHinhThucGiaHan);
 
-                btnEdit.Text = "Sửa";
+                btnSua.Text = "Sửa";
             }
         }
 

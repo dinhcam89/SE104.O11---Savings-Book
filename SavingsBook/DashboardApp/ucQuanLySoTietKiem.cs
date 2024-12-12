@@ -11,23 +11,29 @@ using System.Windows.Forms;
 
 namespace GUI.DashboardApp
 {
-    public partial class ucManageCustomers : UserControl
+    public partial class ucQuanLySoTietKiem : UserControl
     {
-        public ucManageCustomers()
+        public ucQuanLySoTietKiem()
         {
             InitializeComponent();
         }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            ThemPhieu editCustomerInfor = new ThemPhieu();
+            editCustomerInfor.Show();
+        }
 
-        private void ucManageCustomers_Load(object sender, EventArgs e)
+        private void ucManageSavingBooks_Load(object sender, EventArgs e)
         {
             populateItems();
 
         }
 
+
         private void populateItems()
         {
-            ListItem[] listItems = new ListItem[10];
+            ListItem[] listItems = new ListItem[20];
 
             for (int i = 0; i < listItems.Length; i++)
             {
@@ -35,10 +41,15 @@ namespace GUI.DashboardApp
                 listItems[i].CustomerName = "Tên khách hàng " + i;
                 listItems[i].Id = "Mã khách hàng " + i;
                 listItems[i].Type = "Loại kỳ hạn " + i;
+                //listItems[i].btnCustom.Text = "Xem";
+                listItems[i].FormType = ObjectType.PhieuGoiTien;
+
+                //listItems[i].ButtonClick += ListItem_ButtonClick;
+
 
                 flowLayoutPanel1.Controls.Add(listItems[i]);
-
             }
+
             flowLayoutPanel1.Resize += (s, e) =>
             {
                 foreach (ListItem item in flowLayoutPanel1.Controls)
@@ -46,18 +57,7 @@ namespace GUI.DashboardApp
                     item.Width = flowLayoutPanel1.ClientSize.Width;
                 }
             };
-        }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            AddCustomers addSavingBooks = new AddCustomers();
-            addSavingBooks.Show();
-        }
-
-        private void btn_Click(object sender, EventArgs e)
-        {
-            CustomerInfor customerInfor = new CustomerInfor();
-            customerInfor.Show();
         }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class DepositReceiptForm : Form
+    public partial class GuiTien : Form
     {
-        public DepositReceiptForm()
+        public GuiTien()
         {
             InitializeComponent();
             // Thiết lập không cho phép thay đổi kích thước Form

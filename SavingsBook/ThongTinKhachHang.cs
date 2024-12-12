@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class CustomerInfor : Form
+    public partial class ThongTinKhachHang : Form
     {
-        public CustomerInfor()
+        public ThongTinKhachHang()
         {
             InitializeComponent();
             //customizeDesign();
@@ -55,27 +55,30 @@ namespace GUI
             lbl.Visible = true;
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        private void btnSua_Click(object sender, EventArgs e)
         {
-            if (btnEdit.Text == "Sửa")
+
+            if (btnSua.Text == "Sửa")
             {
                 ToggleToEditMode(lblSTKThanhToan, txtSTKThanhToan);
-                ToggleToEditMode(lblDiaChi, txtDiaChi);;
+                ToggleToEditMode(lblDiaChi, txtDiaChi); ;
 
-                btnEdit.Text = "Cập nhật";
+                btnSua.Text = "Cập nhật";
             }
             else
             {
                 SaveFromEditor(lblSTKThanhToan, txtSTKThanhToan);
                 SaveFromEditor(lblDiaChi, txtDiaChi);
 
-                btnEdit.Text = "Sửa";
+                btnSua.Text = "Sửa";
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnHuy_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        
     }
 }

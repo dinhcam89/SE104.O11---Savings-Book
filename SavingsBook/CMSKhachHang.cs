@@ -24,7 +24,9 @@ namespace GUI
         }
         private void OpenManagementForm(object sender, EventArgs e)
         {
-            MessageBox.Show("Hiện thông tin chi tiết của khách hàng");
+            ThongTinKhachHang themKhachHang = new ThongTinKhachHang();
+            themKhachHang.Show();
+            //MessageBox.Show("Hiện thông tin chi tiết của khách hàng");
         }
         private void DeleteItem(object sender, EventArgs e)
         {

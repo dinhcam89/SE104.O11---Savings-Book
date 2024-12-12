@@ -8,17 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI
+namespace GUI.DashboardApp
 {
-    public partial class AddAccount : Form
+    public partial class ucChinhSuaQuyDinh : UserControl
     {
-        public AddAccount()
+        public ucChinhSuaQuyDinh()
         {
             InitializeComponent();
-            // Thiết lập không cho phép thay đổi kích thước Form
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
-
-
     }
 }

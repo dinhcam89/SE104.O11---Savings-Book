@@ -81,21 +81,21 @@ namespace GUI
         public string CustomerName
         {
             get { return _name; }
-            set { _name = value; lblCustomerName.Text = value; }
+            set { _name = value; lblTen.Text = value; }
         }
 
         [Category("Custom")]
         public string Id
         {
             get { return _id; }
-            set { _id = value; lblIDNumber.Text = value; }
+            set { _id = value; lblID.Text = value; }
         }
 
         [Category("Custom")]
         public string Type
         {
             get { return _type; }
-            set { _type = value; lblType.Text = value; }
+            set { _type = value; lblLoai.Text = value; }
         }
 
         [Category("Custom")]

@@ -10,14 +10,11 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class AddCustomers : Form
+    public partial class ThemLoaiTietKiem : Form
     {
-        public AddCustomers()
+        public ThemLoaiTietKiem()
         {
             InitializeComponent();
-            //customizeDesign();
-            // Thiết lập không cho phép thay đổi kích thước Form
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -26,4 +23,3 @@ namespace GUI
         }
     }
 }
-

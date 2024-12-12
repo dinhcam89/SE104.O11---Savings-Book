@@ -11,15 +11,11 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GUI.DashboardApp
 {
-    public partial class ucSaleReports : UserControl
+    public partial class ucDoanhSoHoatDong : UserControl
     {
-        public ucSaleReports()
+        public ucDoanhSoHoatDong()
         {
             InitializeComponent();
-
-            // Thêm dữ liệu vào ComboBox
-            string[] timePeriods = { "Hôm nay", "7 ngày", "1 tháng", "1 năm" };
-            cboxDateType.Items.AddRange(timePeriods);
         }
 
         private void chartRevenue_Load(object sender, EventArgs e)
@@ -37,8 +33,8 @@ namespace GUI.DashboardApp
 
 
             // Thêm dataset vào biểu đồ
-            chartRevenue.Datasets.Add(barSeries);
-            chartRevenue.Update();
+            chartDoanhThu.Datasets.Add(barSeries);
+            chartDoanhThu.Update();
         }
 
         private void chartExpenditure_Load(object sender, EventArgs e)
@@ -55,8 +51,8 @@ namespace GUI.DashboardApp
 
 
             // Thêm dataset vào biểu đồ
-            chartExpenditure.Datasets.Add(barSeries);
-            chartExpenditure.Update();
+            chartChiTieu.Datasets.Add(barSeries);
+            chartChiTieu.Update();
         }
 
         private void chartDifference_Load(object sender, EventArgs e)
@@ -80,8 +76,8 @@ namespace GUI.DashboardApp
             differenceSeries.DataPoints.Add("Kỳ hạn 6 tháng", revenue6Months - expenditure6Months);
 
             // Thêm dataset vào biểu đồ chênh lệch
-            chartDifference.Datasets.Add(differenceSeries);
-            chartDifference.Update();
+            chartChenhLech.Datasets.Add(differenceSeries);
+            chartChenhLech.Update();
         }
 
         private void guna2Panel3_Paint(object sender, PaintEventArgs e)

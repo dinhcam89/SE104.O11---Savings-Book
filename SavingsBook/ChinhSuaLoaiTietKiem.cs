@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class EditAdjustRateForm : Form
+    public partial class ChinhSuaLoaiTietKiem : Form
     {
-        public EditAdjustRateForm()
+        public ChinhSuaLoaiTietKiem()
         {
             InitializeComponent();
         }
@@ -39,28 +39,34 @@ namespace GUI
         {
             if (btnSua.Text == "Sửa")
             {
-                ToggleToEditMode(lblMoney, txtMoney);
-                ToggleToEditMode(lblAdjustRate, txtAdjustRate);
-                ToggleToEditMode(lblMinimumTime, txtMinimumTime);
+                ToggleToEditMode(lblSoTienGuiToiThieu, txtSoTienGuiToiThieu);
+                ToggleToEditMode(lblLaiSuat, txtLaiSuat);
+                ToggleToEditMode(lblThoiGianGuiToiThieu, txtThoiGianGuiToiThieu);
                 ToggleToEditMode(lblSoTienRutToiThieu, txtSoTienRutToiThieu);
 
-                btnSua.Text = "Cập nhật";}
+                btnSua.Text = "Cập nhật";
+            }
 
-             else
-             {
+            else
+            {
 
-                 SaveFromTextBox(lblMoney, txtMoney);
-                 SaveFromTextBox(lblAdjustRate, txtAdjustRate);
-                 SaveFromTextBox(lblMinimumTime, txtMinimumTime);
-                 SaveFromTextBox(lblSoTienRutToiThieu, txtSoTienRutToiThieu);
-                
-                 btnSua.Text = "Sửa";
-             }
-            
+                SaveFromTextBox(lblSoTienGuiToiThieu, txtSoTienGuiToiThieu);
+                SaveFromTextBox(lblLaiSuat, txtLaiSuat);
+                SaveFromTextBox(lblThoiGianGuiToiThieu, txtThoiGianGuiToiThieu);
+                SaveFromTextBox(lblSoTienRutToiThieu, txtSoTienRutToiThieu);
+
+                btnSua.Text = "Sửa";
+            }
+
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtAdjustRate_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -10,22 +10,21 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class WithdrawalReceiptForm : Form
+    public partial class ThemTaiKhoan : Form
     {
-        public WithdrawalReceiptForm()
+        public ThemTaiKhoan()
         {
             InitializeComponent();
             // Thiết lập không cho phép thay đổi kích thước Form
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
+            string[] phongban = { "Phòng Kế Hoạch", "Phòng Tài Chính", "Phòng Nhân Sự" };
+            cboxPhongBan.Items.AddRange(phongban);
         }
 
-        private void btnClose_Click_1(object sender, EventArgs e)
+        private void btnHuy_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-
-
     }
 }

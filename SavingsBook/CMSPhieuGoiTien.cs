@@ -32,19 +32,19 @@ namespace GUI
         }
         private void OpenManagementForm(object sender, EventArgs e)
         {
-            SlotInfor slotInfor = new SlotInfor();
+            ThongTinPhieu slotInfor = new ThongTinPhieu();
             slotInfor.Show();
         }
 
         private void OpenDepositForm(object sender, EventArgs e)
         {
-            DepositReceiptForm form = new DepositReceiptForm();
+            GuiTien form = new GuiTien();
             form.Show();
         }
 
         private void OpenWithdrawalForm(object sender, EventArgs e)
         {
-            WithdrawalReceiptForm form = new WithdrawalReceiptForm();
+            RutTienForm form = new RutTienForm();
             form.Show();
         }
 

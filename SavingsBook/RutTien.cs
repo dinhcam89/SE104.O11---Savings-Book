@@ -10,16 +10,22 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class AddAjustRateForm : Form
+    public partial class RutTienForm : Form
     {
-        public AddAjustRateForm()
+        public RutTienForm()
         {
             InitializeComponent();
+            // Thiết lập không cho phép thay đổi kích thước Form
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void btnClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
+
+
+
     }
 }
