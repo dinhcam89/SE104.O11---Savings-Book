@@ -1,6 +1,6 @@
 ﻿namespace GUI.DashboardApp
 {
-    partial class ucQuanLySoTietKiem
+    partial class ucQuanLyPhieu
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucQuanLySoTietKiem));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucQuanLyPhieu));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -146,7 +146,7 @@
             lblLoaiTietKiem0.BackColor = Color.Transparent;
             lblLoaiTietKiem0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblLoaiTietKiem0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblLoaiTietKiem0.Location = new Point(538, 11);
+            lblLoaiTietKiem0.Location = new Point(437, 10);
             lblLoaiTietKiem0.Name = "lblLoaiTietKiem0";
             lblLoaiTietKiem0.Size = new Size(100, 20);
             lblLoaiTietKiem0.TabIndex = 4;
@@ -158,7 +158,7 @@
             lblMaPhieuTietKiem0.BackColor = Color.Transparent;
             lblMaPhieuTietKiem0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblMaPhieuTietKiem0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblMaPhieuTietKiem0.Location = new Point(305, 11);
+            lblMaPhieuTietKiem0.Location = new Point(229, 10);
             lblMaPhieuTietKiem0.Name = "lblMaPhieuTietKiem0";
             lblMaPhieuTietKiem0.Size = new Size(137, 20);
             lblMaPhieuTietKiem0.TabIndex = 5;
@@ -170,7 +170,7 @@
             lblTenKhachHang0.BackColor = Color.Transparent;
             lblTenKhachHang0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTenKhachHang0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblTenKhachHang0.Location = new Point(99, 11);
+            lblTenKhachHang0.Location = new Point(27, 10);
             lblTenKhachHang0.Name = "lblTenKhachHang0";
             lblTenKhachHang0.Size = new Size(117, 20);
             lblTenKhachHang0.TabIndex = 4;
@@ -202,14 +202,14 @@
             btnThemPhieu.TextOffset = new Point(-20, 0);
             btnThemPhieu.Click += btnAdd_Click;
             // 
-            // ucQuanLySoTietKiem
+            // ucQuanLyPhieu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             Controls.Add(guna2Panel2);
             ForeColor = Color.FromArgb(255, 87, 87);
-            Name = "ucQuanLySoTietKiem";
+            Name = "ucQuanLyPhieu";
             Size = new Size(966, 634);
             Load += ucManageSavingBooks_Load;
             guna2Panel2.ResumeLayout(false);

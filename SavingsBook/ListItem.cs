@@ -29,10 +29,10 @@ namespace GUI
             InitializeComponent();
         }
 
-        private string _name;
-        private string _id;
-        private string _type;
-        private Image _image;
+        private string _ten1;
+        private string _ten2;
+        private string _ten3;
+        private string _ten4;
         private ObjectType _formType;
 
         [Category("Custom")]
@@ -78,31 +78,31 @@ namespace GUI
         [Category("Custom")]
         [Browsable(true)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
-        public string CustomerName
+        public string Ten1
         {
-            get { return _name; }
-            set { _name = value; lblTen.Text = value; }
+            get { return _ten1; }
+            set { _ten1 = value; lblTen1.Text = value; }
         }
 
         [Category("Custom")]
-        public string Id
+        public string Ten2
         {
-            get { return _id; }
-            set { _id = value; lblID.Text = value; }
+            get { return _ten2; }
+            set { _ten2 = value; lblTen2.Text = value; }
         }
 
         [Category("Custom")]
-        public string Type
+        public string Ten3
         {
-            get { return _type; }
-            set { _type = value; lblLoai.Text = value; }
+            get { return _ten3; }
+            set { _ten3 = value; lblTen3.Text = value; }
         }
 
         [Category("Custom")]
-        public Image Avatar
+        public string Ten4
         {
-            get { return _image; }
-            set { _image = value; picAvatar.Image = value; }
+            get { return _ten4; }
+            set { _ten4 = value; lblTen4.Text = value; }
         }
 
         // Property: Form type

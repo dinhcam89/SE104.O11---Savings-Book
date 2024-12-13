@@ -14,8 +14,8 @@ namespace GUI
     public partial class Dashboard : Form
     {
 
-        private ucQuanLySoTietKiem ucSearch;        
-        private ucQuanLySoTietKiem ucManageSavingBooks;
+        private ucQuanLyPhieu ucSearch;        
+        private ucQuanLyPhieu ucManageSavingBooks;
         private ucQuanLyKhachHang ucManageCustomers;
         private ucDoanhSoHoatDong ucSaleReport;
         private ucQuanLyLoaiTietKiem ucEditAdjustRate;
@@ -47,7 +47,7 @@ namespace GUI
                 case "manageSavingBooks":
                     if (this.ucManageSavingBooks == null)
                     {
-                        this.ucManageSavingBooks = new ucQuanLySoTietKiem();
+                        this.ucManageSavingBooks = new ucQuanLyPhieu();
                         this.panelMain.Controls.Add(ucManageSavingBooks);
                         this.ucManageSavingBooks.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.ucManageSavingBooks.Location = new System.Drawing.Point(0, 0);

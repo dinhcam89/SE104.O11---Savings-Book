@@ -36,40 +36,40 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            panel1 = new Panel();
             txtSoTaiKhoanThanhToan = new Guna.UI2.WinForms.Guna2TextBox();
-            DTPNgaySinh = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            txtSDT = new Guna.UI2.WinForms.Guna2TextBox();
-            lblSDT0 = new Label();
-            btnHuy = new Guna.UI2.WinForms.Guna2Button();
             lblTitle = new Label();
-            lblNgaySinh0 = new Label();
+            DTPNgaySinh = new Guna.UI2.WinForms.Guna2DateTimePicker();
             btnTao = new Guna.UI2.WinForms.Guna2Button();
+            txtSDT = new Guna.UI2.WinForms.Guna2TextBox();
+            lblCMND0 = new Label();
+            lblSDT0 = new Label();
+            lblDiaChi0 = new Label();
+            btnHuy = new Guna.UI2.WinForms.Guna2Button();
+            lblMaKhachHang0 = new Label();
+            lblNgaySinh0 = new Label();
+            txtMaKhachHang = new Guna.UI2.WinForms.Guna2TextBox();
+            txtTenKhachHang = new Guna.UI2.WinForms.Guna2TextBox();
             txtDiaChi = new Guna.UI2.WinForms.Guna2TextBox();
+            lblSTKThanhToan0 = new Label();
             lblTenKhachHang0 = new Label();
             txtCMND = new Guna.UI2.WinForms.Guna2TextBox();
-            lblSTKThanhToan0 = new Label();
-            txtTenKhachHang = new Guna.UI2.WinForms.Guna2TextBox();
-            txtMaKhachHang = new Guna.UI2.WinForms.Guna2TextBox();
-            lblMaKhachHang0 = new Label();
-            lblDiaChi0 = new Label();
-            lblCMND0 = new Label();
-            panel1 = new Panel();
             guna2Panel1.SuspendLayout();
             guna2GradientPanel1.SuspendLayout();
             panel1.SuspendLayout();
@@ -104,6 +104,32 @@
             guna2GradientPanel1.Size = new Size(552, 657);
             guna2GradientPanel1.TabIndex = 27;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(txtSoTaiKhoanThanhToan);
+            panel1.Controls.Add(lblTitle);
+            panel1.Controls.Add(DTPNgaySinh);
+            panel1.Controls.Add(btnTao);
+            panel1.Controls.Add(txtSDT);
+            panel1.Controls.Add(lblCMND0);
+            panel1.Controls.Add(lblSDT0);
+            panel1.Controls.Add(lblDiaChi0);
+            panel1.Controls.Add(btnHuy);
+            panel1.Controls.Add(lblMaKhachHang0);
+            panel1.Controls.Add(lblNgaySinh0);
+            panel1.Controls.Add(txtMaKhachHang);
+            panel1.Controls.Add(txtTenKhachHang);
+            panel1.Controls.Add(txtDiaChi);
+            panel1.Controls.Add(lblSTKThanhToan0);
+            panel1.Controls.Add(lblTenKhachHang0);
+            panel1.Controls.Add(txtCMND);
+            panel1.ForeColor = Color.White;
+            panel1.Location = new Point(12, 12);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(528, 631);
+            panel1.TabIndex = 41;
+            // 
             // txtSoTaiKhoanThanhToan
             // 
             txtSoTaiKhoanThanhToan.BackColor = Color.Transparent;
@@ -129,6 +155,19 @@
             txtSoTaiKhoanThanhToan.Size = new Size(480, 41);
             txtSoTaiKhoanThanhToan.TabIndex = 40;
             // 
+            // lblTitle
+            // 
+            lblTitle.Anchor = AnchorStyles.Top;
+            lblTitle.AutoSize = true;
+            lblTitle.BackColor = Color.Transparent;
+            lblTitle.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            lblTitle.ForeColor = Color.FromArgb(120, 126, 253);
+            lblTitle.Location = new Point(154, 9);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(230, 30);
+            lblTitle.TabIndex = 35;
+            lblTitle.Text = "THÊM KHÁCH HÀNG";
+            // 
             // DTPNgaySinh
             // 
             DTPNgaySinh.Checked = true;
@@ -145,6 +184,25 @@
             DTPNgaySinh.Size = new Size(480, 46);
             DTPNgaySinh.TabIndex = 39;
             DTPNgaySinh.Value = new DateTime(2024, 12, 12, 1, 43, 53, 247);
+            // 
+            // btnTao
+            // 
+            btnTao.BorderRadius = 15;
+            btnTao.CustomizableEdges = customizableEdges5;
+            btnTao.DisabledState.BorderColor = Color.DarkGray;
+            btnTao.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnTao.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnTao.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnTao.FillColor = Color.FromArgb(120, 126, 253);
+            btnTao.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnTao.ForeColor = Color.White;
+            btnTao.Location = new Point(393, 577);
+            btnTao.Name = "btnTao";
+            btnTao.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnTao.Size = new Size(109, 45);
+            btnTao.TabIndex = 27;
+            btnTao.Text = "Tạo";
+            btnTao.Click += btnTao_Click;
             // 
             // txtSDT
             // 
@@ -171,6 +229,18 @@
             txtSDT.Size = new Size(480, 41);
             txtSDT.TabIndex = 38;
             // 
+            // lblCMND0
+            // 
+            lblCMND0.AutoSize = true;
+            lblCMND0.BackColor = Color.Transparent;
+            lblCMND0.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            lblCMND0.ForeColor = Color.FromArgb(120, 126, 253);
+            lblCMND0.Location = new Point(22, 268);
+            lblCMND0.Name = "lblCMND0";
+            lblCMND0.Size = new Size(100, 20);
+            lblCMND0.TabIndex = 20;
+            lblCMND0.Text = "CCCD/CMND";
+            // 
             // lblSDT0
             // 
             lblSDT0.AutoSize = true;
@@ -179,9 +249,21 @@
             lblSDT0.ForeColor = Color.FromArgb(120, 126, 253);
             lblSDT0.Location = new Point(22, 190);
             lblSDT0.Name = "lblSDT0";
-            lblSDT0.Size = new Size(37, 20);
+            lblSDT0.Size = new Size(100, 20);
             lblSDT0.TabIndex = 37;
-            lblSDT0.Text = "SĐT";
+            lblSDT0.Text = "Số điện thoại";
+            // 
+            // lblDiaChi0
+            // 
+            lblDiaChi0.AutoSize = true;
+            lblDiaChi0.BackColor = Color.Transparent;
+            lblDiaChi0.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            lblDiaChi0.ForeColor = Color.FromArgb(120, 126, 253);
+            lblDiaChi0.Location = new Point(22, 339);
+            lblDiaChi0.Name = "lblDiaChi0";
+            lblDiaChi0.Size = new Size(56, 20);
+            lblDiaChi0.TabIndex = 22;
+            lblDiaChi0.Text = "Địa chỉ";
             // 
             // btnHuy
             // 
@@ -205,18 +287,17 @@
             btnHuy.Text = "Hủy";
             btnHuy.Click += btnHuy_Click;
             // 
-            // lblTitle
+            // lblMaKhachHang0
             // 
-            lblTitle.Anchor = AnchorStyles.Top;
-            lblTitle.AutoSize = true;
-            lblTitle.BackColor = Color.Transparent;
-            lblTitle.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            lblTitle.ForeColor = Color.FromArgb(120, 126, 253);
-            lblTitle.Location = new Point(154, 9);
-            lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(230, 30);
-            lblTitle.TabIndex = 35;
-            lblTitle.Text = "THÊM KHÁCH HÀNG";
+            lblMaKhachHang0.AutoSize = true;
+            lblMaKhachHang0.BackColor = Color.Transparent;
+            lblMaKhachHang0.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            lblMaKhachHang0.ForeColor = Color.FromArgb(120, 126, 253);
+            lblMaKhachHang0.Location = new Point(22, 117);
+            lblMaKhachHang0.Name = "lblMaKhachHang0";
+            lblMaKhachHang0.Size = new Size(115, 20);
+            lblMaKhachHang0.TabIndex = 15;
+            lblMaKhachHang0.Text = "Mã khách hàng";
             // 
             // lblNgaySinh0
             // 
@@ -230,24 +311,54 @@
             lblNgaySinh0.TabIndex = 34;
             lblNgaySinh0.Text = "Ngày sinh";
             // 
-            // btnTao
+            // txtMaKhachHang
             // 
-            btnTao.BorderRadius = 15;
-            btnTao.CustomizableEdges = customizableEdges5;
-            btnTao.DisabledState.BorderColor = Color.DarkGray;
-            btnTao.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnTao.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnTao.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnTao.FillColor = Color.FromArgb(120, 126, 253);
-            btnTao.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnTao.ForeColor = Color.White;
-            btnTao.Location = new Point(393, 577);
-            btnTao.Name = "btnTao";
-            btnTao.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnTao.Size = new Size(109, 45);
-            btnTao.TabIndex = 27;
-            btnTao.Text = "Tạo";
-            btnTao.Click += btnTao_Click;
+            txtMaKhachHang.BackColor = Color.Transparent;
+            txtMaKhachHang.BorderColor = Color.FromArgb(120, 126, 253);
+            txtMaKhachHang.BorderRadius = 10;
+            txtMaKhachHang.CustomizableEdges = customizableEdges11;
+            txtMaKhachHang.DefaultText = "";
+            txtMaKhachHang.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtMaKhachHang.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtMaKhachHang.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtMaKhachHang.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtMaKhachHang.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtMaKhachHang.Font = new Font("Segoe UI", 9F);
+            txtMaKhachHang.ForeColor = Color.Empty;
+            txtMaKhachHang.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtMaKhachHang.ImeMode = ImeMode.On;
+            txtMaKhachHang.Location = new Point(22, 140);
+            txtMaKhachHang.Name = "txtMaKhachHang";
+            txtMaKhachHang.PasswordChar = '\0';
+            txtMaKhachHang.PlaceholderText = "";
+            txtMaKhachHang.SelectedText = "";
+            txtMaKhachHang.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            txtMaKhachHang.Size = new Size(480, 41);
+            txtMaKhachHang.TabIndex = 16;
+            // 
+            // txtTenKhachHang
+            // 
+            txtTenKhachHang.BackColor = Color.Transparent;
+            txtTenKhachHang.BorderColor = Color.FromArgb(120, 126, 253);
+            txtTenKhachHang.BorderRadius = 10;
+            txtTenKhachHang.CustomizableEdges = customizableEdges13;
+            txtTenKhachHang.DefaultText = "";
+            txtTenKhachHang.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtTenKhachHang.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtTenKhachHang.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtTenKhachHang.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtTenKhachHang.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtTenKhachHang.Font = new Font("Segoe UI", 9F);
+            txtTenKhachHang.ForeColor = Color.Empty;
+            txtTenKhachHang.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtTenKhachHang.Location = new Point(22, 63);
+            txtTenKhachHang.Name = "txtTenKhachHang";
+            txtTenKhachHang.PasswordChar = '\0';
+            txtTenKhachHang.PlaceholderText = "";
+            txtTenKhachHang.SelectedText = "";
+            txtTenKhachHang.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            txtTenKhachHang.Size = new Size(480, 41);
+            txtTenKhachHang.TabIndex = 14;
             // 
             // txtDiaChi
             // 
@@ -273,6 +384,18 @@
             txtDiaChi.ShadowDecoration.CustomizableEdges = customizableEdges16;
             txtDiaChi.Size = new Size(480, 41);
             txtDiaChi.TabIndex = 23;
+            // 
+            // lblSTKThanhToan0
+            // 
+            lblSTKThanhToan0.AutoSize = true;
+            lblSTKThanhToan0.BackColor = Color.Transparent;
+            lblSTKThanhToan0.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            lblSTKThanhToan0.ForeColor = Color.FromArgb(120, 126, 253);
+            lblSTKThanhToan0.Location = new Point(22, 499);
+            lblSTKThanhToan0.Name = "lblSTKThanhToan0";
+            lblSTKThanhToan0.Size = new Size(176, 20);
+            lblSTKThanhToan0.TabIndex = 24;
+            lblSTKThanhToan0.Text = "Số tài khoản thanh toán";
             // 
             // lblTenKhachHang0
             // 
@@ -310,129 +433,6 @@
             txtCMND.ShadowDecoration.CustomizableEdges = customizableEdges18;
             txtCMND.Size = new Size(480, 41);
             txtCMND.TabIndex = 21;
-            // 
-            // lblSTKThanhToan0
-            // 
-            lblSTKThanhToan0.AutoSize = true;
-            lblSTKThanhToan0.BackColor = Color.Transparent;
-            lblSTKThanhToan0.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            lblSTKThanhToan0.ForeColor = Color.FromArgb(120, 126, 253);
-            lblSTKThanhToan0.Location = new Point(22, 499);
-            lblSTKThanhToan0.Name = "lblSTKThanhToan0";
-            lblSTKThanhToan0.Size = new Size(176, 20);
-            lblSTKThanhToan0.TabIndex = 24;
-            lblSTKThanhToan0.Text = "Số tài khoản thanh toán";
-            // 
-            // txtTenKhachHang
-            // 
-            txtTenKhachHang.BackColor = Color.Transparent;
-            txtTenKhachHang.BorderColor = Color.FromArgb(120, 126, 253);
-            txtTenKhachHang.BorderRadius = 10;
-            txtTenKhachHang.CustomizableEdges = customizableEdges13;
-            txtTenKhachHang.DefaultText = "";
-            txtTenKhachHang.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtTenKhachHang.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtTenKhachHang.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtTenKhachHang.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtTenKhachHang.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTenKhachHang.Font = new Font("Segoe UI", 9F);
-            txtTenKhachHang.ForeColor = Color.Empty;
-            txtTenKhachHang.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTenKhachHang.Location = new Point(22, 63);
-            txtTenKhachHang.Name = "txtTenKhachHang";
-            txtTenKhachHang.PasswordChar = '\0';
-            txtTenKhachHang.PlaceholderText = "";
-            txtTenKhachHang.SelectedText = "";
-            txtTenKhachHang.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            txtTenKhachHang.Size = new Size(480, 41);
-            txtTenKhachHang.TabIndex = 14;
-            // 
-            // txtMaKhachHang
-            // 
-            txtMaKhachHang.BackColor = Color.Transparent;
-            txtMaKhachHang.BorderColor = Color.FromArgb(120, 126, 253);
-            txtMaKhachHang.BorderRadius = 10;
-            txtMaKhachHang.CustomizableEdges = customizableEdges11;
-            txtMaKhachHang.DefaultText = "";
-            txtMaKhachHang.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtMaKhachHang.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtMaKhachHang.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtMaKhachHang.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtMaKhachHang.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtMaKhachHang.Font = new Font("Segoe UI", 9F);
-            txtMaKhachHang.ForeColor = Color.Empty;
-            txtMaKhachHang.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtMaKhachHang.ImeMode = ImeMode.On;
-            txtMaKhachHang.Location = new Point(22, 140);
-            txtMaKhachHang.Name = "txtMaKhachHang";
-            txtMaKhachHang.PasswordChar = '\0';
-            txtMaKhachHang.PlaceholderText = "";
-            txtMaKhachHang.SelectedText = "";
-            txtMaKhachHang.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            txtMaKhachHang.Size = new Size(480, 41);
-            txtMaKhachHang.TabIndex = 16;
-            // 
-            // lblMaKhachHang0
-            // 
-            lblMaKhachHang0.AutoSize = true;
-            lblMaKhachHang0.BackColor = Color.Transparent;
-            lblMaKhachHang0.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            lblMaKhachHang0.ForeColor = Color.FromArgb(120, 126, 253);
-            lblMaKhachHang0.Location = new Point(22, 117);
-            lblMaKhachHang0.Name = "lblMaKhachHang0";
-            lblMaKhachHang0.Size = new Size(115, 20);
-            lblMaKhachHang0.TabIndex = 15;
-            lblMaKhachHang0.Text = "Mã khách hàng";
-            // 
-            // lblDiaChi0
-            // 
-            lblDiaChi0.AutoSize = true;
-            lblDiaChi0.BackColor = Color.Transparent;
-            lblDiaChi0.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            lblDiaChi0.ForeColor = Color.FromArgb(120, 126, 253);
-            lblDiaChi0.Location = new Point(22, 339);
-            lblDiaChi0.Name = "lblDiaChi0";
-            lblDiaChi0.Size = new Size(56, 20);
-            lblDiaChi0.TabIndex = 22;
-            lblDiaChi0.Text = "Địa chỉ";
-            // 
-            // lblCMND0
-            // 
-            lblCMND0.AutoSize = true;
-            lblCMND0.BackColor = Color.Transparent;
-            lblCMND0.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            lblCMND0.ForeColor = Color.FromArgb(120, 126, 253);
-            lblCMND0.Location = new Point(22, 268);
-            lblCMND0.Name = "lblCMND0";
-            lblCMND0.Size = new Size(100, 20);
-            lblCMND0.TabIndex = 20;
-            lblCMND0.Text = "CCCD/CMND";
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.White;
-            panel1.Controls.Add(txtSoTaiKhoanThanhToan);
-            panel1.Controls.Add(lblTitle);
-            panel1.Controls.Add(DTPNgaySinh);
-            panel1.Controls.Add(btnTao);
-            panel1.Controls.Add(txtSDT);
-            panel1.Controls.Add(lblCMND0);
-            panel1.Controls.Add(lblSDT0);
-            panel1.Controls.Add(lblDiaChi0);
-            panel1.Controls.Add(btnHuy);
-            panel1.Controls.Add(lblMaKhachHang0);
-            panel1.Controls.Add(lblNgaySinh0);
-            panel1.Controls.Add(txtMaKhachHang);
-            panel1.Controls.Add(txtTenKhachHang);
-            panel1.Controls.Add(txtDiaChi);
-            panel1.Controls.Add(lblSTKThanhToan0);
-            panel1.Controls.Add(lblTenKhachHang0);
-            panel1.Controls.Add(txtCMND);
-            panel1.ForeColor = Color.White;
-            panel1.Location = new Point(12, 12);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(528, 631);
-            panel1.TabIndex = 41;
             // 
             // ThemKhachHang
             // 

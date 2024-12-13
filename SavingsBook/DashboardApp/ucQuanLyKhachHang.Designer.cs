@@ -45,6 +45,7 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             btnAdd = new Guna.UI2.WinForms.Guna2GradientButton();
             guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            label1 = new Label();
             lblLoaiTietKiem0 = new Label();
             lblMaPhieuTietKiem0 = new Label();
             lbltenKhachHang0 = new Label();
@@ -124,6 +125,7 @@
             guna2Panel5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             guna2Panel5.BorderColor = Color.Transparent;
             guna2Panel5.BorderRadius = 10;
+            guna2Panel5.Controls.Add(label1);
             guna2Panel5.Controls.Add(lblLoaiTietKiem0);
             guna2Panel5.Controls.Add(lblMaPhieuTietKiem0);
             guna2Panel5.Controls.Add(lbltenKhachHang0);
@@ -135,17 +137,29 @@
             guna2Panel5.Size = new Size(872, 42);
             guna2Panel5.TabIndex = 20;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(37, 10, 128);
+            label1.Location = new Point(638, 11);
+            label1.Name = "label1";
+            label1.Size = new Size(132, 20);
+            label1.TabIndex = 6;
+            label1.Text = "Số phiếu tiết kiệm";
+            // 
             // lblLoaiTietKiem0
             // 
             lblLoaiTietKiem0.AutoSize = true;
             lblLoaiTietKiem0.BackColor = Color.Transparent;
             lblLoaiTietKiem0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblLoaiTietKiem0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblLoaiTietKiem0.Location = new Point(545, 11);
+            lblLoaiTietKiem0.Location = new Point(441, 11);
             lblLoaiTietKiem0.Name = "lblLoaiTietKiem0";
-            lblLoaiTietKiem0.Size = new Size(100, 20);
+            lblLoaiTietKiem0.Size = new Size(48, 20);
             lblLoaiTietKiem0.TabIndex = 4;
-            lblLoaiTietKiem0.Text = "Loại tiết kiệm";
+            lblLoaiTietKiem0.Text = "Số dư";
             // 
             // lblMaPhieuTietKiem0
             // 
@@ -153,11 +167,11 @@
             lblMaPhieuTietKiem0.BackColor = Color.Transparent;
             lblMaPhieuTietKiem0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblMaPhieuTietKiem0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblMaPhieuTietKiem0.Location = new Point(310, 11);
+            lblMaPhieuTietKiem0.Location = new Point(237, 11);
             lblMaPhieuTietKiem0.Name = "lblMaPhieuTietKiem0";
-            lblMaPhieuTietKiem0.Size = new Size(137, 20);
+            lblMaPhieuTietKiem0.Size = new Size(115, 20);
             lblMaPhieuTietKiem0.TabIndex = 5;
-            lblMaPhieuTietKiem0.Text = "Mã phiếu tiết kiệm";
+            lblMaPhieuTietKiem0.Text = "Mã khách hàng";
             // 
             // lbltenKhachHang0
             // 
@@ -165,7 +179,7 @@
             lbltenKhachHang0.BackColor = Color.Transparent;
             lbltenKhachHang0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbltenKhachHang0.ForeColor = Color.FromArgb(37, 10, 128);
-            lbltenKhachHang0.Location = new Point(106, 11);
+            lbltenKhachHang0.Location = new Point(28, 11);
             lbltenKhachHang0.Name = "lbltenKhachHang0";
             lbltenKhachHang0.Size = new Size(117, 20);
             lbltenKhachHang0.TabIndex = 4;
@@ -245,6 +259,7 @@
         private Label lbltenKhachHang0;
         private Guna.UI2.WinForms.Guna2GradientButton btnAdd;
         private FlowLayoutPanel flowLayoutPanel1;
+        private Label label1;
     }
 
 }

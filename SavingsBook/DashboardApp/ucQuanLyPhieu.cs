@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace GUI.DashboardApp
 {
-    public partial class ucQuanLySoTietKiem : UserControl
+    public partial class ucQuanLyPhieu : UserControl
     {
-        public ucQuanLySoTietKiem()
+        public ucQuanLyPhieu()
         {
             InitializeComponent();
         }
@@ -38,9 +38,10 @@ namespace GUI.DashboardApp
             for (int i = 0; i < listItems.Length; i++)
             {
                 listItems[i] = new ListItem();
-                listItems[i].CustomerName = "Tên khách hàng " + i;
-                listItems[i].Id = "Mã khách hàng " + i;
-                listItems[i].Type = "Loại kỳ hạn " + i;
+                listItems[i].Ten1 = "Tên khách hàng " + i;
+                listItems[i].Ten2 = "Mã khách hàng " + i;
+                listItems[i].Ten3 = "Loại kỳ hạn " + i;
+                listItems[i].Ten4 = "";
                 //listItems[i].btnCustom.Text = "Xem";
                 listItems[i].FormType = ObjectType.PhieuGoiTien;
 

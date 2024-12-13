@@ -30,9 +30,10 @@ namespace GUI
             for (int i = 0; i < listItems.Length; i++)
             {
                 listItems[i] = new ListItem();
-                listItems[i].CustomerName = "Tên Nhân viên " + i;
-                listItems[i].Id = "Chức vụ nhân viên " + i;
-                listItems[i].Type = "Phòng ban nhân viên " + i;
+                listItems[i].Ten1 = "Tên Nhân viên " + i;
+                listItems[i].Ten2 = "Chức vụ nhân viên " + i;
+                listItems[i].Ten3 = "Phòng ban nhân viên " + i;
+                listItems[i].Ten4 = "";
 
 
                 flowLayoutPanel1.Controls.Add(listItems[i]);
