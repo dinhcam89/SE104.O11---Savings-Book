@@ -29,7 +29,7 @@ namespace DAO
             return connection;
         }
 
-        public DataTable? executeSelectQuery(String _query, SqlParameter[] sqlParameter)
+        public DataTable? executeSelectQuery(String _query, SqlParameter[]? sqlParameter)
         {
             SqlCommand myCommand = new SqlCommand();
             DataTable dataTable = new DataTable();
@@ -39,7 +39,8 @@ namespace DAO
             {
                 myCommand.Connection = openConnection();
                 myCommand.CommandText = _query;
-                myCommand.Parameters.AddRange(sqlParameter);
+                if (sqlParameter != null)
+                    myCommand.Parameters.AddRange(sqlParameter);
                 myCommand.ExecuteNonQuery();
                 adapter.SelectCommand = myCommand;
                 adapter.Fill(ds);

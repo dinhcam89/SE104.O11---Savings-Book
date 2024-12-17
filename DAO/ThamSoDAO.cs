@@ -25,8 +25,8 @@ namespace DAO
             if (dataTable != null)
             {
                 ThamSo thamSo = new ThamSo();
-                thamSo.SoTienGuiBanDauToiThieu = double.Parse(dataTable.Rows[0]["SoTienGuiBanDauToiThieu"].ToString() ?? "0");
-                thamSo.SoTienGuiThemToiThieu = double.Parse(dataTable.Rows[0]["SoTienGuiThemToiThieu"].ToString() ?? "0");
+                thamSo.SoTienBanDauToiThieu = double.Parse(dataTable.Rows[0]["SoTienBanDauToiThieu"].ToString() ?? "0");
+                thamSo.SoTienGoiThemToiThieu = double.Parse(dataTable.Rows[0]["SoTienGoiThemToiThieu"].ToString() ?? "0");
                 return thamSo;
             }
             return null;
@@ -41,8 +41,8 @@ namespace DAO
                 "   SoTienGoiThemToiThieu = @SoTienGoiThemToiThieu";
             SqlParameter[] sqlParameters =
             [
-                new SqlParameter("@SoTienGuiBanDauToiThieu", thamSo.SoTienGuiBanDauToiThieu),
-                new SqlParameter("@SoTienGuiThemToiThieu", thamSo.SoTienGuiThemToiThieu),
+                new SqlParameter("@SoTienBanDauToiThieu", thamSo.SoTienBanDauToiThieu),
+                new SqlParameter("@SoTienGoiThemToiThieu", thamSo.SoTienGoiThemToiThieu),
             ];
             bool response = dbConnection.executeUpdateQuery(query, sqlParameters);
             return response;
