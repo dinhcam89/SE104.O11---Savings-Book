@@ -172,6 +172,7 @@
             btnDatLai.Size = new Size(146, 60);
             btnDatLai.TabIndex = 6;
             btnDatLai.Text = "Đặt lại";
+            btnDatLai.Click += btnDatLai_Click;
             // 
             // panel1
             // 

@@ -50,5 +50,12 @@ namespace GUI.DashboardApp
             _thamSoBUS.updateThamSo(new ThamSo(double.Parse(tbSoTienBanDauToiThieu.Text), double.Parse(tbSoTienGoiThemToiThieu.Text)));
             loadThamSo();
         }
+
+        private void btnDatLai_Click(object sender, EventArgs e)
+        {
+            ThamSo defaultThamSo = new ThamSo(100000, 0);
+            _thamSoBUS.updateThamSo(defaultThamSo);
+            loadThamSo();
+        }
     }
 }
