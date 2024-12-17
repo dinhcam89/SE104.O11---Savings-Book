@@ -15,20 +15,40 @@ namespace GUI.DashboardApp
     public partial class ucChinhSuaQuyDinh : UserControl
     {
         private ThamSoBUS _thamSoBUS = new ThamSoBUS();
+        private ThamSo? thamSo;
         public ucChinhSuaQuyDinh()
         {
             InitializeComponent();
-            ThamSo? thamSo = _thamSoBUS.getThamSo();
+        }
+        private void loadThamSo()
+        {
+            thamSo = _thamSoBUS.getThamSo();
             if (thamSo != null)
             {
                 tbSoTienBanDauToiThieu.Text = thamSo.SoTienBanDauToiThieu.ToString();
                 tbSoTienGoiThemToiThieu.Text = thamSo.SoTienGoiThemToiThieu.ToString();
-            } else
-            {
-                MessageBox.Show("Không thể lấy dữ liệu từ database");
-                tbSoTienBanDauToiThieu.Text = "0";
-                tbSoTienGoiThemToiThieu.Text = "0";
             }
+            else
+            {
+                MessageBox.Show("Không thể lấy thông tin quy định từ cơ sở dữ liệu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tbSoTienBanDauToiThieu.Text = "";
+                tbSoTienGoiThemToiThieu.Text = "";
+            }
+        }
+        private void ucChinhSuaQuyDinh_Layout(object sender, LayoutEventArgs e)
+        {
+            loadThamSo();
+        }
+
+        private void btnXacNhan_Click(object sender, EventArgs e)
+        {
+            if (tbSoTienBanDauToiThieu.Text == "" || tbSoTienGoiThemToiThieu.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            _thamSoBUS.updateThamSo(new ThamSo(double.Parse(tbSoTienBanDauToiThieu.Text), double.Parse(tbSoTienGoiThemToiThieu.Text)));
+            loadThamSo();
         }
     }
 }
