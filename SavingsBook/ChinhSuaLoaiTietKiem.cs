@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,46 @@ namespace GUI
 {
     public partial class ChinhSuaLoaiTietKiem : Form
     {
-        public ChinhSuaLoaiTietKiem()
+        private LoaiTietKiem _loaiTietKiem;
+        public ChinhSuaLoaiTietKiem(LoaiTietKiem ltk)
         {
             InitializeComponent();
+            _loaiTietKiem = ltk;
+
+            // Gán các giá trị từ DTO vào các Label
+            if (ltk.KyHan == 0)
+            {
+                lblLoaiKyHan.Text = "Không kỳ hạn";
+            }
+            else
+            {
+                var formatedKyHan = formatDaysToMonths(ltk.KyHan);
+                if (formatedKyHan.days == 0)
+                {
+                    lblLoaiKyHan.Text = $"{formatedKyHan.months} tháng";
+                }
+                else
+                {
+                    lblLoaiKyHan.Text = $"{ltk.KyHan} ngày";
+                }
+            }
+            lblLaiSuat.Text = ltk.LaiSuat.ToString();
+            lblThoiGianGuiToiThieu.Text = ltk.SoNgayToiThieuDuocRutTien.ToString();
+            if (ltk.QuyDinhSoTienRut != null)
+            {
+                if (ltk.QuyDinhSoTienRut == "=")
+                {
+                    lblInputQuyDinhSoTienRut.Text = "Toàn phần";
+                }
+                else
+                {
+                    lblInputQuyDinhSoTienRut.Text = "Một phần hoặc toàn phần";
+                }
+            }
+        }
+        (int months, int days) formatDaysToMonths(int days)
+        {
+            return (days / 30, days % 30);
         }
 
 
@@ -39,10 +77,9 @@ namespace GUI
         {
             if (btnSua.Text == "Sửa")
             {
-                ToggleToEditMode(lblSoTienGuiToiThieu, txtSoTienGuiToiThieu);
                 ToggleToEditMode(lblLaiSuat, txtLaiSuat);
                 ToggleToEditMode(lblThoiGianGuiToiThieu, txtThoiGianGuiToiThieu);
-                ToggleToEditMode(lblSoTienRutToiThieu, txtSoTienRutToiThieu);
+                ToggleToEditMode(lblInputQuyDinhSoTienRut, txtSoTienRutToiThieu);
 
                 btnSua.Text = "Cập nhật";
             }
@@ -50,10 +87,9 @@ namespace GUI
             else
             {
 
-                SaveFromTextBox(lblSoTienGuiToiThieu, txtSoTienGuiToiThieu);
                 SaveFromTextBox(lblLaiSuat, txtLaiSuat);
                 SaveFromTextBox(lblThoiGianGuiToiThieu, txtThoiGianGuiToiThieu);
-                SaveFromTextBox(lblSoTienRutToiThieu, txtSoTienRutToiThieu);
+                SaveFromTextBox(lblInputQuyDinhSoTienRut, txtSoTienRutToiThieu);
 
                 btnSua.Text = "Sửa";
             }

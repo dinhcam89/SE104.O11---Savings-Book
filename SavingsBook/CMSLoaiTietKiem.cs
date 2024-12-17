@@ -1,4 +1,5 @@
-﻿using SavingsBook;
+﻿using DTO;
+using SavingsBook;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,11 @@ namespace GUI
 {
     public class CMSLoaiTietKiem : ContextMenuStrip
     {
-        public CMSLoaiTietKiem()
+        private LoaiTietKiem _loaiTietKiem;
+        public CMSLoaiTietKiem(LoaiTietKiem ltk)
         {
+            _loaiTietKiem = ltk;
+
             // Khởi tạo các mục menu
             ToolStripMenuItem menuItemQuanLy = new ToolStripMenuItem("Chi tiết");
             menuItemQuanLy.Click += OpenManagementForm!;
@@ -24,7 +28,7 @@ namespace GUI
         }
         private void OpenManagementForm(object sender, EventArgs e)
         {
-            ChinhSuaLoaiTietKiem form = new ChinhSuaLoaiTietKiem();
+            ChinhSuaLoaiTietKiem form = new ChinhSuaLoaiTietKiem(_loaiTietKiem);
             form.Show();
             //MessageBox.Show("Hiện thông tin chi tiết của loại tiết kiệm");
         }

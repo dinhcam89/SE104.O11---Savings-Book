@@ -67,9 +67,9 @@
             label2.ForeColor = Color.FromArgb(139, 84, 255);
             label2.Location = new Point(58, 105);
             label2.Name = "label2";
-            label2.Size = new Size(248, 28);
+            label2.Size = new Size(312, 28);
             label2.TabIndex = 1;
-            label2.Text = "Số tiền ban đầu tối thiểu";
+            label2.Text = "Số tiền ban đầu tối thiểu (VND)";
             // 
             // label3
             // 
@@ -79,9 +79,9 @@
             label3.ForeColor = Color.FromArgb(139, 84, 255);
             label3.Location = new Point(55, 219);
             label3.Name = "label3";
-            label3.Size = new Size(257, 28);
+            label3.Size = new Size(321, 28);
             label3.TabIndex = 2;
-            label3.Text = "Số tiền gởi thêm tối thiểu";
+            label3.Text = "Số tiền gởi thêm tối thiểu (VND)";
             // 
             // tbSoTienBanDauToiThieu
             // 
@@ -97,14 +97,14 @@
             tbSoTienBanDauToiThieu.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tbSoTienBanDauToiThieu.Font = new Font("Segoe UI", 9F);
             tbSoTienBanDauToiThieu.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbSoTienBanDauToiThieu.Location = new Point(333, 92);
+            tbSoTienBanDauToiThieu.Location = new Point(382, 92);
             tbSoTienBanDauToiThieu.Margin = new Padding(3, 5, 3, 5);
             tbSoTienBanDauToiThieu.Name = "tbSoTienBanDauToiThieu";
             tbSoTienBanDauToiThieu.PasswordChar = '\0';
             tbSoTienBanDauToiThieu.PlaceholderText = "";
             tbSoTienBanDauToiThieu.SelectedText = "";
             tbSoTienBanDauToiThieu.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            tbSoTienBanDauToiThieu.Size = new Size(778, 53);
+            tbSoTienBanDauToiThieu.Size = new Size(729, 53);
             tbSoTienBanDauToiThieu.TabIndex = 3;
             // 
             // tbSoTienGoiThemToiThieu
@@ -121,14 +121,14 @@
             tbSoTienGoiThemToiThieu.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tbSoTienGoiThemToiThieu.Font = new Font("Segoe UI", 9F);
             tbSoTienGoiThemToiThieu.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tbSoTienGoiThemToiThieu.Location = new Point(333, 205);
+            tbSoTienGoiThemToiThieu.Location = new Point(382, 205);
             tbSoTienGoiThemToiThieu.Margin = new Padding(3, 5, 3, 5);
             tbSoTienGoiThemToiThieu.Name = "tbSoTienGoiThemToiThieu";
             tbSoTienGoiThemToiThieu.PasswordChar = '\0';
             tbSoTienGoiThemToiThieu.PlaceholderText = "";
             tbSoTienGoiThemToiThieu.SelectedText = "";
             tbSoTienGoiThemToiThieu.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            tbSoTienGoiThemToiThieu.Size = new Size(778, 53);
+            tbSoTienGoiThemToiThieu.Size = new Size(729, 53);
             tbSoTienGoiThemToiThieu.TabIndex = 4;
             // 
             // btnXacNhan

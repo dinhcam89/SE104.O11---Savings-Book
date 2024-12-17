@@ -37,6 +37,7 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             btnAdd = new Guna.UI2.WinForms.Guna2GradientButton();
             guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            label1 = new Label();
             lblLaiSuat0 = new Label();
             lblSoTienGoi0 = new Label();
             lblLoaiTietKiem0 = new Label();
@@ -100,6 +101,7 @@
             guna2Panel5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             guna2Panel5.BorderColor = Color.Transparent;
             guna2Panel5.BorderRadius = 10;
+            guna2Panel5.Controls.Add(label1);
             guna2Panel5.Controls.Add(lblLaiSuat0);
             guna2Panel5.Controls.Add(lblSoTienGoi0);
             guna2Panel5.Controls.Add(lblLoaiTietKiem0);
@@ -111,6 +113,17 @@
             guna2Panel5.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Panel5.Size = new Size(1114, 56);
             guna2Panel5.TabIndex = 23;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(37, 10, 128);
+            label1.Location = new Point(726, 15);
+            label1.Name = "label1";
+            label1.Size = new Size(0, 25);
+            label1.TabIndex = 6;
             // 
             // lblLaiSuat0
             // 
@@ -132,9 +145,9 @@
             lblSoTienGoi0.ForeColor = Color.FromArgb(37, 10, 128);
             lblSoTienGoi0.Location = new Point(267, 15);
             lblSoTienGoi0.Name = "lblSoTienGoi0";
-            lblSoTienGoi0.Size = new Size(104, 25);
+            lblSoTienGoi0.Size = new Size(70, 25);
             lblSoTienGoi0.TabIndex = 4;
-            lblSoTienGoi0.Text = "Số tiền gởi";
+            lblSoTienGoi0.Text = "Kỳ hạn";
             // 
             // lblLoaiTietKiem0
             // 
@@ -144,9 +157,9 @@
             lblLoaiTietKiem0.ForeColor = Color.FromArgb(37, 10, 128);
             lblLoaiTietKiem0.Location = new Point(33, 15);
             lblLoaiTietKiem0.Name = "lblLoaiTietKiem0";
-            lblLoaiTietKiem0.Size = new Size(128, 25);
+            lblLoaiTietKiem0.Size = new Size(157, 25);
             lblLoaiTietKiem0.TabIndex = 4;
-            lblLoaiTietKiem0.Text = "Loại tiết kiệm";
+            lblLoaiTietKiem0.Text = "Mã loại tiết kiệm";
             // 
             // ucQuanLyLoaiTietKiem
             // 
@@ -156,7 +169,6 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "ucQuanLyLoaiTietKiem";
             Size = new Size(1191, 936);
-            Load += ucEditAdjustRate_Load;
             Layout += ucQuanLyLoaiTietKiem_Layout;
             panel1.ResumeLayout(false);
             guna2Panel5.ResumeLayout(false);
@@ -173,5 +185,6 @@
         private Label lblLoaiTietKiem0;
         private Label lblLaiSuat0;
         private FlowLayoutPanel flowLayoutPanel1;
+        private Label label1;
     }
 }

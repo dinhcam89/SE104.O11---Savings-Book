@@ -29,10 +29,6 @@ namespace GUI.DashboardApp
             addForm.ShowDialog();
         }
 
-        private void ucEditAdjustRate_Load(object sender, EventArgs e)
-        {
-        }
-
         private void populateItems(List<LoaiTietKiem> loaiTietKiem)
         {
             ListItem[] listItems = new ListItem[loaiTietKiem.Count];
@@ -40,13 +36,7 @@ namespace GUI.DashboardApp
 
             for (int i = 0; i < listItems.Length; i++)
             {
-                listItems[i] = new ListItem();
-                listItems[i].Ten1 = loaiTietKiem[i].MaLoaiTietKiem.ToString() ?? "";
-                listItems[i].Ten2 = loaiTietKiem[i].KyHan.ToString() ?? "";
-                listItems[i].Ten3 = loaiTietKiem[i].LaiSuat.ToString() ?? "";
-                listItems[i].Ten4 = loaiTietKiem[i].SoNgayToiThieuDuocRutTien.ToString() ?? "";
-                listItems[i].FormType = ObjectType.LoaiTietKiem;
-
+                listItems[i] = new ListItem(loaiTietKiem[i]);
                 flowLayoutPanel1.Controls.Add(listItems[i]);
             }
 
