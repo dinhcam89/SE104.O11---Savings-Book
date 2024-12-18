@@ -170,7 +170,6 @@
             Name = "ucQuanLyLoaiTietKiem";
             Size = new Size(1191, 936);
             Load += ucQuanLyLoaiTietKiem_Load;
-            VisibleChanged += ucQuanLyLoaiTietKiem_VisibleChanged;
             Layout += ucQuanLyLoaiTietKiem_Layout;
             panel1.ResumeLayout(false);
             guna2Panel5.ResumeLayout(false);

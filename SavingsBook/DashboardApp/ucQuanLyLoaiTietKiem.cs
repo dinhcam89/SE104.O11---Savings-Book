@@ -1,14 +1,5 @@
 ﻿using BUS;
 using DTO;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace GUI.DashboardApp
 {
@@ -28,14 +19,6 @@ namespace GUI.DashboardApp
             ThemLoaiTietKiem addForm = new ThemLoaiTietKiem();
             addForm.ShowDialog();
         }
-
-        //private EventHandler resizePanel = (object s, EventArgs e) =>
-        //{
-        //    foreach (ListItem item in flowLayoutPanel1.Controls)
-        //    {
-        //        item.Width = flowLayoutPanel1.ClientSize.Width;
-        //    }
-        //};
 
         private void populateItems(List<LoaiTietKiem> loaiTietKiem)
         {
@@ -70,11 +53,6 @@ namespace GUI.DashboardApp
         {
             _loaiTietKiemList = _loaiTietKiemBUS.getListLoaiTietKiem();
             populateItems(_loaiTietKiemList);
-        }
-
-        private void ucQuanLyLoaiTietKiem_VisibleChanged(object sender, EventArgs e)
-        {
-            //resizeItems();
         }
     }
 }
