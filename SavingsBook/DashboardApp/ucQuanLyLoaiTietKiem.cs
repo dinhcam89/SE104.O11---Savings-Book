@@ -29,18 +29,19 @@ namespace GUI.DashboardApp
             addForm.ShowDialog();
         }
 
+        //private EventHandler resizePanel = (object s, EventArgs e) =>
+        //{
+        //    foreach (ListItem item in flowLayoutPanel1.Controls)
+        //    {
+        //        item.Width = flowLayoutPanel1.ClientSize.Width;
+        //    }
+        //};
+
         private void populateItems(List<LoaiTietKiem> loaiTietKiem)
         {
             ListItem[] listItems = new ListItem[loaiTietKiem.Count];
-            flowLayoutPanel1.Controls.Clear();
 
-            for (int i = 0; i < listItems.Length; i++)
-            {
-                listItems[i] = new ListItem(loaiTietKiem[i]);
-                flowLayoutPanel1.Controls.Add(listItems[i]);
-            }
-
-            flowLayoutPanel1.Resize += (s, e) =>
+            EventHandler resizePanel = (s, e) =>
             {
                 foreach (ListItem item in flowLayoutPanel1.Controls)
                 {
@@ -48,12 +49,32 @@ namespace GUI.DashboardApp
                 }
             };
 
+            flowLayoutPanel1.Controls.Clear();
+
+            for (int i = 0; i < listItems.Length; i++)
+            {
+                listItems[i] = new ListItem(loaiTietKiem[i]);
+                flowLayoutPanel1.Controls.Add(listItems[i]);
+            }
+            flowLayoutPanel1.Resize += resizePanel;
+            flowLayoutPanel1.VisibleChanged += resizePanel;
         }
 
         private void ucQuanLyLoaiTietKiem_Layout(object sender, LayoutEventArgs e)
+        { 
+            _loaiTietKiemList = _loaiTietKiemBUS.getListLoaiTietKiem();
+            populateItems(_loaiTietKiemList);
+        }
+
+        private void ucQuanLyLoaiTietKiem_Load(object sender, EventArgs e)
         {
             _loaiTietKiemList = _loaiTietKiemBUS.getListLoaiTietKiem();
             populateItems(_loaiTietKiemList);
+        }
+
+        private void ucQuanLyLoaiTietKiem_VisibleChanged(object sender, EventArgs e)
+        {
+            //resizeItems();
         }
     }
 }

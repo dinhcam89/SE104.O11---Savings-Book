@@ -1,4 +1,5 @@
-﻿using DTO;
+﻿using BUS;
+using DTO;
 using SavingsBook;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace GUI
     public class CMSLoaiTietKiem : ContextMenuStrip
     {
         private LoaiTietKiem _loaiTietKiem;
+        private LoaiTietKiemBUS _loaiTietKiemBUS = new LoaiTietKiemBUS();
         public CMSLoaiTietKiem(LoaiTietKiem ltk)
         {
             _loaiTietKiem = ltk;
@@ -34,8 +36,20 @@ namespace GUI
         }
         private void DeleteItem(object sender, EventArgs e)
         {
-            //thêm hàm xóa vào đây nhé Conal
-            MessageBox.Show("Item đã được xóa.");
+            // Hiển thị MessageBox với hai nút Yes/No
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // Kiểm tra xem người dùng chọn Yes
+            if (result == DialogResult.Yes)
+            {
+                // Gọi hàm delete() để thực hiện việc xóa
+                bool response = _loaiTietKiemBUS.deleteLoaiTietKiem(_loaiTietKiem);
+                if (response)
+                    MessageBox.Show("Xóa thành công.");
+                else
+                    MessageBox.Show("Xóa thất bại.");
+                //Refresh();
+            }
         }
     }
 }

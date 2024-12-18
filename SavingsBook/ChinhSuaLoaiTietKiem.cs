@@ -13,11 +13,9 @@ namespace GUI
 {
     public partial class ChinhSuaLoaiTietKiem : Form
     {
-        private LoaiTietKiem _loaiTietKiem;
         public ChinhSuaLoaiTietKiem(LoaiTietKiem ltk)
         {
             InitializeComponent();
-            _loaiTietKiem = ltk;
 
             // Gán các giá trị từ DTO vào các Label
             if (ltk.KyHan == 0)
