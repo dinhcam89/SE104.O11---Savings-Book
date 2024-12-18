@@ -48,7 +48,7 @@
             lblSTKTienGoi = new Label();
             lblNgayGiaoDich = new Label();
             lblTitle = new Label();
-            txt = new Guna.UI2.WinForms.Guna2TextBox();
+            txtSoTienRut = new Guna.UI2.WinForms.Guna2TextBox();
             lblSTKTienGoi0 = new Label();
             lblSoTienRut = new Label();
             guna2GradientPanel1.SuspendLayout();
@@ -64,9 +64,10 @@
             guna2GradientPanel1.FillColor2 = Color.FromArgb(91, 185, 250);
             guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
             guna2GradientPanel1.Location = new Point(0, 0);
+            guna2GradientPanel1.Margin = new Padding(3, 4, 3, 4);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2GradientPanel1.Size = new Size(393, 328);
+            guna2GradientPanel1.Size = new Size(449, 437);
             guna2GradientPanel1.TabIndex = 2;
             // 
             // guna2Panel1
@@ -78,14 +79,15 @@
             guna2Panel1.Controls.Add(lblSTKTienGoi);
             guna2Panel1.Controls.Add(lblNgayGiaoDich);
             guna2Panel1.Controls.Add(lblTitle);
-            guna2Panel1.Controls.Add(txt);
+            guna2Panel1.Controls.Add(txtSoTienRut);
             guna2Panel1.Controls.Add(lblSTKTienGoi0);
             guna2Panel1.Controls.Add(lblSoTienRut);
             guna2Panel1.CustomizableEdges = customizableEdges9;
-            guna2Panel1.Location = new Point(12, 10);
+            guna2Panel1.Location = new Point(14, 13);
+            guna2Panel1.Margin = new Padding(3, 4, 3, 4);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2Panel1.Size = new Size(368, 302);
+            guna2Panel1.Size = new Size(421, 403);
             guna2Panel1.TabIndex = 47;
             // 
             // DTPNgayGiaoDich
@@ -97,12 +99,13 @@
             DTPNgayGiaoDich.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DTPNgayGiaoDich.ForeColor = Color.White;
             DTPNgayGiaoDich.Format = DateTimePickerFormat.Short;
-            DTPNgayGiaoDich.Location = new Point(179, 164);
+            DTPNgayGiaoDich.Location = new Point(205, 219);
+            DTPNgayGiaoDich.Margin = new Padding(3, 4, 3, 4);
             DTPNgayGiaoDich.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DTPNgayGiaoDich.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DTPNgayGiaoDich.Name = "DTPNgayGiaoDich";
             DTPNgayGiaoDich.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            DTPNgayGiaoDich.Size = new Size(172, 36);
+            DTPNgayGiaoDich.Size = new Size(197, 48);
             DTPNgayGiaoDich.TabIndex = 50;
             DTPNgayGiaoDich.Value = new DateTime(2024, 12, 1, 3, 15, 49, 556);
             // 
@@ -123,10 +126,11 @@
             btnHuy.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnHuy.ForeColor = Color.FromArgb(139, 84, 255);
             btnHuy.ImeMode = ImeMode.Off;
-            btnHuy.Location = new Point(14, 230);
+            btnHuy.Location = new Point(16, 307);
+            btnHuy.Margin = new Padding(3, 4, 3, 4);
             btnHuy.Name = "btnHuy";
             btnHuy.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnHuy.Size = new Size(121, 45);
+            btnHuy.Size = new Size(138, 60);
             btnHuy.TabIndex = 49;
             btnHuy.Text = "Hủy";
             btnHuy.Click += btnClose_Click_1;
@@ -146,12 +150,14 @@
             btnRutTien.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRutTien.ForeColor = Color.White;
             btnRutTien.ImeMode = ImeMode.Off;
-            btnRutTien.Location = new Point(230, 230);
+            btnRutTien.Location = new Point(263, 307);
+            btnRutTien.Margin = new Padding(3, 4, 3, 4);
             btnRutTien.Name = "btnRutTien";
             btnRutTien.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnRutTien.Size = new Size(121, 45);
+            btnRutTien.Size = new Size(138, 60);
             btnRutTien.TabIndex = 22;
             btnRutTien.Text = "Rút tiền";
+            btnRutTien.Click += btnRutTien_Click;
             // 
             // lblSTKTienGoi
             // 
@@ -159,11 +165,11 @@
             lblSTKTienGoi.BackColor = Color.Transparent;
             lblSTKTienGoi.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             lblSTKTienGoi.ForeColor = Color.FromArgb(135, 92, 254);
-            lblSTKTienGoi.Location = new Point(243, 67);
+            lblSTKTienGoi.Location = new Point(278, 89);
             lblSTKTienGoi.Name = "lblSTKTienGoi";
-            lblSTKTienGoi.Size = new Size(108, 20);
+            lblSTKTienGoi.Size = new Size(23, 25);
             lblSTKTienGoi.TabIndex = 47;
-            lblSTKTienGoi.Text = "09876543234";
+            lblSTKTienGoi.Text = "1";
             // 
             // lblNgayGiaoDich
             // 
@@ -171,9 +177,9 @@
             lblNgayGiaoDich.BackColor = Color.Transparent;
             lblNgayGiaoDich.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             lblNgayGiaoDich.ForeColor = Color.FromArgb(135, 92, 254);
-            lblNgayGiaoDich.Location = new Point(14, 180);
+            lblNgayGiaoDich.Location = new Point(16, 240);
             lblNgayGiaoDich.Name = "lblNgayGiaoDich";
-            lblNgayGiaoDich.Size = new Size(113, 20);
+            lblNgayGiaoDich.Size = new Size(145, 25);
             lblNgayGiaoDich.TabIndex = 44;
             lblNgayGiaoDich.Text = "Ngày giao dịch";
             // 
@@ -183,35 +189,36 @@
             lblTitle.BackColor = Color.Transparent;
             lblTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = Color.FromArgb(135, 92, 254);
-            lblTitle.Location = new Point(130, 16);
+            lblTitle.Location = new Point(149, 21);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(122, 32);
+            lblTitle.Size = new Size(154, 41);
             lblTitle.TabIndex = 46;
             lblTitle.Text = "RÚT TIỀN";
             // 
-            // txt
+            // txtSoTienRut
             // 
-            txt.BackColor = Color.Transparent;
-            txt.BorderColor = Color.FromArgb(61, 66, 250);
-            txt.BorderRadius = 10;
-            txt.CustomizableEdges = customizableEdges7;
-            txt.DefaultText = "";
-            txt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txt.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txt.Font = new Font("Segoe UI", 9F);
-            txt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txt.ImeMode = ImeMode.On;
-            txt.Location = new Point(179, 101);
-            txt.Name = "txt";
-            txt.PasswordChar = '\0';
-            txt.PlaceholderText = "";
-            txt.SelectedText = "";
-            txt.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            txt.Size = new Size(172, 41);
-            txt.TabIndex = 43;
+            txtSoTienRut.BackColor = Color.Transparent;
+            txtSoTienRut.BorderColor = Color.FromArgb(61, 66, 250);
+            txtSoTienRut.BorderRadius = 10;
+            txtSoTienRut.CustomizableEdges = customizableEdges7;
+            txtSoTienRut.DefaultText = "";
+            txtSoTienRut.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtSoTienRut.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtSoTienRut.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtSoTienRut.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtSoTienRut.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtSoTienRut.Font = new Font("Segoe UI", 9F);
+            txtSoTienRut.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtSoTienRut.ImeMode = ImeMode.On;
+            txtSoTienRut.Location = new Point(205, 135);
+            txtSoTienRut.Margin = new Padding(3, 5, 3, 5);
+            txtSoTienRut.Name = "txtSoTienRut";
+            txtSoTienRut.PasswordChar = '\0';
+            txtSoTienRut.PlaceholderText = "";
+            txtSoTienRut.SelectedText = "";
+            txtSoTienRut.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            txtSoTienRut.Size = new Size(197, 55);
+            txtSoTienRut.TabIndex = 43;
             // 
             // lblSTKTienGoi0
             // 
@@ -219,9 +226,9 @@
             lblSTKTienGoi0.BackColor = Color.Transparent;
             lblSTKTienGoi0.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             lblSTKTienGoi0.ForeColor = Color.FromArgb(135, 92, 254);
-            lblSTKTienGoi0.Location = new Point(14, 67);
+            lblSTKTienGoi0.Location = new Point(16, 89);
             lblSTKTienGoi0.Name = "lblSTKTienGoi0";
-            lblSTKTienGoi0.Size = new Size(152, 20);
+            lblSTKTienGoi0.Size = new Size(196, 25);
             lblSTKTienGoi0.TabIndex = 36;
             lblSTKTienGoi0.Text = "Số tài khoản tiền gởi";
             // 
@@ -231,20 +238,21 @@
             lblSoTienRut.BackColor = Color.Transparent;
             lblSoTienRut.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             lblSoTienRut.ForeColor = Color.FromArgb(135, 92, 254);
-            lblSoTienRut.Location = new Point(14, 122);
+            lblSoTienRut.Location = new Point(16, 163);
             lblSoTienRut.Name = "lblSoTienRut";
-            lblSoTienRut.Size = new Size(82, 20);
+            lblSoTienRut.Size = new Size(106, 25);
             lblSoTienRut.TabIndex = 42;
             lblSoTienRut.Text = "Số tiền rút";
             // 
             // RutTienForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(393, 328);
+            ClientSize = new Size(449, 437);
             ControlBox = false;
             Controls.Add(guna2GradientPanel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             Name = "RutTienForm";
             Text = "Rút Tiền";
@@ -264,7 +272,7 @@
         private Label lblSTKTienGoi;
         private Label lblNgayGiaoDich;
         private Label lblTitle;
-        private Guna.UI2.WinForms.Guna2TextBox txt;
+        private Guna.UI2.WinForms.Guna2TextBox txtSoTienRut;
         private Label lblSTKTienGoi0;
         private Label lblSoTienRut;
     }
