@@ -32,5 +32,10 @@ namespace BUS
         {
             return _loaiTietKiemDAO.deleteLoaiTietKiem(ltk);
         }
+        public bool postLoaiTietKiem(int kyHan, double laiSuat, int soNgayToiThieuDuocRutTien, string quyDinhTienRut)
+        {
+            return _loaiTietKiemDAO.insertLoaiTietKiem(
+                kyHan, laiSuat , soNgayToiThieuDuocRutTien, quyDinhTienRut);
+        }
     }
 }

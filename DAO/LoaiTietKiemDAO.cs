@@ -104,5 +104,22 @@ namespace DAO
             bool response = dbConnection.executeUpdateQuery(query, sqlParameters);
             return response;
         }
+        public bool insertLoaiTietKiem(int kyHan, double laiSuat, int soNgayToiThieuDuocRutTien, string quyDinhSoTienRut)
+        {
+            string query = "" +
+                "INSERT INTO " +
+                "   LoaiTietKiem " +
+                "VALUES " +
+                "   (@KyHan, @LaiSuat, @SoNgayToiThieuDuocRutTien, @QuyDinhSoTienRut)";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@KyHan", kyHan),
+                new SqlParameter("@LaiSuat", laiSuat),
+                new SqlParameter("@SoNgayToiThieuDuocRutTien", soNgayToiThieuDuocRutTien),
+                new SqlParameter("@QuyDinhSoTienRut", quyDinhSoTienRut),
+            };
+            bool response = dbConnection.executeUpdateQuery(query, sqlParameters);
+            return response;
+        }
     }
 }
