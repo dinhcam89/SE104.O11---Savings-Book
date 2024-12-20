@@ -15,9 +15,11 @@ namespace GUI
     public partial class ThemLoaiTietKiem : Form
     {
         private LoaiTietKiemBUS _loaiTietKiemBUS = new LoaiTietKiemBUS();
-        public ThemLoaiTietKiem()
+        private Action reload;
+        public ThemLoaiTietKiem(Action reload)
         {
             InitializeComponent();
+            this.reload = reload;
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -98,6 +100,7 @@ namespace GUI
             }
             _loaiTietKiemBUS.postLoaiTietKiem(formatedKyHan * 30, formatedLaiSuat, formatedSoNgayToiThieuDuocRutTien, formatedQuyDinhTienRut);
             MessageBox.Show("Thêm loại tiết kiệm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            reload();
             Close();
         }
     }

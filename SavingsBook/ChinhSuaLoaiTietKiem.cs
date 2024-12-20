@@ -7,7 +7,8 @@ namespace GUI
     {
         private LoaiTietKiemBUS _loaiTietKiemBUS = new LoaiTietKiemBUS();
         private LoaiTietKiem _loaiTietKiem;
-        public ChinhSuaLoaiTietKiem(LoaiTietKiem ltk)
+        private Action reload;
+        public ChinhSuaLoaiTietKiem(LoaiTietKiem ltk, Action reload)
         {
             InitializeComponent();
             _loaiTietKiem = ltk;
@@ -50,6 +51,8 @@ namespace GUI
                     lblInputQuyDinhSoTienRut.Text = "Một phần hoặc toàn phần";
                 }
             }
+
+            this.reload = reload;
         }
         (int months, int days) formatDaysToMonths(int days)
         {
@@ -130,7 +133,6 @@ namespace GUI
 
                 btnSua.Text = "Cập nhật";
             }
-
             else
             {
                 if (!isLaiSuatValid(txtLaiSuat.Text) || !isThoiGianGuiToiThieuValid(txtThoiGianGuiToiThieu.Text) || !isQuyDinhTienRutValid(cboxQuyDinhTienRut.Text)) {
@@ -156,6 +158,7 @@ namespace GUI
                 if (response)
                 {
                     MessageBox.Show("Cập nhật thành công");
+                    reload();
                     Close();
                 }
                 else
@@ -176,7 +179,6 @@ namespace GUI
 
                     btnSua.Text = "Sửa";
                 }
-
             }
 
         }

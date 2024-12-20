@@ -13,9 +13,11 @@ namespace GUI
     {
         private LoaiTietKiem _loaiTietKiem;
         private LoaiTietKiemBUS _loaiTietKiemBUS = new LoaiTietKiemBUS();
-        public CMSLoaiTietKiem(LoaiTietKiem ltk)
+        private Action reload;
+        public CMSLoaiTietKiem(LoaiTietKiem ltk, Action reload)
         {
             _loaiTietKiem = ltk;
+            this.reload = reload;
 
             // Khởi tạo các mục menu
             ToolStripMenuItem menuItemQuanLy = new ToolStripMenuItem("Chi tiết");
@@ -30,9 +32,8 @@ namespace GUI
         }
         private void OpenManagementForm(object sender, EventArgs e)
         {
-            ChinhSuaLoaiTietKiem form = new ChinhSuaLoaiTietKiem(_loaiTietKiem);
+            ChinhSuaLoaiTietKiem form = new ChinhSuaLoaiTietKiem(_loaiTietKiem, reload);
             form.Show();
-            //MessageBox.Show("Hiện thông tin chi tiết của loại tiết kiệm");
         }
         private void DeleteItem(object sender, EventArgs e)
         {
@@ -45,10 +46,12 @@ namespace GUI
                 // Gọi hàm delete() để thực hiện việc xóa
                 bool response = _loaiTietKiemBUS.deleteLoaiTietKiem(_loaiTietKiem);
                 if (response)
+                {
                     MessageBox.Show("Xóa thành công.");
+                    reload();
+                }
                 else
                     MessageBox.Show("Xóa thất bại.");
-                //Refresh();
             }
         }
     }

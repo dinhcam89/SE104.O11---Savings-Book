@@ -16,7 +16,7 @@ namespace GUI.DashboardApp
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ThemLoaiTietKiem addForm = new ThemLoaiTietKiem();
+            ThemLoaiTietKiem addForm = new ThemLoaiTietKiem(loadItems);
             addForm.ShowDialog();
         }
 
@@ -36,23 +36,25 @@ namespace GUI.DashboardApp
 
             for (int i = 0; i < listItems.Length; i++)
             {
-                listItems[i] = new ListItem(loaiTietKiem[i]);
+                listItems[i] = new ListItem(loaiTietKiem[i], loadItems);
                 flowLayoutPanel1.Controls.Add(listItems[i]);
             }
+            resizePanel(this, null);
             flowLayoutPanel1.Resize += resizePanel;
-            flowLayoutPanel1.VisibleChanged += resizePanel;
         }
-
-        private void ucQuanLyLoaiTietKiem_Layout(object sender, LayoutEventArgs e)
-        { 
+        private void loadItems()
+        {
             _loaiTietKiemList = _loaiTietKiemBUS.getListLoaiTietKiem();
             populateItems(_loaiTietKiemList);
+        }
+        private void ucQuanLyLoaiTietKiem_Layout(object sender, LayoutEventArgs e)
+        { 
+            loadItems();
         }
 
         private void ucQuanLyLoaiTietKiem_Load(object sender, EventArgs e)
         {
-            _loaiTietKiemList = _loaiTietKiemBUS.getListLoaiTietKiem();
-            populateItems(_loaiTietKiemList);
+            loadItems();
         }
     }
 }
