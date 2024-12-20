@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using BUS;
 
 namespace GUI.DashboardApp
 {
+    
     public partial class ucDoanhSoHoatDong : UserControl
     {
+        private BieuDoBUS bieuDoBUS = new BieuDoBUS();
         public ucDoanhSoHoatDong()
         {
             InitializeComponent();
@@ -80,9 +83,26 @@ namespace GUI.DashboardApp
             chartChenhLech.Update();
         }
 
-        private void guna2Panel3_Paint(object sender, PaintEventArgs e)
+        private void ucDoanhSoHoatDong_Load(object sender, EventArgs e)
         {
+            try
+            {
+                // Lấy và hiển thị tổng số khách hàng
+                int totalCustomers = bieuDoBUS.GetTotalCustomers();
+                lbl_SoLuongKhachHang.Text = totalCustomers.ToString();
 
+                // Lấy và hiển thị tổng số phiếu gửi tiền
+                int totalSavingsAccounts = bieuDoBUS.GetTotalSavingsAccounts();
+                lbl_SoLuongPhieuGuiTien.Text = totalSavingsAccounts.ToString();
+
+                // Lấy và hiển thị tổng số tiền gửi
+                decimal totalSavingsAmount = bieuDoBUS.GetTotalSavingsAmount();
+                lbl_TongTienGui.Text =totalSavingsAmount.ToString("C") + "VNĐ";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
         }
     }
 }
