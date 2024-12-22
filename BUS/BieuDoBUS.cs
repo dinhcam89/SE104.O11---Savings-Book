@@ -43,6 +43,10 @@ namespace BUS
             // Truy vấn cơ sở dữ liệu để đếm số lượng phiếu tiết kiệm theo kỳ hạn
             return bieuDoDAO.GetSavingsByDateAndTerm(selectedDate);
         }
+        public decimal GetTotalSavingsAmountByTerm(int maLoaiTietKiem)
+            {
+            return bieuDoDAO.GetTotalSavingsAmountByTerm(maLoaiTietKiem);
+        }
 
     }
 }

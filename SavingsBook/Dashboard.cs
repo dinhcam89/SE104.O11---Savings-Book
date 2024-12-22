@@ -52,7 +52,7 @@ namespace GUI
                         this.ucManageSavingBooks.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.ucManageSavingBooks.Location = new System.Drawing.Point(0, 0);
                         this.ucManageSavingBooks.Name = "ucManageSavingBooks";
-                        this.Size = new System.Drawing.Size(1236, 686);
+                        this.Size = new System.Drawing.Size(1336, 686);
                         this.ucManageSavingBooks.TabIndex = 0;
                     }
                     else
@@ -86,7 +86,7 @@ namespace GUI
                         this.ucSaleReport.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.ucSaleReport.Location = new System.Drawing.Point(0, 0);
                         this.ucSaleReport.Name = "ucSaleReport";
-                        this.Size = new System.Drawing.Size(1236, 686);
+                        this.Size = new System.Drawing.Size(1236, 757);
                         this.ucSaleReport.TabIndex = 0;
                     }
                     else

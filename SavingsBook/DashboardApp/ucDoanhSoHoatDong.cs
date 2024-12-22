@@ -274,45 +274,9 @@ namespace GUI.DashboardApp
             lb_SoPhieu3Thang.Text = bieuDoBUS.GetTotalSavingsAccountsByTerm(2).ToString();
             lb_SoPhieu6Thang.Text = bieuDoBUS.GetTotalSavingsAccountsByTerm(3).ToString();
             
-            var dic_tongTienGui0KyHan = bieuDoBUS.GetSavingsByMonthAndTerm("0"); // Gọi hàm với giá trị số kỳ hạn
-            // Duyệt qua dữ liệu và thêm điểm dữ liệu vào biểu đồ
-            foreach (var monthData in dic_tongTienGui0KyHan)
-            {
-                string month = monthData.Key;
-
-                // Tổng tiền gửi cho mỗi tháng
-                decimal totalAmount = monthData.Value.Values.Sum();  // Tính tổng cho tất cả các kỳ hạn trong tháng
-                int tongTienGui0KyHan = Convert.ToInt32(totalAmount);
-
-                lb_TongTienGui0KyHan.Text = tongTienGui0KyHan.ToString("C") + " VNĐ";
-
-            }
-            var dic_tongTienGui3Thang = bieuDoBUS.GetSavingsByMonthAndTerm("30"); // Gọi hàm với giá trị số kỳ hạn
-            // Duyệt qua dữ liệu và thêm điểm dữ liệu vào biểu đồ
-            foreach (var monthData in dic_tongTienGui3Thang)
-            {
-                string month = monthData.Key;
-
-                // Tổng tiền gửi cho mỗi tháng
-                decimal totalAmount = monthData.Value.Values.Sum();  // Tính tổng cho tất cả các kỳ hạn trong tháng
-                int tongTienGui3KyHan = Convert.ToInt32(totalAmount);
-
-                lb_TongTienGui3Thang.Text = tongTienGui3KyHan.ToString("C") + " VNĐ";
-
-            }
-            var dic_tongTienGui6Thang = bieuDoBUS.GetSavingsByMonthAndTerm("60"); // Gọi hàm với giá trị số kỳ hạn
-            // Duyệt qua dữ liệu và thêm điểm dữ liệu vào biểu đồ
-            foreach (var monthData in dic_tongTienGui6Thang)
-            {
-                string month = monthData.Key;
-
-                // Tổng tiền gửi cho mỗi tháng
-                decimal totalAmount = monthData.Value.Values.Sum();  // Tính tổng cho tất cả các kỳ hạn trong tháng
-                int tongTienGui6KyHan = Convert.ToInt32(totalAmount);
-
-                lb_TongTienGui6Thang.Text = tongTienGui6KyHan.ToString("C") + " VNĐ";
-
-            }
+            lb_TongTienGui0KyHan.Text = bieuDoBUS.GetTotalSavingsAmountByTerm(1).ToString("C") + " VNĐ"; // Gọi hàm với giá trị số kỳ hạn
+            lb_TongTienGui3Thang.Text = bieuDoBUS.GetTotalSavingsAmountByTerm(2).ToString("C") + " VNĐ"; ; // Gọi hàm với giá trị số kỳ hạn
+            lb_TongTienGui6Thang.Text = bieuDoBUS.GetTotalSavingsAmountByTerm(3).ToString("C") + " VNĐ"; ; // Gọi hàm với giá trị số kỳ hạn
         }
     }
 

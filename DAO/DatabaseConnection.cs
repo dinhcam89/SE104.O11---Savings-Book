@@ -16,7 +16,7 @@ namespace DAO
 
         public DatabaseConnection()
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["dbConnectionString"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings[@"Server=MSI\SQLEXPRESS;Database=stk_db;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True"].ConnectionString;
             connection = new SqlConnection(connectionString);
         }
 

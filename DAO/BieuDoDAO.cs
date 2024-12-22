@@ -52,6 +52,24 @@ namespace DAO
             }
             return total;
         }
+        public decimal GetTotalSavingsAmountByTerm(int maLoaiTietKiem)
+        {
+            decimal totalAmount = 0;
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT SUM(TongTienGoc) FROM PhieuGoiTien WHERE MaLoaiTietKiem = @MaLoaiTietKiem";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@MaLoaiTietKiem", maLoaiTietKiem); // Truyền giá trị mã loại tiết kiệm vào tham số
+
+                conn.Open();
+                var result = cmd.ExecuteScalar();
+
+                // Kiểm tra nếu kết quả trả về là null (không có dữ liệu)
+                totalAmount = result == DBNull.Value ? 0 : Convert.ToDecimal(result);
+            }
+            return totalAmount;
+        }
+
 
 
         // Hàm lấy tổng số tiền gửi

@@ -510,7 +510,7 @@
             tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(990, 560);
             tabPage2.TabIndex = 1;
-            tabPage2.Text = "Chi tiết";
+            tabPage2.Text = "Tổng thu";
             tabPage2.UseVisualStyleBackColor = true;
             // 
             // guna2Panel18
@@ -907,7 +907,7 @@
             tabPage3.Padding = new Padding(3);
             tabPage3.Size = new Size(990, 560);
             tabPage3.TabIndex = 2;
-            tabPage3.Text = "tabPage3";
+            tabPage3.Text = "Tổng chi";
             tabPage3.UseVisualStyleBackColor = true;
             // 
             // chartChenhLech
