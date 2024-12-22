@@ -1,55 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using BUS;
+using DTO;
 
 namespace GUI.DashboardApp
 {
     public partial class ucQuanLyLoaiTietKiem : UserControl
     {
+        private List<LoaiTietKiem> _loaiTietKiemList;
+        private LoaiTietKiemBUS _loaiTietKiemBUS;
         public ucQuanLyLoaiTietKiem()
         {
             InitializeComponent();
-
+            _loaiTietKiemBUS = new LoaiTietKiemBUS();
+            _loaiTietKiemList = new List<LoaiTietKiem>();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ThemLoaiTietKiem addForm = new ThemLoaiTietKiem();
+            ThemLoaiTietKiem addForm = new ThemLoaiTietKiem(loadItems);
             addForm.ShowDialog();
         }
 
-        private void ucEditAdjustRate_Load(object sender, EventArgs e)
+        private void populateItems(List<LoaiTietKiem> loaiTietKiem)
         {
-            populateItems();
-        }
+            ListItem[] listItems = new ListItem[loaiTietKiem.Count];
 
-        private void populateItems()
-        {
-            ListItem[] listItems = new ListItem[5];
-
-            for (int i = 0; i < listItems.Length; i++)
-            {
-                listItems[i] = new ListItem();
-                listItems[i].Ten1 = "Loại tiết kiệm " + i;
-                listItems[i].Ten2 = "Số tiền gởi " + i;
-                listItems[i].Ten3 = "Lãi suất " + i;
-                listItems[i].Ten4 = "";
-                //listItems[i].btnCustom.Text = "Xem";
-                listItems[i].FormType = ObjectType.LoaiTietKiem;
-
-                //listItems[i].ButtonClick += ListItem_ButtonClick;
-
-
-                flowLayoutPanel1.Controls.Add(listItems[i]);
-            }
-
-            flowLayoutPanel1.Resize += (s, e) =>
+            EventHandler resizePanel = (s, e) =>
             {
                 foreach (ListItem item in flowLayoutPanel1.Controls)
                 {
@@ -57,7 +32,29 @@ namespace GUI.DashboardApp
                 }
             };
 
+            flowLayoutPanel1.Controls.Clear();
+
+            for (int i = 0; i < listItems.Length; i++)
+            {
+                listItems[i] = new ListItem(loaiTietKiem[i], loadItems);
+                flowLayoutPanel1.Controls.Add(listItems[i]);
+            }
+            resizePanel(this, null);
+            flowLayoutPanel1.Resize += resizePanel;
+        }
+        private void loadItems()
+        {
+            _loaiTietKiemList = _loaiTietKiemBUS.getListLoaiTietKiem();
+            populateItems(_loaiTietKiemList);
+        }
+        private void ucQuanLyLoaiTietKiem_Layout(object sender, LayoutEventArgs e)
+        { 
+            loadItems();
         }
 
+        private void ucQuanLyLoaiTietKiem_Load(object sender, EventArgs e)
+        {
+            loadItems();
+        }
     }
 }

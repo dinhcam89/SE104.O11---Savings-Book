@@ -22,6 +22,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="CMSPhieuGoiTien.cs">
       <SubType>Component</SubType>
     </Compile>
