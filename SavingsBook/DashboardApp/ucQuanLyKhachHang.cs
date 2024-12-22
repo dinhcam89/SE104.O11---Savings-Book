@@ -27,6 +27,7 @@ namespace GUI.DashboardApp
 
         private void populateItems()
         {
+<<<<<<< HEAD
             ListItem[] listItems = new ListItem[10];
 
             for (int i = 0; i < listItems.Length; i++)
@@ -47,6 +48,9 @@ namespace GUI.DashboardApp
                     item.Width = flowLayoutPanel1.ClientSize.Width;
                 }
             };
+=======
+           
+>>>>>>> b9113d9 (Initial commit)
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

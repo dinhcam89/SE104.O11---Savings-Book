@@ -16,7 +16,11 @@ namespace GUI.DashboardApp
 
     public partial class ucDoanhSoHoatDong : UserControl
     {
+<<<<<<< HEAD
         private BieuDoBUS bieuDoBUS = new BieuDoBUS();
+=======
+      
+>>>>>>> b9113d9 (Initial commit)
 
         public ucDoanhSoHoatDong()
         {
@@ -26,6 +30,7 @@ namespace GUI.DashboardApp
 
         private void chartRevenue_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             // Cấu hình kiểu biểu đồ, nếu cần
             //chart_DoanhThuTheoKyHan.Type = Guna.Charts.WinForms.ChartType.Line; // Đặt biểu đồ là Line
 
@@ -36,10 +41,14 @@ namespace GUI.DashboardApp
             //chart_DoanhThuTheoKyHan.Title.Text = "Doanh thu theo tháng của từng kỳ hạn";
 
             // Gọi hàm cập nhật dữ liệu
+=======
+           
+>>>>>>> b9113d9 (Initial commit)
         }
 
         private void chartExpenditure_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             // Thêm các lựa chọn kỳ hạn vào ComboBox
             cbbox_TuyChonBieuDo.Items.Add("Tất cả kỳ hạn");
             cbbox_TuyChonBieuDo.Items.Add("Không kỳ hạn");
@@ -54,12 +63,16 @@ namespace GUI.DashboardApp
 
             // Cập nhật biểu đồ khi tải
             UpdateChartData("Tất cả kỳ hạn");
+=======
+            
+>>>>>>> b9113d9 (Initial commit)
         }
 
 
 
         private void chartDifference_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             var differenceSeries = new Guna.Charts.WinForms.GunaBarDataset();
             differenceSeries.Label = "Mức chênh lệch";
 
@@ -81,11 +94,15 @@ namespace GUI.DashboardApp
             // Thêm dataset vào biểu đồ chênh lệch
             chartChenhLech.Datasets.Add(differenceSeries);
             chartChenhLech.Update();
+=======
+           
+>>>>>>> b9113d9 (Initial commit)
         }
 
         private void ucDoanhSoHoatDong_Load(object sender, EventArgs e)
         {
 
+<<<<<<< HEAD
             try
             {
                 // Lấy và hiển thị tổng số khách hàng
@@ -104,6 +121,9 @@ namespace GUI.DashboardApp
             {
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
+=======
+           
+>>>>>>> b9113d9 (Initial commit)
         }
 
         private void cbbox_TuyChonBieuDo_SelectedIndexChanged(object sender, EventArgs e)
@@ -118,6 +138,7 @@ namespace GUI.DashboardApp
 
         private void UpdateChartData(string kyHan)
         {
+<<<<<<< HEAD
             // Giá trị kỳ hạn mặc định
             int kyHanValue = 0;
 
@@ -180,6 +201,11 @@ namespace GUI.DashboardApp
 
             // Cập nhật biểu đồ
             chart_TongTienGuiTheoThang.Update();
+=======
+           
+
+            
+>>>>>>> b9113d9 (Initial commit)
         }
 
         private void chart_TienGuiNgayTheoKyHan_Load(object sender, EventArgs e)
@@ -188,6 +214,7 @@ namespace GUI.DashboardApp
         }
         private void UpdateChartDataByDay(DateTime selectedDate)
         {
+<<<<<<< HEAD
             // Lấy dữ liệu tổng tiền gửi theo ngày và kỳ hạn
             var savingsData = bieuDoBUS.GetSavingsByDateAndTerm(selectedDate);
 
@@ -257,6 +284,9 @@ namespace GUI.DashboardApp
             // Cập nhật biểu đồ
             chart_TienGuiNgayTheoKyHan.Update();
             chart_TienGuiNgayTheoKyHan.Invalidate();
+=======
+            
+>>>>>>> b9113d9 (Initial commit)
         }
 
 
@@ -270,6 +300,7 @@ namespace GUI.DashboardApp
         }
         private void UpdateDetailChart()
         {
+<<<<<<< HEAD
             lb_SoPhieu0KyHan.Text = bieuDoBUS.GetTotalSavingsAccountsByTerm(1).ToString();
             lb_SoPhieu3Thang.Text = bieuDoBUS.GetTotalSavingsAccountsByTerm(2).ToString();
             lb_SoPhieu6Thang.Text = bieuDoBUS.GetTotalSavingsAccountsByTerm(3).ToString();
@@ -277,6 +308,9 @@ namespace GUI.DashboardApp
             lb_TongTienGui0KyHan.Text = bieuDoBUS.GetTotalSavingsAmountByTerm(1).ToString("C") + " VNĐ"; // Gọi hàm với giá trị số kỳ hạn
             lb_TongTienGui3Thang.Text = bieuDoBUS.GetTotalSavingsAmountByTerm(2).ToString("C") + " VNĐ"; ; // Gọi hàm với giá trị số kỳ hạn
             lb_TongTienGui6Thang.Text = bieuDoBUS.GetTotalSavingsAmountByTerm(3).ToString("C") + " VNĐ"; ; // Gọi hàm với giá trị số kỳ hạn
+=======
+           
+>>>>>>> b9113d9 (Initial commit)
         }
     }
 

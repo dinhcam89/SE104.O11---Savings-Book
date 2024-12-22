@@ -5,6 +5,7 @@ namespace GUI.DashboardApp
 {
     public partial class ucQuanLyLoaiTietKiem : UserControl
     {
+<<<<<<< HEAD
         private List<LoaiTietKiem> _loaiTietKiemList;
         private LoaiTietKiemBUS _loaiTietKiemBUS;
         public ucQuanLyLoaiTietKiem()
@@ -12,6 +13,13 @@ namespace GUI.DashboardApp
             InitializeComponent();
             _loaiTietKiemBUS = new LoaiTietKiemBUS();
             _loaiTietKiemList = new List<LoaiTietKiem>();
+=======
+        
+        public ucQuanLyLoaiTietKiem()
+        {
+            InitializeComponent();
+            
+>>>>>>> b9113d9 (Initial commit)
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -20,6 +28,7 @@ namespace GUI.DashboardApp
             addForm.ShowDialog();
         }
 
+<<<<<<< HEAD
         private void populateItems(List<LoaiTietKiem> loaiTietKiem)
         {
             ListItem[] listItems = new ListItem[loaiTietKiem.Count];
@@ -46,6 +55,12 @@ namespace GUI.DashboardApp
         {
             _loaiTietKiemList = _loaiTietKiemBUS.getListLoaiTietKiem();
             populateItems(_loaiTietKiemList);
+=======
+        
+        private void loadItems()
+        {
+            
+>>>>>>> b9113d9 (Initial commit)
         }
         private void ucQuanLyLoaiTietKiem_Layout(object sender, LayoutEventArgs e)
         { 

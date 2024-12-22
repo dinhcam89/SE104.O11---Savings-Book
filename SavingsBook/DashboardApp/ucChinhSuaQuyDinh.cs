@@ -14,14 +14,19 @@ namespace GUI.DashboardApp
 {
     public partial class ucChinhSuaQuyDinh : UserControl
     {
+<<<<<<< HEAD
         private ThamSoBUS _thamSoBUS = new ThamSoBUS();
         private ThamSo? thamSo;
+=======
+        
+>>>>>>> b9113d9 (Initial commit)
         public ucChinhSuaQuyDinh()
         {
             InitializeComponent();
         }
         private void loadThamSo()
         {
+<<<<<<< HEAD
             thamSo = _thamSoBUS.getThamSo();
             if (thamSo != null)
             {
@@ -34,6 +39,9 @@ namespace GUI.DashboardApp
                 tbSoTienBanDauToiThieu.Text = "";
                 tbSoTienGoiThemToiThieu.Text = "";
             }
+=======
+            
+>>>>>>> b9113d9 (Initial commit)
         }
         private void ucChinhSuaQuyDinh_Layout(object sender, LayoutEventArgs e)
         {
@@ -42,6 +50,7 @@ namespace GUI.DashboardApp
 
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             if (tbSoTienBanDauToiThieu.Text == "" || tbSoTienGoiThemToiThieu.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -49,13 +58,20 @@ namespace GUI.DashboardApp
             }
             _thamSoBUS.updateThamSo(new ThamSo(double.Parse(tbSoTienBanDauToiThieu.Text), double.Parse(tbSoTienGoiThemToiThieu.Text)));
             loadThamSo();
+=======
+            
+>>>>>>> b9113d9 (Initial commit)
         }
 
         private void btnDatLai_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             ThamSo defaultThamSo = new ThamSo(100000, 0);
             _thamSoBUS.updateThamSo(defaultThamSo);
             loadThamSo();
+=======
+            
+>>>>>>> b9113d9 (Initial commit)
         }
     }
 }

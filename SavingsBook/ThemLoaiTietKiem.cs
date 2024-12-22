@@ -14,12 +14,20 @@ namespace GUI
 {
     public partial class ThemLoaiTietKiem : Form
     {
+<<<<<<< HEAD
         private LoaiTietKiemBUS _loaiTietKiemBUS = new LoaiTietKiemBUS();
         private Action reload;
         public ThemLoaiTietKiem(Action reload)
         {
             InitializeComponent();
             this.reload = reload;
+=======
+        
+        public ThemLoaiTietKiem(Action reload)
+        {
+            InitializeComponent();
+            
+>>>>>>> b9113d9 (Initial commit)
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -98,10 +106,14 @@ namespace GUI
                 }
 
             }
+<<<<<<< HEAD
             _loaiTietKiemBUS.postLoaiTietKiem(formatedKyHan * 30, formatedLaiSuat, formatedSoNgayToiThieuDuocRutTien, formatedQuyDinhTienRut);
             MessageBox.Show("Thêm loại tiết kiệm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             reload();
             Close();
+=======
+            
+>>>>>>> b9113d9 (Initial commit)
         }
     }
 }

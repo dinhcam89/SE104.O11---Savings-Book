@@ -11,6 +11,7 @@ namespace GUI
 {
     public class CMSLoaiTietKiem : ContextMenuStrip
     {
+<<<<<<< HEAD
         private LoaiTietKiem _loaiTietKiem;
         private LoaiTietKiemBUS _loaiTietKiemBUS = new LoaiTietKiemBUS();
         private Action reload;
@@ -53,6 +54,17 @@ namespace GUI
                 else
                     MessageBox.Show("Xóa thất bại.");
             }
+=======
+        
+        
+        private void OpenManagementForm(object sender, EventArgs e)
+        {
+            
+        }
+        private void DeleteItem(object sender, EventArgs e)
+        {
+            
+>>>>>>> b9113d9 (Initial commit)
         }
     }
 }

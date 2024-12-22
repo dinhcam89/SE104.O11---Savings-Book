@@ -25,6 +25,7 @@ namespace GUI
 
         private void populateItems()
         {
+<<<<<<< HEAD
             ListItem[] listItems = new ListItem[10];
 
             for (int i = 0; i < listItems.Length; i++)
@@ -45,6 +46,10 @@ namespace GUI
                     item.Width = flowLayoutPanel1.ClientSize.Width;
                 }
             };
+=======
+           
+           
+>>>>>>> b9113d9 (Initial commit)
         }
 
 

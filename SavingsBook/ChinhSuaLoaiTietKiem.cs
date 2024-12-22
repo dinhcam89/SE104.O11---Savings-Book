@@ -5,6 +5,7 @@ namespace GUI
 {
     public partial class ChinhSuaLoaiTietKiem : Form
     {
+<<<<<<< HEAD
         private LoaiTietKiemBUS _loaiTietKiemBUS = new LoaiTietKiemBUS();
         private LoaiTietKiem _loaiTietKiem;
         private Action reload;
@@ -180,6 +181,14 @@ namespace GUI
                     btnSua.Text = "Sửa";
                 }
             }
+=======
+        
+        
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            
+>>>>>>> b9113d9 (Initial commit)
 
         }
         private void btnExit_Click(object sender, EventArgs e)

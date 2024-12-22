@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
+<<<<<<< HEAD
     public class LoaiTietKiem
     {
         #region Properties
@@ -27,5 +28,25 @@ namespace DTO
             QuyDinhSoTienRut = quydinhsotienrut;
         }
         #endregion
+=======
+    public class LoaiTietKiemDTO
+    {
+        public int MaLoaiTietKiem { get; set; }           // Mã loại tiết kiệm
+        public int KyHan { get; set; }                   // Kỳ hạn (tháng)
+        public float LaiSuat { get; set; }               // Lãi suất (%)
+        public int SoNgayToiThieuDuocRutTien { get; set; } // Số ngày tối thiểu để được rút tiền
+        public string QuiDinhSoTienRut { get; set; }     // Quy định số tiền được rút (<=, =, ...)
+
+        public LoaiTietKiemDTO() { }
+
+        public LoaiTietKiemDTO(int maLoaiTietKiem, int kyHan, float laiSuat, int soNgayToiThieuDuocRutTien, string quiDinhSoTienRut)
+        {
+            MaLoaiTietKiem = maLoaiTietKiem;
+            KyHan = kyHan;
+            LaiSuat = laiSuat;
+            SoNgayToiThieuDuocRutTien = soNgayToiThieuDuocRutTien;
+            QuiDinhSoTienRut = quiDinhSoTienRut;
+        }
+>>>>>>> b9113d9 (Initial commit)
     }
 }
