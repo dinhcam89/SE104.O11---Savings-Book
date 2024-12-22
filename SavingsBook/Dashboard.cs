@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class Dashboard : Form
+    public partial class Dashboard : BaseForm
     {
 
         private ucQuanLyPhieu ucSearch;        
@@ -52,7 +52,7 @@ namespace GUI
                         this.ucManageSavingBooks.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.ucManageSavingBooks.Location = new System.Drawing.Point(0, 0);
                         this.ucManageSavingBooks.Name = "ucManageSavingBooks";
-                        this.Size = new System.Drawing.Size(698, 508);
+                        this.Size = new System.Drawing.Size(1236, 686);
                         this.ucManageSavingBooks.TabIndex = 0;
                     }
                     else
@@ -69,7 +69,7 @@ namespace GUI
                         this.ucManageCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.ucManageCustomers.Location = new System.Drawing.Point(0, 0);
                         this.ucManageCustomers.Name = "ucManageCustomers";
-                        this.Size = new System.Drawing.Size(698, 508);
+                        this.Size = new System.Drawing.Size(1236, 686);
                         this.ucManageCustomers.TabIndex = 0;
                     }
                     else
@@ -86,7 +86,7 @@ namespace GUI
                         this.ucSaleReport.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.ucSaleReport.Location = new System.Drawing.Point(0, 0);
                         this.ucSaleReport.Name = "ucSaleReport";
-                        this.Size = new System.Drawing.Size(698, 508);
+                        this.Size = new System.Drawing.Size(1236, 686);
                         this.ucSaleReport.TabIndex = 0;
                     }
                     else
@@ -103,7 +103,7 @@ namespace GUI
                         this.ucEditAdjustRate.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.ucEditAdjustRate.Location = new System.Drawing.Point(0, 0);
                         this.ucEditAdjustRate.Name = "ucEditAdjustRate";
-                        this.Size = new System.Drawing.Size(698, 508);
+                        this.Size = new System.Drawing.Size(1236, 686);
                         this.ucEditAdjustRate.TabIndex = 0;
                     }
                     else
@@ -120,7 +120,7 @@ namespace GUI
                         this.ucEditRules.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.ucEditRules.Location = new System.Drawing.Point(0, 0);
                         this.ucEditRules.Name = "ucEditRules";
-                        this.Size = new System.Drawing.Size(698, 508);
+                        this.Size = new System.Drawing.Size(1236, 686);
                         this.ucEditRules.TabIndex = 0;
                     }
                     else

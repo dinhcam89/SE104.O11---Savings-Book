@@ -28,11 +28,21 @@ namespace BUS
         {
             return bieuDoDAO.GetTotalSavingsAmount();
         }
+        public decimal GetTotalSavingsAccountsByTerm(int term)
+        {
+            return bieuDoDAO.GetTotalSavingsAccountsByTerm(term);
+        }
 
         // Hàm lấy dữ liệu tổng quan theo tháng
-        public Dictionary<string, decimal> GetSavingsByMonth()
+        public Dictionary<string, Dictionary<int, decimal>> GetSavingsByMonthAndTerm(string kyHan)
         {
-            return bieuDoDAO.GetSavingsByMonth();
+            return bieuDoDAO.GetSavingsByMonthAndTerm(kyHan);
         }
+        public Dictionary<int, Dictionary<DateTime, decimal>> GetSavingsByDateAndTerm(DateTime selectedDate)
+        {
+            // Truy vấn cơ sở dữ liệu để đếm số lượng phiếu tiết kiệm theo kỳ hạn
+            return bieuDoDAO.GetSavingsByDateAndTerm(selectedDate);
+        }
+
     }
 }
