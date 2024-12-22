@@ -1,4 +1,6 @@
-﻿using SavingsBook;
+﻿using BUS;
+using DTO;
+using SavingsBook;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +11,14 @@ namespace GUI
 {
     public class CMSLoaiTietKiem : ContextMenuStrip
     {
-        public CMSLoaiTietKiem()
+        private LoaiTietKiem _loaiTietKiem;
+        private LoaiTietKiemBUS _loaiTietKiemBUS = new LoaiTietKiemBUS();
+        private Action reload;
+        public CMSLoaiTietKiem(LoaiTietKiem ltk, Action reload)
         {
+            _loaiTietKiem = ltk;
+            this.reload = reload;
+
             // Khởi tạo các mục menu
             ToolStripMenuItem menuItemQuanLy = new ToolStripMenuItem("Chi tiết");
             menuItemQuanLy.Click += OpenManagementForm!;
@@ -24,14 +32,27 @@ namespace GUI
         }
         private void OpenManagementForm(object sender, EventArgs e)
         {
-            ChinhSuaLoaiTietKiem form = new ChinhSuaLoaiTietKiem();
+            ChinhSuaLoaiTietKiem form = new ChinhSuaLoaiTietKiem(_loaiTietKiem, reload);
             form.Show();
-            //MessageBox.Show("Hiện thông tin chi tiết của loại tiết kiệm");
         }
         private void DeleteItem(object sender, EventArgs e)
         {
-            //thêm hàm xóa vào đây nhé Conal
-            MessageBox.Show("Item đã được xóa.");
+            // Hiển thị MessageBox với hai nút Yes/No
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // Kiểm tra xem người dùng chọn Yes
+            if (result == DialogResult.Yes)
+            {
+                // Gọi hàm delete() để thực hiện việc xóa
+                bool response = _loaiTietKiemBUS.deleteLoaiTietKiem(_loaiTietKiem);
+                if (response)
+                {
+                    MessageBox.Show("Xóa thành công.");
+                    reload();
+                }
+                else
+                    MessageBox.Show("Xóa thất bại.");
+            }
         }
     }
 }
