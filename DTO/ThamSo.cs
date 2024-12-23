@@ -8,14 +8,14 @@ namespace DTO
 {
     public class ThamSo
     {
-        public double SoTienBanDauToiThieu { get; set; }
-        public double SoTienGoiThemToiThieu { get; set; }
+        public float SoTienBanDauToiThieu { get; set; }
+        public float SoTienGoiThemToiThieu { get; set; }
 
-        public ThamSo() { }
-        public ThamSo(double sotienbandautoithieu, double sotiengoithemtoithieu)
+        // Constructor
+        public ThamSo(float soTienBanDauToiThieu, float soTienGoiThemToiThieu)
         {
-            SoTienBanDauToiThieu = sotienbandautoithieu;
-            SoTienGoiThemToiThieu = sotiengoithemtoithieu;
+            SoTienBanDauToiThieu = soTienBanDauToiThieu;
+            SoTienGoiThemToiThieu = soTienGoiThemToiThieu;
         }
     }
 }

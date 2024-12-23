@@ -8,11 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS;
+using DTO;
 
 namespace GUI.DashboardApp
 {
     public partial class ucQuanLyKhachHang : UserControl
     {
+        private DSKhachHangBUS dsKhachHangBUS = new DSKhachHangBUS();
+        List<KhachHang> danhSachKhachHang = new List<KhachHang>();
+
         public ucQuanLyKhachHang()
         {
             InitializeComponent();
@@ -21,33 +26,31 @@ namespace GUI.DashboardApp
 
         private void ucManageCustomers_Load(object sender, EventArgs e)
         {
-            populateItems();
+            danhSachKhachHang = dsKhachHangBUS.GetAllCustomers();
+            populateItems(danhSachKhachHang);
 
         }
 
-        private void populateItems()
+        private void populateItems(List<KhachHang> khachHangList)
         {
-            ListItem[] listItems = new ListItem[10];
+            // Xóa tất cả control cũ
+            flowLayoutPanelKhachHang.Controls.Clear();
 
-            for (int i = 0; i < listItems.Length; i++)
+            foreach (var kh in khachHangList)
             {
-                listItems[i] = new ListItem();
-                listItems[i].Ten1 = "Tên khách hàng " + i;
-                listItems[i].Ten2 = "Mã khách hàng " + i;
-                listItems[i].Ten3 = "Số dư " + i;
-                listItems[i].Ten4 = "Số phiếu tiết kiệm " + i;
-
-                flowLayoutPanel1.Controls.Add(listItems[i]);
-
-            }
-            flowLayoutPanel1.Resize += (s, e) =>
-            {
-                foreach (ListItem item in flowLayoutPanel1.Controls)
+                var listItem = new ListItem
                 {
-                    item.Width = flowLayoutPanel1.ClientSize.Width;
-                }
-            };
+                    Ten1 = kh.HoTenKH,
+                    Ten2 = kh.MaKH,
+                    Ten3 = kh.SoDuHienCo.ToString("C"),
+                    Ten4 = kh.SDT
+                };
+
+                flowLayoutPanelKhachHang.Controls.Add(listItem);
+            }
         }
+
+
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -59,6 +62,17 @@ namespace GUI.DashboardApp
         {
             ThongTinKhachHang customerInfor = new ThongTinKhachHang();
             customerInfor.Show();
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = txtTimKiem.Text.Trim();
+
+            // Gọi hàm tìm kiếm trong database
+            var danhSachKhachHang = dsKhachHangBUS.SearchKhachHang(searchText);
+
+            // Hiển thị danh sách khách hàng lên FlowLayoutPanel
+            populateItems(danhSachKhachHang);
         }
     }
 }

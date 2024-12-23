@@ -9,7 +9,7 @@ namespace DAO
 {
     public class BieuDoDAO
     {
-        private string connectionString = @"Server=MSI\SQLEXPRESS;Database=stk_db;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True";
+        private string connectionString = @"Server=MSI\SQLEXPRESS;Database=saving_books_management;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True";
 
         // Hàm lấy tổng số khách hàng
         public int GetTotalCustomers()

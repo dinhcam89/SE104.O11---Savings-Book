@@ -39,7 +39,7 @@ namespace GUI.DashboardApp
             {
                 listItems[i] = new ListItem();
                 listItems[i].Ten1 = "Tên khách hàng " + i;
-                listItems[i].Ten2 = "Mã khách hàng " + i;
+                listItems[i].Ten2 = "Mã phiếu tiết kiệm" + i;
                 listItems[i].Ten3 = "Loại kỳ hạn " + i;
                 listItems[i].Ten4 = "";
                 //listItems[i].btnCustom.Text = "Xem";

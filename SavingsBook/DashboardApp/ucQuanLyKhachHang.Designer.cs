@@ -42,7 +42,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            flowLayoutPanel1 = new FlowLayoutPanel();
+            flowLayoutPanelKhachHang = new FlowLayoutPanel();
             btnAdd = new Guna.UI2.WinForms.Guna2GradientButton();
             guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             label1 = new Label();
@@ -72,7 +72,7 @@
             // 
             guna2Panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             guna2Panel2.BackColor = Color.White;
-            guna2Panel2.Controls.Add(flowLayoutPanel1);
+            guna2Panel2.Controls.Add(flowLayoutPanelKhachHang);
             guna2Panel2.Controls.Add(btnAdd);
             guna2Panel2.Controls.Add(guna2Panel5);
             guna2Panel2.Controls.Add(btnTimKiem);
@@ -84,15 +84,15 @@
             guna2Panel2.Size = new Size(929, 603);
             guna2Panel2.TabIndex = 0;
             // 
-            // flowLayoutPanel1
+            // flowLayoutPanelKhachHang
             // 
-            flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.BackColor = Color.Transparent;
-            flowLayoutPanel1.Location = new Point(19, 183);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(894, 356);
-            flowLayoutPanel1.TabIndex = 24;
+            flowLayoutPanelKhachHang.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            flowLayoutPanelKhachHang.AutoScroll = true;
+            flowLayoutPanelKhachHang.BackColor = Color.Transparent;
+            flowLayoutPanelKhachHang.Location = new Point(19, 183);
+            flowLayoutPanelKhachHang.Name = "flowLayoutPanelKhachHang";
+            flowLayoutPanelKhachHang.Size = new Size(894, 356);
+            flowLayoutPanelKhachHang.TabIndex = 24;
             // 
             // btnAdd
             // 
@@ -230,6 +230,7 @@
             txtTimKiem.Size = new Size(815, 50);
             txtTimKiem.TabIndex = 18;
             txtTimKiem.TextOffset = new Point(10, 0);
+            txtTimKiem.TextChanged += txtTimKiem_TextChanged;
             // 
             // ucQuanLyKhachHang
             // 
@@ -258,7 +259,7 @@
         private Label lblMaPhieuTietKiem0;
         private Label lbltenKhachHang0;
         private Guna.UI2.WinForms.Guna2GradientButton btnAdd;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel flowLayoutPanelKhachHang;
         private Label label1;
     }
 

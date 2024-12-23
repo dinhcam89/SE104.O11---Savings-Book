@@ -8,24 +8,21 @@ namespace DTO
 {
     public class LoaiTietKiem
     {
-        #region Properties
-        public int MaLoaiTietKiem { get; set; }
+        public string MaLoaiTietKiem { get; set; }
         public int KyHan { get; set; }
-        public double LaiSuat { get; set; }
+        public float LaiSuat { get; set; }
         public int SoNgayToiThieuDuocRutTien { get; set; }
         public string QuyDinhSoTienRut { get; set; }
-        #endregion
-
-        #region Constructors
         public LoaiTietKiem() { }
-        public LoaiTietKiem(int maloaitk, int kyhan, double laisuat, int songaytoithieuduocruttien, string quydinhsotienrut)
+
+        // Constructor
+        public LoaiTietKiem(string maLoaiTietKiem, int kyHan, float laiSuat, int soNgayToiThieuDuocRutTien, string quyDinhSoTienRut)
         {
-            MaLoaiTietKiem = maloaitk;
-            KyHan = kyhan;
-            LaiSuat = laisuat;
-            SoNgayToiThieuDuocRutTien = songaytoithieuduocruttien;
-            QuyDinhSoTienRut = quydinhsotienrut;
+            MaLoaiTietKiem = maLoaiTietKiem;
+            KyHan = kyHan;
+            LaiSuat = laiSuat;
+            SoNgayToiThieuDuocRutTien = soNgayToiThieuDuocRutTien;
+            QuyDinhSoTienRut = quyDinhSoTienRut;
         }
-        #endregion
     }
 }
