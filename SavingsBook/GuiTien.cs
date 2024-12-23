@@ -43,7 +43,6 @@ namespace GUI
                 GuiThemTienBUS bus = new GuiThemTienBUS();
                 string result = bus.GuiThemTien(soTaiKhoanTienGoi, soTienGuiThem, ngayGiaoDich);
 
-                // Hiển thị thông báo dựa trên kết quả trả về
                 MessageBox.Show(result, "Kết quả", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
