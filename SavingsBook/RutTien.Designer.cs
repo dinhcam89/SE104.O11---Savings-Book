@@ -167,9 +167,9 @@
             lblSTKTienGoi.ForeColor = Color.FromArgb(135, 92, 254);
             lblSTKTienGoi.Location = new Point(278, 89);
             lblSTKTienGoi.Name = "lblSTKTienGoi";
-            lblSTKTienGoi.Size = new Size(23, 25);
+            lblSTKTienGoi.Size = new Size(126, 25);
             lblSTKTienGoi.TabIndex = 47;
-            lblSTKTienGoi.Text = "1";
+            lblSTKTienGoi.Text = "PGT0000002";
             // 
             // lblNgayGiaoDich
             // 
@@ -207,18 +207,19 @@
             txtSoTienRut.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtSoTienRut.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtSoTienRut.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtSoTienRut.Font = new Font("Segoe UI", 9F);
+            txtSoTienRut.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtSoTienRut.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtSoTienRut.ImeMode = ImeMode.On;
-            txtSoTienRut.Location = new Point(205, 135);
-            txtSoTienRut.Margin = new Padding(3, 5, 3, 5);
+            txtSoTienRut.Location = new Point(205, 148);
+            txtSoTienRut.Margin = new Padding(8, 10, 8, 10);
             txtSoTienRut.Name = "txtSoTienRut";
             txtSoTienRut.PasswordChar = '\0';
             txtSoTienRut.PlaceholderText = "";
             txtSoTienRut.SelectedText = "";
             txtSoTienRut.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            txtSoTienRut.Size = new Size(197, 55);
+            txtSoTienRut.Size = new Size(199, 57);
             txtSoTienRut.TabIndex = 43;
+            txtSoTienRut.TextAlign = HorizontalAlignment.Center;
             // 
             // lblSTKTienGoi0
             // 
@@ -269,11 +270,11 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker DTPNgayGiaoDich;
         private Guna.UI2.WinForms.Guna2GradientButton btnHuy;
         private Guna.UI2.WinForms.Guna2GradientButton btnRutTien;
-        private Label lblSTKTienGoi;
         private Label lblNgayGiaoDich;
         private Label lblTitle;
         private Guna.UI2.WinForms.Guna2TextBox txtSoTienRut;
         private Label lblSTKTienGoi0;
         private Label lblSoTienRut;
+        private Label lblSTKTienGoi;
     }
 }

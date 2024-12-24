@@ -10,8 +10,8 @@ namespace DTO
     {
         #region Properties
         public string SoTaiKhoanGuiTien { get; set; }
-        public int MaKH { get; set; }
-        public int MaLoaiTietKiem { get; set; } 
+        public string SoTaiKhoanThanhToan { get; set; }
+        public string MaLoaiTietKiem { get; set; } 
         public double LaiSuatApDung { get; set; }
         public double LaiSuatPhatSinh { get; set; }
         public DateTime NgayDaoHanKeTiep { get; set; }
@@ -23,11 +23,11 @@ namespace DTO
 
         #region Constructors
         public PhieuGuiTien() { }
-        public PhieuGuiTien(string sotaikhoanguitien, int makh,int maltk, double laisuatapdung, double laisuatphatsinh, DateTime ngaydaohanketiep,
+        public PhieuGuiTien(string sotaikhoanguitien, string sotaikhoanthanhtoan,string maltk, double laisuatapdung, double laisuatphatsinh, DateTime ngaydaohanketiep,
             DateTime ngaygui, double tongtiengoc, double tongtienlaiphatsinh, int hinhthucgiahan)
         {
             SoTaiKhoanGuiTien = sotaikhoanguitien;
-            MaKH = makh;
+            SoTaiKhoanThanhToan = sotaikhoanthanhtoan;
             MaLoaiTietKiem = maltk;
             LaiSuatApDung = laisuatapdung;
             LaiSuatPhatSinh = laisuatphatsinh;

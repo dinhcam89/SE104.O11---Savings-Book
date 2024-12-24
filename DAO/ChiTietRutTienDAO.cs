@@ -28,8 +28,8 @@ namespace DAO
                     return new PhieuGuiTien
                     {
                         SoTaiKhoanGuiTien = reader.GetString(reader.GetOrdinal("SoTaiKhoanTienGoi")),
-                        MaKH = reader.GetInt32(reader.GetOrdinal("SoTaiKhoanThanhToan")),
-                        MaLoaiTietKiem = reader.GetInt32(reader.GetOrdinal("MaLoaiTietKiem")),
+                        SoTaiKhoanThanhToan = reader.GetString(reader.GetOrdinal("SoTaiKhoanThanhToan")),
+                        MaLoaiTietKiem = reader.GetString(reader.GetOrdinal("MaLoaiTietKiem")),
                         LaiSuatApDung = reader.GetDouble(reader.GetOrdinal("LaiSuatApDung")),
                         LaiSuatPhatSinh = reader.GetDouble(reader.GetOrdinal("LaiSuatPhatSinh")),
                         NgayDaoHanKeTiep = reader.GetDateTime(reader.GetOrdinal("NgayDaoHanKeTiep")), // DATE
@@ -42,7 +42,7 @@ namespace DAO
             return null;
         }
 
-        public LoaiTietKiem GetLoaiTietKiemById(int maLoaiTietKiem)
+        public LoaiTietKiem GetLoaiTietKiemById(string maLoaiTietKiem)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -64,18 +64,6 @@ namespace DAO
                 }
             }
             return null;
-        }
-
-        public double GetLaiSuatKhongKyHan()
-        {
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                string query = "SELECT TOP 1 LaiSuat FROM LoaiTietKiem WHERE KyHan = 0";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                conn.Open();
-                object result = cmd.ExecuteScalar();
-                return result != null ? Convert.ToDouble(result) : 0.0;
-            }
         }
 
         public bool UpdatePhieuGoiTienAfterRut(string soTaiKhoanTienGoi, double soTienRut)
@@ -124,7 +112,7 @@ namespace DAO
             }
         }
 
-        public bool UpdateKhachHangSoDu(int soTaiKhoanThanhToan, double soTienRut)
+        public bool UpdateKhachHangSoDu(string soTaiKhoanThanhToan, double soTienRut)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {

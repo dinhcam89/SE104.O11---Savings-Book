@@ -20,7 +20,37 @@ namespace GUI
             InitializeComponent();
             // Thiết lập không cho phép thay đổi kích thước Form
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.Load += new System.EventHandler(this.RutTienForm_Load);
 
+        }
+
+        public void RutTienForm_Load(object sender, EventArgs e)
+        {
+            string soTaiKhoanTienGoi = lblSTKTienGoi.Text;
+            double tongTien = rutTienBUS.GetTongTien(soTaiKhoanTienGoi);
+            bool isKyHan = rutTienBUS.IsKyHan(soTaiKhoanTienGoi);
+
+            if (tongTien > 0)
+            {
+                txtSoTienRut.Text = tongTien.ToString("N2"); // Hiển thị số tiền với định dạng hai chữ số thập phân
+            }
+            else
+            {
+                txtSoTienRut.Text = "0.00";
+            }
+
+            if (isKyHan)
+            {
+                // Nếu là loại tiết kiệm có kỳ hạn
+                txtSoTienRut.Enabled = false; // Không cho phép nhập
+                txtSoTienRut.Text = tongTien.ToString("N2"); // Hiển thị toàn bộ số tiền
+            }
+            else
+            {
+                // Nếu là loại tiết kiệm không kỳ hạn
+                txtSoTienRut.Enabled = true; // Cho phép nhập
+                //txtSoTienRut.Clear(); // Để trống TextBox
+            }
         }
 
         private void btnClose_Click_1(object sender, EventArgs e)

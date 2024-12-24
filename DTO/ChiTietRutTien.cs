@@ -9,7 +9,7 @@ namespace DTO
     public class ChiTietRutTien
     {
         #region Properties
-        public int MaChiTietRutTien { get; set; }
+        public string MaChiTietRutTien { get; set; }
         public string SoTaiKhoanGuiTien { get; set; }
         public DateTime NgayRut { get; set; }
         public double SoTienRut { get; set; }
@@ -17,7 +17,7 @@ namespace DTO
 
         #region Constructors
         public ChiTietRutTien() { }
-        public ChiTietRutTien(int machitietruttien, string sotaikhoanguitien, DateTime ngayrut, double sotienrut)
+        public ChiTietRutTien(string machitietruttien, string sotaikhoanguitien, DateTime ngayrut, double sotienrut)
         {
             MaChiTietRutTien = machitietruttien;
             SoTaiKhoanGuiTien = sotaikhoanguitien;

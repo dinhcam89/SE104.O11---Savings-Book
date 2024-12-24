@@ -33,7 +33,7 @@ namespace BUS
                 if (!rutTienDAO.UpdatePhieuGoiTienAfterRut(soTaiKhoanTienGoi, soTienRut))
                     return "Lỗi khi cập nhật số tiền gốc sau khi rút.";
 
-                if (!rutTienDAO.UpdateKhachHangSoDu(phieuGuiTien.MaKH, soTienRut))
+                if (!rutTienDAO.UpdateKhachHangSoDu(phieuGuiTien.SoTaiKhoanThanhToan, soTienRut))
                     return "Lỗi khi cập nhật số dư hiện có của khách hàng.";
 
                 InsertChiTietRutTien(soTaiKhoanTienGoi, soTienRut, ngayRut);
@@ -48,13 +48,36 @@ namespace BUS
                 if (!rutTienDAO.UpdatePhieuGoiTienToZero(soTaiKhoanTienGoi))
                     return "Lỗi khi cập nhật thông tin sổ tiết kiệm (gốc và lãi phát sinh).";
 
-                if (!rutTienDAO.UpdateKhachHangSoDu(phieuGuiTien.MaKH, soTienRut))
+                if (!rutTienDAO.UpdateKhachHangSoDu(phieuGuiTien.SoTaiKhoanThanhToan, soTienRut))
                     return "Lỗi khi cập nhật số dư hiện có của khách hàng.";
 
                 InsertChiTietRutTien(soTaiKhoanTienGoi, soTienRut, ngayRut);
 
                 return $"Rút tiền thành công.";
             }
+        }
+        public double GetTongTien(string soTaiKhoanTienGoi)
+        {
+            PhieuGuiTien phieuGuiTien = rutTienDAO.GetPhieuGoiTienById(soTaiKhoanTienGoi);
+            if (phieuGuiTien != null)
+            {
+                return phieuGuiTien.TongTienGoc + phieuGuiTien.TongTienLaiPhatSinh;
+            }
+            return 0;
+        }
+
+        public bool IsKyHan(string soTaiKhoanTienGoi)
+        {
+            PhieuGuiTien phieuGuiTien = rutTienDAO.GetPhieuGoiTienById(soTaiKhoanTienGoi);
+            if (phieuGuiTien != null)
+            {
+                LoaiTietKiem loaiTietKiem = rutTienDAO.GetLoaiTietKiemById(phieuGuiTien.MaLoaiTietKiem);
+                if (loaiTietKiem != null)
+                {
+                    return loaiTietKiem.KyHan > 0; // Có kỳ hạn nếu KyHan > 0
+                }
+            }
+            return false; // Mặc định là không kỳ hạn nếu không tìm thấy thông tin
         }
 
         private void InsertChiTietRutTien(string soTaiKhoanTienGoi, double soTienRut, DateTime ngayRut)
