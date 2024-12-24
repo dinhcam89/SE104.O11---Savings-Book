@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges51 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges52 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -116,16 +115,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges49 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges50 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges45 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges46 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges47 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges48 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             tabPage1 = new TabPage();
@@ -146,15 +135,16 @@
             tabPage2 = new TabPage();
             label11 = new Label();
             guna2Panel18 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2Panel19 = new Guna.UI2.WinForms.Guna2Panel();
-            label8 = new Label();
-            lb_TongTienGui3Thang = new Label();
-            guna2Panel20 = new Guna.UI2.WinForms.Guna2Panel();
-            label10 = new Label();
-            lb_TongTienGui0KyHan = new Label();
+            tableLayoutPanel1 = new TableLayoutPanel();
             guna2Panel21 = new Guna.UI2.WinForms.Guna2Panel();
             label12 = new Label();
             lb_TongTienGui6Thang = new Label();
+            guna2Panel20 = new Guna.UI2.WinForms.Guna2Panel();
+            label10 = new Label();
+            lb_TongTienGui0KyHan = new Label();
+            guna2Panel19 = new Guna.UI2.WinForms.Guna2Panel();
+            label8 = new Label();
+            lb_TongTienGui3Thang = new Label();
             label14 = new Label();
             chart_TienGuiNgayTheoKyHan = new Guna.Charts.WinForms.GunaChart();
             DTP_BieuDoTienGuiTheoThang = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -187,25 +177,7 @@
             label5 = new Label();
             lb_TongChiKyHan0 = new Label();
             label7 = new Label();
-            tabPage4 = new TabPage();
-            guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
-            btnTaoBaoCao = new Guna.UI2.WinForms.Guna2GradientButton();
-            guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            label18 = new Label();
-            label17 = new Label();
-            DTP_NgayKetThucBaoCao = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            btnTuyChon = new Guna.UI2.WinForms.Guna2GradientButton();
-            label16 = new Label();
-            label15 = new Label();
-            label13 = new Label();
-            dgvBaoCaoGDGuiTien = new DataGridView();
-            dgvBaoCaoDoanhThuTaoPhieu = new DataGridView();
-            dgvBaoCaoGDRutTien = new DataGridView();
             lblTitle = new Label();
-            CMS_LoaiBaoCao = new ContextMenuStrip(components);
-            toolStripMenuItem_GDGuiTien = new ToolStripMenuItem();
-            toolStripMenuItem_GDRutTien = new ToolStripMenuItem();
-            toolStripMenuItem_GDTaoPhieu = new ToolStripMenuItem();
             guna2Panel1.SuspendLayout();
             guna2TabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -215,9 +187,10 @@
             guna2Panel8.SuspendLayout();
             tabPage2.SuspendLayout();
             guna2Panel18.SuspendLayout();
-            guna2Panel19.SuspendLayout();
-            guna2Panel20.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
             guna2Panel21.SuspendLayout();
+            guna2Panel20.SuspendLayout();
+            guna2Panel19.SuspendLayout();
             guna2Panel4.SuspendLayout();
             guna2Panel13.SuspendLayout();
             guna2Panel12.SuspendLayout();
@@ -228,12 +201,6 @@
             guna2Panel15.SuspendLayout();
             guna2Panel16.SuspendLayout();
             guna2Panel17.SuspendLayout();
-            tabPage4.SuspendLayout();
-            guna2Panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvBaoCaoGDGuiTien).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvBaoCaoDoanhThuTaoPhieu).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvBaoCaoGDRutTien).BeginInit();
-            CMS_LoaiBaoCao.SuspendLayout();
             SuspendLayout();
             // 
             // guna2Panel1
@@ -242,11 +209,11 @@
             guna2Panel1.BackColor = Color.White;
             guna2Panel1.Controls.Add(guna2TabControl1);
             guna2Panel1.Controls.Add(lblTitle);
-            guna2Panel1.CustomizableEdges = customizableEdges51;
+            guna2Panel1.CustomizableEdges = customizableEdges41;
             guna2Panel1.Dock = DockStyle.Fill;
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges52;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges42;
             guna2Panel1.Size = new Size(1084, 690);
             guna2Panel1.TabIndex = 0;
             // 
@@ -256,12 +223,11 @@
             guna2TabControl1.Controls.Add(tabPage1);
             guna2TabControl1.Controls.Add(tabPage2);
             guna2TabControl1.Controls.Add(tabPage3);
-            guna2TabControl1.Controls.Add(tabPage4);
             guna2TabControl1.ItemSize = new Size(180, 40);
             guna2TabControl1.Location = new Point(17, 61);
             guna2TabControl1.Name = "guna2TabControl1";
             guna2TabControl1.SelectedIndex = 0;
-            guna2TabControl1.Size = new Size(998, 608);
+            guna2TabControl1.Size = new Size(1052, 608);
             guna2TabControl1.TabButtonHoverState.BorderColor = Color.Empty;
             guna2TabControl1.TabButtonHoverState.FillColor = Color.FromArgb(40, 52, 70);
             guna2TabControl1.TabButtonHoverState.Font = new Font("Segoe UI Semibold", 10F);
@@ -291,7 +257,7 @@
             tabPage1.Location = new Point(4, 44);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(990, 560);
+            tabPage1.Size = new Size(1044, 560);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Tổng quan";
             tabPage1.UseVisualStyleBackColor = true;
@@ -308,10 +274,10 @@
             cbbox_TuyChonBieuDo.Font = new Font("Segoe UI", 10F);
             cbbox_TuyChonBieuDo.ForeColor = Color.FromArgb(68, 88, 112);
             cbbox_TuyChonBieuDo.ItemHeight = 30;
-            cbbox_TuyChonBieuDo.Location = new Point(826, 503);
+            cbbox_TuyChonBieuDo.Location = new Point(857, 503);
             cbbox_TuyChonBieuDo.Name = "cbbox_TuyChonBieuDo";
             cbbox_TuyChonBieuDo.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            cbbox_TuyChonBieuDo.Size = new Size(140, 36);
+            cbbox_TuyChonBieuDo.Size = new Size(160, 36);
             cbbox_TuyChonBieuDo.TabIndex = 15;
             cbbox_TuyChonBieuDo.SelectedIndexChanged += cbbox_TuyChonBieuDo_SelectedIndexChanged;
             // 
@@ -346,7 +312,7 @@
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges10;
             guna2Panel2.ShadowDecoration.Enabled = true;
             guna2Panel2.ShadowDecoration.Shadow = new Padding(0, 0, 5, 5);
-            guna2Panel2.Size = new Size(941, 196);
+            guna2Panel2.Size = new Size(992, 196);
             guna2Panel2.TabIndex = 3;
             // 
             // lblRevenueTitle
@@ -355,7 +321,7 @@
             lblRevenueTitle.AutoSize = true;
             lblRevenueTitle.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblRevenueTitle.ForeColor = Color.FromArgb(37, 10, 128);
-            lblRevenueTitle.Location = new Point(399, 11);
+            lblRevenueTitle.Location = new Point(425, 11);
             lblRevenueTitle.Name = "lblRevenueTitle";
             lblRevenueTitle.Size = new Size(179, 37);
             lblRevenueTitle.TabIndex = 4;
@@ -459,7 +425,7 @@
             guna2Panel8.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2Panel8.ShadowDecoration.Enabled = true;
             guna2Panel8.ShadowDecoration.Shadow = new Padding(0, 0, 5, 5);
-            guna2Panel8.Size = new Size(405, 109);
+            guna2Panel8.Size = new Size(456, 109);
             guna2Panel8.TabIndex = 13;
             // 
             // lblRevenueTitleType3
@@ -469,7 +435,7 @@
             lblRevenueTitleType3.ForeColor = Color.FromArgb(28, 52, 186);
             lblRevenueTitleType3.Location = new Point(122, 15);
             lblRevenueTitleType3.Name = "lblRevenueTitleType3";
-            lblRevenueTitleType3.Size = new Size(158, 25);
+            lblRevenueTitleType3.Size = new Size(209, 25);
             lblRevenueTitleType3.TabIndex = 13;
             lblRevenueTitleType3.Text = "Tổng số tiền gửi";
             lblRevenueTitleType3.TextAlign = ContentAlignment.MiddleCenter;
@@ -482,7 +448,7 @@
             lbl_TongTienGui.Location = new Point(0, 0);
             lbl_TongTienGui.Name = "lbl_TongTienGui";
             lbl_TongTienGui.Padding = new Padding(0, 25, 0, 0);
-            lbl_TongTienGui.Size = new Size(405, 109);
+            lbl_TongTienGui.Size = new Size(456, 109);
             lbl_TongTienGui.TabIndex = 16;
             lbl_TongTienGui.Text = "30";
             lbl_TongTienGui.TextAlign = ContentAlignment.MiddleCenter;
@@ -497,7 +463,7 @@
             chart_TongTienGuiTheoThang.Location = new Point(25, 239);
             chart_TongTienGuiTheoThang.Name = "chart_TongTienGuiTheoThang";
             chart_TongTienGuiTheoThang.PaletteCustomColors.FillColors.AddRange(new Color[] { Color.FromArgb(39, 20, 85), Color.FromArgb(37, 10, 128), Color.FromArgb(61, 78, 178), Color.FromArgb(118, 129, 253), Color.FromArgb(96, 176, 250) });
-            chart_TongTienGuiTheoThang.Size = new Size(941, 258);
+            chart_TongTienGuiTheoThang.Size = new Size(992, 258);
             chart_TongTienGuiTheoThang.TabIndex = 7;
             chartFont2.FontName = "Arial";
             chartFont2.Size = 12;
@@ -538,7 +504,7 @@
             tabPage2.Location = new Point(4, 44);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(990, 560);
+            tabPage2.Size = new Size(1044, 560);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Tổng thu";
             tabPage2.UseVisualStyleBackColor = true;
@@ -549,7 +515,7 @@
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.FromArgb(37, 10, 128);
-            label11.Location = new Point(368, 475);
+            label11.Location = new Point(399, 527);
             label11.Name = "label11";
             label11.Size = new Size(280, 30);
             label11.TabIndex = 21;
@@ -559,132 +525,56 @@
             // 
             guna2Panel18.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             guna2Panel18.AutoScroll = true;
-            guna2Panel18.AutoSize = true;
             guna2Panel18.BackColor = Color.Transparent;
             guna2Panel18.BorderColor = Color.Transparent;
             guna2Panel18.BorderRadius = 10;
-            guna2Panel18.Controls.Add(guna2Panel19);
-            guna2Panel18.Controls.Add(guna2Panel20);
-            guna2Panel18.Controls.Add(guna2Panel21);
+            guna2Panel18.Controls.Add(tableLayoutPanel1);
             guna2Panel18.Controls.Add(label14);
             guna2Panel18.CustomizableEdges = customizableEdges17;
             guna2Panel18.FillColor = Color.FromArgb(154, 198, 251);
-            guna2Panel18.Location = new Point(482, 29);
+            guna2Panel18.Location = new Point(479, 29);
             guna2Panel18.Name = "guna2Panel18";
             guna2Panel18.ShadowDecoration.Color = Color.LightGray;
             guna2Panel18.ShadowDecoration.CustomizableEdges = customizableEdges18;
             guna2Panel18.ShadowDecoration.Enabled = true;
             guna2Panel18.ShadowDecoration.Shadow = new Padding(0, 0, 5, 5);
-            guna2Panel18.Size = new Size(491, 171);
+            guna2Panel18.Size = new Size(548, 171);
             guna2Panel18.TabIndex = 13;
-            guna2Panel18.Paint += guna2Panel18_Paint;
             // 
-            // guna2Panel19
+            // tableLayoutPanel1
             // 
-            guna2Panel19.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            guna2Panel19.AutoSize = true;
-            guna2Panel19.BackColor = Color.Transparent;
-            guna2Panel19.BorderRadius = 10;
-            guna2Panel19.Controls.Add(label8);
-            guna2Panel19.Controls.Add(lb_TongTienGui3Thang);
-            guna2Panel19.CustomizableEdges = customizableEdges11;
-            guna2Panel19.FillColor = Color.FromArgb(208, 232, 255);
-            guna2Panel19.Location = new Point(172, 53);
-            guna2Panel19.Name = "guna2Panel19";
-            guna2Panel19.ShadowDecoration.Color = Color.Gray;
-            guna2Panel19.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2Panel19.ShadowDecoration.Enabled = true;
-            guna2Panel19.ShadowDecoration.Shadow = new Padding(0, 0, 5, 5);
-            guna2Panel19.Size = new Size(149, 100);
-            guna2Panel19.TabIndex = 13;
-            // 
-            // label8
-            // 
-            label8.Dock = DockStyle.Top;
-            label8.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            label8.ForeColor = Color.FromArgb(29, 0, 122);
-            label8.Location = new Point(0, 0);
-            label8.Name = "label8";
-            label8.Padding = new Padding(0, 10, 0, 0);
-            label8.Size = new Size(149, 39);
-            label8.TabIndex = 24;
-            label8.Text = "Kỳ hạn 3 tháng";
-            label8.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // lb_TongTienGui3Thang
-            // 
-            lb_TongTienGui3Thang.Dock = DockStyle.Fill;
-            lb_TongTienGui3Thang.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lb_TongTienGui3Thang.ForeColor = Color.FromArgb(29, 0, 122);
-            lb_TongTienGui3Thang.Location = new Point(0, 0);
-            lb_TongTienGui3Thang.Name = "lb_TongTienGui3Thang";
-            lb_TongTienGui3Thang.Padding = new Padding(0, 15, 0, 0);
-            lb_TongTienGui3Thang.Size = new Size(149, 100);
-            lb_TongTienGui3Thang.TabIndex = 27;
-            lb_TongTienGui3Thang.Text = "10";
-            lb_TongTienGui3Thang.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // guna2Panel20
-            // 
-            guna2Panel20.AutoSize = true;
-            guna2Panel20.BackColor = Color.Transparent;
-            guna2Panel20.BorderRadius = 10;
-            guna2Panel20.Controls.Add(label10);
-            guna2Panel20.Controls.Add(lb_TongTienGui0KyHan);
-            guna2Panel20.CustomizableEdges = customizableEdges13;
-            guna2Panel20.FillColor = Color.FromArgb(208, 232, 255);
-            guna2Panel20.Location = new Point(17, 53);
-            guna2Panel20.Name = "guna2Panel20";
-            guna2Panel20.ShadowDecoration.Color = Color.Gray;
-            guna2Panel20.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            guna2Panel20.ShadowDecoration.Enabled = true;
-            guna2Panel20.ShadowDecoration.Shadow = new Padding(0, 0, 5, 5);
-            guna2Panel20.Size = new Size(149, 100);
-            guna2Panel20.TabIndex = 29;
-            // 
-            // label10
-            // 
-            label10.Dock = DockStyle.Top;
-            label10.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            label10.ForeColor = Color.FromArgb(30, 3, 94);
-            label10.Location = new Point(0, 0);
-            label10.Name = "label10";
-            label10.Padding = new Padding(0, 10, 0, 0);
-            label10.Size = new Size(149, 39);
-            label10.TabIndex = 23;
-            label10.Text = "Không kỳ hạn";
-            label10.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // lb_TongTienGui0KyHan
-            // 
-            lb_TongTienGui0KyHan.Dock = DockStyle.Fill;
-            lb_TongTienGui0KyHan.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lb_TongTienGui0KyHan.ForeColor = Color.FromArgb(30, 3, 94);
-            lb_TongTienGui0KyHan.Location = new Point(0, 0);
-            lb_TongTienGui0KyHan.Name = "lb_TongTienGui0KyHan";
-            lb_TongTienGui0KyHan.Padding = new Padding(0, 15, 0, 0);
-            lb_TongTienGui0KyHan.Size = new Size(149, 100);
-            lb_TongTienGui0KyHan.TabIndex = 26;
-            lb_TongTienGui0KyHan.Text = "5";
-            lb_TongTienGui0KyHan.TextAlign = ContentAlignment.MiddleCenter;
+            tableLayoutPanel1.ColumnCount = 3;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.Controls.Add(guna2Panel21, 2, 0);
+            tableLayoutPanel1.Controls.Add(guna2Panel20, 0, 0);
+            tableLayoutPanel1.Controls.Add(guna2Panel19, 1, 0);
+            tableLayoutPanel1.Dock = DockStyle.Bottom;
+            tableLayoutPanel1.Location = new Point(0, 45);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.Padding = new Padding(10);
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Size = new Size(548, 126);
+            tableLayoutPanel1.TabIndex = 22;
             // 
             // guna2Panel21
             // 
             guna2Panel21.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            guna2Panel21.AutoSize = true;
             guna2Panel21.BackColor = Color.Transparent;
             guna2Panel21.BorderRadius = 10;
             guna2Panel21.Controls.Add(label12);
             guna2Panel21.Controls.Add(lb_TongTienGui6Thang);
-            guna2Panel21.CustomizableEdges = customizableEdges15;
+            guna2Panel21.CustomizableEdges = customizableEdges11;
             guna2Panel21.FillColor = Color.FromArgb(208, 232, 255);
-            guna2Panel21.Location = new Point(327, 53);
+            guna2Panel21.Location = new Point(375, 13);
             guna2Panel21.Name = "guna2Panel21";
             guna2Panel21.ShadowDecoration.Color = Color.Gray;
-            guna2Panel21.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            guna2Panel21.ShadowDecoration.CustomizableEdges = customizableEdges12;
             guna2Panel21.ShadowDecoration.Enabled = true;
             guna2Panel21.ShadowDecoration.Shadow = new Padding(0, 0, 5, 5);
-            guna2Panel21.Size = new Size(149, 100);
+            guna2Panel21.Size = new Size(160, 100);
             guna2Panel21.TabIndex = 12;
             // 
             // label12
@@ -695,7 +585,7 @@
             label12.Location = new Point(0, 0);
             label12.Name = "label12";
             label12.Padding = new Padding(0, 10, 0, 0);
-            label12.Size = new Size(149, 39);
+            label12.Size = new Size(160, 39);
             label12.TabIndex = 25;
             label12.Text = "Kỳ hạn 6 tháng";
             label12.TextAlign = ContentAlignment.TopCenter;
@@ -708,21 +598,107 @@
             lb_TongTienGui6Thang.Location = new Point(0, 0);
             lb_TongTienGui6Thang.Name = "lb_TongTienGui6Thang";
             lb_TongTienGui6Thang.Padding = new Padding(0, 15, 0, 0);
-            lb_TongTienGui6Thang.Size = new Size(149, 100);
+            lb_TongTienGui6Thang.Size = new Size(160, 100);
             lb_TongTienGui6Thang.TabIndex = 28;
             lb_TongTienGui6Thang.Text = "24";
             lb_TongTienGui6Thang.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // guna2Panel20
+            // 
+            guna2Panel20.BackColor = Color.Transparent;
+            guna2Panel20.BorderRadius = 10;
+            guna2Panel20.Controls.Add(label10);
+            guna2Panel20.Controls.Add(lb_TongTienGui0KyHan);
+            guna2Panel20.CustomizableEdges = customizableEdges13;
+            guna2Panel20.FillColor = Color.FromArgb(208, 232, 255);
+            guna2Panel20.Location = new Point(13, 13);
+            guna2Panel20.Name = "guna2Panel20";
+            guna2Panel20.ShadowDecoration.Color = Color.Gray;
+            guna2Panel20.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            guna2Panel20.ShadowDecoration.Enabled = true;
+            guna2Panel20.ShadowDecoration.Shadow = new Padding(0, 0, 5, 5);
+            guna2Panel20.Size = new Size(159, 100);
+            guna2Panel20.TabIndex = 29;
+            // 
+            // label10
+            // 
+            label10.Dock = DockStyle.Top;
+            label10.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label10.ForeColor = Color.FromArgb(30, 3, 94);
+            label10.Location = new Point(0, 0);
+            label10.Name = "label10";
+            label10.Padding = new Padding(0, 10, 0, 0);
+            label10.Size = new Size(159, 39);
+            label10.TabIndex = 23;
+            label10.Text = "Không kỳ hạn";
+            label10.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // lb_TongTienGui0KyHan
+            // 
+            lb_TongTienGui0KyHan.Dock = DockStyle.Fill;
+            lb_TongTienGui0KyHan.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lb_TongTienGui0KyHan.ForeColor = Color.FromArgb(30, 3, 94);
+            lb_TongTienGui0KyHan.Location = new Point(0, 0);
+            lb_TongTienGui0KyHan.Name = "lb_TongTienGui0KyHan";
+            lb_TongTienGui0KyHan.Padding = new Padding(0, 15, 0, 0);
+            lb_TongTienGui0KyHan.Size = new Size(159, 100);
+            lb_TongTienGui0KyHan.TabIndex = 26;
+            lb_TongTienGui0KyHan.Text = "5";
+            lb_TongTienGui0KyHan.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // guna2Panel19
+            // 
+            guna2Panel19.Anchor = AnchorStyles.Top;
+            guna2Panel19.BackColor = Color.Transparent;
+            guna2Panel19.BorderRadius = 10;
+            guna2Panel19.Controls.Add(label8);
+            guna2Panel19.Controls.Add(lb_TongTienGui3Thang);
+            guna2Panel19.CustomizableEdges = customizableEdges15;
+            guna2Panel19.FillColor = Color.FromArgb(208, 232, 255);
+            guna2Panel19.Location = new Point(189, 13);
+            guna2Panel19.Name = "guna2Panel19";
+            guna2Panel19.ShadowDecoration.Color = Color.Gray;
+            guna2Panel19.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            guna2Panel19.ShadowDecoration.Enabled = true;
+            guna2Panel19.ShadowDecoration.Shadow = new Padding(0, 0, 5, 5);
+            guna2Panel19.Size = new Size(170, 100);
+            guna2Panel19.TabIndex = 13;
+            // 
+            // label8
+            // 
+            label8.Dock = DockStyle.Top;
+            label8.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label8.ForeColor = Color.FromArgb(29, 0, 122);
+            label8.Location = new Point(0, 0);
+            label8.Name = "label8";
+            label8.Padding = new Padding(0, 10, 0, 0);
+            label8.Size = new Size(170, 39);
+            label8.TabIndex = 24;
+            label8.Text = "Kỳ hạn 3 tháng";
+            label8.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // lb_TongTienGui3Thang
+            // 
+            lb_TongTienGui3Thang.Dock = DockStyle.Fill;
+            lb_TongTienGui3Thang.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lb_TongTienGui3Thang.ForeColor = Color.FromArgb(29, 0, 122);
+            lb_TongTienGui3Thang.Location = new Point(0, 0);
+            lb_TongTienGui3Thang.Name = "lb_TongTienGui3Thang";
+            lb_TongTienGui3Thang.Padding = new Padding(0, 15, 0, 0);
+            lb_TongTienGui3Thang.Size = new Size(170, 100);
+            lb_TongTienGui3Thang.TabIndex = 27;
+            lb_TongTienGui3Thang.Text = "10";
+            lb_TongTienGui3Thang.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // label14
             // 
-            label14.AutoSize = true;
             label14.Dock = DockStyle.Fill;
             label14.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
             label14.ForeColor = Color.FromArgb(37, 10, 128);
             label14.Location = new Point(0, 0);
             label14.Name = "label14";
             label14.Padding = new Padding(0, 10, 0, 0);
-            label14.Size = new Size(183, 35);
+            label14.Size = new Size(548, 171);
             label14.TabIndex = 4;
             label14.Text = "TỔNG SỐ TIỀN GỬI";
             label14.TextAlign = ContentAlignment.TopCenter;
@@ -737,7 +713,7 @@
             chart_TienGuiNgayTheoKyHan.Location = new Point(15, 251);
             chart_TienGuiNgayTheoKyHan.Name = "chart_TienGuiNgayTheoKyHan";
             chart_TienGuiNgayTheoKyHan.PaletteCustomColors.FillColors.AddRange(new Color[] { Color.FromArgb(39, 20, 85), Color.FromArgb(37, 10, 128), Color.FromArgb(61, 78, 178), Color.FromArgb(118, 129, 253), Color.FromArgb(96, 176, 250) });
-            chart_TienGuiNgayTheoKyHan.Size = new Size(958, 221);
+            chart_TienGuiNgayTheoKyHan.Size = new Size(1012, 273);
             chart_TienGuiNgayTheoKyHan.TabIndex = 12;
             chartFont10.FontName = "Arial";
             chartFont10.Size = 12;
@@ -777,7 +753,7 @@
             DTP_BieuDoTienGuiTheoThang.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DTP_BieuDoTienGuiTheoThang.ForeColor = Color.White;
             DTP_BieuDoTienGuiTheoThang.Format = DateTimePickerFormat.Long;
-            DTP_BieuDoTienGuiTheoThang.Location = new Point(726, 217);
+            DTP_BieuDoTienGuiTheoThang.Location = new Point(780, 217);
             DTP_BieuDoTienGuiTheoThang.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DTP_BieuDoTienGuiTheoThang.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DTP_BieuDoTienGuiTheoThang.Name = "DTP_BieuDoTienGuiTheoThang";
@@ -961,7 +937,7 @@
             tabPage3.Location = new Point(4, 44);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(990, 560);
+            tabPage3.Size = new Size(1044, 560);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Tổng chi";
             tabPage3.UseVisualStyleBackColor = true;
@@ -1027,7 +1003,7 @@
             DTP_BieuDoTongChi.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DTP_BieuDoTongChi.ForeColor = Color.White;
             DTP_BieuDoTongChi.Format = DateTimePickerFormat.Long;
-            DTP_BieuDoTongChi.Location = new Point(729, 180);
+            DTP_BieuDoTongChi.Location = new Point(779, 180);
             DTP_BieuDoTongChi.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DTP_BieuDoTongChi.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DTP_BieuDoTongChi.Name = "DTP_BieuDoTongChi";
@@ -1047,7 +1023,7 @@
             chart_TongChiTheoKyHanVaThang.Location = new Point(36, 214);
             chart_TongChiTheoKyHanVaThang.Name = "chart_TongChiTheoKyHanVaThang";
             chart_TongChiTheoKyHanVaThang.PaletteCustomColors.FillColors.AddRange(new Color[] { Color.FromArgb(39, 20, 85), Color.FromArgb(37, 10, 128), Color.FromArgb(61, 78, 178), Color.FromArgb(118, 129, 253), Color.FromArgb(96, 176, 250) });
-            chart_TongChiTheoKyHanVaThang.Size = new Size(940, 282);
+            chart_TongChiTheoKyHanVaThang.Size = new Size(990, 282);
             chart_TongChiTheoKyHanVaThang.TabIndex = 10;
             chartFont18.FontName = "Arial";
             chartFont18.Size = 12;
@@ -1091,7 +1067,7 @@
             guna2Panel14.Controls.Add(label7);
             guna2Panel14.CustomizableEdges = customizableEdges39;
             guna2Panel14.FillColor = Color.FromArgb(154, 198, 251);
-            guna2Panel14.Location = new Point(385, 17);
+            guna2Panel14.Location = new Point(435, 17);
             guna2Panel14.Name = "guna2Panel14";
             guna2Panel14.ShadowDecoration.Color = Color.LightGray;
             guna2Panel14.ShadowDecoration.CustomizableEdges = customizableEdges40;
@@ -1242,203 +1218,6 @@
             label7.Text = "TỔNG CHI THEO KỲ HẠN";
             label7.TextAlign = ContentAlignment.TopCenter;
             // 
-            // tabPage4
-            // 
-            tabPage4.Controls.Add(guna2Panel11);
-            tabPage4.Controls.Add(label16);
-            tabPage4.Controls.Add(label15);
-            tabPage4.Controls.Add(label13);
-            tabPage4.Controls.Add(dgvBaoCaoGDGuiTien);
-            tabPage4.Controls.Add(dgvBaoCaoDoanhThuTaoPhieu);
-            tabPage4.Controls.Add(dgvBaoCaoGDRutTien);
-            tabPage4.Location = new Point(4, 44);
-            tabPage4.Name = "tabPage4";
-            tabPage4.Padding = new Padding(3);
-            tabPage4.Size = new Size(990, 560);
-            tabPage4.TabIndex = 3;
-            tabPage4.Text = "Báo Cáo Chi Tiết";
-            tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // guna2Panel11
-            // 
-            guna2Panel11.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            guna2Panel11.BackColor = Color.Transparent;
-            guna2Panel11.BorderColor = Color.Transparent;
-            guna2Panel11.BorderRadius = 10;
-            guna2Panel11.Controls.Add(btnTaoBaoCao);
-            guna2Panel11.Controls.Add(guna2DateTimePicker1);
-            guna2Panel11.Controls.Add(label18);
-            guna2Panel11.Controls.Add(label17);
-            guna2Panel11.Controls.Add(DTP_NgayKetThucBaoCao);
-            guna2Panel11.Controls.Add(btnTuyChon);
-            guna2Panel11.CustomizableEdges = customizableEdges49;
-            guna2Panel11.FillColor = Color.FromArgb(208, 232, 255);
-            guna2Panel11.Location = new Point(19, 11);
-            guna2Panel11.Name = "guna2Panel11";
-            guna2Panel11.ShadowDecoration.CustomizableEdges = customizableEdges50;
-            guna2Panel11.Size = new Size(432, 112);
-            guna2Panel11.TabIndex = 28;
-            // 
-            // btnTaoBaoCao
-            // 
-            btnTaoBaoCao.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnTaoBaoCao.BackColor = Color.Transparent;
-            btnTaoBaoCao.BorderRadius = 10;
-            btnTaoBaoCao.CustomizableEdges = customizableEdges41;
-            btnTaoBaoCao.DisabledState.BorderColor = Color.DarkGray;
-            btnTaoBaoCao.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnTaoBaoCao.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnTaoBaoCao.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
-            btnTaoBaoCao.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnTaoBaoCao.FillColor2 = Color.FromArgb(61, 78, 178);
-            btnTaoBaoCao.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnTaoBaoCao.ForeColor = Color.White;
-            btnTaoBaoCao.Location = new Point(303, 78);
-            btnTaoBaoCao.Name = "btnTaoBaoCao";
-            btnTaoBaoCao.ShadowDecoration.CustomizableEdges = customizableEdges42;
-            btnTaoBaoCao.Size = new Size(104, 27);
-            btnTaoBaoCao.TabIndex = 32;
-            btnTaoBaoCao.Text = "Xuất báo cáo";
-            // 
-            // guna2DateTimePicker1
-            // 
-            guna2DateTimePicker1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            guna2DateTimePicker1.Checked = true;
-            guna2DateTimePicker1.CustomizableEdges = customizableEdges43;
-            guna2DateTimePicker1.FillColor = Color.FromArgb(61, 78, 178);
-            guna2DateTimePicker1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2DateTimePicker1.ForeColor = Color.White;
-            guna2DateTimePicker1.Format = DateTimePickerFormat.Long;
-            guna2DateTimePicker1.Location = new Point(167, 12);
-            guna2DateTimePicker1.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
-            guna2DateTimePicker1.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            guna2DateTimePicker1.ShadowDecoration.CustomizableEdges = customizableEdges44;
-            guna2DateTimePicker1.Size = new Size(240, 27);
-            guna2DateTimePicker1.TabIndex = 31;
-            guna2DateTimePicker1.Value = new DateTime(2024, 10, 23, 10, 39, 1, 549);
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label18.ForeColor = Color.FromArgb(37, 10, 128);
-            label18.Location = new Point(18, 45);
-            label18.Name = "label18";
-            label18.Size = new Size(82, 21);
-            label18.TabIndex = 30;
-            label18.Text = "Đến ngày:";
-            // 
-            // label17
-            // 
-            label17.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label17.ForeColor = Color.FromArgb(37, 10, 128);
-            label17.Location = new Point(18, 12);
-            label17.Name = "label17";
-            label17.Size = new Size(73, 21);
-            label17.TabIndex = 29;
-            label17.Text = "Từ ngày:";
-            // 
-            // DTP_NgayKetThucBaoCao
-            // 
-            DTP_NgayKetThucBaoCao.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            DTP_NgayKetThucBaoCao.Checked = true;
-            DTP_NgayKetThucBaoCao.CustomizableEdges = customizableEdges45;
-            DTP_NgayKetThucBaoCao.FillColor = Color.FromArgb(61, 78, 178);
-            DTP_NgayKetThucBaoCao.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DTP_NgayKetThucBaoCao.ForeColor = Color.White;
-            DTP_NgayKetThucBaoCao.Format = DateTimePickerFormat.Long;
-            DTP_NgayKetThucBaoCao.Location = new Point(167, 45);
-            DTP_NgayKetThucBaoCao.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
-            DTP_NgayKetThucBaoCao.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            DTP_NgayKetThucBaoCao.Name = "DTP_NgayKetThucBaoCao";
-            DTP_NgayKetThucBaoCao.ShadowDecoration.CustomizableEdges = customizableEdges46;
-            DTP_NgayKetThucBaoCao.Size = new Size(240, 27);
-            DTP_NgayKetThucBaoCao.TabIndex = 25;
-            DTP_NgayKetThucBaoCao.Value = new DateTime(2024, 10, 23, 10, 39, 1, 549);
-            // 
-            // btnTuyChon
-            // 
-            btnTuyChon.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnTuyChon.BackColor = Color.Transparent;
-            btnTuyChon.BorderRadius = 10;
-            btnTuyChon.CustomizableEdges = customizableEdges47;
-            btnTuyChon.DisabledState.BorderColor = Color.DarkGray;
-            btnTuyChon.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnTuyChon.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnTuyChon.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
-            btnTuyChon.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnTuyChon.FillColor2 = Color.FromArgb(168, 81, 234);
-            btnTuyChon.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnTuyChon.ForeColor = Color.White;
-            btnTuyChon.Location = new Point(1109, 20);
-            btnTuyChon.Name = "btnTuyChon";
-            btnTuyChon.ShadowDecoration.CustomizableEdges = customizableEdges48;
-            btnTuyChon.Size = new Size(82, 38);
-            btnTuyChon.TabIndex = 23;
-            btnTuyChon.Text = "Tùy chọn";
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label16.ForeColor = Color.FromArgb(37, 10, 128);
-            label16.Location = new Point(88, 533);
-            label16.Name = "label16";
-            label16.Size = new Size(279, 21);
-            label16.TabIndex = 27;
-            label16.Text = "Báo cáo doanh thu tạo phiếu gửi tiền";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.ForeColor = Color.FromArgb(37, 10, 128);
-            label15.Location = new Point(127, 318);
-            label15.Name = "label15";
-            label15.Size = new Size(196, 21);
-            label15.TabIndex = 26;
-            label15.Text = "Báo cáo giao dịch rút tiền";
-            // 
-            // label13
-            // 
-            label13.Anchor = AnchorStyles.Top;
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label13.ForeColor = Color.FromArgb(37, 10, 128);
-            label13.Location = new Point(589, 14);
-            label13.Name = "label13";
-            label13.Size = new Size(261, 30);
-            label13.TabIndex = 25;
-            label13.Text = "Báo cáo giao dịch gửi tiền";
-            // 
-            // dgvBaoCaoGDGuiTien
-            // 
-            dgvBaoCaoGDGuiTien.BackgroundColor = SystemColors.ActiveCaption;
-            dgvBaoCaoGDGuiTien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvBaoCaoGDGuiTien.Location = new Point(472, 47);
-            dgvBaoCaoGDGuiTien.Name = "dgvBaoCaoGDGuiTien";
-            dgvBaoCaoGDGuiTien.Size = new Size(485, 507);
-            dgvBaoCaoGDGuiTien.TabIndex = 24;
-            // 
-            // dgvBaoCaoDoanhThuTaoPhieu
-            // 
-            dgvBaoCaoDoanhThuTaoPhieu.BackgroundColor = SystemColors.ActiveCaption;
-            dgvBaoCaoDoanhThuTaoPhieu.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvBaoCaoDoanhThuTaoPhieu.Location = new Point(19, 351);
-            dgvBaoCaoDoanhThuTaoPhieu.Name = "dgvBaoCaoDoanhThuTaoPhieu";
-            dgvBaoCaoDoanhThuTaoPhieu.Size = new Size(432, 179);
-            dgvBaoCaoDoanhThuTaoPhieu.TabIndex = 23;
-            // 
-            // dgvBaoCaoGDRutTien
-            // 
-            dgvBaoCaoGDRutTien.BackgroundColor = SystemColors.ActiveCaption;
-            dgvBaoCaoGDRutTien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvBaoCaoGDRutTien.Location = new Point(19, 129);
-            dgvBaoCaoGDRutTien.Name = "dgvBaoCaoGDRutTien";
-            dgvBaoCaoGDRutTien.Size = new Size(432, 186);
-            dgvBaoCaoGDRutTien.TabIndex = 22;
-            // 
             // lblTitle
             // 
             lblTitle.Anchor = AnchorStyles.Top;
@@ -1450,31 +1229,6 @@
             lblTitle.Size = new Size(355, 40);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "DOANH SỐ HOẠT ĐỘNG";
-            // 
-            // CMS_LoaiBaoCao
-            // 
-            CMS_LoaiBaoCao.Items.AddRange(new ToolStripItem[] { toolStripMenuItem_GDGuiTien, toolStripMenuItem_GDRutTien, toolStripMenuItem_GDTaoPhieu });
-            CMS_LoaiBaoCao.Name = "CMS_LoaiBaoCao";
-            CMS_LoaiBaoCao.Size = new Size(250, 70);
-            CMS_LoaiBaoCao.ItemClicked += CMS_LoaiBaoCao_ItemClicked;
-            // 
-            // toolStripMenuItem_GDGuiTien
-            // 
-            toolStripMenuItem_GDGuiTien.Name = "toolStripMenuItem_GDGuiTien";
-            toolStripMenuItem_GDGuiTien.Size = new Size(249, 22);
-            toolStripMenuItem_GDGuiTien.Text = "Tạo Báo cáo giao dịch gửi tiền";
-            // 
-            // toolStripMenuItem_GDRutTien
-            // 
-            toolStripMenuItem_GDRutTien.Name = "toolStripMenuItem_GDRutTien";
-            toolStripMenuItem_GDRutTien.Size = new Size(249, 22);
-            toolStripMenuItem_GDRutTien.Text = "Tạo Báo cáo giao dịch rút tiền";
-            // 
-            // toolStripMenuItem_GDTaoPhieu
-            // 
-            toolStripMenuItem_GDTaoPhieu.Name = "toolStripMenuItem_GDTaoPhieu";
-            toolStripMenuItem_GDTaoPhieu.Size = new Size(249, 22);
-            toolStripMenuItem_GDTaoPhieu.Text = "Tạo Báo cáo doanh thu tạo phiếu";
             // 
             // ucDoanhSoHoatDong
             // 
@@ -1499,10 +1253,10 @@
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             guna2Panel18.ResumeLayout(false);
-            guna2Panel18.PerformLayout();
-            guna2Panel19.ResumeLayout(false);
-            guna2Panel20.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
             guna2Panel21.ResumeLayout(false);
+            guna2Panel20.ResumeLayout(false);
+            guna2Panel19.ResumeLayout(false);
             guna2Panel4.ResumeLayout(false);
             guna2Panel13.ResumeLayout(false);
             guna2Panel12.ResumeLayout(false);
@@ -1514,14 +1268,6 @@
             guna2Panel15.ResumeLayout(false);
             guna2Panel16.ResumeLayout(false);
             guna2Panel17.ResumeLayout(false);
-            tabPage4.ResumeLayout(false);
-            tabPage4.PerformLayout();
-            guna2Panel11.ResumeLayout(false);
-            guna2Panel11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvBaoCaoGDGuiTien).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvBaoCaoDoanhThuTaoPhieu).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvBaoCaoGDRutTien).EndInit();
-            CMS_LoaiBaoCao.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -1529,49 +1275,27 @@
 
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Label lblTitle;
-        private Guna.UI2.WinForms.Guna2DateTimePicker DTP_BieuDoTienGuiTheoThang;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private Label lblDifferenceTitle;
-        private Label lblRevenueTitle;
-        private Guna.Charts.WinForms.GunaChart chart_TongTienGuiTheoThang;
-        private Guna.Charts.WinForms.GunaChart chart_TongChiTheoKyHanVaThang;
-        private Label lblRevenueTitleType1;
-        private Label lblRevenueTitleType3;
-        private Label lblRevenueTitleType2;
-        private Label lbl_TongTienGui;
-        private Label lbl_SoLuongPhieuGuiTien;
-        private Label lbl_SoLuongKhachHang;
-        private Label lb_SoPhieu6Thang;
-        private Label lb_SoPhieu3Thang;
-        private Label lblDifferenceTitleType2;
-        private Label lblDifferenceTitleType3;
-        private Label lb_SoPhieu0KyHan;
-        private Label lblDifferenceTitleType1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel13;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel12;
+        private Guna.UI2.WinForms.Guna2Button btnTaoBaoCaoNam;
+        private Guna.UI2.WinForms.Guna2Button btnTaoBaoCaoQuy;
+        private Guna.UI2.WinForms.Guna2Button btnTaoBaoCaoNgay;
         private Guna.UI2.WinForms.Guna2TabControl guna2TabControl1;
         private TabPage tabPage1;
-        private TabPage tabPage2;
-        private Label lb_BieuDoDoanhThuThang;
         private Guna.UI2.WinForms.Guna2ComboBox cbbox_TuyChonBieuDo;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel14;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel15;
-        private Label label1;
-        private Label lb_TongChiKyHan6Thang;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel16;
-        private Label label3;
-        private Label lb_TongChiKyHan3Thang;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel17;
-        private Label label5;
-        private Label lb_TongChiKyHan0;
-        private Label label7;
-        private TabPage tabPage3;
-        private Guna.Charts.WinForms.GunaChart chart_TienGuiNgayTheoKyHan;
+        private Label lb_BieuDoDoanhThuThang;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Label lblRevenueTitle;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
+        private Label lblRevenueTitleType1;
+        private Label lbl_SoLuongKhachHang;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
+        private Label lblRevenueTitleType2;
+        private Label lbl_SoLuongPhieuGuiTien;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
+        private Label lblRevenueTitleType3;
+        private Label lbl_TongTienGui;
+        private Guna.Charts.WinForms.GunaChart chart_TongTienGuiTheoThang;
+        private TabPage tabPage2;
+        private Label label11;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel18;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel19;
         private Label label8;
@@ -1583,32 +1307,37 @@
         private Label label12;
         private Label lb_TongTienGui6Thang;
         private Label label14;
-        private Guna.UI2.WinForms.Guna2DateTimePicker DTP_BieuDoTongChi;
+        private Guna.Charts.WinForms.GunaChart chart_TienGuiNgayTheoKyHan;
+        private Guna.UI2.WinForms.Guna2DateTimePicker DTP_BieuDoTienGuiTheoThang;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel13;
+        private Label lblDifferenceTitleType2;
+        private Label lb_SoPhieu3Thang;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel12;
+        private Label lblDifferenceTitleType1;
+        private Label lb_SoPhieu0KyHan;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
+        private Label lblDifferenceTitleType3;
+        private Label lb_SoPhieu6Thang;
+        private Label lblDifferenceTitle;
+        private TabPage tabPage3;
+        private Label label9;
         private Label lb_TONGCHI;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
         private Label lb_TONGTIENRUT;
-        private Label label9;
-        private Label label11;
-        private TabPage tabPage4;
-        private Guna.UI2.WinForms.Guna2Button btnTaoBaoCaoNam;
-        private Guna.UI2.WinForms.Guna2Button btnTaoBaoCaoQuy;
-        private Guna.UI2.WinForms.Guna2Button btnTaoBaoCaoNgay;
-        private DataGridView dgvBaoCaoGDRutTien;
-        private DataGridView dgvBaoCaoGDGuiTien;
-        private DataGridView dgvBaoCaoDoanhThuTaoPhieu;
-        private Label label13;
-        private Label label15;
-        private Label label16;
-        private ContextMenuStrip CMS_LoaiBaoCao;
-        private ToolStripMenuItem toolStripMenuItem_GDGuiTien;
-        private ToolStripMenuItem toolStripMenuItem_GDRutTien;
-        private ToolStripMenuItem toolStripMenuItem_GDTaoPhieu;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel11;
-        private Guna.UI2.WinForms.Guna2GradientButton btnTuyChon;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
-        private Label label18;
-        private Label label17;
-        private Guna.UI2.WinForms.Guna2DateTimePicker DTP_NgayKetThucBaoCao;
-        private Guna.UI2.WinForms.Guna2GradientButton btnTaoBaoCao;
+        private Guna.UI2.WinForms.Guna2DateTimePicker DTP_BieuDoTongChi;
+        private Guna.Charts.WinForms.GunaChart chart_TongChiTheoKyHanVaThang;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel14;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel15;
+        private Label label1;
+        private Label lb_TongChiKyHan6Thang;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel16;
+        private Label label3;
+        private Label lb_TongChiKyHan3Thang;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel17;
+        private Label label5;
+        private Label lb_TongChiKyHan0;
+        private Label label7;
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }

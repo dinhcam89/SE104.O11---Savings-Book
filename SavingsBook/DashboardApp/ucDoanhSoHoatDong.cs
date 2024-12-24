@@ -31,14 +31,13 @@ namespace GUI.DashboardApp
             ExcelPackage.LicenseContext = ExcelLicenseContext.NonCommercial;
             DTP_BieuDoTongChi.Format = DateTimePickerFormat.Custom;
             DTP_BieuDoTongChi.CustomFormat = "MM/yyyy";
-            DTP_NgayKetThucBaoCao.MaxDate = DateTime.Now;
             DTP_BieuDoTienGuiTheoThang.Format = DateTimePickerFormat.Custom;
             DTP_BieuDoTienGuiTheoThang.CustomFormat = "MM/yyyy";
             DTP_BieuDoTienGuiTheoThang.MaxDate = DateTime.Now;
             //DTP_BieuDoTienGuiTheoThang.ShowUpDown = true;
-            guna2Panel19.Size = new System.Drawing.Size(200, 100);
-            guna2Panel20.Size = new System.Drawing.Size(200, 100);
-            guna2Panel21.Size = new System.Drawing.Size(200, 100);
+            guna2Panel19.Size = new System.Drawing.Size(220, 100);
+            guna2Panel20.Size = new System.Drawing.Size(220, 100);
+            guna2Panel21.Size = new System.Drawing.Size(220, 100);
 
         }
 
@@ -130,13 +129,12 @@ namespace GUI.DashboardApp
             UpdateChartData(selectedKyHan);
         }
 
-
         private void UpdateChartData(string kyHan)
         {
             // Giá trị kỳ hạn mặc định
             int kyHanValue = 0;
 
-            // Sử dụng switch hoặc nếu bạn muốn có cách dễ dàng, chỉ cần chuyển trực tiếp
+            // Sử dụng switch hoặc ánh xạ kỳ hạn
             switch (kyHan)
             {
                 case "Tất cả kỳ hạn":
@@ -154,6 +152,7 @@ namespace GUI.DashboardApp
                 case "Kỳ hạn 60 ngày":
                     kyHanValue = 6;  // Kỳ hạn 60 ngày
                     break;
+
                 default:
                     break;
             }
@@ -162,20 +161,20 @@ namespace GUI.DashboardApp
             var savingsData = bieuDoBUS.GetSavingsByMonthAndTerm(kyHanValue.ToString()); // Gọi hàm với giá trị số kỳ hạn
 
             // Tạo một dataset mới cho biểu đồ
-            var barSeries = new Guna.Charts.WinForms.GunaBarDataset();
-            barSeries.Label = "Tổng Tiền Gửi";
+            var barSeries = new Guna.Charts.WinForms.GunaBarDataset
+            {
+                Label = $"Tổng tiền gửi ({kyHan})", // Gán label cho cả dataset
+                BorderWidth = 2,                  // Độ dày của cột
+            };
 
-            // Duyệt qua dữ liệu và thêm điểm dữ liệu vào biểu đồ
+            // Duyệt qua dữ liệu và thêm điểm dữ liệu vào dataset
             foreach (var monthData in savingsData)
             {
-                string month = monthData.Key;
+                string month = monthData.Key; // Tên tháng (ví dụ: "01/2024")
+                decimal totalAmount = monthData.Value.Values.Sum(); // Tính tổng cho tất cả các kỳ hạn trong tháng
 
-                // Tổng tiền gửi cho mỗi tháng
-                decimal totalAmount = monthData.Value.Values.Sum();  // Tính tổng cho tất cả các kỳ hạn trong tháng
-                int totalAmountInt = Convert.ToInt32(totalAmount);
-
-                // Thêm dữ liệu vào dataset
-                barSeries.DataPoints.Add(month, totalAmountInt);
+                // Thêm dữ liệu vào dataset (cột)
+                barSeries.DataPoints.Add(month, Convert.ToDouble(totalAmount));
             }
 
             // Xóa dữ liệu cũ trên biểu đồ
@@ -187,6 +186,10 @@ namespace GUI.DashboardApp
             // Cập nhật biểu đồ
             chart_TongTienGuiTheoThang.Update();
         }
+
+
+
+
 
         private void chart_TienGuiNgayTheoKyHan_Load(object sender, EventArgs e)
         {
@@ -431,12 +434,6 @@ namespace GUI.DashboardApp
                 package.SaveAs(file);
             }
         }
-        private void btnTaoBaoCao_Click(object sender, EventArgs e)
-        {
-            CMS_LoaiBaoCao.Show(btnTaoBaoCao, new Point(0, btnTaoBaoCao.Height));
-
-        }
-
         private void CMS_LoaiBaoCao_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             //switch (e.ClickedItem.Text)
@@ -460,11 +457,6 @@ namespace GUI.DashboardApp
         }
         #endregion
 
-
-        private void guna2Panel18_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 
 }
