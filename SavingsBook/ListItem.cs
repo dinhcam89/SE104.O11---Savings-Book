@@ -128,5 +128,12 @@ namespace GUI
             set => _formType = value;
         }
 
+        [Category("Custom")]
+        public bool IsButtonVisible
+        {
+            get { return btnTuyChon.Visible; }
+            set { btnTuyChon.Visible = value; }
+        }
+
     }
 }
