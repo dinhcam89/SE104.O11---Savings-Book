@@ -36,6 +36,10 @@ namespace GUI.DashboardApp
             DTP_BieuDoTienGuiTheoThang.CustomFormat = "MM/yyyy";
             DTP_BieuDoTienGuiTheoThang.MaxDate = DateTime.Now;
             //DTP_BieuDoTienGuiTheoThang.ShowUpDown = true;
+            guna2Panel19.Size = new System.Drawing.Size(200, 100);
+            guna2Panel20.Size = new System.Drawing.Size(200, 100);
+            guna2Panel21.Size = new System.Drawing.Size(200, 100);
+
         }
 
         #region CÁC HÀM XỬ LÝ XUẤT CHO DASHBOARD TỔNG QUAN VÀ TỔNG THU
@@ -457,6 +461,10 @@ namespace GUI.DashboardApp
         #endregion
 
 
+        private void guna2Panel18_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
 }

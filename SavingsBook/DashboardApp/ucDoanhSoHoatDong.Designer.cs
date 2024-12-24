@@ -247,11 +247,12 @@
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges52;
-            guna2Panel1.Size = new Size(1035, 687);
+            guna2Panel1.Size = new Size(1084, 690);
             guna2Panel1.TabIndex = 0;
             // 
             // guna2TabControl1
             // 
+            guna2TabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             guna2TabControl1.Controls.Add(tabPage1);
             guna2TabControl1.Controls.Add(tabPage2);
             guna2TabControl1.Controls.Add(tabPage3);
@@ -297,6 +298,7 @@
             // 
             // cbbox_TuyChonBieuDo
             // 
+            cbbox_TuyChonBieuDo.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             cbbox_TuyChonBieuDo.BackColor = Color.Transparent;
             cbbox_TuyChonBieuDo.CustomizableEdges = customizableEdges1;
             cbbox_TuyChonBieuDo.DrawMode = DrawMode.OwnerDrawFixed;
@@ -315,7 +317,7 @@
             // 
             // lb_BieuDoDoanhThuThang
             // 
-            lb_BieuDoDoanhThuThang.Anchor = AnchorStyles.Top;
+            lb_BieuDoDoanhThuThang.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lb_BieuDoDoanhThuThang.AutoSize = true;
             lb_BieuDoDoanhThuThang.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             lb_BieuDoDoanhThuThang.ForeColor = Color.FromArgb(37, 10, 128);
@@ -327,6 +329,7 @@
             // 
             // guna2Panel2
             // 
+            guna2Panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             guna2Panel2.AutoSize = true;
             guna2Panel2.BackColor = Color.Transparent;
             guna2Panel2.BorderColor = Color.Transparent;
@@ -443,6 +446,7 @@
             // 
             // guna2Panel8
             // 
+            guna2Panel8.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             guna2Panel8.BackColor = Color.Transparent;
             guna2Panel8.BorderRadius = 10;
             guna2Panel8.Controls.Add(lblRevenueTitleType3);
@@ -460,7 +464,7 @@
             // 
             // lblRevenueTitleType3
             // 
-            lblRevenueTitleType3.AutoSize = true;
+            lblRevenueTitleType3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             lblRevenueTitleType3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblRevenueTitleType3.ForeColor = Color.FromArgb(28, 52, 186);
             lblRevenueTitleType3.Location = new Point(122, 15);
@@ -468,10 +472,11 @@
             lblRevenueTitleType3.Size = new Size(158, 25);
             lblRevenueTitleType3.TabIndex = 13;
             lblRevenueTitleType3.Text = "Tổng số tiền gửi";
+            lblRevenueTitleType3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbl_TongTienGui
             // 
-            lbl_TongTienGui.Dock = DockStyle.Fill;
+            lbl_TongTienGui.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             lbl_TongTienGui.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl_TongTienGui.ForeColor = Color.FromArgb(28, 52, 186);
             lbl_TongTienGui.Location = new Point(0, 0);
@@ -484,7 +489,7 @@
             // 
             // chart_TongTienGuiTheoThang
             // 
-            chart_TongTienGuiTheoThang.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            chart_TongTienGuiTheoThang.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             chart_TongTienGuiTheoThang.AutoSize = true;
             chart_TongTienGuiTheoThang.BackColor = Color.FromArgb(208, 232, 255);
             chartFont1.FontName = "Arial";
@@ -552,6 +557,9 @@
             // 
             // guna2Panel18
             // 
+            guna2Panel18.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            guna2Panel18.AutoScroll = true;
+            guna2Panel18.AutoSize = true;
             guna2Panel18.BackColor = Color.Transparent;
             guna2Panel18.BorderColor = Color.Transparent;
             guna2Panel18.BorderRadius = 10;
@@ -569,9 +577,12 @@
             guna2Panel18.ShadowDecoration.Shadow = new Padding(0, 0, 5, 5);
             guna2Panel18.Size = new Size(491, 171);
             guna2Panel18.TabIndex = 13;
+            guna2Panel18.Paint += guna2Panel18_Paint;
             // 
             // guna2Panel19
             // 
+            guna2Panel19.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            guna2Panel19.AutoSize = true;
             guna2Panel19.BackColor = Color.Transparent;
             guna2Panel19.BorderRadius = 10;
             guna2Panel19.Controls.Add(label8);
@@ -615,6 +626,7 @@
             // 
             // guna2Panel20
             // 
+            guna2Panel20.AutoSize = true;
             guna2Panel20.BackColor = Color.Transparent;
             guna2Panel20.BorderRadius = 10;
             guna2Panel20.Controls.Add(label10);
@@ -658,6 +670,8 @@
             // 
             // guna2Panel21
             // 
+            guna2Panel21.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            guna2Panel21.AutoSize = true;
             guna2Panel21.BackColor = Color.Transparent;
             guna2Panel21.BorderRadius = 10;
             guna2Panel21.Controls.Add(label12);
@@ -701,13 +715,14 @@
             // 
             // label14
             // 
+            label14.AutoSize = true;
             label14.Dock = DockStyle.Fill;
             label14.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
             label14.ForeColor = Color.FromArgb(37, 10, 128);
             label14.Location = new Point(0, 0);
             label14.Name = "label14";
             label14.Padding = new Padding(0, 10, 0, 0);
-            label14.Size = new Size(491, 171);
+            label14.Size = new Size(183, 35);
             label14.TabIndex = 4;
             label14.Text = "TỔNG SỐ TIỀN GỬI";
             label14.TextAlign = ContentAlignment.TopCenter;
@@ -774,6 +789,7 @@
             // 
             // guna2Panel4
             // 
+            guna2Panel4.AutoSize = true;
             guna2Panel4.BackColor = Color.Transparent;
             guna2Panel4.BorderColor = Color.Transparent;
             guna2Panel4.BorderRadius = 10;
@@ -975,6 +991,7 @@
             // 
             // guna2Panel9
             // 
+            guna2Panel9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             guna2Panel9.BackColor = Color.Transparent;
             guna2Panel9.BorderRadius = 10;
             guna2Panel9.Controls.Add(lb_TONGTIENRUT);
@@ -1063,6 +1080,7 @@
             // 
             // guna2Panel14
             // 
+            guna2Panel14.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             guna2Panel14.AutoSize = true;
             guna2Panel14.BackColor = Color.Transparent;
             guna2Panel14.BorderColor = Color.Transparent;
@@ -1427,7 +1445,7 @@
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = Color.FromArgb(37, 10, 128);
-            lblTitle.Location = new Point(365, 9);
+            lblTitle.Location = new Point(390, 9);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(355, 40);
             lblTitle.TabIndex = 0;
@@ -1464,7 +1482,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(guna2Panel1);
             Name = "ucDoanhSoHoatDong";
-            Size = new Size(1035, 687);
+            Size = new Size(1084, 690);
             Load += ucDoanhSoHoatDong_Load;
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
@@ -1478,10 +1496,10 @@
             guna2Panel7.ResumeLayout(false);
             guna2Panel7.PerformLayout();
             guna2Panel8.ResumeLayout(false);
-            guna2Panel8.PerformLayout();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             guna2Panel18.ResumeLayout(false);
+            guna2Panel18.PerformLayout();
             guna2Panel19.ResumeLayout(false);
             guna2Panel20.ResumeLayout(false);
             guna2Panel21.ResumeLayout(false);
