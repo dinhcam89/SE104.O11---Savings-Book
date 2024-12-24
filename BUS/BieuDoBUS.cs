@@ -28,9 +28,9 @@ namespace BUS
         {
             return bieuDoDAO.GetTotalSavingsAmount();
         }
-        public decimal GetTotalSavingsAccountsByTerm(int term)
+        public decimal GetTotalSavingsAccountsByTerm(string maLoaiTietKiem)
         {
-            return bieuDoDAO.GetTotalSavingsAccountsByTerm(term);
+            return bieuDoDAO.GetTotalSavingsAccountsByTerm(maLoaiTietKiem);
         }
 
         // Hàm lấy dữ liệu tổng quan theo tháng
@@ -43,10 +43,22 @@ namespace BUS
             // Truy vấn cơ sở dữ liệu để đếm số lượng phiếu tiết kiệm theo kỳ hạn
             return bieuDoDAO.GetSavingsByDateAndTerm(selectedDate);
         }
-        public decimal GetTotalSavingsAmountByTerm(int maLoaiTietKiem)
-            {
+        public decimal GetTotalSavingsAmountByTerm(string maLoaiTietKiem)
+        {
             return bieuDoDAO.GetTotalSavingsAmountByTerm(maLoaiTietKiem);
         }
+        public float LayTongSoTienDaChi()
+        {
+            return bieuDoDAO.LayTongSoTienDaChi();
 
+        }
+        public Dictionary<string, float> LayTongSoTienRutTheoKyHan(DateTime thangDuocChon)
+        {
+            return bieuDoDAO.LayTongSoTienRutTheoKyHan(thangDuocChon);
+        }
+        public Dictionary<int, decimal> GetWithdrawalsByTerm()
+        {
+            return bieuDoDAO.GetWithdrawalsByTerm();
+        }
     }
 }

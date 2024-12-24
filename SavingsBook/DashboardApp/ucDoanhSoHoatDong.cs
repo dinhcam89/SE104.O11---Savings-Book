@@ -10,6 +10,11 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using BUS;
 using System.Windows.Forms.DataVisualization.Charting;
+using DTO;
+using OfficeOpenXml;
+using ExcelLicenseContext = OfficeOpenXml.LicenseContext;
+using DAO;
+
 
 namespace GUI.DashboardApp
 {
@@ -17,23 +22,29 @@ namespace GUI.DashboardApp
     public partial class ucDoanhSoHoatDong : UserControl
     {
         private BieuDoBUS bieuDoBUS = new BieuDoBUS();
-
+        private BaoCaoBUS baoCaoBUS = new BaoCaoBUS();
         public ucDoanhSoHoatDong()
         {
             InitializeComponent();
             UpdateDetailChart();
+            HienThiDashBoardTongThu();
+            ExcelPackage.LicenseContext = ExcelLicenseContext.NonCommercial;
+            DTP_BieuDoTongChi.Format = DateTimePickerFormat.Custom;
+            DTP_BieuDoTongChi.CustomFormat = "MM/yyyy";
+            DTP_NgayKetThucBaoCao.MaxDate = DateTime.Now;
+            DTP_BieuDoTienGuiTheoThang.Format = DateTimePickerFormat.Custom;
+            DTP_BieuDoTienGuiTheoThang.CustomFormat = "MM/yyyy";
+            DTP_BieuDoTienGuiTheoThang.MaxDate = DateTime.Now;
+            //DTP_BieuDoTienGuiTheoThang.ShowUpDown = true;
         }
 
+        #region CÁC HÀM XỬ LÝ XUẤT CHO DASHBOARD TỔNG QUAN VÀ TỔNG THU
+        ////////////////////////////////////////////////////////////////////////////
+        /**      CÁC HÀM XỬ LÝ XUẤT CHO DASHBOARD TỔNG QUAN VÀ TỔNG THU          **/
+        ////////////////////////////////////////////////////////////////////////////
         private void chartRevenue_Load(object sender, EventArgs e)
         {
             // Cấu hình kiểu biểu đồ, nếu cần
-            //chart_DoanhThuTheoKyHan.Type = Guna.Charts.WinForms.ChartType.Line; // Đặt biểu đồ là Line
-
-            // Đặt thuộc tính chung cho biểu đồ (nếu chưa làm ở nơi khác)
-            //chart_DoanhThuTheoKyHan.YAxes.GridLines.Display = true; // Hiển thị lưới ngang
-            //chart_DoanhThuTheoKyHan.XAxes.GridLines.Display = false; // Ẩn lưới dọc
-            //chart_DoanhThuTheoKyHan.Legend.Display = true; // Hiển thị chú thích
-            //chart_DoanhThuTheoKyHan.Title.Text = "Doanh thu theo tháng của từng kỳ hạn";
 
             // Gọi hàm cập nhật dữ liệu
         }
@@ -79,8 +90,8 @@ namespace GUI.DashboardApp
             differenceSeries.DataPoints.Add("Kỳ hạn 6 tháng", revenue6Months - expenditure6Months);
 
             // Thêm dataset vào biểu đồ chênh lệch
-            chartChenhLech.Datasets.Add(differenceSeries);
-            chartChenhLech.Update();
+            chart_TongChiTheoKyHanVaThang.Datasets.Add(differenceSeries);
+            chart_TongChiTheoKyHanVaThang.Update();
         }
 
         private void ucDoanhSoHoatDong_Load(object sender, EventArgs e)
@@ -133,21 +144,12 @@ namespace GUI.DashboardApp
                     break;
 
                 case "Kỳ hạn 30 ngày":
-                    kyHanValue = 30;  // Kỳ hạn 30 ngày
+                    kyHanValue = 3;  // Kỳ hạn 30 ngày
                     break;
 
                 case "Kỳ hạn 60 ngày":
-                    kyHanValue = 60;  // Kỳ hạn 60 ngày
+                    kyHanValue = 6;  // Kỳ hạn 60 ngày
                     break;
-
-                case "Kỳ hạn 90 ngày":
-                    kyHanValue = 90;  // Kỳ hạn 90 ngày
-                    break;
-
-                case "Kỳ hạn 120 ngày":
-                    kyHanValue = 120;  // Kỳ hạn 120 ngày
-                    break;
-
                 default:
                     break;
             }
@@ -184,9 +186,11 @@ namespace GUI.DashboardApp
 
         private void chart_TienGuiNgayTheoKyHan_Load(object sender, EventArgs e)
         {
-
+            DateTime thangDuocChon = DTP_BieuDoTongChi.Value; // Lấy giá trị tháng được chọn
+            var tongTienTheoKyHan = bieuDoBUS.LayTongSoTienRutTheoKyHan(thangDuocChon); // Lấy dữ liệu từ cơ sở dữ liệu
+            HienThiDuLieuLenGunaChart(chart_TongChiTheoKyHanVaThang, tongTienTheoKyHan); // Hiển thị lên biểu đồ
         }
-        private void UpdateChartDataByDay(DateTime selectedDate)
+        private void UpdateChartDataByMonth(DateTime selectedDate)
         {
             // Lấy dữ liệu tổng tiền gửi theo ngày và kỳ hạn
             var savingsData = bieuDoBUS.GetSavingsByDateAndTerm(selectedDate);
@@ -194,63 +198,53 @@ namespace GUI.DashboardApp
             // Kiểm tra xem savingsData có dữ liệu không
             if (savingsData == null || savingsData.Count == 0)
             {
-                MessageBox.Show("Không có dữ liệu cho ngày này.");
+                MessageBox.Show("Không có dữ liệu cho tháng này.");
                 return;
             }
 
-            // Danh sách các kỳ hạn
-            var kyHanList = new List<int> { 0, 30, 60, 90, 120 }; // Không kỳ hạn, 30, 60, 90, 120 ngày
+            // Danh sách các kỳ hạn: 0 kỳ hạn, 3 tháng, 6 tháng
+            var kyHanList = new List<int> { 0, 3, 6 };
 
             // Xóa dữ liệu cũ trên biểu đồ
             chart_TienGuiNgayTheoKyHan.Datasets.Clear();
 
-            // Lấy phần ngày của selectedDate
-            DateTime selectedDateOnly = selectedDate.Date; // Chỉ lấy phần ngày, bỏ giờ, phút, giây
+            // Lấy phần năm và tháng của selectedDate
+            int selectedYear = selectedDate.Year;
+            int selectedMonth = selectedDate.Month;
 
+            // Duyệt qua tất cả các kỳ hạn và kiểm tra xem có dữ liệu cho tháng/năm được chọn
             foreach (int kyHan in kyHanList)
             {
-                // Tạo một dataset mới cho từng kỳ hạn
-                var barSeries = new Guna.Charts.WinForms.GunaBarDataset
-                {
-                    Label = $"Kỳ hạn {kyHan} ngày",
-                    BorderWidth = 2 // Độ dày cột
-                };
-
-                // Kiểm tra dữ liệu cho kỳ hạn
                 if (savingsData.ContainsKey(kyHan))
                 {
-                    var dailyData = savingsData[kyHan]; // Lấy dữ liệu cho kỳ hạn này
+                    var monthlyData = savingsData[kyHan]; // Lấy dữ liệu cho kỳ hạn này
 
-                    // Kiểm tra nếu có dữ liệu cho ngày người dùng chọn (chỉ so sánh phần ngày)
-                    bool foundData = false;
-                    foreach (var date in dailyData.Keys)
+                    // Tính tổng số tiền gửi trong tháng được chọn
+                    decimal totalAmountForMonth = 0;
+                    foreach (var date in monthlyData.Keys)
                     {
-                        if (date.Date == selectedDateOnly) // So sánh chỉ phần ngày
+                        if (date.Year == selectedYear && date.Month == selectedMonth)
                         {
-                            decimal totalAmount = dailyData[date]; // Số tiền gửi cho ngày này
-
-                            // Thêm dữ liệu vào dataset (cột cho ngày này)
-                            barSeries.DataPoints.Add(date.ToString("yyyy/MM/dd"), Convert.ToDouble(totalAmount));
-                            foundData = true;
-                            break; // Dừng vòng lặp khi đã tìm thấy dữ liệu cho ngày
+                            totalAmountForMonth += monthlyData[date]; // Cộng dồn tổng số tiền gửi cho tháng này
                         }
                     }
 
-                    if (foundData)
+                    // Nếu có dữ liệu cho tháng này thì hiển thị trên biểu đồ
+                    if (totalAmountForMonth > 0)
                     {
+                        // Tạo một dataset mới cho từng kỳ hạn
+                        var barSeries = new Guna.Charts.WinForms.GunaBarDataset
+                        {
+                            Label = $"Kỳ hạn {kyHan} tháng",
+                            BorderWidth = 2 // Độ dày cột
+                        };
+
+                        // Thêm dữ liệu vào dataset (cột cho kỳ hạn này)
+                        barSeries.DataPoints.Add($"{selectedDate.ToString("MM/yyyy")}", Convert.ToDouble(totalAmountForMonth));
+
                         // Thêm dataset vào biểu đồ
                         chart_TienGuiNgayTheoKyHan.Datasets.Add(barSeries);
                     }
-                    else
-                    {
-                        // Debug: In ra thông báo nếu không có dữ liệu cho ngày chọn
-                        //MessageBox.Show($"Không có dữ liệu cho ngày {selectedDateOnly} và kỳ hạn {kyHan} ngày");
-                    }
-                }
-                else
-                {
-                    // Debug: In ra thông báo nếu không có dữ liệu cho kỳ hạn này
-                    //MessageBox.Show($"Không có dữ liệu cho kỳ hạn {kyHan} ngày");
                 }
             }
 
@@ -261,23 +255,208 @@ namespace GUI.DashboardApp
 
 
 
+
+
+
         private void DTPDoanhSoHoatDong_ValueChanged(object sender, EventArgs e)
         {
-            DateTime selectedDate = DTPDoanhSoHoatDong.Value;
+            DateTime selectedDate = DTP_BieuDoTienGuiTheoThang.Value;
 
             // Cập nhật biểu đồ với ngày đã chọn
-            UpdateChartDataByDay(selectedDate);
+            UpdateChartDataByMonth(selectedDate);
         }
         private void UpdateDetailChart()
         {
-            lb_SoPhieu0KyHan.Text = bieuDoBUS.GetTotalSavingsAccountsByTerm(1).ToString();
-            lb_SoPhieu3Thang.Text = bieuDoBUS.GetTotalSavingsAccountsByTerm(2).ToString();
-            lb_SoPhieu6Thang.Text = bieuDoBUS.GetTotalSavingsAccountsByTerm(3).ToString();
-            
-            lb_TongTienGui0KyHan.Text = bieuDoBUS.GetTotalSavingsAmountByTerm(1).ToString("C") + " VNĐ"; // Gọi hàm với giá trị số kỳ hạn
-            lb_TongTienGui3Thang.Text = bieuDoBUS.GetTotalSavingsAmountByTerm(2).ToString("C") + " VNĐ"; ; // Gọi hàm với giá trị số kỳ hạn
-            lb_TongTienGui6Thang.Text = bieuDoBUS.GetTotalSavingsAmountByTerm(3).ToString("C") + " VNĐ"; ; // Gọi hàm với giá trị số kỳ hạn
+            lb_SoPhieu0KyHan.Text = bieuDoBUS.GetTotalSavingsAccountsByTerm("LTK0000000").ToString();
+            lb_SoPhieu3Thang.Text = bieuDoBUS.GetTotalSavingsAccountsByTerm("LTK0000001").ToString();
+            lb_SoPhieu6Thang.Text = bieuDoBUS.GetTotalSavingsAccountsByTerm("LTK0000002").ToString();
+
+            lb_TongTienGui0KyHan.Text = bieuDoBUS.GetTotalSavingsAmountByTerm("LTK0000000").ToString("C") + " VNĐ"; // Gọi hàm với giá trị số kỳ hạn
+            lb_TongTienGui3Thang.Text = bieuDoBUS.GetTotalSavingsAmountByTerm("LTK0000001").ToString("C") + " VNĐ"; ; // Gọi hàm với giá trị số kỳ hạn
+            lb_TongTienGui6Thang.Text = bieuDoBUS.GetTotalSavingsAmountByTerm("LTK0000002").ToString("C") + " VNĐ"; ; // Gọi hàm với giá trị số kỳ hạn
         }
+        #endregion
+
+        #region CÁC HÀM XỬ LÝ XUẤT CHO DASHBOARD TỔNG CHI
+        /////////////////////////////////////////////////////////////////
+        /**         CÁC HÀM XỬ LÝ XUẤT CHO DASHBOARD TỔNG CHI          **/
+        /////////////////////////////////////////////////////////////////
+
+        public void HienThiDashBoardTongThu()
+        {
+            // Lấy tổng số tiền đã chi
+            float tongSoTienDaChi = bieuDoBUS.LayTongSoTienDaChi();
+            lb_TONGTIENRUT.Text = tongSoTienDaChi.ToString("C") + " VNĐ";
+
+            var withdrawalsByTerm = bieuDoBUS.GetWithdrawalsByTerm();
+            decimal totalWithdrawal0Month = withdrawalsByTerm.ContainsKey(0) ? withdrawalsByTerm[0] : 0;
+            decimal totalWithdrawal3Month = withdrawalsByTerm.ContainsKey(3) ? withdrawalsByTerm[3] : 0;
+            decimal totalWithdrawal6Month = withdrawalsByTerm.ContainsKey(6) ? withdrawalsByTerm[6] : 0;
+            lb_TongChiKyHan0.Text = totalWithdrawal0Month.ToString("C") + " VNĐ";
+            lb_TongChiKyHan3Thang.Text = totalWithdrawal3Month.ToString("C") + " VNĐ";
+            lb_TongChiKyHan6Thang.Text = totalWithdrawal6Month.ToString("C") + " VNĐ";
+        }
+
+        private void HienThiDuLieuLenGunaChart(Guna.Charts.WinForms.GunaChart chart, Dictionary<string, float> duLieu)
+        {
+            // Xóa dữ liệu cũ
+            chart.Datasets.Clear();
+
+            // Tạo dataset mới
+            var dataset = new Guna.Charts.WinForms.GunaBarDataset
+            {
+                Label = "Tổng số tiền rút", // Nhãn của dữ liệu
+                BorderWidth = 1
+            };
+
+            // Thêm dữ liệu vào dataset
+            foreach (var item in duLieu)
+            {
+                dataset.DataPoints.Add(new Guna.Charts.WinForms.LPoint(item.Key, item.Value));
+            }
+            // Thêm dataset vào biểu đồ
+            chart.Datasets.Add(dataset);
+
+            // Cập nhật biểu đồ
+            chart.Update();
+        }
+
+
+        private void DTP_BieuDoTongChi_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime thangDuocChon = DTP_BieuDoTongChi.Value; // Lấy giá trị tháng được chọn
+            var tongTienTheoKyHan = bieuDoBUS.LayTongSoTienRutTheoKyHan(thangDuocChon); // Lấy dữ liệu từ cơ sở dữ liệu
+            HienThiDuLieuLenGunaChart(chart_TongChiTheoKyHanVaThang, tongTienTheoKyHan); // Hiển thị lên biểu đồ
+        }
+
+        #endregion
+
+        #region  CÁC HÀM XỬ LÝ XUẤT FILE BÁO CÁO
+        /////////////////////////////////////////////////////////////////
+        /**             CÁC HÀM XỬ LÝ XUẤT FILE BÁO CÁO           **/
+        /////////////////////////////////////////////////////////////////
+        // Hàm để lấy khoảng thời gian theo ngày, tháng, quý, và năm
+        public DateTime LayNgayBatDau(DateTime ngayKetThuc, string loaiBaoCao)
+        {
+            switch (loaiBaoCao)
+            {
+                case "Ngày":
+                    return ngayKetThuc.AddDays(-1); // Ngày hôm qua
+                case "Tháng":
+                    return new DateTime(ngayKetThuc.Year, ngayKetThuc.Month, 1); // Ngày đầu tháng
+                case "Quý":
+                    int thangQuy = ((ngayKetThuc.Month - 1) / 3) * 3 + 1; // Tháng đầu tiên của quý
+                    return new DateTime(ngayKetThuc.Year, thangQuy, 1); // Ngày đầu của quý
+                case "Năm":
+                    return new DateTime(ngayKetThuc.Year, 1, 1); // Ngày đầu năm
+                default:
+                    return ngayKetThuc;
+            }
+        }
+        private void btnTaoBaoCaoNgay_Click(object sender, EventArgs e)
+        {
+            DateTime ngayKetThuc = DateTime.Now; // Ngày hiện tại
+            DateTime ngayBatDau = LayNgayBatDau(ngayKetThuc, "Ngày");
+
+            // Lấy dữ liệu giao dịch trong khoảng thời gian từ ngayBatDau đến ngayKetThuc
+            var danhSachGiaoDich = baoCaoBUS.LayDanhSachGiaoDich(ngayBatDau, ngayKetThuc);
+
+            // Xuất báo cáo Excel hoặc PDF
+            XuatBaoCaoExcel(danhSachGiaoDich, "BaoCaoNgay.xlsx");
+            // hoặc XuatBaoCaoPdf(danhSachGiaoDich, "BaoCaoNgay.pdf");
+        }
+
+        private void btnTaoBaoCaoThang_Click(object sender, EventArgs e)
+        {
+            DateTime ngayKetThuc = DateTime.Now; // Ngày hiện tại
+            DateTime ngayBatDau = LayNgayBatDau(ngayKetThuc, "Tháng");
+
+            var danhSachGiaoDich = baoCaoBUS.LayDanhSachGiaoDich(ngayBatDau, ngayKetThuc);
+
+            XuatBaoCaoExcel(danhSachGiaoDich, "BaoCaoThang.xlsx");
+            // hoặc XuatBaoCaoPdf(danhSachGiaoDich, "BaoCaoThang.pdf");
+        }
+
+        private void btnTaoBaoCaoQuy_Click(object sender, EventArgs e)
+        {
+            DateTime ngayKetThuc = DateTime.Now; // Ngày hiện tại
+            DateTime ngayBatDau = LayNgayBatDau(ngayKetThuc, "Quý");
+
+            var danhSachGiaoDich = baoCaoBUS.LayDanhSachGiaoDich(ngayBatDau, ngayKetThuc);
+
+            XuatBaoCaoExcel(danhSachGiaoDich, "BaoCaoQuy.xlsx");
+            // hoặc XuatBaoCaoPdf(danhSachGiaoDich, "BaoCaoQuy.pdf");
+        }
+
+        private void btnTaoBaoCaoNam_Click(object sender, EventArgs e)
+        {
+            DateTime ngayKetThuc = DateTime.Now; // Ngày hiện tại
+            DateTime ngayBatDau = LayNgayBatDau(ngayKetThuc, "Năm");
+
+            var danhSachGiaoDich = baoCaoBUS.LayDanhSachGiaoDich(ngayBatDau, ngayKetThuc);
+
+            XuatBaoCaoExcel(danhSachGiaoDich, "BaoCaoNam.xlsx");
+            // hoặc XuatBaoCaoPdf(danhSachGiaoDich, "BaoCaoNam.pdf");
+        }
+        public void XuatBaoCaoExcel(List<BaoCaoGiaoDich> danhSachGiaoDich, string tenFile)
+        {
+            // Tạo và xuất báo cáo Excel bằng cách sử dụng thư viện như EPPlus hoặc ClosedXML
+            // Ví dụ sử dụng EPPlus để tạo Excel
+            using (var package = new ExcelPackage())
+            {
+                var worksheet = package.Workbook.Worksheets.Add("BaoCaoGiaoDich");
+
+                worksheet.Cells[1, 1].Value = "Tên Khách Hàng";
+                worksheet.Cells[1, 2].Value = "Mã Phiếu Gửi Tiền";
+                worksheet.Cells[1, 3].Value = "Số Tiền Gửi";
+                worksheet.Cells[1, 4].Value = "Loại Kỳ Hạn";
+                worksheet.Cells[1, 5].Value = "Ngày Tạo";
+
+                int row = 2;
+                foreach (var giaoDich in danhSachGiaoDich)
+                {
+                    worksheet.Cells[row, 1].Value = giaoDich.TenKhachHang;
+                    worksheet.Cells[row, 2].Value = giaoDich.SoTaiKhoanTienGoi;
+                    worksheet.Cells[row, 3].Value = giaoDich.SoTienGui;
+                    worksheet.Cells[row, 4].Value = giaoDich.LoaiKyHan;
+                    worksheet.Cells[row, 5].Value = giaoDich.NgayTao.ToString("yyyy-MM-dd");
+                    row++;
+                }
+
+                FileInfo file = new FileInfo(tenFile);
+                package.SaveAs(file);
+            }
+        }
+        private void btnTaoBaoCao_Click(object sender, EventArgs e)
+        {
+            CMS_LoaiBaoCao.Show(btnTaoBaoCao, new Point(0, btnTaoBaoCao.Height));
+
+        }
+
+        private void CMS_LoaiBaoCao_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            //switch (e.ClickedItem.Text)
+            //{
+            //    case "Tạo Báo cáo giao dịch gửi tiền":
+            //        XuatBaoCaoExcel(dgvBaoCaoGDGuiTien, "BaoCaoPhieuTietKiem");
+            //        break;
+
+            //    case "Tạo Báo cáo giao dịch rút tiền":
+            //        XuatBaoCaoExcel(dgvGuiThemTien, "BaoCaoGuiThemTien");
+            //        break;
+
+            //    case "Tạo Báo cáo doanh thu tạo phiếu":
+            //        XuatBaoCaoExcel(dgvRutTien, "BaoCaoRutTien");
+            //        break;
+
+            //    default:
+            //        MessageBox.Show("Tùy chọn không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //        break;
+            //}
+        }
+        #endregion
+
+
     }
 
 }

@@ -8,28 +8,25 @@ namespace DTO
 {
     public class KhachHang
     {
-        #region Properties
-        public string MaKH { get; set; }
-        public string HoTenKH { get; set; }
-        public DateOnly NgaySinh { get; set; }
+        public string SoTaiKhoanThanhToan { get; set; }
+        public string TenKhachHang { get; set; }
+        public string CCCD { get; set; }
+        public string SoDienThoai { get; set; }
+        public DateTime NgaySinh { get; set; }
         public string DiaChi { get; set; }
-        public string SDT { get; set; }
-        public string SoCCCD { get; set; }
-        public double SoDuHienCo { get; set; }
-        #endregion
-
-        #region Constructors
+        public float SoDuHienCo { get; set; }
         public KhachHang() { }
-        public KhachHang(string makh, string tenkh, DateOnly ngaysinh, string diachi, string sdt, string socccd, double sodu)
+
+        // Constructor
+        public KhachHang(string soTaiKhoanThanhToan, string tenKhachHang, string cccd, string soDienThoai, DateTime ngaySinh, string diaChi, float soDuHienCo)
         {
-            MaKH = makh;
-            HoTenKH = tenkh;
-            NgaySinh = ngaysinh;
-            DiaChi = diachi;
-            SDT = sdt;
-            SoCCCD = socccd;
-            SoDuHienCo = sodu;
+            SoTaiKhoanThanhToan = soTaiKhoanThanhToan;
+            TenKhachHang = tenKhachHang;
+            CCCD = cccd;
+            SoDienThoai = soDienThoai;
+            NgaySinh = ngaySinh;
+            DiaChi = diaChi;
+            SoDuHienCo = soDuHienCo;
         }
-        #endregion
     }
 }
