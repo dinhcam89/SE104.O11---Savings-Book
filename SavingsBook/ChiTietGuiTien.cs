@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class ChiTietRutTien : Form
+    public partial class ChiTietGuiTien : Form
     {
-        public ChiTietRutTien()
+        public ChiTietGuiTien()
         {
             InitializeComponent();
         }
 
-        private void ChiTietRutTien_Load(object sender, EventArgs e)
+        private void ChiTietGuiTien_Load(object sender, EventArgs e)
         {
             populateItems();
         }
@@ -29,11 +29,11 @@ namespace GUI
             for (int i = 0; i < listItems.Length; i++)
             {
                 listItems[i] = new ListItem();
-                listItems[i].Ten1 = "Ngày rút " + i;
-                listItems[i].Ten2 = "Số tiền " + i;
+                listItems[i].Ten1 = "Ngày gửi " + i;
+                listItems[i].Ten2 = "Số tiền gửi " + i;
                 listItems[i].Ten3 = "";
                 listItems[i].Ten4 = "";
-                    
+
                 listItems[i].FormType = ObjectType.PhieuGoiTien;
 
                 listItems[i].IsButtonVisible = false; // Ẩn nút

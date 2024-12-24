@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI
+namespace GUI.DashboardApp
 {
-    public partial class ChiTietRutTien : Form
+    public partial class ucQuanLyChiTietRutTien : UserControl
     {
-        public ChiTietRutTien()
+        public ucQuanLyChiTietRutTien()
         {
             InitializeComponent();
         }
 
-        private void ChiTietRutTien_Load(object sender, EventArgs e)
+        private void ucQuanLyChiTietRutTien_Load(object sender, EventArgs e)
         {
             populateItems();
         }
@@ -29,11 +29,11 @@ namespace GUI
             for (int i = 0; i < listItems.Length; i++)
             {
                 listItems[i] = new ListItem();
-                listItems[i].Ten1 = "Ngày rút " + i;
-                listItems[i].Ten2 = "Số tiền " + i;
-                listItems[i].Ten3 = "";
+                listItems[i].Ten1 = "Mã phiếu " + i;
+                listItems[i].Ten2 = "Ngày rút " + i;
+                listItems[i].Ten3 = "Số tiền rút " + i;
                 listItems[i].Ten4 = "";
-                    
+
                 listItems[i].FormType = ObjectType.PhieuGoiTien;
 
                 listItems[i].IsButtonVisible = false; // Ẩn nút
@@ -50,5 +50,6 @@ namespace GUI
             };
 
         }
+
     }
 }

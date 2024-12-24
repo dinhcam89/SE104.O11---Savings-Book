@@ -21,6 +21,9 @@ namespace GUI
             ToolStripMenuItem menuItemGuiTien = new ToolStripMenuItem("Gửi tiền");
             menuItemGuiTien.Click += OpenDepositForm!;
 
+            ToolStripMenuItem menuItemChiTietGuiTien = new ToolStripMenuItem("Chi tiết rút tiền");
+            menuItemChiTietGuiTien.Click += OpenDetailDepositForm!;
+
             ToolStripMenuItem menuItemRutTien = new ToolStripMenuItem("Rút tiền");
             menuItemRutTien.Click += OpenWithdrawalForm!;
 
@@ -34,6 +37,7 @@ namespace GUI
             this.Items.Add(menuItemThemPhieu);
             this.Items.Add(menuItemQuanLy);
             this.Items.Add(menuItemGuiTien);
+            this.Items.Add(menuItemChiTietGuiTien);
             this.Items.Add(menuItemRutTien);
             this.Items.Add(menuItemChiTietRutTien);
             this.Items.Add(menuItemXoa);
@@ -54,6 +58,12 @@ namespace GUI
         private void OpenDepositForm(object sender, EventArgs e)
         {
             GuiTien form = new GuiTien();
+            form.Show();
+        }
+
+        private void OpenDetailDepositForm(object sender, EventArgs e)
+        {
+            ChiTietGuiTien form = new ChiTietGuiTien();
             form.Show();
         }
 

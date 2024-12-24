@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class ChiTietRutTien
+    partial class ChiTietGuiTien
     {
         /// <summary>
         /// Required designer variable.
@@ -30,10 +30,11 @@
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             panel1 = new Panel();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            lblSoTienRut0 = new Label();
-            lblNgayRut0 = new Label();
+            lblSoTienGui0 = new Label();
+            lblNgayGui0 = new Label();
             panel2 = new Panel();
             label4 = new Label();
             label5 = new Label();
@@ -41,11 +42,22 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            flowLayoutPanel1 = new FlowLayoutPanel();
             panel1.SuspendLayout();
             guna2Panel3.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.BackColor = Color.White;
+            flowLayoutPanel1.Dock = DockStyle.Bottom;
+            flowLayoutPanel1.Location = new Point(0, 180);
+            flowLayoutPanel1.Margin = new Padding(10, 3, 10, 3);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Padding = new Padding(10, 0, 10, 0);
+            flowLayoutPanel1.Size = new Size(1023, 357);
+            flowLayoutPanel1.TabIndex = 0;
             // 
             // panel1
             // 
@@ -57,15 +69,15 @@
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(1023, 537);
-            panel1.TabIndex = 0;
+            panel1.TabIndex = 2;
             // 
             // guna2Panel3
             // 
             guna2Panel3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             guna2Panel3.BorderColor = Color.Transparent;
             guna2Panel3.BorderRadius = 10;
-            guna2Panel3.Controls.Add(lblSoTienRut0);
-            guna2Panel3.Controls.Add(lblNgayRut0);
+            guna2Panel3.Controls.Add(lblSoTienGui0);
+            guna2Panel3.Controls.Add(lblNgayGui0);
             guna2Panel3.CustomizableEdges = customizableEdges1;
             guna2Panel3.FillColor = Color.AliceBlue;
             guna2Panel3.Location = new Point(25, 132);
@@ -74,29 +86,29 @@
             guna2Panel3.Size = new Size(971, 42);
             guna2Panel3.TabIndex = 19;
             // 
-            // lblSoTienRut0
+            // lblSoTienGui0
             // 
-            lblSoTienRut0.AutoSize = true;
-            lblSoTienRut0.BackColor = Color.Transparent;
-            lblSoTienRut0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSoTienRut0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblSoTienRut0.Location = new Point(231, 10);
-            lblSoTienRut0.Name = "lblSoTienRut0";
-            lblSoTienRut0.Size = new Size(80, 20);
-            lblSoTienRut0.TabIndex = 5;
-            lblSoTienRut0.Text = "Số tiền rút";
+            lblSoTienGui0.AutoSize = true;
+            lblSoTienGui0.BackColor = Color.Transparent;
+            lblSoTienGui0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSoTienGui0.ForeColor = Color.FromArgb(37, 10, 128);
+            lblSoTienGui0.Location = new Point(231, 10);
+            lblSoTienGui0.Name = "lblSoTienGui0";
+            lblSoTienGui0.Size = new Size(82, 20);
+            lblSoTienGui0.TabIndex = 5;
+            lblSoTienGui0.Text = "Số tiền gửi";
             // 
-            // lblNgayRut0
+            // lblNgayGui0
             // 
-            lblNgayRut0.AutoSize = true;
-            lblNgayRut0.BackColor = Color.Transparent;
-            lblNgayRut0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNgayRut0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblNgayRut0.Location = new Point(29, 10);
-            lblNgayRut0.Name = "lblNgayRut0";
-            lblNgayRut0.Size = new Size(70, 20);
-            lblNgayRut0.TabIndex = 4;
-            lblNgayRut0.Text = "Ngày rút";
+            lblNgayGui0.AutoSize = true;
+            lblNgayGui0.BackColor = Color.Transparent;
+            lblNgayGui0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNgayGui0.ForeColor = Color.FromArgb(37, 10, 128);
+            lblNgayGui0.Location = new Point(29, 10);
+            lblNgayGui0.Name = "lblNgayGui0";
+            lblNgayGui0.Size = new Size(72, 20);
+            lblNgayGui0.TabIndex = 4;
+            lblNgayGui0.Text = "Ngày gửi";
             // 
             // panel2
             // 
@@ -185,30 +197,17 @@
             label1.TabIndex = 5;
             label1.Text = "Tên khách hàng";
             // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.BackColor = Color.White;
-            flowLayoutPanel1.Dock = DockStyle.Bottom;
-            flowLayoutPanel1.Location = new Point(0, 180);
-            flowLayoutPanel1.Margin = new Padding(10, 3, 10, 3);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Padding = new Padding(10, 0, 10, 0);
-            flowLayoutPanel1.Size = new Size(1023, 357);
-            flowLayoutPanel1.TabIndex = 0;
-            // 
-            // ChiTietRutTien
+            // ChiTietGuiTien
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoScroll = true;
             ClientSize = new Size(1023, 537);
             Controls.Add(panel1);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "ChiTietRutTien";
-            Text = "Chitietruttien";
-            Load += ChiTietRutTien_Load;
+            Name = "ChiTietGuiTien";
+            Text = "ChiTietGuiTien";
+            Load += ChiTietGuiTien_Load;
             panel1.ResumeLayout(false);
             guna2Panel3.ResumeLayout(false);
             guna2Panel3.PerformLayout();
@@ -219,13 +218,12 @@
 
         #endregion
 
-        private Panel panel1;
         private FlowLayoutPanel flowLayoutPanel1;
-        private Panel panel2;
+        private Panel panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private Label lblLoaiTietKiem0;
-        private Label lblSoTienRut0;
-        private Label lblNgayRut0;
+        private Label lblSoTienGui0;
+        private Label lblNgayGui0;
+        private Panel panel2;
         private Label label4;
         private Label label5;
         private Label label6;
