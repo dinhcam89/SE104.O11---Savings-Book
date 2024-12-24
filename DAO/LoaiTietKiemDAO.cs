@@ -66,6 +66,12 @@ namespace DAO
             }
             return null;
         }
+        public LoaiTietKiem? getLoaiTietKiemById(string maLoaiTietKiem)
+        {
+            LoaiTietKiem ltk = new LoaiTietKiem();
+            ltk.MaLoaiTietKiem = maLoaiTietKiem;
+            return getLoaiTietKiem(ltk);
+        }
         public bool updateLoaiTietKiem(LoaiTietKiem ltk)
         {
             string query = "" +
