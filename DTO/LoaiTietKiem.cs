@@ -9,7 +9,7 @@ namespace DTO
     public class LoaiTietKiem
     {
         #region Properties
-        public int MaLoaiTietKiem { get; set; }
+        public string MaLoaiTietKiem { get; set; }
         public int KyHan { get; set; }
         public double LaiSuat { get; set; }
         public int SoNgayToiThieuDuocRutTien { get; set; }
@@ -18,7 +18,7 @@ namespace DTO
 
         #region Constructors
         public LoaiTietKiem() { }
-        public LoaiTietKiem(int maloaitk, int kyhan, double laisuat, int songaytoithieuduocruttien, string quydinhsotienrut)
+        public LoaiTietKiem(string maloaitk, int kyhan, double laisuat, int songaytoithieuduocruttien, string quydinhsotienrut)
         {
             MaLoaiTietKiem = maloaitk;
             KyHan = kyhan;

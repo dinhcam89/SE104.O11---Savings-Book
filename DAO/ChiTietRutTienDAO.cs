@@ -13,7 +13,7 @@ namespace DAO
     {
         private string connectionString = "Data Source=CONALNGUYEN\\NGUYENCHAU;Initial Catalog=saving_books_management;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
 
-        public PhieuGuiTien GetPhieuGoiTienById(int soTaiKhoanTienGoi)
+        public PhieuGuiTien GetPhieuGoiTienById(string soTaiKhoanTienGoi)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -27,7 +27,7 @@ namespace DAO
                 {
                     return new PhieuGuiTien
                     {
-                        MaPhieuGuiTien = reader.GetInt32(reader.GetOrdinal("SoTaiKhoanTienGoi")),
+                        SoTaiKhoanGuiTien = reader.GetString(reader.GetOrdinal("SoTaiKhoanTienGoi")),
                         MaKH = reader.GetInt32(reader.GetOrdinal("SoTaiKhoanThanhToan")),
                         MaLoaiTietKiem = reader.GetInt32(reader.GetOrdinal("MaLoaiTietKiem")),
                         LaiSuatApDung = reader.GetDouble(reader.GetOrdinal("LaiSuatApDung")),
@@ -56,7 +56,7 @@ namespace DAO
                 {
                     return new LoaiTietKiem
                     {
-                        MaLoaiTietKiem = reader.GetInt32(reader.GetOrdinal("MaLoaiTietKiem")),
+                        MaLoaiTietKiem = reader.GetString(reader.GetOrdinal("MaLoaiTietKiem")),
                         KyHan = reader.GetInt32(reader.GetOrdinal("KyHan")),
                         LaiSuat = (double)reader["LaiSuat"],
                         SoNgayToiThieuDuocRutTien = reader.GetInt32(reader.GetOrdinal("SoNgayToiThieuDuocRutTien"))
@@ -78,7 +78,7 @@ namespace DAO
             }
         }
 
-        public bool UpdatePhieuGoiTienAfterRut(int soTaiKhoanTienGoi, double soTienRut)
+        public bool UpdatePhieuGoiTienAfterRut(string soTaiKhoanTienGoi, double soTienRut)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -93,7 +93,7 @@ namespace DAO
             }
         }
 
-        public bool UpdatePhieuGoiTienToZero(int soTaiKhoanTienGoi)
+        public bool UpdatePhieuGoiTienToZero(string soTaiKhoanTienGoi)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -116,7 +116,7 @@ namespace DAO
                              (SoTaiKhoanTienGoi, NgayRut, SoTienRut) 
                              VALUES (@SoTaiKhoanTienGoi, @NgayRut, @SoTienRut)";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@SoTaiKhoanTienGoi", chiTietRutTien.MaPhieuGuiTien);
+                cmd.Parameters.AddWithValue("@SoTaiKhoanTienGoi", chiTietRutTien.SoTaiKhoanGuiTien);
                 cmd.Parameters.AddWithValue("@NgayRut", chiTietRutTien.NgayRut);
                 cmd.Parameters.AddWithValue("@SoTienRut", chiTietRutTien.SoTienRut);
                 conn.Open();

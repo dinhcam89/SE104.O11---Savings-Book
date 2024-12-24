@@ -9,7 +9,7 @@ namespace DTO
     public class PhieuGuiTien
     {
         #region Properties
-        public int MaPhieuGuiTien { get; set; }
+        public string SoTaiKhoanGuiTien { get; set; }
         public int MaKH { get; set; }
         public int MaLoaiTietKiem { get; set; } 
         public double LaiSuatApDung { get; set; }
@@ -23,10 +23,10 @@ namespace DTO
 
         #region Constructors
         public PhieuGuiTien() { }
-        public PhieuGuiTien(int maphieu, int makh,int maltk, double laisuatapdung, double laisuatphatsinh, DateTime ngaydaohanketiep,
+        public PhieuGuiTien(string sotaikhoanguitien, int makh,int maltk, double laisuatapdung, double laisuatphatsinh, DateTime ngaydaohanketiep,
             DateTime ngaygui, double tongtiengoc, double tongtienlaiphatsinh, int hinhthucgiahan)
         {
-            MaPhieuGuiTien = maphieu;
+            SoTaiKhoanGuiTien = sotaikhoanguitien;
             MaKH = makh;
             MaLoaiTietKiem = maltk;
             LaiSuatApDung = laisuatapdung;

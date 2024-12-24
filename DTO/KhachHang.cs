@@ -9,7 +9,7 @@ namespace DTO
     public class KhachHang
     {
         #region Properties
-        public string MaKH { get; set; }
+        public string SoTaiKhoanThanhToan { get; set; }
         public string HoTenKH { get; set; }
         public DateOnly NgaySinh { get; set; }
         public string DiaChi { get; set; }
@@ -20,9 +20,9 @@ namespace DTO
 
         #region Constructors
         public KhachHang() { }
-        public KhachHang(string makh, string tenkh, DateOnly ngaysinh, string diachi, string sdt, string socccd, double sodu)
+        public KhachHang(string sotaikhoanthanhtoan, string tenkh, DateOnly ngaysinh, string diachi, string sdt, string socccd, double sodu)
         {
-            MaKH = makh;
+            SoTaiKhoanThanhToan = sotaikhoanthanhtoan;
             HoTenKH = tenkh;
             NgaySinh = ngaysinh;
             DiaChi = diachi;

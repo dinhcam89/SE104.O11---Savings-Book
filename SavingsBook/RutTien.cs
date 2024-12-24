@@ -30,7 +30,8 @@ namespace GUI
 
         private void btnRutTien_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(lblSTKTienGoi.Text, out int maPhieuGuiTien))
+            string soTaiKhoanTienGoi = lblSTKTienGoi.Text;
+            if (string.IsNullOrWhiteSpace(soTaiKhoanTienGoi))
             {
                 MessageBox.Show("Số tài khoản tiền gửi không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -50,7 +51,7 @@ namespace GUI
                 return;
             }
 
-            string result = rutTienBUS.RutTien(maPhieuGuiTien, ngayRut, soTienRut);
+            string result = rutTienBUS.RutTien(soTaiKhoanTienGoi, ngayRut, soTienRut);
             MessageBox.Show(result);
 
         }
