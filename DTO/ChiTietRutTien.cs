@@ -9,18 +9,18 @@ namespace DTO
     public class ChiTietRutTien
     {
         #region Properties
-        public int MaChiTietRutTien { get; set; }
-        public int MaPhieuGuiTien { get; set; }
-        public DateOnly NgayRut { get; set; }
+        public string MaChiTietRutTien { get; set; }
+        public string SoTaiKhoanTienGui { get; set; }
+        public DateTime NgayRut { get; set; }
         public double SoTienRut { get; set; }
         #endregion
 
         #region Constructors
         public ChiTietRutTien() { }
-        public ChiTietRutTien(int machitietruttien, int maphieuguitien, DateOnly ngayrut, double sotienrut)
+        public ChiTietRutTien(string machitietruttien, string sotaikhoantiengui, DateTime ngayrut, double sotienrut)
         {
             MaChiTietRutTien = machitietruttien;
-            MaPhieuGuiTien = maphieuguitien;
+            SoTaiKhoanTienGui = sotaikhoantiengui;
             NgayRut = ngayrut;
             SoTienRut = sotienrut;
         }
