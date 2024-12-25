@@ -52,7 +52,7 @@ namespace DAO
         public ChiTietGuiTien GetByMaPhieu(string maPhieu)
         {
             ChiTietGuiTien chiTiet = null;
-            string query = "SELECT MaChiTietGoiTien, SoTaiKhoanTienGoi, NgayGoi, SoTienGoi FROM ChiTietGoiTien WHERE MaChiTietGoiTien = @MaPhieu";
+            string query = "SELECT MaChiTietGoiTien, SoTaiKhoanTienGoi, NgayGoi, SoTienGoi FROM ChiTietGoiTien WHERE SoTaiKhoanTienGoi = @MaPhieu";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -69,7 +69,7 @@ namespace DAO
                         chiTiet = new ChiTietGuiTien
                         {
                             //MaChiTietGuiTien = reader["MaChiTietGoiTien"].ToString(),
-                            //SoTaiKhoanTienGui = reader["SoTaiKhoanTienGoi"].ToString(),
+                            SoTaiKhoanTienGui = reader["SoTaiKhoanTienGoi"].ToString(),
                             NgayGui = Convert.ToDateTime(reader["NgayGoi"]),
                             SoTienGui = Convert.ToDouble(reader["SoTienGoi"])
                         };
@@ -82,6 +82,7 @@ namespace DAO
             }
 
             return chiTiet;
+
         }
     }
 }

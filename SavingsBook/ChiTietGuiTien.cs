@@ -38,6 +38,7 @@ namespace GUI
 
                 // Kiểm tra và lấy thông tin theo mã phiếu
                 var chiTiet = hienthiBUS.GetChiTietGuiTienByMaPhieu(maPhieu);
+
                 listChiTiet = chiTiet != null ? new List<DTO.ChiTietGuiTien> { chiTiet } : new List<DTO.ChiTietGuiTien>();
 
                 if (listChiTiet.Count > 0)

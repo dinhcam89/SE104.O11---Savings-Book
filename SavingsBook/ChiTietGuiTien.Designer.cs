@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel1 = new Panel();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
@@ -37,11 +37,11 @@
             lblNgayGui0 = new Label();
             panel2 = new Panel();
             label4 = new Label();
-            lbMaPhieu = new Label();
             label6 = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            lbMaPhieu = new Label();
             panel1.SuspendLayout();
             guna2Panel3.SuspendLayout();
             panel2.SuspendLayout();
@@ -79,12 +79,12 @@
             guna2Panel3.BorderRadius = 10;
             guna2Panel3.Controls.Add(lblSoTienGui0);
             guna2Panel3.Controls.Add(lblNgayGui0);
-            guna2Panel3.CustomizableEdges = customizableEdges3;
+            guna2Panel3.CustomizableEdges = customizableEdges1;
             guna2Panel3.FillColor = Color.AliceBlue;
             guna2Panel3.Location = new Point(29, 176);
             guna2Panel3.Margin = new Padding(3, 4, 3, 4);
             guna2Panel3.Name = "guna2Panel3";
-            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Panel3.Size = new Size(1110, 56);
             guna2Panel3.TabIndex = 19;
             // 
@@ -140,18 +140,6 @@
             label4.TabIndex = 10;
             label4.Text = "10.000.000";
             // 
-            // lbMaPhieu
-            // 
-            lbMaPhieu.AutoSize = true;
-            lbMaPhieu.BackColor = Color.Transparent;
-            lbMaPhieu.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbMaPhieu.ForeColor = Color.FromArgb(37, 10, 128);
-            lbMaPhieu.Location = new Point(1040, 76);
-            lbMaPhieu.Name = "lbMaPhieu";
-            lbMaPhieu.Size = new Size(120, 25);
-            lbMaPhieu.TabIndex = 9;
-            lbMaPhieu.Text = "CGT0000001";
-            // 
             // label6
             // 
             label6.AutoSize = true;
@@ -200,6 +188,18 @@
             label1.TabIndex = 5;
             label1.Text = "Tên khách hàng";
             // 
+            // lbMaPhieu
+            // 
+            lbMaPhieu.AutoSize = true;
+            lbMaPhieu.BackColor = Color.Transparent;
+            lbMaPhieu.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbMaPhieu.ForeColor = Color.FromArgb(37, 10, 128);
+            lbMaPhieu.Location = new Point(1040, 76);
+            lbMaPhieu.Name = "lbMaPhieu";
+            lbMaPhieu.Size = new Size(120, 25);
+            lbMaPhieu.TabIndex = 9;
+            lbMaPhieu.Text = "PGT0000001";
+            // 
             // ChiTietGuiTien
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -229,10 +229,10 @@
         private Label lblNgayGui0;
         private Panel panel2;
         private Label label4;
-        private Label lbMaPhieu;
         private Label label6;
         private Label label3;
         private Label label2;
         private Label label1;
+        private Label lbMaPhieu;
     }
 }
