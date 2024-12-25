@@ -1,4 +1,6 @@
-﻿using SavingsBook;
+﻿using BUS;
+using DTO;
+using SavingsBook;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +15,13 @@ namespace GUI.DashboardApp
 {
     public partial class ucQuanLyPhieu : UserControl
     {
+        List<PhieuGoiTien> phieuGoiTiens;
+        private PhieuGoiTienBUS _phieuGoiTienBUS;
         public ucQuanLyPhieu()
         {
             InitializeComponent();
+            _phieuGoiTienBUS = new PhieuGoiTienBUS();
+            phieuGoiTiens = new List<PhieuGoiTien>();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -26,27 +32,34 @@ namespace GUI.DashboardApp
 
         private void ucManageSavingBooks_Load(object sender, EventArgs e)
         {
-            populateItems();
+            loadItems();
 
         }
-
-
-        private void populateItems()
+        private void loadItems()
         {
-            ListItem[] listItems = new ListItem[20];
+            phieuGoiTiens = _phieuGoiTienBUS.GetPhieuGoiTien();
+            populateItems(phieuGoiTiens);
+        }
+        private void populateItems(List<PhieuGoiTien> phieuGoiTiens)
+        {
+            ListItem[] listItems = new ListItem[phieuGoiTiens.Count];
 
             for (int i = 0; i < listItems.Length; i++)
             {
+                // Lấy loại kỳ hạn của loại tiết kiệm
+                LoaiTietKiem? ltk = new LoaiTietKiemBUS().getLoaiTietKiemById(phieuGoiTiens[i].MaLoaiTietKiem);
+
+                if (ltk == null)
+                {
+                    continue;
+                }
+
                 listItems[i] = new ListItem();
-                listItems[i].Ten1 = "Tên khách hàng " + i;
-                listItems[i].Ten2 = "Mã khách hàng " + i;
-                listItems[i].Ten3 = "Loại kỳ hạn " + i;
+                listItems[i].Ten1 = phieuGoiTiens[i].SoTaiKhoanTienGoi;
+                listItems[i].Ten2 = phieuGoiTiens[i].TongTienGoc.ToString();
+                listItems[i].Ten3 = ltk.KyHan.ToString();
                 listItems[i].Ten4 = "";
-                //listItems[i].btnCustom.Text = "Xem";
                 listItems[i].FormType = ObjectType.PhieuGoiTien;
-
-                //listItems[i].ButtonClick += ListItem_ButtonClick;
-
 
                 flowLayoutPanel1.Controls.Add(listItems[i]);
             }
