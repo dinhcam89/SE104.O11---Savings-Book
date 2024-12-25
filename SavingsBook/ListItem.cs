@@ -57,6 +57,10 @@ namespace GUI
                         break;
                     case ObjectType.PhieuGoiTien:
                         CMSPhieuGoiTien cmsPhieuGoiTien = new CMSPhieuGoiTien();
+                        string maPhieu = Ten2.ToString();
+                        cmsPhieuGoiTien.maPhieu = maPhieu;
+                        string tenKhachHang = Ten1.ToString();
+                        cmsPhieuGoiTien.tenKhachHang = tenKhachHang;
                         cmsPhieuGoiTien.Show(screenPoint);
                         break;
                     case ObjectType.LoaiTietKiem:

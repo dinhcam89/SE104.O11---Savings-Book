@@ -13,20 +13,25 @@ namespace GUI
 {
     public partial class ChiTietGuiTien : Form
     {
-        public ChiTietGuiTien()
+        private string maPhieu;
+        private string tenKhachHang;
+
+        public ChiTietGuiTien(string maPhieu, string tenKhachHang)
         {
             InitializeComponent();
+            this.maPhieu = maPhieu;
+            this.tenKhachHang = tenKhachHang;
         }
 
         private void ChiTietGuiTien_Load(object sender, EventArgs e)
         {
-            populateItems();
+            populateItems(maPhieu);
+            lbMaPhieu.Text = maPhieu;
+            lblTenKhachHang.Text = tenKhachHang;
         }
 
-        private void populateItems()
+        private void populateItems(string maPhieu)
         {
-            // Xóa các mục hiện có
-            string maPhieu = lbMaPhieu.Text;
             flowLayoutPanel1.Controls.Clear();
 
             List<DTO.ChiTietGuiTien> listChiTiet;

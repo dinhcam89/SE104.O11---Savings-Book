@@ -13,44 +13,24 @@ namespace GUI
 {
     public partial class ChiTietRutTien : Form
     {
-        public ChiTietRutTien()
+        private string maPhieu;
+        private string tenKhachHang;
+        public ChiTietRutTien(string maPhieu, string tenKhachHang)
         {
             InitializeComponent();
+            this.maPhieu = maPhieu;
+            this.tenKhachHang = tenKhachHang;
         }
 
         private void ChiTietRutTien_Load(object sender, EventArgs e)
         {
-            populateItems();
+            populateItems(maPhieu, tenKhachHang);
+            lbMaPhieu.Text = maPhieu;
+            lblTenKhachHang.Text = tenKhachHang;
         }
 
-        private void populateItems()
+        private void populateItems(string maPhieu, string tenKhachHang)
         {
-            /*ListItem[] listItems = new ListItem[20];
-
-            for (int i = 0; i < listItems.Length; i++)
-            {
-                listItems[i] = new ListItem();
-                listItems[i].Ten1 = "Ngày rút " + i;
-                listItems[i].Ten2 = "Số tiền " + i;
-                listItems[i].Ten3 = "";
-                listItems[i].Ten4 = "";
-                    
-                listItems[i].FormType = ObjectType.PhieuGoiTien;
-
-                listItems[i].IsButtonVisible = false; // Ẩn nút
-
-                flowLayoutPanel1.Controls.Add(listItems[i]);
-            }
-
-            flowLayoutPanel1.Resize += (s, e) =>
-            {
-                foreach (ListItem item in flowLayoutPanel1.Controls)
-                {
-                    item.Width = flowLayoutPanel1.ClientSize.Width;
-                }
-            };*/
-            // Xóa các mục hiện có
-            string maPhieu = lbMaPhieu.Text;
             flowLayoutPanel1.Controls.Clear();
 
             List<DTO.ChiTietRutTien> listChiTiet;

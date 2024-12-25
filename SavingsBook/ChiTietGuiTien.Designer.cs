@@ -37,11 +37,11 @@
             lblNgayGui0 = new Label();
             panel2 = new Panel();
             label4 = new Label();
-            label6 = new Label();
+            lbMaPhieu = new Label();
+            lblTenKhachHang = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            lbMaPhieu = new Label();
             panel1.SuspendLayout();
             guna2Panel3.SuspendLayout();
             panel2.SuspendLayout();
@@ -117,7 +117,7 @@
             panel2.BackColor = Color.White;
             panel2.Controls.Add(label4);
             panel2.Controls.Add(lbMaPhieu);
-            panel2.Controls.Add(label6);
+            panel2.Controls.Add(lblTenKhachHang);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label1);
@@ -140,17 +140,29 @@
             label4.TabIndex = 10;
             label4.Text = "10.000.000";
             // 
-            // label6
+            // lbMaPhieu
             // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.FromArgb(37, 10, 128);
-            label6.Location = new Point(907, 24);
-            label6.Name = "label6";
-            label6.Size = new Size(253, 25);
-            label6.TabIndex = 8;
-            label6.Text = "Nguyễn Lương Huỳnh Đăng";
+            lbMaPhieu.AutoSize = true;
+            lbMaPhieu.BackColor = Color.Transparent;
+            lbMaPhieu.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbMaPhieu.ForeColor = Color.FromArgb(37, 10, 128);
+            lbMaPhieu.Location = new Point(1035, 76);
+            lbMaPhieu.Name = "lbMaPhieu";
+            lbMaPhieu.Size = new Size(120, 25);
+            lbMaPhieu.TabIndex = 9;
+            lbMaPhieu.Text = "PGT0000001";
+            // 
+            // lblTenKhachHang
+            // 
+            lblTenKhachHang.AutoSize = true;
+            lblTenKhachHang.BackColor = Color.Transparent;
+            lblTenKhachHang.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTenKhachHang.ForeColor = Color.FromArgb(37, 10, 128);
+            lblTenKhachHang.Location = new Point(902, 24);
+            lblTenKhachHang.Name = "lblTenKhachHang";
+            lblTenKhachHang.Size = new Size(253, 25);
+            lblTenKhachHang.TabIndex = 8;
+            lblTenKhachHang.Text = "Nguyễn Lương Huỳnh Đăng";
             // 
             // label3
             // 
@@ -188,18 +200,6 @@
             label1.TabIndex = 5;
             label1.Text = "Tên khách hàng";
             // 
-            // lbMaPhieu
-            // 
-            lbMaPhieu.AutoSize = true;
-            lbMaPhieu.BackColor = Color.Transparent;
-            lbMaPhieu.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbMaPhieu.ForeColor = Color.FromArgb(37, 10, 128);
-            lbMaPhieu.Location = new Point(1040, 76);
-            lbMaPhieu.Name = "lbMaPhieu";
-            lbMaPhieu.Size = new Size(120, 25);
-            lbMaPhieu.TabIndex = 9;
-            lbMaPhieu.Text = "PGT0000001";
-            // 
             // ChiTietGuiTien
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -229,7 +229,7 @@
         private Label lblNgayGui0;
         private Panel panel2;
         private Label label4;
-        private Label label6;
+        private Label lblTenKhachHang;
         private Label label3;
         private Label label2;
         private Label label1;
