@@ -21,7 +21,7 @@ namespace GUI
             ToolStripMenuItem menuItemGuiTien = new ToolStripMenuItem("Gửi tiền");
             menuItemGuiTien.Click += OpenDepositForm!;
 
-            ToolStripMenuItem menuItemChiTietGuiTien = new ToolStripMenuItem("Chi tiết rút tiền");
+            ToolStripMenuItem menuItemChiTietGuiTien = new ToolStripMenuItem("Chi tiết gửi tiền");
             menuItemChiTietGuiTien.Click += OpenDetailDepositForm!;
 
             ToolStripMenuItem menuItemRutTien = new ToolStripMenuItem("Rút tiền");

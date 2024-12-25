@@ -15,5 +15,10 @@ namespace BUS
         {
             return hienthichitietrut.GetAll();
         }
+
+        public DTO.ChiTietRutTien GetChiTietGuiTienByMaPhieu(string maPhieu)
+        {
+            return hienthichitietrut.GetByMaPhieu(maPhieu);
+        }
     }
 }

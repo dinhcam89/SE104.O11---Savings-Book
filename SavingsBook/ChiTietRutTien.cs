@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +25,7 @@ namespace GUI
 
         private void populateItems()
         {
-            ListItem[] listItems = new ListItem[20];
+            /*ListItem[] listItems = new ListItem[20];
 
             for (int i = 0; i < listItems.Length; i++)
             {
@@ -47,7 +48,50 @@ namespace GUI
                 {
                     item.Width = flowLayoutPanel1.ClientSize.Width;
                 }
-            };
+            };*/
+            // Xóa các mục hiện có
+            string maPhieu = lbMaPhieu.Text;
+            flowLayoutPanel1.Controls.Clear();
+
+            List<DTO.ChiTietRutTien> listChiTiet;
+
+            try
+            {
+                // Tạo đối tượng BUS
+                var hienthiBUS = new HienThiChiTietRutTienBUS();
+
+                // Kiểm tra và lấy thông tin theo mã phiếu
+                var chiTiet = hienthiBUS.GetChiTietGuiTienByMaPhieu(maPhieu);
+                listChiTiet = chiTiet != null ? new List<DTO.ChiTietRutTien> { chiTiet } : new List<DTO.ChiTietRutTien>();
+
+                if (listChiTiet.Count > 0)
+                {
+                    foreach (var item in listChiTiet)
+                    {
+                        var listItem = new ListItem
+                        {
+                            Ten1 = $"{item.NgayRut:dd/MM/yyyy}",
+                            Ten2 = $"{item.SoTienRut:C}",
+                            Ten3 = "",
+                            Ten4 = "",
+                            FormType = ObjectType.PhieuGoiTien,
+                            IsButtonVisible = false
+
+                        };
+
+                        flowLayoutPanel1.Controls.Add(listItem);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy dữ liệu phù hợp.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
 
         }
     }
