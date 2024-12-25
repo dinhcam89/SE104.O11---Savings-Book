@@ -16,9 +16,15 @@ namespace GUI.DashboardApp
     public partial class ucQuanLyPhieu : UserControl
     {
         private PhieuGoiTienBUS PhieuGoiTienBUS = new PhieuGoiTienBUS();
+        // Danh sách các đối tượng DTO để lưu dữ liệu từ database
+        private List<PhieuGoiTien> listPhieuGoiTien;
+
+        // Lấy dữ liệu từ lớp BUS (nơi xử lý nghiệp vụ)
         public ucQuanLyPhieu()
         {
             InitializeComponent();
+            listPhieuGoiTien = PhieuGoiTienBUS.GetAllPhieuGoiTien();
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -29,18 +35,14 @@ namespace GUI.DashboardApp
 
         private void ucManageSavingBooks_Load(object sender, EventArgs e)
         {
-            PopulateItems();
+            PopulateItems(listPhieuGoiTien);
 
         }
+        
 
-
-        private void PopulateItems()
+        private void PopulateItems(List<PhieuGoiTien> listPhieuGoiTien)
         {
-            // Danh sách các đối tượng DTO để lưu dữ liệu từ database
-            List<PhieuGoiTien> listPhieuGoiTien;
-
-            // Lấy dữ liệu từ lớp BUS (nơi xử lý nghiệp vụ)
-            listPhieuGoiTien = PhieuGoiTienBUS.GetAllPhieuGoiTien();
+            
 
             // Kiểm tra dữ liệu
             if (listPhieuGoiTien == null || listPhieuGoiTien.Count == 0)
@@ -84,5 +86,12 @@ namespace GUI.DashboardApp
             };
         }
 
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = txtTimKiem.Text.Trim();
+            var listPhieuGoiTien = PhieuGoiTienBUS.SearchPhieuGoiTien(searchText);
+
+            PopulateItems(listPhieuGoiTien);
+        }
     }
 }

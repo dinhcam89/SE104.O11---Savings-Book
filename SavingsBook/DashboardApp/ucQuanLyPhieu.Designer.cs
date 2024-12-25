@@ -94,6 +94,7 @@
             txtTimKiem.Size = new Size(811, 50);
             txtTimKiem.TabIndex = 0;
             txtTimKiem.TextOffset = new Point(10, 0);
+            txtTimKiem.TextChanged += txtTimKiem_TextChanged;
             // 
             // guna2Panel2
             // 

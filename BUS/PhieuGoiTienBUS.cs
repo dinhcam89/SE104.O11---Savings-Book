@@ -15,5 +15,11 @@ namespace BUS
         {
             return PhieuGoiTienDAO.GetAllPhieuGoiTienWithKhachHang();
         }
+        public List<PhieuGoiTien> SearchPhieuGoiTien(string searchText)
+        {
+            var dao = new PhieuGoiTienDAO();
+            return dao.SearchPhieuGoiTien(searchText);
+        }
+
     }
 }
