@@ -66,7 +66,7 @@ namespace BUS
             return 0;
         }
 
-        public bool IsKyHan(string soTaiKhoanTienGoi)
+        public bool KiemTraQuyDinhRutTien(string soTaiKhoanTienGoi)
         {
             PhieuGoiTien PhieuGoiTien = rutTienDAO.GetPhieuGoiTienById(soTaiKhoanTienGoi);
             if (PhieuGoiTien != null)
@@ -74,10 +74,11 @@ namespace BUS
                 LoaiTietKiem loaiTietKiem = rutTienDAO.GetLoaiTietKiemById(PhieuGoiTien.MaLoaiTietKiem);
                 if (loaiTietKiem != null)
                 {
-                    return loaiTietKiem.KyHan > 0; // Có kỳ hạn nếu KyHan > 0
+                    return loaiTietKiem.QuyDinhSoTienRut.Equals("=");
                 }
             }
-            return false; // Mặc định là không kỳ hạn nếu không tìm thấy thông tin
+            return false;
+
         }
 
         private void InsertChiTietRutTien(string soTaiKhoanTienGoi, double soTienRut, DateTime ngayRut)
