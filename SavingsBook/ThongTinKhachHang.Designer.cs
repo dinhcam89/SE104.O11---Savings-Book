@@ -99,12 +99,12 @@
             lblSDT.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblSDT.AutoSize = true;
             lblSDT.BackColor = Color.Transparent;
-            lblSDT.Font = new Font("iCiel Brandon Text Bold", 14.25F, FontStyle.Italic);
+            lblSDT.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblSDT.ForeColor = Color.FromArgb(127, 111, 180);
-            lblSDT.Location = new Point(360, 173);
+            lblSDT.Location = new Point(370, 173);
             lblSDT.Name = "lblSDT";
             lblSDT.RightToLeft = RightToLeft.Yes;
-            lblSDT.Size = new Size(120, 24);
+            lblSDT.Size = new Size(110, 24);
             lblSDT.TabIndex = 87;
             lblSDT.Text = "0987645324";
             lblSDT.TextAlign = ContentAlignment.MiddleRight;
@@ -113,11 +113,11 @@
             // 
             lblSDT0.AutoSize = true;
             lblSDT0.BackColor = Color.Transparent;
-            lblSDT0.Font = new Font("iCiel Brandon Text Bold", 14.25F);
+            lblSDT0.Font = new Font("Microsoft Sans Serif", 14.25F);
             lblSDT0.ForeColor = Color.FromArgb(135, 92, 254);
             lblSDT0.Location = new Point(20, 173);
             lblSDT0.Name = "lblSDT0";
-            lblSDT0.Size = new Size(116, 24);
+            lblSDT0.Size = new Size(121, 24);
             lblSDT0.TabIndex = 86;
             lblSDT0.Text = "Số điện thoại";
             // 
@@ -151,13 +151,13 @@
             lblNgaySinh.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblNgaySinh.AutoSize = true;
             lblNgaySinh.BackColor = Color.Transparent;
-            lblNgaySinh.Font = new Font("iCiel Brandon Text Bold", 14.25F, FontStyle.Italic);
+            lblNgaySinh.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblNgaySinh.ForeColor = Color.FromArgb(127, 111, 180);
-            lblNgaySinh.Location = new Point(370, 263);
+            lblNgaySinh.Location = new Point(376, 263);
             lblNgaySinh.Margin = new Padding(3, 0, 25, 0);
             lblNgaySinh.Name = "lblNgaySinh";
             lblNgaySinh.RightToLeft = RightToLeft.Yes;
-            lblNgaySinh.Size = new Size(110, 24);
+            lblNgaySinh.Size = new Size(100, 24);
             lblNgaySinh.TabIndex = 85;
             lblNgaySinh.Text = "10/10/2000";
             lblNgaySinh.TextAlign = ContentAlignment.MiddleLeft;
@@ -166,11 +166,11 @@
             // 
             lblNgaySinh0.AutoSize = true;
             lblNgaySinh0.BackColor = Color.Transparent;
-            lblNgaySinh0.Font = new Font("iCiel Brandon Text Bold", 14.25F);
+            lblNgaySinh0.Font = new Font("Microsoft Sans Serif", 14.25F);
             lblNgaySinh0.ForeColor = Color.FromArgb(135, 92, 254);
             lblNgaySinh0.Location = new Point(20, 263);
             lblNgaySinh0.Name = "lblNgaySinh0";
-            lblNgaySinh0.Size = new Size(90, 24);
+            lblNgaySinh0.Size = new Size(94, 24);
             lblNgaySinh0.TabIndex = 84;
             lblNgaySinh0.Text = "Ngày sinh";
             // 
@@ -202,12 +202,12 @@
             lblSoDuHienCo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblSoDuHienCo.AutoSize = true;
             lblSoDuHienCo.BackColor = Color.Transparent;
-            lblSoDuHienCo.Font = new Font("iCiel Brandon Text Bold", 14.25F, FontStyle.Italic);
+            lblSoDuHienCo.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblSoDuHienCo.ForeColor = Color.FromArgb(127, 111, 180);
             lblSoDuHienCo.Location = new Point(379, 415);
             lblSoDuHienCo.Name = "lblSoDuHienCo";
             lblSoDuHienCo.RightToLeft = RightToLeft.Yes;
-            lblSoDuHienCo.Size = new Size(101, 24);
+            lblSoDuHienCo.Size = new Size(90, 24);
             lblSoDuHienCo.TabIndex = 75;
             lblSoDuHienCo.Text = "1.000.000";
             lblSoDuHienCo.TextAlign = ContentAlignment.MiddleRight;
@@ -216,11 +216,11 @@
             // 
             lblSoDuHienCo0.AutoSize = true;
             lblSoDuHienCo0.BackColor = Color.Transparent;
-            lblSoDuHienCo0.Font = new Font("iCiel Brandon Text Bold", 14.25F);
+            lblSoDuHienCo0.Font = new Font("Microsoft Sans Serif", 14.25F);
             lblSoDuHienCo0.ForeColor = Color.FromArgb(135, 92, 254);
             lblSoDuHienCo0.Location = new Point(21, 415);
             lblSoDuHienCo0.Name = "lblSoDuHienCo0";
-            lblSoDuHienCo0.Size = new Size(119, 24);
+            lblSoDuHienCo0.Size = new Size(128, 24);
             lblSoDuHienCo0.TabIndex = 74;
             lblSoDuHienCo0.Text = "Số dư hiện có";
             // 
@@ -229,12 +229,12 @@
             lblSTKThanhToan.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblSTKThanhToan.AutoSize = true;
             lblSTKThanhToan.BackColor = Color.Transparent;
-            lblSTKThanhToan.Font = new Font("iCiel Brandon Text Bold", 14.25F, FontStyle.Italic);
+            lblSTKThanhToan.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblSTKThanhToan.ForeColor = Color.FromArgb(127, 111, 180);
             lblSTKThanhToan.Location = new Point(377, 365);
             lblSTKThanhToan.Name = "lblSTKThanhToan";
             lblSTKThanhToan.RightToLeft = RightToLeft.Yes;
-            lblSTKThanhToan.Size = new Size(103, 24);
+            lblSTKThanhToan.Size = new Size(100, 24);
             lblSTKThanhToan.TabIndex = 71;
             lblSTKThanhToan.Text = "123456667";
             lblSTKThanhToan.TextAlign = ContentAlignment.MiddleRight;
@@ -245,12 +245,12 @@
             lblDiaChi.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblDiaChi.AutoSize = true;
             lblDiaChi.BackColor = Color.Transparent;
-            lblDiaChi.Font = new Font("iCiel Brandon Text Bold", 14.25F, FontStyle.Italic);
+            lblDiaChi.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblDiaChi.ForeColor = Color.FromArgb(127, 111, 180);
             lblDiaChi.Location = new Point(256, 315);
             lblDiaChi.Name = "lblDiaChi";
             lblDiaChi.RightToLeft = RightToLeft.Yes;
-            lblDiaChi.Size = new Size(224, 24);
+            lblDiaChi.Size = new Size(242, 24);
             lblDiaChi.TabIndex = 70;
             lblDiaChi.Text = "Phước Long B, TP Thủ Đức";
             lblDiaChi.TextAlign = ContentAlignment.MiddleLeft;
@@ -260,12 +260,12 @@
             lblCMND.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblCMND.AutoSize = true;
             lblCMND.BackColor = Color.Transparent;
-            lblCMND.Font = new Font("iCiel Brandon Text Bold", 14.25F, FontStyle.Italic);
+            lblCMND.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblCMND.ForeColor = Color.FromArgb(127, 111, 180);
             lblCMND.Location = new Point(398, 218);
             lblCMND.Name = "lblCMND";
             lblCMND.RightToLeft = RightToLeft.Yes;
-            lblCMND.Size = new Size(82, 24);
+            lblCMND.Size = new Size(80, 24);
             lblCMND.TabIndex = 69;
             lblCMND.Text = "1245678";
             lblCMND.TextAlign = ContentAlignment.MiddleRight;
@@ -275,27 +275,25 @@
             lblMaKhachHang.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblMaKhachHang.AutoSize = true;
             lblMaKhachHang.BackColor = Color.Transparent;
-            lblMaKhachHang.Font = new Font("iCiel Brandon Text Bold", 14.25F, FontStyle.Italic);
+            lblMaKhachHang.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblMaKhachHang.ForeColor = Color.FromArgb(127, 111, 180);
-            lblMaKhachHang.Location = new Point(366, 127);
+            lblMaKhachHang.Location = new Point(370, 127);
             lblMaKhachHang.Name = "lblMaKhachHang";
             lblMaKhachHang.RightToLeft = RightToLeft.Yes;
-            lblMaKhachHang.Size = new Size(114, 24);
+            lblMaKhachHang.Size = new Size(110, 24);
             lblMaKhachHang.TabIndex = 68;
             lblMaKhachHang.Text = "1234566788";
             lblMaKhachHang.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblHoTen
             // 
-            lblHoTen.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblHoTen.AutoSize = true;
             lblHoTen.BackColor = Color.Transparent;
-            lblHoTen.Font = new Font("iCiel Brandon Text Bold", 14.25F, FontStyle.Italic);
+            lblHoTen.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblHoTen.ForeColor = Color.FromArgb(127, 111, 180);
-            lblHoTen.Location = new Point(263, 77);
+            lblHoTen.Location = new Point(181, 77);
             lblHoTen.Name = "lblHoTen";
             lblHoTen.RightToLeft = RightToLeft.Yes;
-            lblHoTen.Size = new Size(217, 24);
+            lblHoTen.Size = new Size(299, 24);
             lblHoTen.TabIndex = 67;
             lblHoTen.Text = "Nguyễn Hoàng Trần Đặng";
             lblHoTen.TextAlign = ContentAlignment.MiddleRight;
@@ -304,11 +302,11 @@
             // 
             lblSTKThanhToan0.AutoSize = true;
             lblSTKThanhToan0.BackColor = Color.Transparent;
-            lblSTKThanhToan0.Font = new Font("iCiel Brandon Text Bold", 14.25F);
+            lblSTKThanhToan0.Font = new Font("Microsoft Sans Serif", 14.25F);
             lblSTKThanhToan0.ForeColor = Color.FromArgb(135, 92, 254);
             lblSTKThanhToan0.Location = new Point(21, 365);
             lblSTKThanhToan0.Name = "lblSTKThanhToan0";
-            lblSTKThanhToan0.Size = new Size(202, 24);
+            lblSTKThanhToan0.Size = new Size(206, 24);
             lblSTKThanhToan0.TabIndex = 64;
             lblSTKThanhToan0.Text = "Số tài khoản thanh toán";
             // 
@@ -316,7 +314,7 @@
             // 
             lblDiaChi0.AutoSize = true;
             lblDiaChi0.BackColor = Color.Transparent;
-            lblDiaChi0.Font = new Font("iCiel Brandon Text Bold", 14.25F);
+            lblDiaChi0.Font = new Font("Microsoft Sans Serif", 14.25F);
             lblDiaChi0.ForeColor = Color.FromArgb(135, 92, 254);
             lblDiaChi0.Location = new Point(21, 315);
             lblDiaChi0.Name = "lblDiaChi0";
@@ -328,11 +326,11 @@
             // 
             lblCMND0.AutoSize = true;
             lblCMND0.BackColor = Color.Transparent;
-            lblCMND0.Font = new Font("iCiel Brandon Text Bold", 14.25F);
+            lblCMND0.Font = new Font("Microsoft Sans Serif", 14.25F);
             lblCMND0.ForeColor = Color.FromArgb(135, 92, 254);
             lblCMND0.Location = new Point(20, 218);
             lblCMND0.Name = "lblCMND0";
-            lblCMND0.Size = new Size(129, 24);
+            lblCMND0.Size = new Size(123, 24);
             lblCMND0.TabIndex = 62;
             lblCMND0.Text = "CMND/CCCD";
             // 
@@ -340,11 +338,11 @@
             // 
             lblMaKhachHang0.AutoSize = true;
             lblMaKhachHang0.BackColor = Color.Transparent;
-            lblMaKhachHang0.Font = new Font("iCiel Brandon Text Bold", 14.25F);
+            lblMaKhachHang0.Font = new Font("Microsoft Sans Serif", 14.25F);
             lblMaKhachHang0.ForeColor = Color.FromArgb(135, 92, 254);
             lblMaKhachHang0.Location = new Point(20, 127);
             lblMaKhachHang0.Name = "lblMaKhachHang0";
-            lblMaKhachHang0.Size = new Size(133, 24);
+            lblMaKhachHang0.Size = new Size(140, 24);
             lblMaKhachHang0.TabIndex = 61;
             lblMaKhachHang0.Text = "Mã khách hàng";
             // 
@@ -352,11 +350,11 @@
             // 
             lblHoTen0.AutoSize = true;
             lblHoTen0.BackColor = Color.Transparent;
-            lblHoTen0.Font = new Font("iCiel Brandon Text Bold", 14.25F);
+            lblHoTen0.Font = new Font("Microsoft Sans Serif", 14.25F);
             lblHoTen0.ForeColor = Color.FromArgb(135, 92, 254);
             lblHoTen0.Location = new Point(20, 77);
             lblHoTen0.Name = "lblHoTen0";
-            lblHoTen0.Size = new Size(89, 24);
+            lblHoTen0.Size = new Size(90, 24);
             lblHoTen0.TabIndex = 59;
             lblHoTen0.Text = "Họ và tên";
             // 

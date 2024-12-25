@@ -89,9 +89,9 @@
             flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.BackColor = Color.Transparent;
-            flowLayoutPanel1.Location = new Point(19, 183);
+            flowLayoutPanel1.Location = new Point(19, 132);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(894, 356);
+            flowLayoutPanel1.Size = new Size(894, 407);
             flowLayoutPanel1.TabIndex = 24;
             // 
             // btnAdd
@@ -131,7 +131,7 @@
             guna2Panel5.Controls.Add(lbltenKhachHang0);
             guna2Panel5.CustomizableEdges = customizableEdges3;
             guna2Panel5.FillColor = Color.AliceBlue;
-            guna2Panel5.Location = new Point(29, 135);
+            guna2Panel5.Location = new Point(29, 84);
             guna2Panel5.Name = "guna2Panel5";
             guna2Panel5.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Panel5.Size = new Size(872, 42);
