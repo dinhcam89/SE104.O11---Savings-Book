@@ -20,20 +20,29 @@ namespace GUI
         {
             InitializeComponent();
             List<PhieuGoiTien> phieuGoiTiens = new PhieuGoiTienBUS().GetPhieuGoiTien();
-            foreach (PhieuGoiTien pgt in  phieuGoiTiens)
+            foreach (PhieuGoiTien pgt in phieuGoiTiens)
             {
                 // Lấy kỳ hạn, lãi suất của loại tiết kiệm dựa vào mã loại tiết kiệm
                 LoaiTietKiem? ltk = new LoaiTietKiemBUS().getLoaiTietKiemById(pgt.MaLoaiTietKiem);
+
                 if (ltk == null)
                 {
                     continue;
                 }
+
+                // Lấy lãi suất của loại tiết kiệm không kỳ hạn
+                double laiSuatKhongKyHan = layLaiSuatKhongKyHan() ?? 0.05;
+              
                 while (DateTime.Now > pgt.NgayDaoHanKeTiep)
                 {
                     pgt.TongTienGoc = Math.Round(tinhTongTienGoc(pgt.TongTienGoc, pgt.HinhThucGiaHan, pgt.TongTienLaiPhatSinh, pgt.NgayDaoHanKeTiep), 2);
                     pgt.TongTienLaiPhatSinh = Math.Round(tinhTongLaiPhatSinh(pgt.TongTienLaiPhatSinh, pgt.TongTienGoc, ltk.KyHan, pgt.LaiSuatApDung), 2);
-                    pgt.LaiSuatApDung = Math.Round(tinhLaiSuatApDung(pgt.LaiSuatApDung, pgt.LaiSuatPhatSinh, ltk.LaiSuat, pgt.NgayDaoHanKeTiep, pgt.HinhThucGiaHan), 2);
-                    pgt.NgayDaoHanKeTiep = tinhNgayDaoHanKeTiep(pgt.NgayDaoHanKeTiep, ltk.KyHan);
+                    pgt.LaiSuatApDung = Math.Round(tinhLaiSuatApDung(pgt.LaiSuatApDung, pgt.LaiSuatPhatSinh, laiSuatKhongKyHan, pgt.NgayDaoHanKeTiep, pgt.HinhThucGiaHan), 2);
+                    pgt.LaiSuatPhatSinh = Math.Round(tinhLaiSuatPhatSinh(pgt.LaiSuatPhatSinh, pgt.HinhThucGiaHan, pgt.NgayDaoHanKeTiep, laiSuatKhongKyHan), 2);
+                    pgt.NgayDaoHanKeTiep = tinhNgayDaoHanKeTiep(pgt.NgayDaoHanKeTiep, ltk.KyHan, pgt.HinhThucGiaHan);
+                    if (pgt.HinhThucGiaHan == 1) {
+                        break;
+                    }
                 }
             }
             dgvPhieuGoiTien.DataSource = phieuGoiTiens;
@@ -54,8 +63,12 @@ namespace GUI
         {
             return tongLaiPhatSinh + tinhLaiPhatSinh(tongTienGoc, kyHan, laiSuat);
         }
-        DateTime tinhNgayDaoHanKeTiep(DateTime ngayDaoHanKeTiep, int kyHan)
+        DateTime tinhNgayDaoHanKeTiep(DateTime ngayDaoHanKeTiep, int kyHan, int hinhThucGiaHan)
         {
+            if (hinhThucGiaHan == 1)
+            {
+                return ngayDaoHanKeTiep;
+            }
             // Cập nhật ngày đáo hạn kế tiếp, bằng cách cộng thêm kỳ hạn (tháng) vào ngày đáo hạn hiện tại
             return ngayDaoHanKeTiep.AddMonths(kyHan);
         }
@@ -70,9 +83,13 @@ namespace GUI
             // Nếu hình thức gia hạn = 2 hoặc 3, tức là gia hạn, lãi suất áp dụng sẽ bằng lãi suất phát sinh
             return hinhThucGiaHan == 1 ? laiSuatKhongKyHan : laiSuatPhatSinh;
         }
-        double tinhLaiSuatPhatSinh(double laiSuatPhatSinh)
+        double tinhLaiSuatPhatSinh(double laiSuatPhatSinh, int hinhThucGiaHan, DateTime ngayDaoHanKeTiep, double laiSuatKhongKyHan)
         {
             // Chỉ cập nhật lãi suất phát sinh nếu lãi suất của loại tiết kiệm thay đổi
+            if (hinhThucGiaHan == 1 && DateTime.Now > ngayDaoHanKeTiep)
+            {
+                return laiSuatKhongKyHan;
+            }
             return laiSuatPhatSinh;
         }
         double tinhTongTienGoc(double tongTienGoc, int hinhThucGiaHan, double tongLaiPhatSinh, DateTime ngayDaoHanKeTiep)
@@ -92,6 +109,21 @@ namespace GUI
             {
                 return tongTienGoc + tongLaiPhatSinh;
             }
+        }
+        double? layLaiSuatKhongKyHan()
+        {
+            // Lấy tất cả loại lãi suất
+            List<LoaiTietKiem> loaiTietKiems = new LoaiTietKiemBUS().getListLoaiTietKiem();
+
+            // Tìm loại lãi suất có kỳ hạn bằng 0
+            foreach (LoaiTietKiem ltk in loaiTietKiems)
+            {
+                if (ltk.KyHan == 0)
+                {
+                    return ltk.LaiSuat;
+                }
+            }
+            return null;
         }
     }
 }
