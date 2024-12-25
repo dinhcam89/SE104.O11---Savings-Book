@@ -1,4 +1,4 @@
-﻿using GUI.DashboardApp;
+using GUI.DashboardApp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

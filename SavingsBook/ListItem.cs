@@ -1,4 +1,5 @@
-﻿using Guna.UI2.WinForms;
+﻿using DTO;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,10 +24,23 @@ namespace GUI
     {
         public event EventHandler ButtonClick;
         public int clickCount = 0;
+        private LoaiTietKiem _loaiTietKiem;
+        private Action reload;
 
         public ListItem()
         {
             InitializeComponent();
+        }
+        public ListItem(LoaiTietKiem ltk, Action reload)
+        {
+            InitializeComponent();
+            _loaiTietKiem = ltk;
+            Ten1 = ltk.MaLoaiTietKiem.ToString();
+            Ten2 = ltk.KyHan.ToString();
+            Ten3 = ltk.LaiSuat.ToString();
+            Ten4 = "";
+            FormType = ObjectType.LoaiTietKiem;
+            this.reload = reload;
         }
 
         private string _ten1;
@@ -61,10 +75,11 @@ namespace GUI
                         cmsPhieuGoiTien.maPhieu = maPhieu;
                         string tenKhachHang = Ten1.ToString();
                         cmsPhieuGoiTien.tenKhachHang = tenKhachHang;
+
                         cmsPhieuGoiTien.Show(screenPoint);
                         break;
                     case ObjectType.LoaiTietKiem:
-                        CMSLoaiTietKiem cmsLoaiTietKiem = new CMSLoaiTietKiem();
+                        CMSLoaiTietKiem cmsLoaiTietKiem = new CMSLoaiTietKiem(_loaiTietKiem, reload);
                         cmsLoaiTietKiem.Show(screenPoint);
                         break;
                     default:

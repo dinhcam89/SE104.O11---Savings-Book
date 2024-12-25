@@ -16,17 +16,24 @@ namespace GUI
         private string maPhieu;
         private string tenKhachHang;
         public ChiTietRutTien(string maPhieu, string tenKhachHang)
+
         {
             InitializeComponent();
             this.maPhieu = maPhieu;
             this.tenKhachHang = tenKhachHang;
         }
+        public ChiTietRutTien(string maPhieuGoiTien) : this()
+        {
+            this.maPhieuGoiTien = maPhieuGoiTien;
+             // Tự động điền số tài khoản thanh toán
 
+        }
         private void ChiTietRutTien_Load(object sender, EventArgs e)
         {
             populateItems(maPhieu, tenKhachHang);
             lbMaPhieu.Text = maPhieu;
             lblTenKhachHang.Text = tenKhachHang;
+
         }
 
         private void populateItems(string maPhieu, string tenKhachHang)

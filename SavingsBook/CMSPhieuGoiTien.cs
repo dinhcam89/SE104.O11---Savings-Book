@@ -11,6 +11,7 @@ namespace GUI
     {
         public string maPhieu;
         public string tenKhachHang;
+
         public CMSPhieuGoiTien()
         {
             // Khởi tạo các mục menu
@@ -78,7 +79,7 @@ namespace GUI
         private void OpenDetailWithdrawalForm(object sender, EventArgs e)
         {
             ChiTietRutTien form = new ChiTietRutTien(maPhieu, tenKhachHang);
-            form.ShowDialog(); // Hoặc form.Show();
+
         }
 
         private void DeleteItem(object sender, EventArgs e)

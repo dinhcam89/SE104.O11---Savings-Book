@@ -38,6 +38,7 @@
             label4 = new Label();
             lbMaPhieu = new Label();
             lblTenKhachHang = new Label();
+
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
@@ -106,6 +107,7 @@
             panel2.Controls.Add(label4);
             panel2.Controls.Add(lbMaPhieu);
             panel2.Controls.Add(lblTenKhachHang);
+
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label1);
@@ -231,10 +233,13 @@
         private Label lblSoTienRut0;
         private Label lblNgayRut0;
         private Label label4;
+
         private Label lbMaPhieu;
         private Label lblTenKhachHang;
+
         private Label label3;
         private Label label2;
         private Label label1;
+        public Label lb_MaPhieu;
     }
 }
