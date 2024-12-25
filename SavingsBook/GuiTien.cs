@@ -30,7 +30,7 @@ namespace GUI
         {
             try
             {
-                int soTaiKhoanTienGoi = int.Parse(lblSTKTienGoi.Text);
+                string soTaiKhoanTienGoi = lblSTKTienGoi.Text;
                 if (!float.TryParse(txtSoTienGoi.Text, out float soTienGuiThem) || soTienGuiThem <= 0)
                 {
                     MessageBox.Show("Số tiền gửi thêm phải lớn hơn 0!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);

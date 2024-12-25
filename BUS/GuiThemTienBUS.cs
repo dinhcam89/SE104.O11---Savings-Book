@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAO;
+using DTO;
 
 namespace BUS
 {
@@ -11,7 +12,7 @@ namespace BUS
     {
         private readonly GuiThemTienDAO guiThemTienDAO = new GuiThemTienDAO();
 
-        public string GuiThemTien(int soTaiKhoanTienGoi, float soTienGuiThem, DateTime ngayGiaoDich)
+        public string GuiThemTien(string soTaiKhoanTienGoi, float soTienGuiThem, DateTime ngayGiaoDich)
         {
             // Kiểm tra số tiền gửi thêm có hợp lệ
             if (soTienGuiThem < 100000)
@@ -25,14 +26,33 @@ namespace BUS
                 return $"Chỉ được gửi thêm tiền vào đúng ngày đáo hạn kế tiếp ({ngayDaoHanKeTiep:dd/MM/yyyy}).";
             }
 
+
             // Cập nhật tổng tiền gốc trong cơ sở dữ liệu
             bool isUpdated = guiThemTienDAO.UpdateTongTienGoc(soTaiKhoanTienGoi, soTienGuiThem);
 
-            // Trả về kết quả
+
             if (isUpdated)
-                return "Gửi thêm tiền thành công! Tổng tiền gốc đã được cập nhật.";
+            {
+                ChiTietGuiTien chiTietGuiTien = new ChiTietGuiTien
+                {
+                    SoTaiKhoanGuiTien = soTaiKhoanTienGoi,
+                    SoTienGui = soTienGuiThem,
+                    NgayGui = ngayGiaoDich
+                };
+
+                // Thêm thông tin giao dịch chi tiết
+                bool isInserted = guiThemTienDAO.InsertChiTietGuiTien(chiTietGuiTien);
+                if (isInserted)
+                    return "Gửi thêm tiền thành công!";
+                else
+                    return "Ghi giao dịch thất bại.";
+            }
             else
+            {
                 return "Gửi thêm tiền thất bại. Vui lòng thử lại.";
+            }
+
         }
+        
     }
 }

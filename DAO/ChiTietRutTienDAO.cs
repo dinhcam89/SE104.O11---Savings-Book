@@ -100,15 +100,29 @@ namespace DAO
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = @"INSERT INTO ChiTietRutTien 
-                             (SoTaiKhoanTienGoi, NgayRut, SoTienRut) 
-                             VALUES (@SoTaiKhoanTienGoi, @NgayRut, @SoTienRut)";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@SoTaiKhoanTienGoi", chiTietRutTien.SoTaiKhoanGuiTien);
-                cmd.Parameters.AddWithValue("@NgayRut", chiTietRutTien.NgayRut);
-                cmd.Parameters.AddWithValue("@SoTienRut", chiTietRutTien.SoTienRut);
                 conn.Open();
-                return cmd.ExecuteNonQuery() > 0;
+
+                // Lấy mã lớn nhất hiện tại
+                string getMaxIdQuery = @"
+                SELECT ISNULL(MAX(CAST(SUBSTRING(MaChiTietRutTien, 4, LEN(MaChiTietRutTien)) AS INT)), 0) + 1 
+                FROM ChiTietRutTien";
+                SqlCommand getMaxIdCmd = new SqlCommand(getMaxIdQuery, conn);
+                int newIdNumber = Convert.ToInt32(getMaxIdCmd.ExecuteScalar());
+
+                // Tạo mã mới với tiền tố "CRT"
+                string newMaChiTietRutTien = $"CRT{newIdNumber:D7}";
+
+                // Chèn dữ liệu mới
+                string insertQuery = @"
+                INSERT INTO ChiTietRutTien (MaChiTietRutTien, SoTaiKhoanTienGoi, NgayRut, SoTienRut) 
+                VALUES (@MaChiTietRutTien, @SoTaiKhoanTienGoi, @NgayRut, @SoTienRut)";
+                SqlCommand insertCmd = new SqlCommand(insertQuery, conn);
+                insertCmd.Parameters.AddWithValue("@MaChiTietRutTien", newMaChiTietRutTien);
+                insertCmd.Parameters.AddWithValue("@SoTaiKhoanTienGoi", chiTietRutTien.SoTaiKhoanGuiTien);
+                insertCmd.Parameters.AddWithValue("@NgayRut", chiTietRutTien.NgayRut);
+                insertCmd.Parameters.AddWithValue("@SoTienRut", chiTietRutTien.SoTienRut);
+
+                return insertCmd.ExecuteNonQuery() > 0;
             }
         }
 

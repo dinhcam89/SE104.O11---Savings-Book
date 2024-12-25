@@ -168,9 +168,9 @@
             lblSTKTienGoi.ForeColor = Color.FromArgb(135, 92, 254);
             lblSTKTienGoi.Location = new Point(278, 89);
             lblSTKTienGoi.Name = "lblSTKTienGoi";
-            lblSTKTienGoi.Size = new Size(23, 25);
+            lblSTKTienGoi.Size = new Size(126, 25);
             lblSTKTienGoi.TabIndex = 47;
-            lblSTKTienGoi.Text = "1";
+            lblSTKTienGoi.Text = "PGT0000001";
             // 
             // lblNgayGiaoDich0
             // 
