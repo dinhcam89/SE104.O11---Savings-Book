@@ -63,6 +63,13 @@ namespace GUI
                 {
                     case ObjectType.KhachHang:
                         CMSKhachHang cmsKhachHang = new CMSKhachHang();
+                        // Lấy số tài khoản thanh toán từ Ten2
+                        string soTaiKhoanThanhToan = Ten2.Replace("Số tài khoản: ", "").Trim();
+                        if (!string.IsNullOrEmpty(soTaiKhoanThanhToan))
+                        {
+                            cmsKhachHang.SoTaiKhoanThanhToan = soTaiKhoanThanhToan; // Gán số tài khoản thanh toán
+                        }
+
                         cmsKhachHang.Show(screenPoint);
                         break;
                     case ObjectType.ChiTietRutTien:

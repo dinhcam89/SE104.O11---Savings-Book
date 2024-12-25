@@ -1,4 +1,6 @@
-﻿using SavingsBook;
+﻿using BUS;
+using DTO;
+using SavingsBook;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,25 +23,41 @@ namespace GUI.DashboardApp
 
         private void ucManageCustomers_Load(object sender, EventArgs e)
         {
-            populateItems();
+            PopulateItems();
 
         }
 
-        private void populateItems()
+        private void PopulateItems()
         {
-            ListItem[] listItems = new ListItem[10];
+            // Lấy dữ liệu từ lớp BUS
+            var khachHangBUS = new KhachHangBUS();
+            List<KhachHang> danhSachKhachHang = khachHangBUS.GetAllKhachHangWithPhieuGoiTienCount();
 
-            for (int i = 0; i < listItems.Length; i++)
+            if (danhSachKhachHang == null || danhSachKhachHang.Count == 0)
             {
-                listItems[i] = new ListItem();
-                listItems[i].Ten1 = "Tên khách hàng " + i;
-                listItems[i].Ten2 = "Mã khách hàng " + i;
-                listItems[i].Ten3 = "Số dư " + i;
-                listItems[i].Ten4 = "Số phiếu tiết kiệm " + i;
-
-                flowLayoutPanel1.Controls.Add(listItems[i]);
-
+                MessageBox.Show("Không có dữ liệu khách hàng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
+
+            // Xóa các điều khiển cũ
+            flowLayoutPanel1.Controls.Clear();
+
+            // Tạo và thêm các ListItem
+            foreach (var kh in danhSachKhachHang)
+            {
+                var listItem = new ListItem
+                {
+                    Ten1 = kh.TenKhachHang,               // Tên khách hàng
+                    Ten2 = kh.SoTaiKhoanThanhToan,       // Mã khách hàng
+                    Ten3 = kh.SoDuHienCo.ToString("C") + " VNĐ",  // Số dư (định dạng tiền tệ)
+                    Ten4 = kh.TongSoPhieuGoiTien.ToString() // Tổng số phiếu tiết kiệm
+                };
+
+                // Thêm vào FlowLayoutPanel
+                flowLayoutPanel1.Controls.Add(listItem);
+            }
+
+            // Điều chỉnh kích thước các ListItem khi thay đổi kích thước FlowLayoutPanel
             flowLayoutPanel1.Resize += (s, e) =>
             {
                 foreach (ListItem item in flowLayoutPanel1.Controls)
@@ -49,9 +67,11 @@ namespace GUI.DashboardApp
             };
         }
 
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ThemKhachHang addSavingBooks = new ThemKhachHang();
+            addSavingBooks.OnKhachHangAdded += ReloadDanhSachKhachHang;
             addSavingBooks.Show();
         }
 
@@ -59,6 +79,12 @@ namespace GUI.DashboardApp
         {
             ThongTinKhachHang customerInfor = new ThongTinKhachHang();
             customerInfor.Show();
+        }
+        private void ReloadDanhSachKhachHang()
+        {
+            // Cập nhật lại danh sách khách hàng
+            // Ví dụ, reload lại dữ liệu từ cơ sở dữ liệu hoặc từ nguồn dữ liệu khác
+            PopulateItems();
         }
     }
 }

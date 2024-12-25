@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,16 @@ namespace GUI
             // Thiết lập không cho phép thay đổi kích thước Form
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
+        }
+        public void LoadThongTinKhachHang(KhachHang khachHang)
+        {
+            lblHoTen.Text = khachHang.TenKhachHang;
+            lblSDT.Text = khachHang.SoDienThoai;
+            lblCMND.Text = khachHang.CCCD;
+            lblNgaySinh.Text = khachHang.NgaySinh.ToString("dd/MM/yyyy") ?? "Chưa cập nhật";
+            lblDiaChi.Text = khachHang.DiaChi ?? "Chưa cập nhật";
+            lblSTKThanhToan.Text = khachHang.SoTaiKhoanThanhToan;
+            lblSoDuHienCo.Text = khachHang.SoDuHienCo.ToString("N0");
         }
 
         private void ToggleToEditMode(Label lbl, Control editor)
@@ -79,6 +90,6 @@ namespace GUI
             this.Close();
         }
 
-        
+
     }
 }

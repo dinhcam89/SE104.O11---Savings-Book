@@ -20,6 +20,9 @@ namespace BUS
             var dao = new PhieuGoiTienDAO();
             return dao.SearchPhieuGoiTien(searchText);
         }
-
+        public bool ThemPhieuGoiTien(PhieuGoiTien phieu)
+        {
+            return PhieuGoiTienDAO.ThemPhieuGoiTien(phieu);
+        }
     }
 }
