@@ -60,7 +60,7 @@ namespace GUI
 
         private void OpenDepositForm(object sender, EventArgs e)
         {
-            GuiTien form = new GuiTien();
+            GuiTien form = new GuiTien(maPhieu);
             form.Show();
         }
 
@@ -72,7 +72,7 @@ namespace GUI
 
         private void OpenWithdrawalForm(object sender, EventArgs e)
         {
-            RutTienForm form = new RutTienForm();
+            RutTienForm form = new RutTienForm(maPhieu);
             form.Show();
         }
 

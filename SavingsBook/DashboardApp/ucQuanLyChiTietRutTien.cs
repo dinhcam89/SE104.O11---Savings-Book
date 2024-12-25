@@ -38,7 +38,7 @@ namespace GUI.DashboardApp
             {
                 ListItem listItem = new ListItem
                 {
-                    Ten1 = item.SoTaiKhoanTienGui,
+                    Ten1 = item.SoTaiKhoanTienGoi,
                     Ten2 = item.NgayRut.ToString("dd/MM/yyyy"),
                     Ten3 = item.SoTienRut.ToString("C"), // Hiển thị số tiền theo định dạng tiền tệ
                     Ten4 = "", // Nếu có dữ liệu khác cần hiển thị, bạn có thể gán ở đây

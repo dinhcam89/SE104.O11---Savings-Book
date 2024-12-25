@@ -30,7 +30,7 @@ namespace DAO
                         var chiTiet = new DTO.ChiTietRutTien
                         {
                             MaChiTietRutTien = reader["MaChiTietRutTien"].ToString(),
-                            SoTaiKhoanTienGui = reader["SoTaiKhoanTienGoi"].ToString(),
+                            SoTaiKhoanTienGoi = reader["SoTaiKhoanTienGoi"].ToString(),
                             NgayRut = Convert.ToDateTime(reader["NgayRut"]),
                             SoTienRut = Convert.ToDouble(reader["SoTienRut"])
                         };
