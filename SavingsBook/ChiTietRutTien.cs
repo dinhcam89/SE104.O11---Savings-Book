@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,14 @@ namespace GUI
 {
     public partial class ChiTietRutTien : Form
     {
-        public string maPhieuGoiTien;
-        public ChiTietRutTien()
+        private string maPhieu;
+        private string tenKhachHang;
+        public ChiTietRutTien(string maPhieu, string tenKhachHang)
+
         {
             InitializeComponent();
+            this.maPhieu = maPhieu;
+            this.tenKhachHang = tenKhachHang;
         }
         public ChiTietRutTien(string maPhieuGoiTien) : this()
         {
@@ -25,36 +30,55 @@ namespace GUI
         }
         private void ChiTietRutTien_Load(object sender, EventArgs e)
         {
-            lb_MaPhieu.Text = "01234";
-            populateItems();
+            populateItems(maPhieu, tenKhachHang);
+            lbMaPhieu.Text = maPhieu;
+            lblTenKhachHang.Text = tenKhachHang;
+
         }
 
-        private void populateItems()
+        private void populateItems(string maPhieu, string tenKhachHang)
         {
-            ListItem[] listItems = new ListItem[20];
+            flowLayoutPanel1.Controls.Clear();
 
-            for (int i = 0; i < listItems.Length; i++)
+            List<DTO.ChiTietRutTien> listChiTiet;
+
+            try
             {
-                listItems[i] = new ListItem();
-                listItems[i].Ten1 = "Ngày rút " + i;
-                listItems[i].Ten2 = "Số tiền " + i;
-                listItems[i].Ten3 = "";
-                listItems[i].Ten4 = "";
-                    
-                listItems[i].FormType = ObjectType.PhieuGoiTien;
+                // Tạo đối tượng BUS
+                var hienthiBUS = new HienThiChiTietRutTienBUS();
 
-                listItems[i].IsButtonVisible = false; // Ẩn nút
+                // Kiểm tra và lấy thông tin theo mã phiếu
+                var chiTiet = hienthiBUS.GetChiTietGuiTienByMaPhieu(maPhieu);
+                listChiTiet = chiTiet != null ? new List<DTO.ChiTietRutTien> { chiTiet } : new List<DTO.ChiTietRutTien>();
 
-                flowLayoutPanel1.Controls.Add(listItems[i]);
+                if (listChiTiet.Count > 0)
+                {
+                    foreach (var item in listChiTiet)
+                    {
+                        var listItem = new ListItem
+                        {
+                            Ten1 = $"{item.NgayRut:dd/MM/yyyy}",
+                            Ten2 = $"{item.SoTienRut:C}",
+                            Ten3 = "",
+                            Ten4 = "",
+                            FormType = ObjectType.PhieuGoiTien,
+                            IsButtonVisible = false
+
+                        };
+
+                        flowLayoutPanel1.Controls.Add(listItem);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy dữ liệu phù hợp.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            flowLayoutPanel1.Resize += (s, e) =>
-            {
-                foreach (ListItem item in flowLayoutPanel1.Controls)
-                {
-                    item.Width = flowLayoutPanel1.ClientSize.Width;
-                }
-            };
 
         }
     }
