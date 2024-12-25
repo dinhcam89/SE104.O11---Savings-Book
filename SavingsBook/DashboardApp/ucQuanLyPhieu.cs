@@ -17,6 +17,7 @@ namespace GUI.DashboardApp
     {
         List<PhieuGoiTien> phieuGoiTiens;
         private PhieuGoiTienBUS _phieuGoiTienBUS;
+        
         public ucQuanLyPhieu()
         {
             InitializeComponent();
@@ -46,7 +47,7 @@ namespace GUI.DashboardApp
 
             for (int i = 0; i < listItems.Length; i++)
             {
-                // Lấy loại kỳ hạn của loại tiết kiệm
+                // Lấy loại kỳ hạn từ mã loại tiết kiệm
                 LoaiTietKiem? ltk = new LoaiTietKiemBUS().getLoaiTietKiemById(phieuGoiTiens[i].MaLoaiTietKiem);
 
                 if (ltk == null)
@@ -54,8 +55,16 @@ namespace GUI.DashboardApp
                     continue;
                 }
 
+                // Lấy khách hàng từ số tài khoản thanh toán
+                KhachHang? kh = new KhachHangBUS().getKhachHangById(phieuGoiTiens[i].SoTaiKhoanThanhToan);
+
+                if (kh == null)
+                {
+                    continue;
+                }
+
                 listItems[i] = new ListItem();
-                listItems[i].Ten1 = phieuGoiTiens[i].SoTaiKhoanTienGoi;
+                listItems[i].Ten1 = kh.TenKhachHang;
                 listItems[i].Ten2 = phieuGoiTiens[i].TongTienGoc.ToString();
                 listItems[i].Ten3 = ltk.KyHan.ToString();
                 listItems[i].Ten4 = "";

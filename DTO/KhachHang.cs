@@ -11,7 +11,7 @@ namespace DTO
         #region Properties
         public string SoTaiKhoanThanhToan { get; set; }
         public string TenKhachHang { get; set; }
-        public DateOnly NgaySinh { get; set; }
+        public DateTime NgaySinh { get; set; }
         public string DiaChi { get; set; }
         public string SoDienThoai { get; set; }
         public string CCCD { get; set; }
@@ -20,7 +20,7 @@ namespace DTO
 
         #region Constructors
         public KhachHang() { }
-        public KhachHang(string sotaikhoanthanhtoan, string tenkh, DateOnly ngaysinh, string diachi, string sdt, string socccd, double sodu)
+        public KhachHang(string sotaikhoanthanhtoan, string tenkh, DateTime ngaysinh, string diachi, string sdt, string socccd, double sodu)
         {
             SoTaiKhoanThanhToan = sotaikhoanthanhtoan;
             TenKhachHang = tenkh;

@@ -25,6 +25,7 @@ namespace DAO
                 "   LoaiTietKiem";
             List<LoaiTietKiem> listLoaiTietKiem = new List<LoaiTietKiem>();
             DataTable? dataTable = dbConnection.executeSelectQuery(query, null);
+
             if (dataTable != null)
             {
                 foreach (DataRow row in dataTable.Rows)
