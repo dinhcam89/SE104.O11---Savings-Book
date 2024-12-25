@@ -12,13 +12,20 @@ namespace GUI
 {
     public partial class ChiTietRutTien : Form
     {
+        public string maPhieuGoiTien;
         public ChiTietRutTien()
         {
             InitializeComponent();
         }
+        public ChiTietRutTien(string maPhieuGoiTien) : this()
+        {
+            this.maPhieuGoiTien = maPhieuGoiTien;
+             // Tự động điền số tài khoản thanh toán
 
+        }
         private void ChiTietRutTien_Load(object sender, EventArgs e)
         {
+            lb_MaPhieu.Text = "01234";
             populateItems();
         }
 

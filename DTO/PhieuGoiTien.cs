@@ -10,6 +10,7 @@ namespace DTO
     {
         public string SoTaiKhoanTienGoi { get; set; }
         public string SoTaiKhoanThanhToan { get; set; }
+        public string TenKhachHang { get; set; }
         public string MaLoaiTietKiem { get; set; }
         public float LaiSuatApDung { get; set; }
         public float LaiSuatPhatSinh { get; set; }
@@ -21,11 +22,12 @@ namespace DTO
         public PhieuGoiTien() { }
 
         // Constructor
-        public PhieuGoiTien(string soTaiKhoanTienGoi, string soTaiKhoanThanhToan, string maLoaiTietKiem, float laiSuatApDung, float laiSuatPhatSinh,
+        public PhieuGoiTien(string soTaiKhoanTienGoi, string soTaiKhoanThanhToan, string tenKH, string maLoaiTietKiem, float laiSuatApDung, float laiSuatPhatSinh,
                             DateTime ngayGoi, DateTime ngayDaoHanKeTiep, float tongTienGoc, float tongTienLaiPhatSinh, int hinhThucGiaHan)
         {
             SoTaiKhoanTienGoi = soTaiKhoanTienGoi;
             SoTaiKhoanThanhToan = soTaiKhoanThanhToan;
+            TenKhachHang = tenKH;
             MaLoaiTietKiem = maLoaiTietKiem;
             LaiSuatApDung = laiSuatApDung;
             LaiSuatPhatSinh = laiSuatPhatSinh;

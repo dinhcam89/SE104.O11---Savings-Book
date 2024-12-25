@@ -9,6 +9,7 @@ namespace GUI
 {
     public class CMSPhieuGoiTien : ContextMenuStrip
     {
+        public string maPhieuGoiTien { get; set; }
         public CMSPhieuGoiTien()
         {
             // Khởi tạo các mục menu
@@ -75,7 +76,7 @@ namespace GUI
 
         private void OpenDetailWithdrawalForm(object sender, EventArgs e)
         {
-            ChiTietRutTien form = new ChiTietRutTien();
+            ChiTietRutTien form = new ChiTietRutTien(maPhieuGoiTien);
             form.ShowDialog(); // Hoặc form.Show();
         }
 

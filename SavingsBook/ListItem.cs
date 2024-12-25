@@ -71,6 +71,11 @@ namespace GUI
                         break;
                     case ObjectType.PhieuGoiTien:
                         CMSPhieuGoiTien cmsPhieuGoiTien = new CMSPhieuGoiTien();
+                        string maPhieuGoiTien = Ten2;
+                        if (!string.IsNullOrEmpty(maPhieuGoiTien))
+                        {
+                            cmsPhieuGoiTien.maPhieuGoiTien = maPhieuGoiTien; // Gán số tài khoản thanh toán
+                        }
                         cmsPhieuGoiTien.Show(screenPoint);
                         break;
                     case ObjectType.LoaiTietKiem:

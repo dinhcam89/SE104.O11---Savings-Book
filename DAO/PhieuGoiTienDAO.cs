@@ -11,10 +11,10 @@ namespace DAO
     public class PhieuGoiTienDAO
     {
         private string connectionString = @"Server=MSI\SQLEXPRESS;Database=saving_books_management;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True";
-        public static List<PhieuGoiTien> GetAllPhieuGoiTienWithKhachHang()
+        public List<PhieuGoiTien> GetAllPhieuGoiTienWithKhachHang()
         {
             List<PhieuGoiTien> result = new List<PhieuGoiTien>();
-            
+
             string query = @"
             SELECT 
                 pg.SoTaiKhoanTienGoi,
@@ -41,10 +41,11 @@ namespace DAO
 
                 while (reader.Read())
                 {
-                    var phieuGoiTien = new PhieuGoiTienDTO
+                    var phieuGoiTien = new PhieuGoiTien
                     {
                         SoTaiKhoanTienGoi = reader["SoTaiKhoanTienGoi"].ToString(),
                         SoTaiKhoanThanhToan = reader["SoTaiKhoanThanhToan"].ToString(),
+                        TenKhachHang = reader["TenKhachHang"].ToString(), // Gán tên khách hàng
                         MaLoaiTietKiem = reader["MaLoaiTietKiem"].ToString(),
                         LaiSuatApDung = Convert.ToSingle(reader["LaiSuatApDung"]),
                         LaiSuatPhatSinh = Convert.ToSingle(reader["LaiSuatPhatSinh"]),
@@ -52,8 +53,7 @@ namespace DAO
                         NgayDaoHanKeTiep = Convert.ToDateTime(reader["NgayDaoHanKeTiep"]),
                         TongTienGoc = Convert.ToSingle(reader["TongTienGoc"]),
                         TongTienLaiPhatSinh = Convert.ToSingle(reader["TongTienLaiPhatSinh"]),
-                        HinhThucGiaHan = Convert.ToInt32(reader["HinhThucGiaHan"]),
-                        TenKhachHang = reader["TenKhachHang"].ToString() // Gán tên khách hàng
+                        HinhThucGiaHan = Convert.ToInt32(reader["HinhThucGiaHan"])
                     };
 
                     result.Add(phieuGoiTien);
@@ -63,4 +63,5 @@ namespace DAO
             return result;
         }
     }
+}
 

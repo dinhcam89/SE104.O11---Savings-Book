@@ -36,7 +36,7 @@
             lblNgayRut0 = new Label();
             panel2 = new Panel();
             label4 = new Label();
-            label5 = new Label();
+            lb_MaPhieu = new Label();
             label6 = new Label();
             label3 = new Label();
             label2 = new Label();
@@ -102,7 +102,7 @@
             // 
             panel2.BackColor = Color.White;
             panel2.Controls.Add(label4);
-            panel2.Controls.Add(label5);
+            panel2.Controls.Add(lb_MaPhieu);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
@@ -125,17 +125,17 @@
             label4.TabIndex = 10;
             label4.Text = "10.000.000";
             // 
-            // label5
+            // lb_MaPhieu
             // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.FromArgb(37, 10, 128);
-            label5.Location = new Point(933, 57);
-            label5.Name = "label5";
-            label5.Size = new Size(63, 20);
-            label5.TabIndex = 9;
-            label5.Text = "1235678";
+            lb_MaPhieu.AutoSize = true;
+            lb_MaPhieu.BackColor = Color.Transparent;
+            lb_MaPhieu.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lb_MaPhieu.ForeColor = Color.FromArgb(37, 10, 128);
+            lb_MaPhieu.Location = new Point(933, 57);
+            lb_MaPhieu.Name = "lb_MaPhieu";
+            lb_MaPhieu.Size = new Size(63, 20);
+            lb_MaPhieu.TabIndex = 9;
+            lb_MaPhieu.Text = "1235678";
             // 
             // label6
             // 
@@ -227,10 +227,10 @@
         private Label lblSoTienRut0;
         private Label lblNgayRut0;
         private Label label4;
-        private Label label5;
         private Label label6;
         private Label label3;
         private Label label2;
         private Label label1;
+        public Label lb_MaPhieu;
     }
 }
