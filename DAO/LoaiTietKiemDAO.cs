@@ -30,7 +30,7 @@ namespace DAO
                 foreach (DataRow row in dataTable.Rows)
                 {
                     LoaiTietKiem loaiTietKiem = new LoaiTietKiem();
-                    loaiTietKiem.MaLoaiTietKiem = int.Parse(row["MaLoaiTietKiem"].ToString()!);
+                    loaiTietKiem.MaLoaiTietKiem = row["MaLoaiTietKiem"].ToString()!;
                     loaiTietKiem.KyHan = int.Parse(row["KyHan"].ToString()!);
                     loaiTietKiem.LaiSuat = double.Parse(row["LaiSuat"].ToString()!);
                     loaiTietKiem.SoNgayToiThieuDuocRutTien = int.Parse(row["SoNgayToiThieuDuocRutTien"].ToString()!);
@@ -57,7 +57,7 @@ namespace DAO
             if (dataTable != null)
             {
                 LoaiTietKiem loaiTietKiem = new LoaiTietKiem();
-                loaiTietKiem.MaLoaiTietKiem = int.Parse(dataTable.Rows[0]["MaLoaiTietKiem"].ToString()!);
+                loaiTietKiem.MaLoaiTietKiem = dataTable.Rows[0]["MaLoaiTietKiem"].ToString()!;
                 loaiTietKiem.KyHan = int.Parse(dataTable.Rows[0]["KyHan"].ToString()!);
                 loaiTietKiem.LaiSuat = double.Parse(dataTable.Rows[0]["LaiSuat"].ToString()!);
                 loaiTietKiem.SoNgayToiThieuDuocRutTien = int.Parse(dataTable.Rows[0]["SoNgayToiThieuDuocRutTien"].ToString()!);
