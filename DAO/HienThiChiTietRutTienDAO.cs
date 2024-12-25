@@ -10,8 +10,7 @@ namespace DAO
 {
     public class HienThiChiTietRutTienDAO
     {
-        private string connectionString = "Data Source=CONALNGUYEN\\NGUYENCHAU;Initial Catalog=saving_books_management;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
-
+        private string connectionString = @"Server=MSI\SQLEXPRESS;Database=saving_books_management;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True";
         public List<DTO.ChiTietRutTien> GetAll()
         {
             List<DTO.ChiTietRutTien> list = new List<DTO.ChiTietRutTien>();

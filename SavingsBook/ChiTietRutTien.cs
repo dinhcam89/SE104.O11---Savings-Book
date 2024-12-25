@@ -22,12 +22,6 @@ namespace GUI
             this.maPhieu = maPhieu;
             this.tenKhachHang = tenKhachHang;
         }
-        public ChiTietRutTien(string maPhieuGoiTien) : this()
-        {
-            this.maPhieuGoiTien = maPhieuGoiTien;
-             // Tự động điền số tài khoản thanh toán
-
-        }
         private void ChiTietRutTien_Load(object sender, EventArgs e)
         {
             populateItems(maPhieu, tenKhachHang);
