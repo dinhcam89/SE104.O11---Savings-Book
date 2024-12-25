@@ -47,5 +47,41 @@ namespace DAO
 
             return list;
         }
+
+        // Phương thức kiểm tra thông tin gửi tiền theo mã phiếu
+        public ChiTietGuiTien GetByMaPhieu(string maPhieu)
+        {
+            ChiTietGuiTien chiTiet = null;
+            string query = "SELECT MaChiTietGoiTien, SoTaiKhoanTienGoi, NgayGoi, SoTienGoi FROM ChiTietGoiTien WHERE MaChiTietGoiTien = @MaPhieu";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@MaPhieu", maPhieu);  // Thêm tham số mã phiếu
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        chiTiet = new ChiTietGuiTien
+                        {
+                            //MaChiTietGuiTien = reader["MaChiTietGoiTien"].ToString(),
+                            //SoTaiKhoanTienGui = reader["SoTaiKhoanTienGoi"].ToString(),
+                            NgayGui = Convert.ToDateTime(reader["NgayGoi"]),
+                            SoTienGui = Convert.ToDouble(reader["SoTienGoi"])
+                        };
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Lỗi khi truy vấn dữ liệu: " + ex.Message);
+                }
+            }
+
+            return chiTiet;
+        }
     }
 }

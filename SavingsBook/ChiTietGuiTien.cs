@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,30 +25,48 @@ namespace GUI
 
         private void populateItems()
         {
-            ListItem[] listItems = new ListItem[20];
+            // Xóa các mục hiện có
+            string maPhieu = lbMaPhieu.Text;
+            flowLayoutPanel1.Controls.Clear();
 
-            for (int i = 0; i < listItems.Length; i++)
+            List<DTO.ChiTietGuiTien> listChiTiet;
+
+            try
             {
-                listItems[i] = new ListItem();
-                listItems[i].Ten1 = "Ngày gửi " + i;
-                listItems[i].Ten2 = "Số tiền gửi " + i;
-                listItems[i].Ten3 = "";
-                listItems[i].Ten4 = "";
+                // Tạo đối tượng BUS
+                var hienthiBUS = new HienThiChiTietGuiTienBUS();
 
-                listItems[i].FormType = ObjectType.PhieuGoiTien;
+                // Kiểm tra và lấy thông tin theo mã phiếu
+                var chiTiet = hienthiBUS.GetChiTietGuiTienByMaPhieu(maPhieu);
+                listChiTiet = chiTiet != null ? new List<DTO.ChiTietGuiTien> { chiTiet } : new List<DTO.ChiTietGuiTien>();
 
-                listItems[i].IsButtonVisible = false; // Ẩn nút
-
-                flowLayoutPanel1.Controls.Add(listItems[i]);
-            }
-
-            flowLayoutPanel1.Resize += (s, e) =>
-            {
-                foreach (ListItem item in flowLayoutPanel1.Controls)
+                if (listChiTiet.Count > 0)
                 {
-                    item.Width = flowLayoutPanel1.ClientSize.Width;
+                    foreach (var item in listChiTiet)
+                    {
+                        var listItem = new ListItem
+                        {
+                            Ten1 = $"{item.NgayGui:dd/MM/yyyy}",
+                            Ten2 = $"{item.SoTienGui:C}",
+                            Ten3 = "",
+                            Ten4 = "",
+                            FormType = ObjectType.PhieuGoiTien,
+                            IsButtonVisible = false
+
+                        };
+
+                        flowLayoutPanel1.Controls.Add(listItem);
+                    }
                 }
-            };
+                else
+                {
+                    MessageBox.Show("Không tìm thấy dữ liệu phù hợp.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
     }
