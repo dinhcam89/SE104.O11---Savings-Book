@@ -30,15 +30,14 @@ namespace GUI
                 }
                 while (DateTime.Now > pgt.NgayDaoHanKeTiep)
                 {
-                    pgt.TongTienGoc = tinhTongTienGoc(pgt.TongTienGoc, pgt.HinhThucGiaHan, pgt.TongTienLaiPhatSinh, pgt.NgayDaoHanKeTiep);
-                    pgt.TongTienLaiPhatSinh = tinhTongLaiPhatSinh(pgt.TongTienLaiPhatSinh, pgt.TongTienGoc, ltk.KyHan, pgt.LaiSuatApDung);
-                    pgt.LaiSuatApDung = tinhLaiSuatApDung(pgt.LaiSuatApDung, pgt.LaiSuatPhatSinh, ltk.LaiSuat, pgt.NgayDaoHanKeTiep, pgt.HinhThucGiaHan);
+                    pgt.TongTienGoc = Math.Round(tinhTongTienGoc(pgt.TongTienGoc, pgt.HinhThucGiaHan, pgt.TongTienLaiPhatSinh, pgt.NgayDaoHanKeTiep), 2);
+                    pgt.TongTienLaiPhatSinh = Math.Round(tinhTongLaiPhatSinh(pgt.TongTienLaiPhatSinh, pgt.TongTienGoc, ltk.KyHan, pgt.LaiSuatApDung), 2);
+                    pgt.LaiSuatApDung = Math.Round(tinhLaiSuatApDung(pgt.LaiSuatApDung, pgt.LaiSuatPhatSinh, ltk.LaiSuat, pgt.NgayDaoHanKeTiep, pgt.HinhThucGiaHan), 2);
                     pgt.NgayDaoHanKeTiep = tinhNgayDaoHanKeTiep(pgt.NgayDaoHanKeTiep, ltk.KyHan);
                 }
             }
             dgvPhieuGoiTien.DataSource = phieuGoiTiens;
         }
-
         double tinhLaiPhatSinh(double tongTienGoc, int kyHan, double laiSuat)
         {
             return tongTienGoc * kyHan * (laiSuat / (12 * 100));
