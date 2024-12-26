@@ -8,12 +8,14 @@ namespace DTO
 {
     public class ThamSo
     {
+        public string MaThamSo { get; set; }
         public double SoTienBanDauToiThieu { get; set; }
         public double SoTienGoiThemToiThieu { get; set; }
 
         public ThamSo() { }
-        public ThamSo(double sotienbandautoithieu, double sotiengoithemtoithieu)
+        public ThamSo(string mathamso, double sotienbandautoithieu, double sotiengoithemtoithieu)
         {
+            MaThamSo = mathamso;
             SoTienBanDauToiThieu = sotienbandautoithieu;
             SoTienGoiThemToiThieu = sotiengoithemtoithieu;
         }
