@@ -24,23 +24,45 @@ namespace GUI.DashboardApp
         {
             populateItems();
         }
+        private void dtpTuNgay_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpTuNgay.Value.Date > dtpDenNgay.Value.Date)
+            {
+                MessageBox.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpTuNgay.Value = dtpDenNgay.Value;
+            }
+            else
+            {
+                LocTheoNgay();
+            }
+        }
+
+        private void dtpDenNgay_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpDenNgay.Value.Date < dtpTuNgay.Value.Date)
+            {
+                MessageBox.Show("Ngày kết thúc không được nhỏ hơn ngày bắt đầu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpDenNgay.Value = dtpTuNgay.Value;
+            }
+            else
+            {
+                LocTheoNgay();
+            }
+        }
 
         private void populateItems()
         {
-            // Lấy dữ liệu từ BUS, đảm bảo kiểu trả về là List<DTO.ChiTietGuiTien>
             List<DTO.ChiTietRutTien> listItems = hienThiBUS.GetAllChiTietRutTien();
 
-            // Xóa các item cũ trong flowLayoutPanel trước khi thêm mới
             flowLayoutPanel1.Controls.Clear();
 
-            // Duyệt qua danh sách và thêm item vào FlowLayoutPanel
             foreach (var item in listItems)
             {
                 ListItem listItem = new ListItem
                 {
                     Ten1 = item.SoTaiKhoanTienGui,
                     Ten2 = item.NgayRut.ToString("dd/MM/yyyy"),
-                    Ten3 = item.SoTienRut.ToString("C"), // Hiển thị số tiền theo định dạng tiền tệ
+                    Ten3 = item.SoTienRut.ToString("C"), 
                     Ten4 = "", // Nếu có dữ liệu khác cần hiển thị, bạn có thể gán ở đây
                     FormType = ObjectType.PhieuGoiTien,
                     IsButtonVisible = false // Ẩn nút nếu cần
@@ -59,7 +81,32 @@ namespace GUI.DashboardApp
             };
 
         }
+        private void LocTheoNgay()
+        {
+            DateTime startDate = dtpTuNgay.Value.Date;
+            DateTime endDate = dtpDenNgay.Value.Date;
 
+            // Lấy danh sách phiếu trong khoảng thời gian
+            List<DTO.ChiTietRutTien> filteredItems = hienThiBUS.GetNgay(startDate, endDate);
+
+            // Cập nhật giao diện
+            flowLayoutPanel1.Controls.Clear();
+
+            foreach (var item in filteredItems)
+            {
+                ListItem listItem = new ListItem
+                {
+                    Ten1 = item.SoTaiKhoanTienGui,
+                    Ten2 = item.NgayRut.ToString("dd/MM/yyyy"),
+                    Ten3 = item.SoTienRut.ToString("C"),
+                    Ten4 = "",
+                    FormType = ObjectType.PhieuGoiTien,
+                    IsButtonVisible = false
+                };
+
+                flowLayoutPanel1.Controls.Add(listItem);
+            }
+        }
         private void btnXuatBaoCao_Click(object sender, EventArgs e)
         {
             try
@@ -72,12 +119,18 @@ namespace GUI.DashboardApp
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    // Lấy dữ liệu từ danh sách
-                    List<DTO.ChiTietRutTien> listItems = hienThiBUS.GetTenKhachHang();
+                    DateTime tuNgay = dtpTuNgay.Value.Date;
+                    DateTime denNgay = dtpDenNgay.Value.Date;
+
+                    // Lấy danh sách ChiTietRutTien đã lọc theo ngày
+                    List<DTO.ChiTietRutTien> filteredItems = hienThiBUS.GetNgay(tuNgay, denNgay);
+
+                    // Lấy danh sách tên khách hàng
+                    List<DTO.ChiTietRutTien> customerNames = hienThiBUS.GetTenKhachHang();
 
                     using (var workbook = new ClosedXML.Excel.XLWorkbook())
                     {
-                        var worksheet = workbook.Worksheets.Add("ChiTietRutTien");
+                        var worksheet = workbook.Worksheets.Add("ChiTietGuiTien");
 
                         // Tiêu đề cột
                         worksheet.Cell(1, 1).Value = "Số Tài Khoản";
@@ -85,28 +138,26 @@ namespace GUI.DashboardApp
                         worksheet.Cell(1, 3).Value = "Ngày Rút";
                         worksheet.Cell(1, 4).Value = "Số Tiền Rút";
 
-                        // Định dạng tiêu đề
                         var headerRange = worksheet.Range(1, 1, 1, 4);
                         headerRange.Style.Font.Bold = true;
                         headerRange.Style.Alignment.Horizontal = ClosedXML.Excel.XLAlignmentHorizontalValues.Center;
 
-                        // Dữ liệu
-                        for (int i = 0; i < listItems.Count; i++)
+                        for (int i = 0; i < filteredItems.Count; i++)
                         {
-                            var item = listItems[i];
+                            var item = filteredItems[i];
+
+                            var customer = customerNames.FirstOrDefault(c => c.SoTaiKhoanTienGui == item.SoTaiKhoanTienGui);
 
                             worksheet.Cell(i + 2, 1).Value = item.SoTaiKhoanTienGui;
-                            worksheet.Cell(i + 2, 2).Value = item.TenKhachHang;
+                            worksheet.Cell(i + 2, 2).Value = customer != null ? customer.TenKhachHang : "Không tìm thấy";
                             worksheet.Cell(i + 2, 3).Value = item.NgayRut;
                             worksheet.Cell(i + 2, 4).Value = item.SoTienRut;
 
-                            // Định dạng dữ liệu
                             worksheet.Cell(i + 2, 3).Style.DateFormat.Format = "dd/MM/yyyy";
                             worksheet.Cell(i + 2, 4).Style.NumberFormat.Format = "$#,##0.00";
                         }
 
-                        // Định dạng bảng
-                        var tableRange = worksheet.Range(1, 1, listItems.Count + 1, 4);
+                        var tableRange = worksheet.Range(1, 1, filteredItems.Count + 1, 4);
                         tableRange.Style.Border.OutsideBorder = ClosedXML.Excel.XLBorderStyleValues.Thin;
                         tableRange.Style.Border.InsideBorder = ClosedXML.Excel.XLBorderStyleValues.Thin;
 

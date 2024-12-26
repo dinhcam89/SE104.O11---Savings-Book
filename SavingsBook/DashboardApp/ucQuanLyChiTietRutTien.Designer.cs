@@ -171,6 +171,7 @@
             dtpTuNgay.Size = new Size(282, 38);
             dtpTuNgay.TabIndex = 28;
             dtpTuNgay.Value = new DateTime(2024, 12, 24, 18, 57, 23, 910);
+            dtpTuNgay.ValueChanged += dtpTuNgay_ValueChanged;
             // 
             // dtpDenNgay
             // 
@@ -190,6 +191,7 @@
             dtpDenNgay.Size = new Size(282, 35);
             dtpDenNgay.TabIndex = 27;
             dtpDenNgay.Value = new DateTime(2024, 12, 25, 18, 57, 0, 0);
+            dtpDenNgay.ValueChanged += dtpDenNgay_ValueChanged;
             // 
             // btnXuatBaoCao
             // 

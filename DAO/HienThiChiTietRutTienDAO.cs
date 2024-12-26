@@ -129,5 +129,46 @@ namespace DAO
 
             return list;
         }
+        public List<DTO.ChiTietRutTien> GetNgay(DateTime startDate, DateTime endDate)
+        {
+            List<DTO.ChiTietRutTien> list = new List<DTO.ChiTietRutTien>();
+
+            string query = @"
+        SELECT MaChiTietRutTien, SoTaiKhoanTienGoi, NgayRut, SoTienRut
+        FROM ChiTietRutTien
+        WHERE NgayRut >= @StartDate AND NgayRut <= @EndDate";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@StartDate", startDate);
+                    command.Parameters.AddWithValue("@EndDate", endDate);
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        var chiTiet = new DTO.ChiTietRutTien
+                        {
+                            MaChiTietRutTien = reader["MaChiTietRutTien"].ToString(),
+                            SoTaiKhoanTienGui = reader["SoTaiKhoanTienGoi"].ToString(),
+                            NgayRut = Convert.ToDateTime(reader["NgayRut"]),
+                            SoTienRut = Convert.ToDouble(reader["SoTienRut"])
+                        };
+
+                        list.Add(chiTiet);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Lỗi khi truy vấn dữ liệu: " + ex.Message);
+                }
+            }
+
+            return list;
+        }
     }
 }

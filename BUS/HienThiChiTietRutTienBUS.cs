@@ -25,5 +25,9 @@ namespace BUS
         {
             return hienthichitietrut.GetTenKhachHang();
         }
+        public List<DTO.ChiTietRutTien> GetNgay(DateTime startDate, DateTime endDate)
+        {
+            return hienthichitietrut.GetNgay(startDate, endDate);
+        }
     }
 }
