@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel1 = new Panel();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             lblSoTienGui0 = new Label();
             lblNgayGui0 = new Label();
             panel2 = new Panel();
-            label4 = new Label();
+            lblSoTienGoc = new Label();
             lbMaPhieu = new Label();
             lblTenKhachHang = new Label();
             label3 = new Label();
@@ -78,12 +78,13 @@
             guna2Panel3.BorderRadius = 10;
             guna2Panel3.Controls.Add(lblSoTienGui0);
             guna2Panel3.Controls.Add(lblNgayGui0);
-            guna2Panel3.CustomizableEdges = customizableEdges1;
+            guna2Panel3.CustomizableEdges = customizableEdges3;
             guna2Panel3.FillColor = Color.AliceBlue;
             guna2Panel3.Location = new Point(25, 132);
             guna2Panel3.Name = "guna2Panel3";
-            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Panel3.Size = new Size(971, 42);
+            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2Panel3.Size = new Size(1110, 56);
+
             guna2Panel3.TabIndex = 19;
             // 
             // lblSoTienGui0
@@ -113,7 +114,7 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(label4);
+            panel2.Controls.Add(lblSoTienGoc);
             panel2.Controls.Add(lbMaPhieu);
             panel2.Controls.Add(lblTenKhachHang);
             panel2.Controls.Add(label3);
@@ -125,17 +126,18 @@
             panel2.Size = new Size(1023, 126);
             panel2.TabIndex = 1;
             // 
-            // label4
+            // lblSoTienGoc
             // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.FromArgb(37, 10, 128);
-            label4.Location = new Point(917, 96);
-            label4.Name = "label4";
-            label4.Size = new Size(79, 20);
-            label4.TabIndex = 10;
-            label4.Text = "10.000.000";
+            lblSoTienGoc.AutoSize = true;
+            lblSoTienGoc.BackColor = Color.Transparent;
+            lblSoTienGoc.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSoTienGoc.ForeColor = Color.FromArgb(37, 10, 128);
+            lblSoTienGoc.Location = new Point(1048, 128);
+            lblSoTienGoc.Name = "lblSoTienGoc";
+            lblSoTienGoc.Size = new Size(107, 25);
+            lblSoTienGoc.TabIndex = 10;
+            lblSoTienGoc.Text = "10.000.000";
+
             // 
             // lbMaPhieu
             // 
@@ -225,7 +227,7 @@
         private Label lblSoTienGui0;
         private Label lblNgayGui0;
         private Panel panel2;
-        private Label label4;
+        private Label lblSoTienGoc;
         private Label lblTenKhachHang;
         private Label label3;
         private Label label2;

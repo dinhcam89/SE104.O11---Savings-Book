@@ -28,13 +28,20 @@ namespace GUI
             populateItems(maPhieu);
             lbMaPhieu.Text = maPhieu;
             lblTenKhachHang.Text = tenKhachHang;
+            try
+            {
+                var hienthiBUS = new HienThiChiTietGuiTienBUS();
+                float tongTienGoc = hienthiBUS.GetTongTien(maPhieu);
+                lblSoTienGoc.Text = $"{tongTienGoc:C}";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải tổng tiền gốc: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
         private void populateItems(string maPhieu)
         {
             flowLayoutPanel1.Controls.Clear();
-
-            List<DTO.ChiTietGuiTien> listChiTiet;
 
             try
             {
@@ -44,11 +51,9 @@ namespace GUI
                 // Kiểm tra và lấy thông tin theo mã phiếu
                 var chiTiet = hienthiBUS.GetChiTietGuiTienByMaPhieu(maPhieu);
 
-                listChiTiet = chiTiet != null ? new List<DTO.ChiTietGuiTien> { chiTiet } : new List<DTO.ChiTietGuiTien>();
-
-                if (listChiTiet.Count > 0)
+                if (chiTiet.Count > 0)
                 {
-                    foreach (var item in listChiTiet)
+                    foreach (var item in chiTiet)
                     {
                         var listItem = new ListItem
                         {

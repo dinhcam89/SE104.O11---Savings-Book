@@ -13,28 +13,44 @@ namespace GUI
 {
     public partial class ChiTietRutTien : Form
     {
-        private string maPhieu;
+        private string maPhieuGoiTien;
         private string tenKhachHang;
-        public ChiTietRutTien(string maPhieu, string tenKhachHang)
+        public ChiTietRutTien(string maPhieuGoiTien, string tenKhachHang)
 
         {
             InitializeComponent();
-            this.maPhieu = maPhieu;
+            this.maPhieuGoiTien = maPhieuGoiTien;
             this.tenKhachHang = tenKhachHang;
         }
+        public ChiTietRutTien(string maPhieuGoiTien) 
+        {
+            this.maPhieuGoiTien = maPhieuGoiTien;
+             // Tự động điền số tài khoản thanh toán
+
+        }
+
         private void ChiTietRutTien_Load(object sender, EventArgs e)
         {
-            populateItems(maPhieu, tenKhachHang);
-            lbMaPhieu.Text = maPhieu;
+            populateItems(maPhieuGoiTien, tenKhachHang);
+            lbMaPhieu.Text = maPhieuGoiTien;
             lblTenKhachHang.Text = tenKhachHang;
-
+            try
+            {
+                var hienthiBUS = new HienThiChiTietGuiTienBUS();
+                float tongTienGoc = hienthiBUS.GetTongTien(maPhieuGoiTien);
+                lblSoTienGoc.Text = $"{tongTienGoc:C}";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải tổng tiền gốc: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void populateItems(string maPhieu, string tenKhachHang)
         {
             flowLayoutPanel1.Controls.Clear();
 
-            List<DTO.ChiTietRutTien> listChiTiet;
+            //List<DTO.ChiTietRutTien> chiTiet;
 
             try
             {
@@ -42,12 +58,12 @@ namespace GUI
                 var hienthiBUS = new HienThiChiTietRutTienBUS();
 
                 // Kiểm tra và lấy thông tin theo mã phiếu
-                var chiTiet = hienthiBUS.GetChiTietGuiTienByMaPhieu(maPhieu);
-                listChiTiet = chiTiet != null ? new List<DTO.ChiTietRutTien> { chiTiet } : new List<DTO.ChiTietRutTien>();
+                var chiTiet = hienthiBUS.GetChiTietRutTienByMaPhieu(maPhieu);
+                //listChiTiet = chiTiet != null ? new List<DTO.ChiTietRutTien> { chiTiet } : new List<DTO.ChiTietRutTien>();
 
-                if (listChiTiet.Count > 0)
+                if (chiTiet.Count > 0)
                 {
-                    foreach (var item in listChiTiet)
+                    foreach (var item in chiTiet)
                     {
                         var listItem = new ListItem
                         {

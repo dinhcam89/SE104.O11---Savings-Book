@@ -49,9 +49,10 @@ namespace DAO
         }
 
         // Phương thức kiểm tra thông tin gửi tiền theo mã phiếu
-        public ChiTietGuiTien? GetByMaPhieu(string maPhieu)
+        public List<ChiTietGuiTien> GetByMaPhieu(string maPhieu)
         {
-            ChiTietGuiTien chiTiet = new();
+            List<ChiTietGuiTien> listChiTiet = new List<ChiTietGuiTien>();
+
             string query = "SELECT MaChiTietGoiTien, SoTaiKhoanTienGoi, NgayGoi, SoTienGoi FROM ChiTietGoiTien WHERE SoTaiKhoanTienGoi = @MaPhieu";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -60,19 +61,21 @@ namespace DAO
                 {
                     connection.Open();
                     SqlCommand command = new SqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@MaPhieu", maPhieu);  // Thêm tham số mã phiếu
+                    command.Parameters.AddWithValue("@MaPhieu", maPhieu);
 
                     SqlDataReader reader = command.ExecuteReader();
 
-                    if (reader.Read())
+                    while (reader.Read())
                     {
-                        chiTiet = new ChiTietGuiTien
+                        var chiTiet = new ChiTietGuiTien
                         {
-                            //MaChiTietGuiTien = reader["MaChiTietGoiTien"].ToString(),
-                            SoTaiKhoanTienGoi = reader["SoTaiKhoanTienGoi"].ToString()!,
+                            MaChiTietGuiTien = reader["MaChiTietGoiTien"].ToString(),
+                            SoTaiKhoanTienGui = reader["SoTaiKhoanTienGoi"].ToString(),
                             NgayGui = Convert.ToDateTime(reader["NgayGoi"]),
                             SoTienGui = Convert.ToDouble(reader["SoTienGoi"])
                         };
+
+                        listChiTiet.Add(chiTiet);
                     }
                 }
                 catch (Exception ex)
@@ -81,8 +84,133 @@ namespace DAO
                 }
             }
 
-            return chiTiet;
-
+            return listChiTiet;
         }
+
+
+        public List<DTO.ChiTietGuiTien> GetTenKhachHang()
+        {
+            List<DTO.ChiTietGuiTien> list = new List<DTO.ChiTietGuiTien>();
+
+            string query = @"
+        SELECT 
+            CTG.MaChiTietGoiTien, 
+            CTG.SoTaiKhoanTienGoi, 
+            KH.TenKhachHang, 
+            CTG.NgayGoi, 
+            CTG.SoTienGoi
+        FROM ChiTietGoiTien CTG
+        JOIN PhieuGoiTien PG ON CTG.SoTaiKhoanTienGoi = PG.SoTaiKhoanTienGoi
+        JOIN KhachHang KH ON PG.SoTaiKhoanThanhToan = KH.SoTaiKhoanThanhToan";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(query, connection);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        var chiTiet = new DTO.ChiTietGuiTien
+                        {
+                            MaChiTietGuiTien = reader["MaChiTietGoiTien"].ToString(),
+                            SoTaiKhoanTienGui = reader["SoTaiKhoanTienGoi"].ToString(),
+                            TenKhachHang = reader["TenKhachHang"].ToString(),
+                            NgayGui = Convert.ToDateTime(reader["NgayGoi"]),
+                            SoTienGui = (float)Convert.ToDouble(reader["SoTienGoi"])
+                        };
+
+                        list.Add(chiTiet);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Lỗi khi truy vấn dữ liệu: " + ex.Message);
+                }
+            }
+
+            return list;
+        }
+
+        public List<DTO.ChiTietGuiTien> GetNgay(DateTime startDate, DateTime endDate)
+        {
+            List<DTO.ChiTietGuiTien> list = new List<DTO.ChiTietGuiTien>();
+
+            string query = @"
+        SELECT MaChiTietGoiTien, SoTaiKhoanTienGoi, NgayGoi, SoTienGoi
+        FROM ChiTietGoiTien
+        WHERE NgayGoi >= @StartDate AND NgayGoi <= @EndDate";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@StartDate", startDate);
+                    command.Parameters.AddWithValue("@EndDate", endDate);
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        var chiTiet = new DTO.ChiTietGuiTien
+                        {
+                            MaChiTietGuiTien = reader["MaChiTietGoiTien"].ToString(),
+                            SoTaiKhoanTienGui = reader["SoTaiKhoanTienGoi"].ToString(),
+
+                            NgayGui = Convert.ToDateTime(reader["NgayGoi"]),
+                            SoTienGui = Convert.ToDouble(reader["SoTienGoi"])
+                        };
+
+                        list.Add(chiTiet);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Lỗi khi truy vấn dữ liệu: " + ex.Message);
+                }
+            }
+
+            return list;
+        }
+
+        public List<DTO.PhieuGoiTien> GetTongTienGoc(string maPhieu)
+        {
+            List<DTO.PhieuGoiTien> listChiTiet = new List<DTO.PhieuGoiTien>();
+            string query = "SELECT SoTaiKhoanTienGoi, TongTienGoc FROM PhieuGoiTien WHERE SoTaiKhoanTienGoi = @MaPhieu";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@MaPhieu", maPhieu);
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        var chiTiet = new DTO.PhieuGoiTien
+                        {
+                            SoTaiKhoanTienGoi = reader["SoTaiKhoanTienGoi"].ToString(),
+                            TongTienGoc = Convert.ToSingle(reader["TongTienGoc"]),
+                        };
+
+                        listChiTiet.Add(chiTiet);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Lỗi khi truy vấn dữ liệu: " + ex.Message);
+                }
+            }
+
+            return listChiTiet;
+        }
+
     }
 }

@@ -16,9 +16,28 @@ namespace BUS
             return hienthichitietrut.GetAll();
         }
 
-        public DTO.ChiTietRutTien GetChiTietGuiTienByMaPhieu(string maPhieu)
+        public List<DTO.ChiTietRutTien> GetChiTietRutTienByMaPhieu(string maPhieu)
         {
             return hienthichitietrut.GetByMaPhieu(maPhieu);
+        }
+
+        public List<DTO.ChiTietRutTien> GetTenKhachHang()
+        {
+            return hienthichitietrut.GetTenKhachHang();
+        }
+        public List<DTO.ChiTietRutTien> GetNgay(DateTime startDate, DateTime endDate)
+        {
+            return hienthichitietrut.GetNgay(startDate, endDate);
+        }
+
+        public float GetTongTien(string maPhieu)
+        {
+            var phieuGoiTienList = hienthichitietrut.GetTongTienGoc(maPhieu);
+            if (phieuGoiTienList != null && phieuGoiTienList.Count > 0)
+            {
+                return phieuGoiTienList.First().TongTienGoc;
+            }
+            return 0; // Nếu không tìm thấy dữ liệu
         }
     }
 }

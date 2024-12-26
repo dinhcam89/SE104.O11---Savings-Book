@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System.Drawing.Text;
 using System.Configuration;
 
@@ -12,7 +12,9 @@ namespace DAO
 {
     public class PhieuGoiTienDAO
     {
+
         private string connectionString = ConfigurationManager.ConnectionStrings["dbConnectionString"].ConnectionString;
+
         public List<PhieuGoiTien> GetAllPhieuGoiTienWithKhachHang()
         {
             List<PhieuGoiTien> result = new List<PhieuGoiTien>();
