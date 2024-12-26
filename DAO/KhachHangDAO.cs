@@ -6,12 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace DAO
 {
     public class KhachHangDAO
     {
-        private string connectionString = @"Server=MSI\SQLEXPRESS;Database=saving_books_management;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True";
+        private string connectionString = ConfigurationManager.ConnectionStrings["dbConnectionString"].ConnectionString;
 
         public List<KhachHang> GetAllKhachHangWithPhieuGoiTienCount()
         {

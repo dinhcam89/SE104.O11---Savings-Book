@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using DTO;
+using System.Configuration;
 
 namespace DAO
 {
     public class HienThiChiTietGuiTienDAO
     {
-        private string connectionString = @"Server=MSI\SQLEXPRESS;Database=saving_books_management;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True";
-
+        private string connectionString = ConfigurationManager.ConnectionStrings["dbConnectionString"].ConnectionString;
         public List<ChiTietGuiTien> GetAll()
         {
             List<ChiTietGuiTien> list = new List<ChiTietGuiTien>();
