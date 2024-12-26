@@ -32,7 +32,7 @@ namespace GUI
             {
                 var hienthiBUS = new HienThiChiTietGuiTienBUS();
                 double tongTienGoc = hienthiBUS.GetTongTien(maPhieu);
-                lblSoTienGoc.Text = $"{tongTienGoc:C}";
+                lblSoTienGoc.Text = tongTienGoc.ToString("#,#.##");
             }
             catch (Exception ex)
             {

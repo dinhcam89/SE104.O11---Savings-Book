@@ -59,6 +59,7 @@ namespace GUI.DashboardApp
             // Hiển thị từng phiếu gửi tiền lên form
             foreach (var phieuGoiTien in listPhieuGoiTien)
             {
+                if (phieuGoiTien.TongTienGoc == 0) continue;
                 var listItem = new ListItem
                 {
                     Ten1 = phieuGoiTien.TenKhachHang,         // Tên khách hàng

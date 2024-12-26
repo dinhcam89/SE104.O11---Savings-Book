@@ -46,6 +46,7 @@ namespace GUI
                 string result = bus.GuiThemTien(soTaiKhoanTienGoi, soTienGuiThem, ngayGiaoDich);
 
                 MessageBox.Show(result, "Kết quả", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Close();
             }
             catch (Exception ex)
             {

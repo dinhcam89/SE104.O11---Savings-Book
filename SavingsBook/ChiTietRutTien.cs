@@ -22,10 +22,10 @@ namespace GUI
             this.maPhieuGoiTien = maPhieuGoiTien;
             this.tenKhachHang = tenKhachHang;
         }
-        public ChiTietRutTien(string maPhieuGoiTien) 
+        public ChiTietRutTien(string maPhieuGoiTien)
         {
             this.maPhieuGoiTien = maPhieuGoiTien;
-             // Tự động điền số tài khoản thanh toán
+            // Tự động điền số tài khoản thanh toán
 
         }
 
@@ -89,6 +89,11 @@ namespace GUI
                 MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
 
         }
     }

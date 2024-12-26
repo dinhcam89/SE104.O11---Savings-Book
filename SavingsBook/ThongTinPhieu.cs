@@ -39,8 +39,8 @@ namespace SavingsBook
             lblLaiSuatApDung.Text = phieuGoiTien.LaiSuatApDung.ToString();
             lblLaiSuatPhatSinh.Text = phieuGoiTien.LaiSuatPhatSinh.ToString();
             lblNgayDaoHanKeTiep.Text = phieuGoiTien.NgayDaoHanKeTiep.ToString("dd/MM/yyyy");
-            lblTongTienGoc.Text = phieuGoiTien.TongTienGoc.ToString();
-            lblTongTienLaiPhatSinh.Text = phieuGoiTien.TongTienLaiPhatSinh.ToString("#,#.##") + " VNĐ";
+            lblTongTienGoc.Text = formatSoTien(phieuGoiTien.TongTienGoc);
+            lblTongTienLaiPhatSinh.Text = formatSoTien(phieuGoiTien.TongTienLaiPhatSinh);
             switch (phieuGoiTien.HinhThucGiaHan)
             {
                 case 1:
@@ -58,7 +58,19 @@ namespace SavingsBook
             LoaiTietKiem maLoaiTietKiem = loaiTietKiemBUS.getLoaiTietKiem(phieuGoiTien.MaLoaiTietKiem);
             lbKyHan.Text = maLoaiTietKiem.KyHan + " tháng";
         }
-
+        string formatSoTien(double sotien)
+        {
+            string formatedText;
+            if (sotien == 0)
+            {
+                formatedText = sotien + " VND";
+            }
+            else
+            {
+                formatedText = sotien.ToString("#,#.##") + " VND";
+            }
+            return formatedText;
+        }
 
 
         private void ToggleToEditMode(Label lbl, Control editor)
