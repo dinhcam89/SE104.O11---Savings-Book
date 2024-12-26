@@ -25,6 +25,10 @@ namespace BUS
         }
         public bool UpdatePhieuGoiTien(PhieuGoiTien phieuGoiTien)
         {
+            phieuGoiTien.LaiSuatApDung = Math.Round(phieuGoiTien.LaiSuatApDung, 2);
+            phieuGoiTien.LaiSuatPhatSinh = Math.Round(phieuGoiTien.LaiSuatPhatSinh, 2);
+            phieuGoiTien.TongTienGoc = Math.Round(phieuGoiTien.TongTienGoc, 2);
+            phieuGoiTien.TongTienLaiPhatSinh = Math.Round(phieuGoiTien.TongTienLaiPhatSinh, 2);
             return phieuGoiTienDAO.UpdatePhieuGoiTien(phieuGoiTien);
         }
     }

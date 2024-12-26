@@ -11,14 +11,14 @@ namespace DTO
         #region Properties
         public string MaLoaiTietKiem { get; set; }
         public int KyHan { get; set; }
-        public double LaiSuat { get; set; }
+        public float LaiSuat { get; set; }
         public int SoNgayToiThieuDuocRutTien { get; set; }
         public string QuyDinhSoTienRut { get; set; }
         #endregion
 
         #region Constructors
         public LoaiTietKiem() { }
-        public LoaiTietKiem(string maloaitk, int kyhan, double laisuat, int songaytoithieuduocruttien, string quydinhsotienrut)
+        public LoaiTietKiem(string maloaitk, int kyhan, float laisuat, int songaytoithieuduocruttien, string quydinhsotienrut)
         {
             MaLoaiTietKiem = maloaitk;
             KyHan = kyhan;

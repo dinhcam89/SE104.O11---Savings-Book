@@ -57,7 +57,7 @@ namespace DAO
                     {
                         MaLoaiTietKiem = reader.GetString(reader.GetOrdinal("MaLoaiTietKiem")),
                         KyHan = reader.GetInt32(reader.GetOrdinal("KyHan")),
-                        LaiSuat = (double)reader["LaiSuat"],
+                        LaiSuat = (float)reader["LaiSuat"],
                         SoNgayToiThieuDuocRutTien = reader.GetInt32(reader.GetOrdinal("SoNgayToiThieuDuocRutTien"))
                     };
                 }
