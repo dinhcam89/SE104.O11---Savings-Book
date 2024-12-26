@@ -25,6 +25,7 @@ namespace DAO
                 "   LoaiTietKiem";
             List<LoaiTietKiem> listLoaiTietKiem = new List<LoaiTietKiem>();
             DataTable? dataTable = dbConnection.executeSelectQuery(query, null);
+
             if (dataTable != null)
             {
                 foreach (DataRow row in dataTable.Rows)
@@ -65,6 +66,12 @@ namespace DAO
                 return loaiTietKiem;
             }
             return null;
+        }
+        public LoaiTietKiem? getLoaiTietKiemById(string maLoaiTietKiem)
+        {
+            LoaiTietKiem ltk = new LoaiTietKiem();
+            ltk.MaLoaiTietKiem = maLoaiTietKiem;
+            return getLoaiTietKiem(ltk);
         }
         public bool updateLoaiTietKiem(LoaiTietKiem ltk)
         {

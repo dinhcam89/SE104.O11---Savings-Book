@@ -12,9 +12,9 @@ namespace DAO
     {
         private string connectionString = @"Server=MSI\SQLEXPRESS;Database=saving_books_management;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True";
 
-        public List<DTO.ChiTietGuiTien> GetAll()
+        public List<ChiTietGuiTien> GetAll()
         {
-            List<DTO.ChiTietGuiTien> list = new List<DTO.ChiTietGuiTien>();
+            List<ChiTietGuiTien> list = new List<ChiTietGuiTien>();
 
             string query = "SELECT MaChiTietGoiTien, SoTaiKhoanTienGoi, NgayGoi, SoTienGoi FROM ChiTietGoiTien";
 
@@ -30,8 +30,8 @@ namespace DAO
                     {
                         var chiTiet = new DTO.ChiTietGuiTien
                         { 
-                            MaChiTietGuiTien = reader["MaChiTietGoiTien"].ToString(),
-                            SoTaiKhoanTienGoi = reader["SoTaiKhoanTienGoi"].ToString(),
+                            MaChiTietGuiTien = reader["MaChiTietGoiTien"].ToString()!,
+                            SoTaiKhoanTienGoi = reader["SoTaiKhoanTienGoi"].ToString()!,
                             NgayGui = Convert.ToDateTime(reader["NgayGoi"]),
                             SoTienGui = Convert.ToDouble(reader["SoTienGoi"])
                         };
@@ -49,9 +49,9 @@ namespace DAO
         }
 
         // Phương thức kiểm tra thông tin gửi tiền theo mã phiếu
-        public ChiTietGuiTien GetByMaPhieu(string maPhieu)
+        public ChiTietGuiTien? GetByMaPhieu(string maPhieu)
         {
-            ChiTietGuiTien chiTiet = null;
+            ChiTietGuiTien chiTiet = new();
             string query = "SELECT MaChiTietGoiTien, SoTaiKhoanTienGoi, NgayGoi, SoTienGoi FROM ChiTietGoiTien WHERE SoTaiKhoanTienGoi = @MaPhieu";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -69,7 +69,7 @@ namespace DAO
                         chiTiet = new ChiTietGuiTien
                         {
                             //MaChiTietGuiTien = reader["MaChiTietGoiTien"].ToString(),
-                            SoTaiKhoanTienGoi = reader["SoTaiKhoanTienGoi"].ToString(),
+                            SoTaiKhoanTienGoi = reader["SoTaiKhoanTienGoi"].ToString()!,
                             NgayGui = Convert.ToDateTime(reader["NgayGoi"]),
                             SoTienGui = Convert.ToDouble(reader["SoTienGoi"])
                         };

@@ -1,4 +1,5 @@
 ﻿using DAO;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +11,21 @@ namespace BUS
 {
     public class PhieuGoiTienBUS
     {
-        private PhieuGoiTienDAO PhieuGoiTienDAO = new PhieuGoiTienDAO();
-        public List<PhieuGoiTien> GetAllPhieuGoiTien()
+        private PhieuGoiTienDAO phieuGoiTienDAO;
+        private LoaiTietKiem loaiTietKiemDAO;
+
+        public PhieuGoiTienBUS()
         {
-            return PhieuGoiTienDAO.GetAllPhieuGoiTienWithKhachHang();
+            phieuGoiTienDAO = new PhieuGoiTienDAO();
+            loaiTietKiemDAO = new LoaiTietKiem();
+        }
+        public List<PhieuGoiTien> GetPhieuGoiTien()
+        {
+            return phieuGoiTienDAO.GetAllPhieuGoiTienWithKhachHang();
+        }
+        public bool UpdatePhieuGoiTien(PhieuGoiTien phieuGoiTien)
+        {
+            return phieuGoiTienDAO.UpdatePhieuGoiTien(phieuGoiTien);
         }
     }
 }

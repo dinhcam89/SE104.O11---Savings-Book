@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BUS\BUS.csproj" />
+    <ProjectReference Include="..\DAO\DAO.csproj" />
   </ItemGroup>
 
   <ItemGroup>
