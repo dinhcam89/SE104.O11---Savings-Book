@@ -25,6 +25,7 @@ namespace DAO
                 "   LoaiTietKiem";
             List<LoaiTietKiem> listLoaiTietKiem = new List<LoaiTietKiem>();
             DataTable? dataTable = dbConnection.executeSelectQuery(query, null);
+
             if (dataTable != null)
             {
                 foreach (DataRow row in dataTable.Rows)
@@ -32,7 +33,7 @@ namespace DAO
                     LoaiTietKiem loaiTietKiem = new LoaiTietKiem();
                     loaiTietKiem.MaLoaiTietKiem = row["MaLoaiTietKiem"].ToString()!;
                     loaiTietKiem.KyHan = int.Parse(row["KyHan"].ToString()!);
-                    loaiTietKiem.LaiSuat = double.Parse(row["LaiSuat"].ToString()!);
+                    loaiTietKiem.LaiSuat = float.Parse(row["LaiSuat"].ToString()!);
                     loaiTietKiem.SoNgayToiThieuDuocRutTien = int.Parse(row["SoNgayToiThieuDuocRutTien"].ToString()!);
                     loaiTietKiem.QuyDinhSoTienRut = row["QuyDinhSoTienRut"].ToString()!;
                     listLoaiTietKiem.Add(loaiTietKiem);
@@ -59,12 +60,18 @@ namespace DAO
                 LoaiTietKiem loaiTietKiem = new LoaiTietKiem();
                 loaiTietKiem.MaLoaiTietKiem = dataTable.Rows[0]["MaLoaiTietKiem"].ToString()!;
                 loaiTietKiem.KyHan = int.Parse(dataTable.Rows[0]["KyHan"].ToString()!);
-                loaiTietKiem.LaiSuat = double.Parse(dataTable.Rows[0]["LaiSuat"].ToString()!);
+                loaiTietKiem.LaiSuat = float.Parse(dataTable.Rows[0]["LaiSuat"].ToString()!);
                 loaiTietKiem.SoNgayToiThieuDuocRutTien = int.Parse(dataTable.Rows[0]["SoNgayToiThieuDuocRutTien"].ToString()!);
                 loaiTietKiem.QuyDinhSoTienRut = dataTable.Rows[0]["QuyDinhSoTienRut"].ToString()!;
                 return loaiTietKiem;
             }
             return null;
+        }
+        public LoaiTietKiem? getLoaiTietKiemById(string maLoaiTietKiem)
+        {
+            LoaiTietKiem ltk = new LoaiTietKiem();
+            ltk.MaLoaiTietKiem = maLoaiTietKiem;
+            return getLoaiTietKiem(ltk);
         }
         public bool updateLoaiTietKiem(LoaiTietKiem ltk)
         {

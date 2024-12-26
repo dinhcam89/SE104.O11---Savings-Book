@@ -24,6 +24,10 @@ namespace BUS
         {
             return _loaiTietKiemDAO.getLoaiTietKiem(ltk);
         }
+        public LoaiTietKiem? getLoaiTietKiemById(string maLoaiTietKiem)
+        {
+            return _loaiTietKiemDAO.getLoaiTietKiemById(maLoaiTietKiem);
+        }
         public bool updateLoaiTietKiem(LoaiTietKiem ltk)
         {
             return _loaiTietKiemDAO.updateLoaiTietKiem(ltk);
