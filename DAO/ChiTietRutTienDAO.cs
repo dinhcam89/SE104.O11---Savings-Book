@@ -57,13 +57,16 @@ namespace DAO
                     {
                         MaLoaiTietKiem = reader.GetString(reader.GetOrdinal("MaLoaiTietKiem")),
                         KyHan = reader.GetInt32(reader.GetOrdinal("KyHan")),
-                        LaiSuat = (float)reader["LaiSuat"],
-                        SoNgayToiThieuDuocRutTien = reader.GetInt32(reader.GetOrdinal("SoNgayToiThieuDuocRutTien"))
+
+                        LaiSuat = (double)reader["LaiSuat"],
+                        SoNgayToiThieuDuocRutTien = reader.GetInt32(reader.GetOrdinal("SoNgayToiThieuDuocRutTien")),
+                        QuyDinhSoTienRut = reader.GetString(reader.GetOrdinal("QuyDinhSoTienRut")) // Lấy thêm cột QuyDinhSoTienRut
                     };
                 }
             }
             return null;
         }
+
 
         public bool UpdatePhieuGoiTienAfterRut(string soTaiKhoanTienGoi, double soTienRut)
         {

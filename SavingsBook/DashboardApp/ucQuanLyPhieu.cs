@@ -16,11 +16,15 @@ namespace GUI.DashboardApp
 {
     public partial class ucQuanLyPhieu : UserControl
     {
-        private PhieuGoiTienBUS PhieuGoiTienBUS;
+        private PhieuGoiTienBUS PhieuGoiTienBUS = new PhieuGoiTienBUS();
+        // Danh sách các đối tượng DTO để lưu dữ liệu từ database
+        private List<PhieuGoiTien> listPhieuGoiTien;
+
+        // Lấy dữ liệu từ lớp BUS (nơi xử lý nghiệp vụ)
         public ucQuanLyPhieu()
         {
             InitializeComponent();
-            PhieuGoiTienBUS = new PhieuGoiTienBUS();
+            listPhieuGoiTien = PhieuGoiTienBUS.GetAllPhieuGoiTien();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -241,5 +245,12 @@ namespace GUI.DashboardApp
             return null;
         }
 
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = txtTimKiem.Text.Trim();
+            var listPhieuGoiTien = PhieuGoiTienBUS.SearchPhieuGoiTien(searchText);
+
+            PopulateItems(listPhieuGoiTien);
+        }
     }
 }

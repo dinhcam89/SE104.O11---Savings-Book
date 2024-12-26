@@ -31,5 +31,14 @@ namespace BUS
             phieuGoiTien.TongTienLaiPhatSinh = Math.Round(phieuGoiTien.TongTienLaiPhatSinh, 2);
             return phieuGoiTienDAO.UpdatePhieuGoiTien(phieuGoiTien);
         }
+        public List<PhieuGoiTien> SearchPhieuGoiTien(string searchText)
+        {
+            var dao = new PhieuGoiTienDAO();
+            return dao.SearchPhieuGoiTien(searchText);
+        }
+        public bool ThemPhieuGoiTien(PhieuGoiTien phieu)
+        {
+            return PhieuGoiTienDAO.ThemPhieuGoiTien(phieu);
+        }
     }
 }

@@ -1,27 +1,28 @@
-﻿using System;
+﻿using DAO;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAO;
-using DTO;
 
 namespace BUS
 {
     public class KhachHangBUS
     {
-        private KhachHangDAO _khachHangDAO;
-        public KhachHangBUS()
+        private KhachHangDAO khachHangDAO = new KhachHangDAO();
+
+        public List<KhachHang> GetAllKhachHangWithPhieuGoiTienCount()
         {
-            _khachHangDAO = new KhachHangDAO();
+            return khachHangDAO.GetAllKhachHangWithPhieuGoiTienCount();
         }
-        public List<KhachHang> getListKhachHang()
+        public KhachHang? LayKhachHangTheoSoTaiKhoan(string soTaiKhoan)
         {
-            return _khachHangDAO.getAllKhachHang();
+            return khachHangDAO.LayKhachHangTheoSoTaiKhoan(soTaiKhoan);
         }
-        public KhachHang? getKhachHangById(string soTaiKhoanThanhToan)
+        public bool ThemKhachHang(KhachHang khachHang)
         {
-            return _khachHangDAO.getKhachHangById(soTaiKhoanThanhToan);
+            return khachHangDAO.ThemKhachHang(khachHang);
         }
     }
 }

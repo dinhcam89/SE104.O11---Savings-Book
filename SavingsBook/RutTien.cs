@@ -33,7 +33,7 @@ namespace GUI
         {
             lblSTKTienGoi.Text = maPhieu;
             double tongTien = rutTienBUS.GetTongTien(maPhieu);
-            bool isKyHan = rutTienBUS.IsKyHan(maPhieu);
+            bool isKyHan = rutTienBUS.KiemTraQuyDinhRutTien(maPhieu);
 
             if (tongTien > 0)
             {

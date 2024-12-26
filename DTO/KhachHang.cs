@@ -15,10 +15,12 @@ namespace DTO
         public DateTime NgaySinh { get; set; }
         public string DiaChi { get; set; }
         public float SoDuHienCo { get; set; }
+        public int TongSoPhieuGoiTien { get; set; }
         public KhachHang() { }
 
         // Constructor
-        public KhachHang(string soTaiKhoanThanhToan, string tenKhachHang, string cccd, string soDienThoai, DateTime ngaySinh, string diaChi, float soDuHienCo)
+        public KhachHang(string soTaiKhoanThanhToan, string tenKhachHang, string cccd, string soDienThoai, 
+            DateTime ngaySinh, string diaChi, float soDuHienCo, int tongSoPhieuTietKiem)
         {
             SoTaiKhoanThanhToan = soTaiKhoanThanhToan;
             TenKhachHang = tenKhachHang;
@@ -27,6 +29,7 @@ namespace DTO
             NgaySinh = ngaySinh;
             DiaChi = diaChi;
             SoDuHienCo = soDuHienCo;
+            TongSoPhieuGoiTien = tongSoPhieuTietKiem;
         }
     }
 }
