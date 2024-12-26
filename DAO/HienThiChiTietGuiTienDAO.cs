@@ -70,7 +70,7 @@ namespace DAO
                         var chiTiet = new ChiTietGuiTien
                         {
                             MaChiTietGuiTien = reader["MaChiTietGoiTien"].ToString(),
-                            SoTaiKhoanTienGui = reader["SoTaiKhoanTienGoi"].ToString(),
+                            SoTaiKhoanTienGoi = reader["SoTaiKhoanTienGoi"].ToString(),
                             NgayGui = Convert.ToDateTime(reader["NgayGoi"]),
                             SoTienGui = Convert.ToDouble(reader["SoTienGoi"])
                         };
@@ -116,7 +116,7 @@ namespace DAO
                         var chiTiet = new DTO.ChiTietGuiTien
                         {
                             MaChiTietGuiTien = reader["MaChiTietGoiTien"].ToString(),
-                            SoTaiKhoanTienGui = reader["SoTaiKhoanTienGoi"].ToString(),
+                            SoTaiKhoanTienGoi = reader["SoTaiKhoanTienGoi"].ToString(),
                             TenKhachHang = reader["TenKhachHang"].ToString(),
                             NgayGui = Convert.ToDateTime(reader["NgayGoi"]),
                             SoTienGui = (float)Convert.ToDouble(reader["SoTienGoi"])
@@ -159,8 +159,7 @@ namespace DAO
                         var chiTiet = new DTO.ChiTietGuiTien
                         {
                             MaChiTietGuiTien = reader["MaChiTietGoiTien"].ToString(),
-                            SoTaiKhoanTienGui = reader["SoTaiKhoanTienGoi"].ToString(),
-
+                            SoTaiKhoanTienGoi = reader["SoTaiKhoanTienGoi"].ToString(),
                             NgayGui = Convert.ToDateTime(reader["NgayGoi"]),
                             SoTienGui = Convert.ToDouble(reader["SoTienGoi"])
                         };

@@ -15,8 +15,6 @@ namespace GUI
         public CMSPhieuGoiTien()
         {
             // Khởi tạo các mục menu
-            ToolStripMenuItem menuItemThemPhieu = new ToolStripMenuItem("Thêm phiếu");
-            menuItemThemPhieu.Click += OpenAddSlotForm!;
 
             ToolStripMenuItem menuItemQuanLy = new ToolStripMenuItem("Chi tiết");
             menuItemQuanLy.Click += OpenManagementForm!;
@@ -37,19 +35,12 @@ namespace GUI
             menuItemXoa.Click += DeleteItem!;
 
             // Thêm các mục vào ContextMenuStrip
-            this.Items.Add(menuItemThemPhieu);
             this.Items.Add(menuItemQuanLy);
             this.Items.Add(menuItemGuiTien);
             this.Items.Add(menuItemChiTietGuiTien);
             this.Items.Add(menuItemRutTien);
             this.Items.Add(menuItemChiTietRutTien);
             this.Items.Add(menuItemXoa);
-        }
-
-        private void OpenAddSlotForm(object sender, EventArgs e)
-        {
-            ThemPhieu form = new ThemPhieu();
-            form.Show();
         }
 
         private void OpenManagementForm(object sender, EventArgs e)

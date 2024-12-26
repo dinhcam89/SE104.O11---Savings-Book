@@ -54,7 +54,7 @@ namespace GUI.DashboardApp
             flowLayoutPanel1.Controls.Clear();
 
             // Cập nhật dữ liệu mới nhất
-            //listPhieuGoiTien = updatePhieuGoiTien(listPhieuGoiTien);
+            listPhieuGoiTien = updatePhieuGoiTien(listPhieuGoiTien);
 
             // Hiển thị từng phiếu gửi tiền lên form
             foreach (var phieuGoiTien in listPhieuGoiTien)

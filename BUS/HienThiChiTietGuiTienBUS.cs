@@ -33,7 +33,7 @@ namespace BUS
         {
             return hienthichitietgui.GetTongTienGoc(maPhieu);
         }*/
-        public float GetTongTien(string maPhieu)
+        public double GetTongTien(string maPhieu)
         {
             var phieuGoiTienList = hienthichitietgui.GetTongTienGoc(maPhieu);
             if (phieuGoiTienList != null && phieuGoiTienList.Count > 0)

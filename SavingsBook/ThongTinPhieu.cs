@@ -8,6 +8,7 @@ namespace SavingsBook
     {
         private string maPhieu;
         private PhieuGoiTienBUS phieuGoiTienBUS = new PhieuGoiTienBUS();
+        private LoaiTietKiemBUS loaiTietKiemBUS = new LoaiTietKiemBUS();
         public ThongTinPhieu(string maPhieu)
         {
             InitializeComponent();
@@ -38,9 +39,8 @@ namespace SavingsBook
             lblLaiSuatApDung.Text = phieuGoiTien.LaiSuatApDung.ToString();
             lblLaiSuatPhatSinh.Text = phieuGoiTien.LaiSuatPhatSinh.ToString();
             lblNgayDaoHanKeTiep.Text = phieuGoiTien.NgayDaoHanKeTiep.ToString("dd/MM/yyyy");
-
             lblTongTienGoc.Text = phieuGoiTien.TongTienGoc.ToString();
-            lblTongTienLaiPhatSinh.Text = phieuGoiTien.TongTienLaiPhatSinh.ToString();
+            lblTongTienLaiPhatSinh.Text = phieuGoiTien.TongTienLaiPhatSinh.ToString("#,#.##") + " VNĐ";
             switch (phieuGoiTien.HinhThucGiaHan)
             {
                 case 1:
@@ -55,6 +55,8 @@ namespace SavingsBook
                 default:
                     break;
             }
+            LoaiTietKiem maLoaiTietKiem = loaiTietKiemBUS.getLoaiTietKiem(phieuGoiTien.MaLoaiTietKiem);
+            lbKyHan.Text = maLoaiTietKiem.KyHan + " tháng";
         }
 
 

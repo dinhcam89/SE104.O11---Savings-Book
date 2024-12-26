@@ -30,7 +30,7 @@ namespace BUS
             return hienthichitietrut.GetNgay(startDate, endDate);
         }
 
-        public float GetTongTien(string maPhieu)
+        public double GetTongTien(string maPhieu)
         {
             var phieuGoiTienList = hienthichitietrut.GetTongTienGoc(maPhieu);
             if (phieuGoiTienList != null && phieuGoiTienList.Count > 0)

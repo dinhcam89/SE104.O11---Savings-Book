@@ -96,7 +96,7 @@ namespace GUI.DashboardApp
             {
                 ListItem listItem = new ListItem
                 {
-                    Ten1 = item.SoTaiKhoanTienGui,
+                    Ten1 = item.SoTaiKhoanTienGoi,
                     Ten2 = item.NgayGui.ToString("dd/MM/yyyy"),
                     Ten3 = item.SoTienGui.ToString("C"),
                     Ten4 = "",
@@ -147,9 +147,9 @@ namespace GUI.DashboardApp
                         {
                             var item = filteredItems[i];
 
-                            var customer = customerNames.FirstOrDefault(c => c.SoTaiKhoanTienGui == item.SoTaiKhoanTienGui);
+                            var customer = customerNames.FirstOrDefault(c => c.SoTaiKhoanTienGoi == item.SoTaiKhoanTienGoi);
 
-                            worksheet.Cell(i + 2, 1).Value = item.SoTaiKhoanTienGui;
+                            worksheet.Cell(i + 2, 1).Value = item.SoTaiKhoanTienGoi;
                             worksheet.Cell(i + 2, 2).Value = customer != null ? customer.TenKhachHang : "Không tìm thấy"; 
                             worksheet.Cell(i + 2, 3).Value = item.NgayGui;
                             worksheet.Cell(i + 2, 4).Value = item.SoTienGui;

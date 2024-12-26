@@ -37,7 +37,7 @@ namespace GUI
             try
             {
                 var hienthiBUS = new HienThiChiTietGuiTienBUS();
-                float tongTienGoc = hienthiBUS.GetTongTien(maPhieuGoiTien);
+                double tongTienGoc = hienthiBUS.GetTongTien(maPhieuGoiTien);
                 lblSoTienGoc.Text = $"{tongTienGoc:C}";
             }
             catch (Exception ex)

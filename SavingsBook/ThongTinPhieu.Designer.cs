@@ -39,7 +39,6 @@
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             lblKyHan0 = new Label();
             btnHuy = new Guna.UI2.WinForms.Guna2GradientButton();
-            lblKyHan = new Label();
             lblSTKThanhToan0 = new Label();
             lblTongTienLaiPhatSinh = new Label();
             lblTongTienLaiPhatSinh0 = new Label();
@@ -61,6 +60,7 @@
             lblTitle = new Label();
             cboxHinhThucGiaHan = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            lbKyHan = new Label();
             guna2Panel1.SuspendLayout();
             guna2GradientPanel1.SuspendLayout();
             SuspendLayout();
@@ -68,9 +68,9 @@
             // guna2Panel1
             // 
             guna2Panel1.BackColor = Color.White;
+            guna2Panel1.Controls.Add(lbKyHan);
             guna2Panel1.Controls.Add(lblKyHan0);
             guna2Panel1.Controls.Add(btnHuy);
-            guna2Panel1.Controls.Add(lblKyHan);
             guna2Panel1.Controls.Add(lblSTKThanhToan0);
             guna2Panel1.Controls.Add(lblTongTienLaiPhatSinh);
             guna2Panel1.Controls.Add(lblTongTienLaiPhatSinh0);
@@ -137,21 +137,6 @@
             btnHuy.TabIndex = 50;
             btnHuy.Text = "Hủy";
             btnHuy.Click += btnClose_Click;
-            // 
-            // lblKyHan
-            // 
-            lblKyHan.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblKyHan.BackColor = Color.Transparent;
-            lblKyHan.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
-            lblKyHan.ForeColor = Color.FromArgb(127, 111, 180);
-            lblKyHan.Location = new Point(301, 216);
-            lblKyHan.Margin = new Padding(3, 0, 25, 0);
-            lblKyHan.Name = "lblKyHan";
-            lblKyHan.RightToLeft = RightToLeft.Yes;
-            lblKyHan.Size = new Size(185, 24);
-            lblKyHan.TabIndex = 53;
-            lblKyHan.Text = "3 tháng";
-            lblKyHan.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblSTKThanhToan0
             // 
@@ -430,6 +415,20 @@
             guna2GradientPanel1.Size = new Size(534, 646);
             guna2GradientPanel1.TabIndex = 37;
             // 
+            // lbKyHan
+            // 
+            lbKyHan.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lbKyHan.BackColor = Color.Transparent;
+            lbKyHan.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
+            lbKyHan.ForeColor = Color.FromArgb(127, 111, 180);
+            lbKyHan.Location = new Point(322, 215);
+            lbKyHan.Name = "lbKyHan";
+            lbKyHan.RightToLeft = RightToLeft.No;
+            lbKyHan.Size = new Size(165, 24);
+            lbKyHan.TabIndex = 59;
+            lbKyHan.Text = "Ky Han";
+            lbKyHan.TextAlign = ContentAlignment.MiddleRight;
+            // 
             // ThongTinPhieu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -470,10 +469,10 @@
         private Label lblTongTienLaiPhatSinh0;
         private Label lblTongTienGoc;
         private Label lblTongTienGoc0;
-        private Label lblKyHan;
         private Label lblSTKThanhToan0;
         private Guna.UI2.WinForms.Guna2GradientButton btnHuy;
         private Guna.UI2.WinForms.Guna2ComboBox cboxHinhThucGiaHan;
         private Label lblKyHan0;
+        private Label lbKyHan;
     }
 }
