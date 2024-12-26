@@ -32,12 +32,12 @@ namespace SavingsBook
             // Lai suat phat sinh
             lblSTKThanhToan.Text = phieuGoiTien.SoTaiKhoanThanhToan;
 
-            lblNgayGoi.Text = phieuGoiTien.NgayGoi.ToString();
+            lblNgayGoi.Text = phieuGoiTien.NgayGoi.ToString("dd/MM/yyyy");
 
             // Lai suat ap dung
             lblLaiSuatApDung.Text = phieuGoiTien.LaiSuatApDung.ToString();
             lblLaiSuatPhatSinh.Text = phieuGoiTien.LaiSuatPhatSinh.ToString();
-            lblNgayDaoHanKeTiep.Text = phieuGoiTien.NgayDaoHanKeTiep.ToString();
+            lblNgayDaoHanKeTiep.Text = phieuGoiTien.NgayDaoHanKeTiep.ToString("dd/MM/yyyy");
 
             lblTongTienGoc.Text = phieuGoiTien.TongTienGoc.ToString();
             lblTongTienLaiPhatSinh.Text = phieuGoiTien.TongTienLaiPhatSinh.ToString();
@@ -55,8 +55,6 @@ namespace SavingsBook
                 default:
                     break;
             }
-
-
         }
 
 

@@ -141,15 +141,14 @@
             // lblKyHan
             // 
             lblKyHan.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblKyHan.AutoSize = true;
             lblKyHan.BackColor = Color.Transparent;
             lblKyHan.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblKyHan.ForeColor = Color.FromArgb(127, 111, 180);
-            lblKyHan.Location = new Point(414, 216);
+            lblKyHan.Location = new Point(301, 216);
             lblKyHan.Margin = new Padding(3, 0, 25, 0);
             lblKyHan.Name = "lblKyHan";
             lblKyHan.RightToLeft = RightToLeft.Yes;
-            lblKyHan.Size = new Size(72, 24);
+            lblKyHan.Size = new Size(185, 24);
             lblKyHan.TabIndex = 53;
             lblKyHan.Text = "3 tháng";
             lblKyHan.TextAlign = ContentAlignment.MiddleLeft;
@@ -169,14 +168,13 @@
             // lblTongTienLaiPhatSinh
             // 
             lblTongTienLaiPhatSinh.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblTongTienLaiPhatSinh.AutoSize = true;
             lblTongTienLaiPhatSinh.BackColor = Color.Transparent;
             lblTongTienLaiPhatSinh.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblTongTienLaiPhatSinh.ForeColor = Color.FromArgb(127, 111, 180);
-            lblTongTienLaiPhatSinh.Location = new Point(423, 462);
+            lblTongTienLaiPhatSinh.Location = new Point(289, 462);
             lblTongTienLaiPhatSinh.Name = "lblTongTienLaiPhatSinh";
             lblTongTienLaiPhatSinh.RightToLeft = RightToLeft.No;
-            lblTongTienLaiPhatSinh.Size = new Size(55, 24);
+            lblTongTienLaiPhatSinh.Size = new Size(196, 24);
             lblTongTienLaiPhatSinh.TabIndex = 51;
             lblTongTienLaiPhatSinh.Text = "2.000";
             lblTongTienLaiPhatSinh.TextAlign = ContentAlignment.MiddleRight;
@@ -196,14 +194,13 @@
             // lblTongTienGoc
             // 
             lblTongTienGoc.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblTongTienGoc.AutoSize = true;
             lblTongTienGoc.BackColor = Color.Transparent;
             lblTongTienGoc.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblTongTienGoc.ForeColor = Color.FromArgb(127, 111, 180);
-            lblTongTienGoc.Location = new Point(360, 416);
+            lblTongTienGoc.Location = new Point(322, 416);
             lblTongTienGoc.Name = "lblTongTienGoc";
             lblTongTienGoc.RightToLeft = RightToLeft.No;
-            lblTongTienGoc.Size = new Size(110, 24);
+            lblTongTienGoc.Size = new Size(165, 24);
             lblTongTienGoc.TabIndex = 49;
             lblTongTienGoc.Text = "100.000.000";
             lblTongTienGoc.TextAlign = ContentAlignment.MiddleRight;
@@ -223,17 +220,16 @@
             // lblNgayDaoHanKeTiep
             // 
             lblNgayDaoHanKeTiep.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblNgayDaoHanKeTiep.AutoSize = true;
             lblNgayDaoHanKeTiep.BackColor = Color.Transparent;
             lblNgayDaoHanKeTiep.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblNgayDaoHanKeTiep.ForeColor = Color.FromArgb(127, 111, 180);
-            lblNgayDaoHanKeTiep.Location = new Point(377, 368);
+            lblNgayDaoHanKeTiep.Location = new Point(305, 368);
             lblNgayDaoHanKeTiep.Name = "lblNgayDaoHanKeTiep";
             lblNgayDaoHanKeTiep.RightToLeft = RightToLeft.Yes;
-            lblNgayDaoHanKeTiep.Size = new Size(100, 24);
+            lblNgayDaoHanKeTiep.Size = new Size(182, 24);
             lblNgayDaoHanKeTiep.TabIndex = 36;
             lblNgayDaoHanKeTiep.Text = "10/10/2024";
-            lblNgayDaoHanKeTiep.TextAlign = ContentAlignment.MiddleRight;
+            lblNgayDaoHanKeTiep.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblNgayDaoHanKeTiep0
             // 
@@ -250,14 +246,13 @@
             // lblHinhThucGiaHan
             // 
             lblHinhThucGiaHan.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblHinhThucGiaHan.AutoSize = true;
             lblHinhThucGiaHan.BackColor = Color.Transparent;
             lblHinhThucGiaHan.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblHinhThucGiaHan.ForeColor = Color.FromArgb(127, 111, 180);
-            lblHinhThucGiaHan.Location = new Point(282, 505);
+            lblHinhThucGiaHan.Location = new Point(206, 505);
             lblHinhThucGiaHan.Name = "lblHinhThucGiaHan";
             lblHinhThucGiaHan.RightToLeft = RightToLeft.No;
-            lblHinhThucGiaHan.Size = new Size(216, 24);
+            lblHinhThucGiaHan.Size = new Size(281, 24);
             lblHinhThucGiaHan.TabIndex = 34;
             lblHinhThucGiaHan.Text = "Xoay vòng cả gốc lẫn lãi";
             lblHinhThucGiaHan.TextAlign = ContentAlignment.MiddleRight;
@@ -268,7 +263,7 @@
             lblNgayGoi.BackColor = Color.Transparent;
             lblNgayGoi.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblNgayGoi.ForeColor = Color.FromArgb(127, 111, 180);
-            lblNgayGoi.Location = new Point(312, 163);
+            lblNgayGoi.Location = new Point(322, 163);
             lblNgayGoi.Name = "lblNgayGoi";
             lblNgayGoi.RightToLeft = RightToLeft.No;
             lblNgayGoi.Size = new Size(165, 24);
@@ -279,33 +274,31 @@
             // lblLaiSuatPhatSinh
             // 
             lblLaiSuatPhatSinh.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblLaiSuatPhatSinh.AutoSize = true;
             lblLaiSuatPhatSinh.BackColor = Color.Transparent;
             lblLaiSuatPhatSinh.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblLaiSuatPhatSinh.ForeColor = Color.FromArgb(127, 111, 180);
-            lblLaiSuatPhatSinh.Location = new Point(452, 318);
+            lblLaiSuatPhatSinh.Location = new Point(301, 318);
             lblLaiSuatPhatSinh.Name = "lblLaiSuatPhatSinh";
             lblLaiSuatPhatSinh.RightToLeft = RightToLeft.Yes;
-            lblLaiSuatPhatSinh.Size = new Size(35, 24);
+            lblLaiSuatPhatSinh.Size = new Size(186, 24);
             lblLaiSuatPhatSinh.TabIndex = 32;
             lblLaiSuatPhatSinh.Text = "2%";
-            lblLaiSuatPhatSinh.TextAlign = ContentAlignment.MiddleRight;
+            lblLaiSuatPhatSinh.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblLaiSuatApDung
             // 
             lblLaiSuatApDung.AllowDrop = true;
             lblLaiSuatApDung.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblLaiSuatApDung.AutoSize = true;
             lblLaiSuatApDung.BackColor = Color.Transparent;
             lblLaiSuatApDung.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblLaiSuatApDung.ForeColor = Color.FromArgb(127, 111, 180);
-            lblLaiSuatApDung.Location = new Point(452, 268);
+            lblLaiSuatApDung.Location = new Point(301, 268);
             lblLaiSuatApDung.Name = "lblLaiSuatApDung";
             lblLaiSuatApDung.RightToLeft = RightToLeft.Yes;
-            lblLaiSuatApDung.Size = new Size(35, 24);
+            lblLaiSuatApDung.Size = new Size(186, 24);
             lblLaiSuatApDung.TabIndex = 31;
             lblLaiSuatApDung.Text = "2%";
-            lblLaiSuatApDung.TextAlign = ContentAlignment.MiddleRight;
+            lblLaiSuatApDung.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblSTKThanhToan
             // 
@@ -313,26 +306,26 @@
             lblSTKThanhToan.BackColor = Color.Transparent;
             lblSTKThanhToan.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblSTKThanhToan.ForeColor = Color.FromArgb(127, 111, 180);
-            lblSTKThanhToan.Location = new Point(301, 121);
+            lblSTKThanhToan.Location = new Point(307, 121);
             lblSTKThanhToan.Name = "lblSTKThanhToan";
             lblSTKThanhToan.RightToLeft = RightToLeft.Yes;
             lblSTKThanhToan.Size = new Size(180, 24);
             lblSTKThanhToan.TabIndex = 29;
             lblSTKThanhToan.Text = "1234566788";
-            lblSTKThanhToan.TextAlign = ContentAlignment.MiddleRight;
+            lblSTKThanhToan.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblSTKTienGoi
             // 
             lblSTKTienGoi.BackColor = Color.Transparent;
             lblSTKTienGoi.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblSTKTienGoi.ForeColor = Color.FromArgb(127, 111, 180);
-            lblSTKTienGoi.Location = new Point(333, 71);
+            lblSTKTienGoi.Location = new Point(337, 71);
             lblSTKTienGoi.Name = "lblSTKTienGoi";
             lblSTKTienGoi.RightToLeft = RightToLeft.Yes;
             lblSTKTienGoi.Size = new Size(150, 24);
             lblSTKTienGoi.TabIndex = 28;
             lblSTKTienGoi.Text = "1234556";
-            lblSTKTienGoi.TextAlign = ContentAlignment.TopRight;
+            lblSTKTienGoi.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblHinhThucGiaHan0
             // 
