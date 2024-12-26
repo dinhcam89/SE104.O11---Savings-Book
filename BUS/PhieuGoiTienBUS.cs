@@ -38,7 +38,7 @@ namespace BUS
         }
         public bool ThemPhieuGoiTien(PhieuGoiTien phieu)
         {
-            return PhieuGoiTienDAO.ThemPhieuGoiTien(phieu);
+            return phieuGoiTienDAO.ThemPhieuGoiTien(phieu);
         }
     }
 }

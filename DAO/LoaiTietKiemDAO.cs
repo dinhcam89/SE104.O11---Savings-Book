@@ -33,7 +33,7 @@ namespace DAO
                     LoaiTietKiem loaiTietKiem = new LoaiTietKiem();
                     loaiTietKiem.MaLoaiTietKiem = row["MaLoaiTietKiem"].ToString()!;
                     loaiTietKiem.KyHan = int.Parse(row["KyHan"].ToString()!);
-                    loaiTietKiem.LaiSuat = float.Parse(row["LaiSuat"].ToString()!);
+                    loaiTietKiem.LaiSuat = double.Parse(row["LaiSuat"].ToString()!);
                     loaiTietKiem.SoNgayToiThieuDuocRutTien = int.Parse(row["SoNgayToiThieuDuocRutTien"].ToString()!);
                     loaiTietKiem.QuyDinhSoTienRut = row["QuyDinhSoTienRut"].ToString()!;
                     listLoaiTietKiem.Add(loaiTietKiem);
@@ -41,7 +41,7 @@ namespace DAO
             }
             return listLoaiTietKiem;
         }
-        public LoaiTietKiem? getLoaiTietKiem(LoaiTietKiem ltk)
+        public LoaiTietKiem? getLoaiTietKiem(string maLoaiTK)
         {
             string query = "" +
                 "SELECT " +
@@ -52,7 +52,7 @@ namespace DAO
                 "   MaLoaiTietKiem = @MaLoaiTietKiem";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@MaLoaiTietKiem", ltk.MaLoaiTietKiem),
+                new SqlParameter("@MaLoaiTietKiem", maLoaiTK),
             };
             DataTable? dataTable = dbConnection.executeSelectQuery(query, sqlParameters);
             if (dataTable != null)
@@ -60,7 +60,7 @@ namespace DAO
                 LoaiTietKiem loaiTietKiem = new LoaiTietKiem();
                 loaiTietKiem.MaLoaiTietKiem = dataTable.Rows[0]["MaLoaiTietKiem"].ToString()!;
                 loaiTietKiem.KyHan = int.Parse(dataTable.Rows[0]["KyHan"].ToString()!);
-                loaiTietKiem.LaiSuat = float.Parse(dataTable.Rows[0]["LaiSuat"].ToString()!);
+                loaiTietKiem.LaiSuat = double.Parse(dataTable.Rows[0]["LaiSuat"].ToString()!);
                 loaiTietKiem.SoNgayToiThieuDuocRutTien = int.Parse(dataTable.Rows[0]["SoNgayToiThieuDuocRutTien"].ToString()!);
                 loaiTietKiem.QuyDinhSoTienRut = dataTable.Rows[0]["QuyDinhSoTienRut"].ToString()!;
                 return loaiTietKiem;
@@ -71,7 +71,7 @@ namespace DAO
         {
             LoaiTietKiem ltk = new LoaiTietKiem();
             ltk.MaLoaiTietKiem = maLoaiTietKiem;
-            return getLoaiTietKiem(ltk);
+            return getLoaiTietKiem(maLoaiTietKiem);
         }
         public bool updateLoaiTietKiem(LoaiTietKiem ltk)
         {

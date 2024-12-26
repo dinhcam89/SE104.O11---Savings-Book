@@ -21,10 +21,11 @@ namespace GUI.DashboardApp
         private List<PhieuGoiTien> listPhieuGoiTien;
 
         // Lấy dữ liệu từ lớp BUS (nơi xử lý nghiệp vụ)
+        // Lấy dữ liệu từ lớp BUS (nơi xử lý nghiệp vụ)
         public ucQuanLyPhieu()
         {
             InitializeComponent();
-            listPhieuGoiTien = PhieuGoiTienBUS.GetAllPhieuGoiTien();
+            listPhieuGoiTien = PhieuGoiTienBUS.GetPhieuGoiTien();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -35,15 +36,12 @@ namespace GUI.DashboardApp
 
         private void ucManageSavingBooks_Load(object sender, EventArgs e)
         {
-            PopulateItems();
+            PopulateItems(listPhieuGoiTien);
         }
-        private void PopulateItems()
+        private void PopulateItems(List<PhieuGoiTien> listPhieuGoiTien)
         {
             // Danh sách các đối tượng DTO để lưu dữ liệu từ database
-            List<PhieuGoiTien> listPhieuGoiTien;
-
-            // Lấy dữ liệu từ lớp BUS (nơi xử lý nghiệp vụ)
-            listPhieuGoiTien = PhieuGoiTienBUS.GetPhieuGoiTien();
+            
 
             // Kiểm tra dữ liệu
             if (listPhieuGoiTien == null || listPhieuGoiTien.Count == 0)
@@ -94,7 +92,7 @@ namespace GUI.DashboardApp
             foreach (PhieuGoiTien pgt in phieuGoiTiens)
             {
                 // Lấy kỳ hạn, lãi suất của loại tiết kiệm dựa vào mã loại tiết kiệm
-                LoaiTietKiem? ltk = new LoaiTietKiemBUS().getLoaiTietKiemById(pgt.MaLoaiTietKiem);
+                LoaiTietKiem? ltk = new LoaiTietKiemBUS().getLoaiTietKiem(pgt.MaLoaiTietKiem);
 
                 if (ltk == null)
                 {

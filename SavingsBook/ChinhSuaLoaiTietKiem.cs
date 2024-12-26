@@ -151,7 +151,7 @@ namespace GUI
                 {
                     MaLoaiTietKiem = _loaiTietKiem.MaLoaiTietKiem,
                     KyHan = _loaiTietKiem.KyHan,
-                    LaiSuat = float.Parse(txtLaiSuat.Text),
+                    LaiSuat = double.Parse(txtLaiSuat.Text),
                     SoNgayToiThieuDuocRutTien = int.Parse(txtThoiGianGuiToiThieu.Text) * 30,
                     QuyDinhSoTienRut = formatedQuyDinhTienRut
                 });

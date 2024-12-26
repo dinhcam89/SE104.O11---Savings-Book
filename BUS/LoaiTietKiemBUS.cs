@@ -20,9 +20,9 @@ namespace BUS
         {
             return _loaiTietKiemDAO.getAllLoaiTietKiem();
         }
-        public LoaiTietKiem? getLoaiTietKiem(LoaiTietKiem ltk)
+        public LoaiTietKiem? getLoaiTietKiem(string maLoaiTK)
         {
-            return _loaiTietKiemDAO.getLoaiTietKiem(ltk);
+            return _loaiTietKiemDAO.getLoaiTietKiem(maLoaiTK);
         }
         public LoaiTietKiem? getLoaiTietKiemById(string maLoaiTietKiem)
         {
