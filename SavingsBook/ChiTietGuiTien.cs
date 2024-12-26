@@ -28,8 +28,17 @@ namespace GUI
             populateItems(maPhieu);
             lbMaPhieu.Text = maPhieu;
             lblTenKhachHang.Text = tenKhachHang;
+            try
+            {
+                var hienthiBUS = new HienThiChiTietGuiTienBUS();
+                float tongTienGoc = hienthiBUS.GetTongTien(maPhieu);
+                lblSoTienGoc.Text = $"{tongTienGoc:C}";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải tổng tiền gốc: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
         private void populateItems(string maPhieu)
         {
             flowLayoutPanel1.Controls.Clear();

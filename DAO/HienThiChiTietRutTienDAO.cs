@@ -171,5 +171,40 @@ namespace DAO
 
             return list;
         }
+        public List<DTO.PhieuGoiTien> GetTongTienGoc(string maPhieu)
+        {
+            List<DTO.PhieuGoiTien> listChiTiet = new List<DTO.PhieuGoiTien>();
+            string query = "SELECT SoTaiKhoanTienGoi, TongTienGoc FROM PhieuGoiTien WHERE SoTaiKhoanTienGoi = @MaPhieu";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@MaPhieu", maPhieu);
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        var chiTiet = new DTO.PhieuGoiTien
+                        {
+                            SoTaiKhoanTienGoi = reader["SoTaiKhoanTienGoi"].ToString(),
+                            TongTienGoc = Convert.ToSingle(reader["TongTienGoc"]),
+                        };
+
+                        listChiTiet.Add(chiTiet);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Lỗi khi truy vấn dữ liệu: " + ex.Message);
+                }
+            }
+
+            return listChiTiet;
+        }
+
     }
 }

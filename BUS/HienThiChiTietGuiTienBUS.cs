@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,19 @@ namespace BUS
         public List<DTO.ChiTietGuiTien> GetNgay(DateTime startDate, DateTime endDate)
         {
             return hienthichitietgui.GetNgay(startDate, endDate);
+        }
+        /*public List<DTO.PhieuGoiTien> GetTongTien(string maPhieu)
+        {
+            return hienthichitietgui.GetTongTienGoc(maPhieu);
+        }*/
+        public float GetTongTien(string maPhieu)
+        {
+            var phieuGoiTienList = hienthichitietgui.GetTongTienGoc(maPhieu);
+            if (phieuGoiTienList != null && phieuGoiTienList.Count > 0)
+            {
+                return phieuGoiTienList.First().TongTienGoc;
+            }
+            return 0; // Nếu không tìm thấy dữ liệu
         }
     }
 }
