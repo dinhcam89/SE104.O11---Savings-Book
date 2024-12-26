@@ -40,5 +40,9 @@ namespace BUS
         {
             return phieuGoiTienDAO.ThemPhieuGoiTien(phieu);
         }
+        public PhieuGoiTien? GetPhieuGoiTienBySoTaiKhoanTienGoi(string soTaiKhoanTienGoi)
+        {
+            return phieuGoiTienDAO.GetPhieuGoiTienBySoTaiKhoanTienGoi(soTaiKhoanTienGoi);
+        }
     }
 }

@@ -54,7 +54,7 @@ namespace GUI
 
         private void OpenManagementForm(object sender, EventArgs e)
         {
-            ThongTinPhieu slotInfor = new ThongTinPhieu();
+            ThongTinPhieu slotInfor = new ThongTinPhieu(maPhieu);
             slotInfor.Show();
         }
 

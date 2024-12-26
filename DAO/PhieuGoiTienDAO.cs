@@ -36,15 +36,70 @@ namespace DAO
                 KhachHang kh ON pg.SoTaiKhoanThanhToan = kh.SoTaiKhoanThanhToan";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    conn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                {
+                        var phieuGoiTien = new PhieuGoiTien
+                    {
+                            SoTaiKhoanTienGoi = reader["SoTaiKhoanTienGoi"].ToString()!,
+                            SoTaiKhoanThanhToan = reader["SoTaiKhoanThanhToan"].ToString()!,
+                            TenKhachHang = reader["TenKhachHang"].ToString()!, // Gán tên khách hàng
+                            MaLoaiTietKiem = reader["MaLoaiTietKiem"].ToString()!,
+                            LaiSuatApDung = Convert.ToSingle(reader["LaiSuatApDung"]),
+                            LaiSuatPhatSinh = Convert.ToSingle(reader["LaiSuatPhatSinh"]),
+                            NgayGoi = Convert.ToDateTime(reader["NgayGoi"]),
+                            NgayDaoHanKeTiep = Convert.ToDateTime(reader["NgayDaoHanKeTiep"]),
+                            TongTienGoc = Convert.ToSingle(reader["TongTienGoc"]),
+                            TongTienLaiPhatSinh = Convert.ToSingle(reader["TongTienLaiPhatSinh"]),
+                            HinhThucGiaHan = Convert.ToInt32(reader["HinhThucGiaHan"])
+                        };
+
+                        result.Add(phieuGoiTien);
+                }
+            }
+
+            return result;
+        }
+        public PhieuGoiTien? GetPhieuGoiTienBySoTaiKhoanTienGoi(string soTaiKhoanTienGoi)
         {
+            PhieuGoiTien? result = null;
+
+            string query = @"
+            SELECT 
+                pg.SoTaiKhoanTienGoi,
+                pg.SoTaiKhoanThanhToan,
+                pg.MaLoaiTietKiem,
+                pg.LaiSuatApDung,
+                pg.LaiSuatPhatSinh,
+                pg.NgayGoi,
+                pg.NgayDaoHanKeTiep,
+                pg.TongTienGoc,
+                pg.TongTienLaiPhatSinh,
+                pg.HinhThucGiaHan,
+                kh.TenKhachHang
+            FROM    
+                PhieuGoiTien pg
+            JOIN 
+                KhachHang kh ON pg.SoTaiKhoanThanhToan = kh.SoTaiKhoanThanhToan
+            WHERE 
+                pg.SoTaiKhoanTienGoi = @SoTaiKhoanTienGoi";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
                 SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@SoTaiKhoanTienGoi", soTaiKhoanTienGoi);
                 conn.Open();
+
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                while (reader.Read())
-            {
-                    var phieuGoiTien = new PhieuGoiTien
+                if (reader.Read())
                 {
+                    result = new PhieuGoiTien
+                    {
                         SoTaiKhoanTienGoi = reader["SoTaiKhoanTienGoi"].ToString()!,
                         SoTaiKhoanThanhToan = reader["SoTaiKhoanThanhToan"].ToString()!,
                         TenKhachHang = reader["TenKhachHang"].ToString()!, // Gán tên khách hàng
@@ -57,13 +112,12 @@ namespace DAO
                         TongTienLaiPhatSinh = Convert.ToSingle(reader["TongTienLaiPhatSinh"]),
                         HinhThucGiaHan = Convert.ToInt32(reader["HinhThucGiaHan"])
                     };
-
-                    result.Add(phieuGoiTien);
+                }
             }
-        }
 
             return result;
         }
+
         public bool UpdatePhieuGoiTien(PhieuGoiTien pgt)
         {
             string query = "" +
@@ -111,8 +165,8 @@ namespace DAO
                 cmd.Parameters.AddWithValue("@MaLoaiTietKiem", phieu.MaLoaiTietKiem);
                 cmd.Parameters.AddWithValue("@LaiSuatApDung", phieu.LaiSuatApDung);
                 cmd.Parameters.AddWithValue("@LaiSuatPhatSinh", phieu.LaiSuatPhatSinh);
-                cmd.Parameters.AddWithValue("@NgayGoi", phieu.NgayGoi);
-                cmd.Parameters.AddWithValue("@NgayDaoHanKeTiep", phieu.NgayDaoHanKeTiep);
+                cmd.Parameters.AddWithValue("@NgayGoi", phieu.NgayGoi.ToString("yyyy-MM-dd"));
+                cmd.Parameters.AddWithValue("@NgayDaoHanKeTiep", phieu.NgayDaoHanKeTiep.ToString("yyyy-MM-dd"));
                 cmd.Parameters.AddWithValue("@TongTienGoc", phieu.TongTienGoc);
                 cmd.Parameters.AddWithValue("@TongTienLaiPhatSinh", phieu.TongTienLaiPhatSinh);
                 cmd.Parameters.AddWithValue("@HinhThucGiaHan", phieu.HinhThucGiaHan);

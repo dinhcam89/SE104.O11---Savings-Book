@@ -90,6 +90,11 @@ namespace GUI
                 MessageBox.Show($"Lỗi: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void txtSoDuBanDau_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

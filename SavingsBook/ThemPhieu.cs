@@ -27,6 +27,9 @@ namespace GUI
             cboxHinhThucGiaHan.DisplayMember = "Text";
             cboxHinhThucGiaHan.ValueMember = "Value";
             cboxHinhThucGiaHan.SelectedIndex = 0; // Mặc định chọn mục đầu tiên
+            DTPNgayGoi.Format = DateTimePickerFormat.Custom;
+            DTPNgayGoi.CustomFormat = "MM/dd/yyyy";
+            DTPNgayGoi.Value = DateTime.Now; //
         }
 
         public ThemPhieu(string soTaiKhoanThanhToan) : this()
@@ -74,6 +77,7 @@ namespace GUI
 
         private void btnTao_Click(object sender, EventArgs e)
         {
+            ThamSo thamSo = new ThamSoBUS().getThamSo();
             try
             {
                 if (cboxKyHan.SelectedItem is not LoaiTietKiem selectedLoaiTietKiem)
@@ -86,7 +90,7 @@ namespace GUI
                 int hinhThucGiaHan = selectedHinhThucGiaHan.Value;
 
                 DateTime ngayGoi = DTPNgayGoi.Value;
-                if (!double.TryParse(txtTongTienGoc.Text, out double tongTienGoc) || tongTienGoc <= 0)
+                if (!double.TryParse(txtTongTienGoc.Text, out double tongTienGoc) || tongTienGoc < thamSo.SoTienBanDauToiThieu)
                 {
                     MessageBox.Show("Vui lòng nhập số tiền gửi hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
