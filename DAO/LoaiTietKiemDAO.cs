@@ -25,6 +25,7 @@ namespace DAO
                 "   LoaiTietKiem";
             List<LoaiTietKiem> listLoaiTietKiem = new List<LoaiTietKiem>();
             DataTable? dataTable = dbConnection.executeSelectQuery(query, null);
+
             if (dataTable != null)
             {
                 foreach (DataRow row in dataTable.Rows)
@@ -40,7 +41,7 @@ namespace DAO
             }
             return listLoaiTietKiem;
         }
-        public LoaiTietKiem? getLoaiTietKiem(LoaiTietKiem ltk)
+        public LoaiTietKiem? getLoaiTietKiem(string maLoaiTK)
         {
             string query = "" +
                 "SELECT " +
@@ -51,7 +52,7 @@ namespace DAO
                 "   MaLoaiTietKiem = @MaLoaiTietKiem";
             SqlParameter[] sqlParameters =
             {
-                new SqlParameter("@MaLoaiTietKiem", ltk.MaLoaiTietKiem),
+                new SqlParameter("@MaLoaiTietKiem", maLoaiTK),
             };
             DataTable? dataTable = dbConnection.executeSelectQuery(query, sqlParameters);
             if (dataTable != null)
@@ -65,6 +66,12 @@ namespace DAO
                 return loaiTietKiem;
             }
             return null;
+        }
+        public LoaiTietKiem? getLoaiTietKiemById(string maLoaiTietKiem)
+        {
+            LoaiTietKiem ltk = new LoaiTietKiem();
+            ltk.MaLoaiTietKiem = maLoaiTietKiem;
+            return getLoaiTietKiem(maLoaiTietKiem);
         }
         public bool updateLoaiTietKiem(LoaiTietKiem ltk)
         {

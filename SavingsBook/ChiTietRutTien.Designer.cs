@@ -55,9 +55,8 @@
             panel1.Controls.Add(flowLayoutPanel1);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1169, 716);
+            panel1.Size = new Size(1023, 537);
             panel1.TabIndex = 0;
             // 
             // guna2Panel3
@@ -69,11 +68,11 @@
             guna2Panel3.Controls.Add(lblNgayRut0);
             guna2Panel3.CustomizableEdges = customizableEdges3;
             guna2Panel3.FillColor = Color.AliceBlue;
-            guna2Panel3.Location = new Point(29, 176);
-            guna2Panel3.Margin = new Padding(3, 4, 3, 4);
+            guna2Panel3.Location = new Point(25, 132);
             guna2Panel3.Name = "guna2Panel3";
             guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Panel3.Size = new Size(1110, 56);
+
             guna2Panel3.TabIndex = 19;
             // 
             // lblSoTienRut0
@@ -82,9 +81,9 @@
             lblSoTienRut0.BackColor = Color.Transparent;
             lblSoTienRut0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSoTienRut0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblSoTienRut0.Location = new Point(264, 13);
+            lblSoTienRut0.Location = new Point(231, 10);
             lblSoTienRut0.Name = "lblSoTienRut0";
-            lblSoTienRut0.Size = new Size(101, 25);
+            lblSoTienRut0.Size = new Size(80, 20);
             lblSoTienRut0.TabIndex = 5;
             lblSoTienRut0.Text = "Số tiền rút";
             // 
@@ -94,9 +93,9 @@
             lblNgayRut0.BackColor = Color.Transparent;
             lblNgayRut0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNgayRut0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblNgayRut0.Location = new Point(33, 13);
+            lblNgayRut0.Location = new Point(29, 10);
             lblNgayRut0.Name = "lblNgayRut0";
-            lblNgayRut0.Size = new Size(88, 25);
+            lblNgayRut0.Size = new Size(70, 20);
             lblNgayRut0.TabIndex = 4;
             lblNgayRut0.Text = "Ngày rút";
             // 
@@ -111,9 +110,8 @@
             panel2.Controls.Add(label1);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
-            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1169, 168);
+            panel2.Size = new Size(1023, 126);
             panel2.TabIndex = 1;
             // 
             // lblSoTienGoc
@@ -127,6 +125,7 @@
             lblSoTienGoc.Size = new Size(107, 25);
             lblSoTienGoc.TabIndex = 10;
             lblSoTienGoc.Text = "10.000.000";
+
             // 
             // lbMaPhieu
             // 
@@ -134,23 +133,23 @@
             lbMaPhieu.BackColor = Color.Transparent;
             lbMaPhieu.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbMaPhieu.ForeColor = Color.FromArgb(37, 10, 128);
-            lbMaPhieu.Location = new Point(1035, 76);
+            lbMaPhieu.Location = new Point(906, 57);
             lbMaPhieu.Name = "lbMaPhieu";
-            lbMaPhieu.Size = new Size(120, 25);
+            lbMaPhieu.Size = new Size(89, 20);
             lbMaPhieu.TabIndex = 9;
             lbMaPhieu.Text = "CRT0000001";
             // 
             // lblTenKhachHang
             // 
-            lblTenKhachHang.AutoSize = true;
             lblTenKhachHang.BackColor = Color.Transparent;
             lblTenKhachHang.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTenKhachHang.ForeColor = Color.FromArgb(37, 10, 128);
-            lblTenKhachHang.Location = new Point(902, 24);
+            lblTenKhachHang.Location = new Point(789, 18);
             lblTenKhachHang.Name = "lblTenKhachHang";
-            lblTenKhachHang.Size = new Size(253, 25);
+            lblTenKhachHang.Size = new Size(202, 20);
             lblTenKhachHang.TabIndex = 8;
             lblTenKhachHang.Text = "Nguyễn Lương Huỳnh Đăng";
+            lblTenKhachHang.TextAlign = ContentAlignment.TopRight;
             // 
             // label3
             // 
@@ -158,9 +157,9 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(37, 10, 128);
-            label3.Location = new Point(29, 128);
+            label3.Location = new Point(25, 96);
             label3.Name = "label3";
-            label3.Size = new Size(107, 25);
+            label3.Size = new Size(85, 20);
             label3.TabIndex = 7;
             label3.Text = "Số tiền gốc";
             // 
@@ -170,9 +169,9 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(37, 10, 128);
-            label2.Location = new Point(29, 76);
+            label2.Location = new Point(25, 57);
             label2.Name = "label2";
-            label2.Size = new Size(93, 25);
+            label2.Size = new Size(74, 20);
             label2.TabIndex = 6;
             label2.Text = "Mã phiếu";
             // 
@@ -182,9 +181,9 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(37, 10, 128);
-            label1.Location = new Point(29, 24);
+            label1.Location = new Point(25, 18);
             label1.Name = "label1";
-            label1.Size = new Size(145, 25);
+            label1.Size = new Size(117, 20);
             label1.TabIndex = 5;
             label1.Text = "Tên khách hàng";
             // 
@@ -193,21 +192,20 @@
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.BackColor = Color.White;
             flowLayoutPanel1.Dock = DockStyle.Bottom;
-            flowLayoutPanel1.Location = new Point(0, 240);
-            flowLayoutPanel1.Margin = new Padding(11, 4, 11, 4);
+            flowLayoutPanel1.Location = new Point(0, 180);
+            flowLayoutPanel1.Margin = new Padding(10, 3, 10, 3);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Padding = new Padding(11, 0, 11, 0);
-            flowLayoutPanel1.Size = new Size(1169, 476);
+            flowLayoutPanel1.Padding = new Padding(10, 0, 10, 0);
+            flowLayoutPanel1.Size = new Size(1023, 357);
             flowLayoutPanel1.TabIndex = 0;
             // 
             // ChiTietRutTien
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            ClientSize = new Size(1169, 716);
+            ClientSize = new Size(1023, 537);
             Controls.Add(panel1);
-            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "ChiTietRutTien";

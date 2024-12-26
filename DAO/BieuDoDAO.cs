@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace DAO
 {
     public class BieuDoDAO
     {
-        private string connectionString = @"Server=MSI\SQLEXPRESS;Database=saving_books_management;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True";
+        private string connectionString = ConfigurationManager.ConnectionStrings["dbConnectionString"].ConnectionString;
 
         // Hàm lấy tổng số khách hàng
         public int GetTotalCustomers()

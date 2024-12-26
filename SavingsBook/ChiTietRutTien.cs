@@ -28,6 +28,7 @@ namespace GUI
              // Tự động điền số tài khoản thanh toán
 
         }
+
         private void ChiTietRutTien_Load(object sender, EventArgs e)
         {
             populateItems(maPhieuGoiTien, tenKhachHang);

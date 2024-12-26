@@ -61,7 +61,7 @@ namespace GUI.DashboardApp
             {
                 ListItem listItem = new ListItem
                 {
-                    Ten1 = item.SoTaiKhoanTienGui,
+                    Ten1 = item.SoTaiKhoanTienGoi,
                     Ten2 = item.NgayGui.ToString("dd/MM/yyyy"),
                     Ten3 = item.SoTienGui.ToString("C"), 
                     Ten4 = "", 

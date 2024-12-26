@@ -5,13 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 
 namespace DAO
 {
     public class HienThiChiTietRutTienDAO
     {
-        private string connectionString = "Data Source=CONALNGUYEN\\NGUYENCHAU;Initial Catalog=saving_books_management;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
-
+        private string connectionString = ConfigurationManager.ConnectionStrings["dbConnectionString"].ConnectionString;
         public List<DTO.ChiTietRutTien> GetAll()
         {
             List<DTO.ChiTietRutTien> list = new List<DTO.ChiTietRutTien>();
@@ -31,7 +31,7 @@ namespace DAO
                         var chiTiet = new DTO.ChiTietRutTien
                         {
                             MaChiTietRutTien = reader["MaChiTietRutTien"].ToString(),
-                            SoTaiKhoanTienGui = reader["SoTaiKhoanTienGoi"].ToString(),
+                            SoTaiKhoanTienGoi = reader["SoTaiKhoanTienGoi"].ToString(),
                             NgayRut = Convert.ToDateTime(reader["NgayRut"]),
                             SoTienRut = Convert.ToDouble(reader["SoTienRut"])
                         };

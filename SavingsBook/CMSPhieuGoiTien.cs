@@ -54,13 +54,13 @@ namespace GUI
 
         private void OpenManagementForm(object sender, EventArgs e)
         {
-            ThongTinPhieu slotInfor = new ThongTinPhieu();
+            ThongTinPhieu slotInfor = new ThongTinPhieu(maPhieu);
             slotInfor.Show();
         }
 
         private void OpenDepositForm(object sender, EventArgs e)
         {
-            GuiTien form = new GuiTien();
+            GuiTien form = new GuiTien(maPhieu);
             form.Show();
         }
 
@@ -72,7 +72,7 @@ namespace GUI
 
         private void OpenWithdrawalForm(object sender, EventArgs e)
         {
-            RutTienForm form = new RutTienForm();
+            RutTienForm form = new RutTienForm(maPhieu);
             form.Show();
         }
 

@@ -97,17 +97,16 @@
             // lblSDT
             // 
             lblSDT.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblSDT.AutoSize = true;
             lblSDT.BackColor = Color.Transparent;
             lblSDT.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblSDT.ForeColor = Color.FromArgb(127, 111, 180);
-            lblSDT.Location = new Point(370, 173);
+            lblSDT.Location = new Point(326, 173);
             lblSDT.Name = "lblSDT";
             lblSDT.RightToLeft = RightToLeft.Yes;
-            lblSDT.Size = new Size(110, 24);
+            lblSDT.Size = new Size(154, 24);
             lblSDT.TabIndex = 87;
             lblSDT.Text = "0987645324";
-            lblSDT.TextAlign = ContentAlignment.MiddleRight;
+            lblSDT.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblSDT0
             // 
@@ -200,17 +199,16 @@
             // lblSoDuHienCo
             // 
             lblSoDuHienCo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblSoDuHienCo.AutoSize = true;
             lblSoDuHienCo.BackColor = Color.Transparent;
             lblSoDuHienCo.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblSoDuHienCo.ForeColor = Color.FromArgb(127, 111, 180);
-            lblSoDuHienCo.Location = new Point(379, 415);
+            lblSoDuHienCo.Location = new Point(277, 415);
             lblSoDuHienCo.Name = "lblSoDuHienCo";
             lblSoDuHienCo.RightToLeft = RightToLeft.Yes;
-            lblSoDuHienCo.Size = new Size(90, 24);
+            lblSoDuHienCo.Size = new Size(192, 24);
             lblSoDuHienCo.TabIndex = 75;
             lblSoDuHienCo.Text = "1.000.000";
-            lblSoDuHienCo.TextAlign = ContentAlignment.MiddleRight;
+            lblSoDuHienCo.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblSoDuHienCo0
             // 
@@ -227,30 +225,28 @@
             // lblSTKThanhToan
             // 
             lblSTKThanhToan.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblSTKThanhToan.AutoSize = true;
             lblSTKThanhToan.BackColor = Color.Transparent;
             lblSTKThanhToan.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblSTKThanhToan.ForeColor = Color.FromArgb(127, 111, 180);
-            lblSTKThanhToan.Location = new Point(377, 365);
+            lblSTKThanhToan.Location = new Point(243, 365);
             lblSTKThanhToan.Name = "lblSTKThanhToan";
             lblSTKThanhToan.RightToLeft = RightToLeft.Yes;
-            lblSTKThanhToan.Size = new Size(100, 24);
+            lblSTKThanhToan.Size = new Size(233, 24);
             lblSTKThanhToan.TabIndex = 71;
             lblSTKThanhToan.Text = "123456667";
-            lblSTKThanhToan.TextAlign = ContentAlignment.MiddleRight;
+            lblSTKThanhToan.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblDiaChi
             // 
             lblDiaChi.AllowDrop = true;
             lblDiaChi.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblDiaChi.AutoSize = true;
             lblDiaChi.BackColor = Color.Transparent;
             lblDiaChi.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblDiaChi.ForeColor = Color.FromArgb(127, 111, 180);
-            lblDiaChi.Location = new Point(256, 315);
+            lblDiaChi.Location = new Point(163, 315);
             lblDiaChi.Name = "lblDiaChi";
             lblDiaChi.RightToLeft = RightToLeft.Yes;
-            lblDiaChi.Size = new Size(242, 24);
+            lblDiaChi.Size = new Size(313, 24);
             lblDiaChi.TabIndex = 70;
             lblDiaChi.Text = "Phước Long B, TP Thủ Đức";
             lblDiaChi.TextAlign = ContentAlignment.MiddleLeft;
@@ -258,45 +254,44 @@
             // lblCMND
             // 
             lblCMND.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblCMND.AutoSize = true;
             lblCMND.BackColor = Color.Transparent;
             lblCMND.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblCMND.ForeColor = Color.FromArgb(127, 111, 180);
-            lblCMND.Location = new Point(398, 218);
+            lblCMND.Location = new Point(326, 218);
             lblCMND.Name = "lblCMND";
             lblCMND.RightToLeft = RightToLeft.Yes;
-            lblCMND.Size = new Size(80, 24);
+            lblCMND.Size = new Size(152, 24);
             lblCMND.TabIndex = 69;
             lblCMND.Text = "1245678";
-            lblCMND.TextAlign = ContentAlignment.MiddleRight;
+            lblCMND.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblMaKhachHang
             // 
             lblMaKhachHang.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblMaKhachHang.AutoSize = true;
             lblMaKhachHang.BackColor = Color.Transparent;
             lblMaKhachHang.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblMaKhachHang.ForeColor = Color.FromArgb(127, 111, 180);
-            lblMaKhachHang.Location = new Point(370, 127);
+            lblMaKhachHang.Location = new Point(297, 127);
             lblMaKhachHang.Name = "lblMaKhachHang";
             lblMaKhachHang.RightToLeft = RightToLeft.Yes;
-            lblMaKhachHang.Size = new Size(110, 24);
+            lblMaKhachHang.Size = new Size(183, 24);
             lblMaKhachHang.TabIndex = 68;
             lblMaKhachHang.Text = "1234566788";
-            lblMaKhachHang.TextAlign = ContentAlignment.MiddleRight;
+            lblMaKhachHang.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblHoTen
             // 
+            lblHoTen.Anchor = AnchorStyles.Right;
             lblHoTen.BackColor = Color.Transparent;
             lblHoTen.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblHoTen.ForeColor = Color.FromArgb(127, 111, 180);
-            lblHoTen.Location = new Point(181, 77);
+            lblHoTen.Location = new Point(297, 77);
             lblHoTen.Name = "lblHoTen";
             lblHoTen.RightToLeft = RightToLeft.Yes;
-            lblHoTen.Size = new Size(299, 24);
+            lblHoTen.Size = new Size(181, 24);
             lblHoTen.TabIndex = 67;
-            lblHoTen.Text = "Nguyễn Hoàng Trần Đặng";
-            lblHoTen.TextAlign = ContentAlignment.MiddleRight;
+            lblHoTen.Text = "Ten KH";
+            lblHoTen.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblSTKThanhToan0
             // 
