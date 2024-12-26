@@ -83,5 +83,51 @@ namespace DAO
 
             return chiTiet;
         }
+
+        public List<DTO.ChiTietRutTien> GetTenKhachHang()
+        {
+            List<DTO.ChiTietRutTien> list = new List<DTO.ChiTietRutTien>();
+
+            string query = @"
+        SELECT 
+            CTG.MaChiTietRutTien, 
+            CTG.SoTaiKhoanTienGoi, 
+            KH.TenKhachHang, 
+            CTG.NgayRut, 
+            CTG.SoTienRut
+        FROM ChiTietRutTien CTG
+        JOIN PhieuGoiTien PG ON CTG.SoTaiKhoanTienGoi = PG.SoTaiKhoanTienGoi
+        JOIN KhachHang KH ON PG.SoTaiKhoanThanhToan = KH.SoTaiKhoanThanhToan";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(query, connection);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        var chiTiet = new DTO.ChiTietRutTien
+                        {
+                            MaChiTietRutTien = reader["MaChiTietRutTien"].ToString(),
+                            SoTaiKhoanTienGui = reader["SoTaiKhoanTienGoi"].ToString(),
+                            TenKhachHang = reader["TenKhachHang"].ToString(),
+                            NgayRut = Convert.ToDateTime(reader["NgayRut"]),
+                            SoTienRut = (float)Convert.ToDouble(reader["SoTienRut"])
+                        };
+
+                        list.Add(chiTiet);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Lỗi khi truy vấn dữ liệu: " + ex.Message);
+                }
+            }
+
+            return list;
+        }
     }
 }

@@ -13,6 +13,7 @@ namespace DTO
         public string SoTaiKhoanTienGui { get; set; }
         public DateTime NgayRut { get; set; }
         public double SoTienRut { get; set; }
+        public string? TenKhachHang {  get; set; }
         #endregion
 
         #region Constructors

@@ -20,6 +20,9 @@ namespace BUS
         {
             return hienthichitietgui.GetByMaPhieu(maPhieu);
         }
-
+        public List<DTO.ChiTietGuiTien> GetTenKhachHang()
+        {
+            return hienthichitietgui.GetTenKhachHang();
+        }
     }
 }

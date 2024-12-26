@@ -13,16 +13,16 @@ namespace GUI
 {
     public partial class ChiTietRutTien : Form
     {
-        private string maPhieu;
+        private string maPhieuGoiTien;
         private string tenKhachHang;
-        public ChiTietRutTien(string maPhieu, string tenKhachHang)
+        public ChiTietRutTien(string maPhieuGoiTien, string tenKhachHang)
 
         {
             InitializeComponent();
-            this.maPhieu = maPhieu;
+            this.maPhieuGoiTien = maPhieuGoiTien;
             this.tenKhachHang = tenKhachHang;
         }
-        public ChiTietRutTien(string maPhieuGoiTien) : this()
+        public ChiTietRutTien(string maPhieuGoiTien) 
         {
             this.maPhieuGoiTien = maPhieuGoiTien;
              // Tự động điền số tài khoản thanh toán
@@ -30,8 +30,8 @@ namespace GUI
         }
         private void ChiTietRutTien_Load(object sender, EventArgs e)
         {
-            populateItems(maPhieu, tenKhachHang);
-            lbMaPhieu.Text = maPhieu;
+            populateItems(maPhieuGoiTien, tenKhachHang);
+            lbMaPhieu.Text = maPhieuGoiTien;
             lblTenKhachHang.Text = tenKhachHang;
 
         }

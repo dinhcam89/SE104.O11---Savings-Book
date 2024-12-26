@@ -8,6 +8,8 @@
 
   <ItemGroup>
 
+    <PackageReference Include="ClosedXML" Version="0.104.2" />
+
     <PackageReference Include="EPPlus" Version="7.5.2" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.0" />
