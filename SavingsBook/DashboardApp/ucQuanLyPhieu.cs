@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using Azure;
+using System.Reflection.Metadata.Ecma335;
 namespace GUI.DashboardApp
 {
     public partial class ucQuanLyPhieu : UserControl
@@ -54,7 +55,7 @@ namespace GUI.DashboardApp
             flowLayoutPanel1.Controls.Clear();
 
             // Cập nhật dữ liệu mới nhất
-            updateDate(listPhieuGoiTien);
+            listPhieuGoiTien = updatePhieuGoiTien(listPhieuGoiTien);
 
             // Hiển thị từng phiếu gửi tiền lên form
             foreach (var phieuGoiTien in listPhieuGoiTien)
@@ -87,8 +88,9 @@ namespace GUI.DashboardApp
                 }
             };
         }
-        void updateDate(List<PhieuGoiTien> phieuGoiTiens)
+        List<PhieuGoiTien> updatePhieuGoiTien(List<PhieuGoiTien> phieuGoiTiens)
         {
+            List<PhieuGoiTien> updatedPhieuGoiTien = new List<PhieuGoiTien>();
             foreach (PhieuGoiTien pgt in phieuGoiTiens)
             {
                 // Lấy kỳ hạn, lãi suất của loại tiết kiệm dựa vào mã loại tiết kiệm
@@ -102,13 +104,14 @@ namespace GUI.DashboardApp
                 // Lấy lãi suất của loại tiết kiệm không kỳ hạn
                 double laiSuatKhongKyHan = layLaiSuatKhongKyHan() ?? 0.05;
 
+                PhieuGoiTien updatedPgt = pgt;
                 while (DateTime.Now > pgt.NgayDaoHanKeTiep)
                 {
-                    pgt.TongTienGoc = tinhTongTienGoc(pgt.TongTienGoc, pgt.HinhThucGiaHan, pgt.TongTienLaiPhatSinh, pgt.NgayDaoHanKeTiep);
-                    pgt.TongTienLaiPhatSinh = tinhTongLaiPhatSinh(pgt.TongTienLaiPhatSinh, pgt.TongTienGoc, ltk.KyHan, pgt.LaiSuatApDung);
-                    pgt.LaiSuatApDung = tinhLaiSuatApDung(pgt.LaiSuatApDung, pgt.LaiSuatPhatSinh, laiSuatKhongKyHan, pgt.NgayDaoHanKeTiep, pgt.HinhThucGiaHan);
-                    pgt.LaiSuatPhatSinh = tinhLaiSuatPhatSinh(pgt.LaiSuatPhatSinh, pgt.HinhThucGiaHan, pgt.NgayDaoHanKeTiep, laiSuatKhongKyHan);
-                    pgt.NgayDaoHanKeTiep = tinhNgayDaoHanKeTiep(pgt.NgayDaoHanKeTiep, ltk.KyHan, pgt.HinhThucGiaHan);
+                    updatedPgt.TongTienGoc = tinhTongTienGoc(pgt.TongTienGoc, pgt.HinhThucGiaHan, pgt.TongTienLaiPhatSinh, pgt.NgayDaoHanKeTiep);
+                    updatedPgt.TongTienLaiPhatSinh = tinhTongLaiPhatSinh(pgt.TongTienLaiPhatSinh, pgt.TongTienGoc, ltk.KyHan, pgt.LaiSuatApDung);
+                    updatedPgt.LaiSuatApDung = tinhLaiSuatApDung(pgt.LaiSuatApDung, pgt.LaiSuatPhatSinh, laiSuatKhongKyHan, pgt.NgayDaoHanKeTiep, pgt.HinhThucGiaHan);
+                    updatedPgt.LaiSuatPhatSinh = tinhLaiSuatPhatSinh(pgt.LaiSuatPhatSinh, pgt.HinhThucGiaHan, pgt.NgayDaoHanKeTiep, laiSuatKhongKyHan);
+                    updatedPgt.NgayDaoHanKeTiep = tinhNgayDaoHanKeTiep(pgt.NgayDaoHanKeTiep, ltk.KyHan, pgt.HinhThucGiaHan);
                     if (pgt.HinhThucGiaHan == 1)
                     {
                         break;
@@ -118,8 +121,14 @@ namespace GUI.DashboardApp
                 if (!response)
                 {
                     MessageBox.Show("Cập nhật phiếu gởi tiền thất bại. Tài khoản tiền gởi: " + pgt.SoTaiKhoanTienGoi, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                } 
+                else
+                {
+                    updatedPhieuGoiTien.Add(updatedPgt);
                 }
             }
+            return updatedPhieuGoiTien;
+
         }
         /// <summary>
         /// Tính lãi phát sinh theo kỳ hạn

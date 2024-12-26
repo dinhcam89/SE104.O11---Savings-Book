@@ -42,9 +42,9 @@ namespace DAO
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
-                {
-                        var phieuGoiTien = new PhieuGoiTien
                     {
+                        var phieuGoiTien = new PhieuGoiTien
+                        {
                             SoTaiKhoanTienGoi = reader["SoTaiKhoanTienGoi"].ToString()!,
                             SoTaiKhoanThanhToan = reader["SoTaiKhoanThanhToan"].ToString()!,
                             TenKhachHang = reader["TenKhachHang"].ToString()!, // Gán tên khách hàng
