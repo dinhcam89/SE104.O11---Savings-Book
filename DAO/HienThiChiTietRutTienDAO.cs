@@ -48,11 +48,10 @@ namespace DAO
             return list;
         }
 
-        // Phương thức kiểm tra thông tin gửi tiền theo mã phiếu
-        public ChiTietRutTien GetByMaPhieu(string maPhieu)
+        public List<ChiTietRutTien> GetByMaPhieu(string maPhieu)
         {
-            ChiTietRutTien chiTiet = null;
-            string query = "SELECT MaChiTietRutTien, SoTaiKhoanTienGoi, NgayRut, SoTienRut FROM ChiTietRutTien WHERE MaChiTietRutTien = @MaPhieu";
+            List<ChiTietRutTien> listChiTiet = new List<ChiTietRutTien>();
+            string query = "SELECT MaChiTietRutTien, SoTaiKhoanTienGoi, NgayRut, SoTienRut FROM ChiTietRutTien WHERE SoTaiKhoanTienGoi = @MaPhieu";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -60,19 +59,21 @@ namespace DAO
                 {
                     connection.Open();
                     SqlCommand command = new SqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@MaPhieu", maPhieu);  // Thêm tham số mã phiếu
+                    command.Parameters.AddWithValue("@MaPhieu", maPhieu);
 
                     SqlDataReader reader = command.ExecuteReader();
 
-                    if (reader.Read())
+                    while (reader.Read())
                     {
-                        chiTiet = new ChiTietRutTien
+                        var chiTiet = new ChiTietRutTien
                         {
-                            //MaChiTietRutTien = reader["MaChiTietRutTien"].ToString(),
-                            //SoTaiKhoanTienGui = reader["SoTaiKhoanTienGoi"].ToString(),
+                            MaChiTietRutTien = reader["MaChiTietRutTien"].ToString(),
+                            SoTaiKhoanTienGui = reader["SoTaiKhoanTienGoi"].ToString(),
                             NgayRut = Convert.ToDateTime(reader["NgayRut"]),
                             SoTienRut = Convert.ToDouble(reader["SoTienRut"])
                         };
+
+                        listChiTiet.Add(chiTiet);
                     }
                 }
                 catch (Exception ex)
@@ -81,7 +82,7 @@ namespace DAO
                 }
             }
 
-            return chiTiet;
+            return listChiTiet;
         }
 
         public List<DTO.ChiTietRutTien> GetTenKhachHang()

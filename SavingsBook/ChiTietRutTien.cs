@@ -40,7 +40,7 @@ namespace GUI
         {
             flowLayoutPanel1.Controls.Clear();
 
-            List<DTO.ChiTietRutTien> listChiTiet;
+            //List<DTO.ChiTietRutTien> chiTiet;
 
             try
             {
@@ -48,12 +48,12 @@ namespace GUI
                 var hienthiBUS = new HienThiChiTietRutTienBUS();
 
                 // Kiểm tra và lấy thông tin theo mã phiếu
-                var chiTiet = hienthiBUS.GetChiTietGuiTienByMaPhieu(maPhieu);
-                listChiTiet = chiTiet != null ? new List<DTO.ChiTietRutTien> { chiTiet } : new List<DTO.ChiTietRutTien>();
+                var chiTiet = hienthiBUS.GetChiTietRutTienByMaPhieu(maPhieu);
+                //listChiTiet = chiTiet != null ? new List<DTO.ChiTietRutTien> { chiTiet } : new List<DTO.ChiTietRutTien>();
 
-                if (listChiTiet.Count > 0)
+                if (chiTiet.Count > 0)
                 {
-                    foreach (var item in listChiTiet)
+                    foreach (var item in chiTiet)
                     {
                         var listItem = new ListItem
                         {

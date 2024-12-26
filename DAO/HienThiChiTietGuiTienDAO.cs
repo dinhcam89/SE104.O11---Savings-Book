@@ -49,9 +49,9 @@ namespace DAO
         }
 
         // Phương thức kiểm tra thông tin gửi tiền theo mã phiếu
-        public ChiTietGuiTien GetByMaPhieu(string maPhieu)
+        public List<ChiTietGuiTien> GetByMaPhieu(string maPhieu)
         {
-            ChiTietGuiTien chiTiet = null;
+            List<ChiTietGuiTien> listChiTiet = new List<ChiTietGuiTien>();
             string query = "SELECT MaChiTietGoiTien, SoTaiKhoanTienGoi, NgayGoi, SoTienGoi FROM ChiTietGoiTien WHERE SoTaiKhoanTienGoi = @MaPhieu";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -60,19 +60,21 @@ namespace DAO
                 {
                     connection.Open();
                     SqlCommand command = new SqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@MaPhieu", maPhieu);  // Thêm tham số mã phiếu
+                    command.Parameters.AddWithValue("@MaPhieu", maPhieu);
 
                     SqlDataReader reader = command.ExecuteReader();
 
-                    if (reader.Read())
+                    while (reader.Read())
                     {
-                        chiTiet = new ChiTietGuiTien
+                        var chiTiet = new ChiTietGuiTien
                         {
-                            //MaChiTietGuiTien = reader["MaChiTietGoiTien"].ToString(),
+                            MaChiTietGuiTien = reader["MaChiTietGoiTien"].ToString(),
                             SoTaiKhoanTienGui = reader["SoTaiKhoanTienGoi"].ToString(),
                             NgayGui = Convert.ToDateTime(reader["NgayGoi"]),
                             SoTienGui = Convert.ToDouble(reader["SoTienGoi"])
                         };
+
+                        listChiTiet.Add(chiTiet);
                     }
                 }
                 catch (Exception ex)
@@ -81,9 +83,9 @@ namespace DAO
                 }
             }
 
-            return chiTiet;
-
+            return listChiTiet;
         }
+
 
         public List<DTO.ChiTietGuiTien> GetTenKhachHang()
         {

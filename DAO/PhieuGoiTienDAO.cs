@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System.Drawing.Text;
 namespace DAO
 {
     public class PhieuGoiTienDAO
     {
-        private string connectionString = @"Server=MSI\SQLEXPRESS;Database=saving_books_management;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True";
+        private string connectionString = "Data Source=CONALNGUYEN\\NGUYENCHAU;Initial Catalog=saving_books_management;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
         public List<PhieuGoiTien> GetAllPhieuGoiTienWithKhachHang()
         {
             List<PhieuGoiTien> result = new List<PhieuGoiTien>();

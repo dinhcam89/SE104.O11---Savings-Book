@@ -79,7 +79,7 @@ namespace GUI
         private void OpenDetailWithdrawalForm(object sender, EventArgs e)
         {
             ChiTietRutTien form = new ChiTietRutTien(maPhieu, tenKhachHang);
-
+            form.Show();
         }
 
         private void DeleteItem(object sender, EventArgs e)
