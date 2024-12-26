@@ -140,11 +140,12 @@
             // 
             // lblDenNgay
             // 
+            lblDenNgay.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblDenNgay.AutoSize = true;
             lblDenNgay.BackColor = Color.Transparent;
             lblDenNgay.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDenNgay.ForeColor = Color.FromArgb(37, 10, 128);
-            lblDenNgay.Location = new Point(609, 162);
+            lblDenNgay.Location = new Point(642, 162);
             lblDenNgay.Name = "lblDenNgay";
             lblDenNgay.Size = new Size(94, 25);
             lblDenNgay.TabIndex = 25;
@@ -152,11 +153,12 @@
             // 
             // lblTuNgay
             // 
+            lblTuNgay.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblTuNgay.AutoSize = true;
             lblTuNgay.BackColor = Color.Transparent;
             lblTuNgay.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTuNgay.ForeColor = Color.FromArgb(37, 10, 128);
-            lblTuNgay.Location = new Point(609, 110);
+            lblTuNgay.Location = new Point(642, 109);
             lblTuNgay.Name = "lblTuNgay";
             lblTuNgay.Size = new Size(81, 25);
             lblTuNgay.TabIndex = 6;
@@ -164,19 +166,20 @@
             // 
             // dtpTuNgay
             // 
+            dtpTuNgay.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             dtpTuNgay.Checked = true;
             dtpTuNgay.CustomizableEdges = customizableEdges4;
             dtpTuNgay.FillColor = Color.FromArgb(61, 78, 178);
             dtpTuNgay.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dtpTuNgay.ForeColor = Color.White;
             dtpTuNgay.Format = DateTimePickerFormat.Long;
-            dtpTuNgay.Location = new Point(742, 96);
+            dtpTuNgay.Location = new Point(742, 106);
             dtpTuNgay.Margin = new Padding(3, 4, 3, 4);
             dtpTuNgay.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpTuNgay.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpTuNgay.Name = "dtpTuNgay";
             dtpTuNgay.ShadowDecoration.CustomizableEdges = customizableEdges5;
-            dtpTuNgay.Size = new Size(282, 48);
+            dtpTuNgay.Size = new Size(282, 38);
             dtpTuNgay.TabIndex = 24;
             dtpTuNgay.Value = new DateTime(2024, 12, 24, 18, 57, 23, 910);
             dtpTuNgay.ValueChanged += dtpTuNgay_ValueChanged;
@@ -222,7 +225,7 @@
             dtpDenNgay.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpDenNgay.Name = "dtpDenNgay";
             dtpDenNgay.ShadowDecoration.CustomizableEdges = customizableEdges9;
-            dtpDenNgay.Size = new Size(282, 48);
+            dtpDenNgay.Size = new Size(282, 35);
             dtpDenNgay.TabIndex = 20;
             dtpDenNgay.Value = new DateTime(2024, 12, 25, 18, 57, 0, 0);
             dtpDenNgay.ValueChanged += dtpDenNgay_ValueChanged;
