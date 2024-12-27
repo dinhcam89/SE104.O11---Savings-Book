@@ -42,5 +42,9 @@ namespace BUS
             }
             return 0; // Nếu không tìm thấy dữ liệu
         }
+        public List<DTO.ChiTietGuiTien> SearchChiTietGuiTien(string searchText)
+        {
+            return hienthichitietgui.SearchChiTietGuiTien(searchText);
+        }
     }
 }

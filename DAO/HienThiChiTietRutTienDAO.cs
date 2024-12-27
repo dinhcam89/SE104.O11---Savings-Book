@@ -205,6 +205,30 @@ namespace DAO
 
             return listChiTiet;
         }
+        public List<ChiTietRutTien> SearchChiTietRutTien(string searchText)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT * FROM ChiTietRutTien WHERE SoTaiKhoanTienGoi LIKE @SearchText";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@SearchText", "%" + searchText + "%");
+
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<ChiTietRutTien> list = new List<ChiTietRutTien>();
+                while (reader.Read())
+                {
+                    list.Add(new ChiTietRutTien
+                    {
+                        MaChiTietRutTien = reader.GetString(reader.GetOrdinal("MaChiTietRutTien")),
+                        SoTaiKhoanTienGoi = reader.GetString(reader.GetOrdinal("SoTaiKhoanTienGoi")),
+                        NgayRut = reader.GetDateTime(reader.GetOrdinal("NgayRut")),
+                        SoTienRut = (float)reader.GetDouble(reader.GetOrdinal("SoTienRut"))
+                    });
+                }
+                return list;
+            }
+        }
 
     }
 }

@@ -210,6 +210,42 @@ namespace DAO
 
             return listChiTiet;
         }
+        public List<ChiTietGuiTien> SearchChiTietGuiTien(string searchText)
+        {
+            var danhSach = new List<ChiTietGuiTien>();
 
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = @"
+        SELECT 
+            CGT.MaChiTietGoiTien, 
+            CGT.SoTaiKhoanTienGoi, 
+            CGT.NgayGoi, 
+            CGT.SoTienGoi
+        FROM 
+            ChiTietGoiTien CGT
+        WHERE 
+            CGT.MaChiTietGoiTien LIKE @SearchText OR 
+            CGT.SoTaiKhoanTienGoi LIKE @SearchText";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@SearchText", "%" + searchText + "%");
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    danhSach.Add(new ChiTietGuiTien
+                    {
+                        MaChiTietGuiTien = reader.GetString(0),
+                        SoTaiKhoanTienGoi = reader.GetString(1),
+                        NgayGui = reader.GetDateTime(2),
+                        SoTienGui = (float)reader.GetDouble(3)
+                    });
+                }
+            }
+
+            return danhSach;
+
+        }
     }
 }

@@ -15,14 +15,17 @@ namespace GUI.DashboardApp
     public partial class ucQuanLyChiTietRutTien : UserControl
     {
         private HienThiChiTietRutTienBUS hienThiBUS = new HienThiChiTietRutTienBUS();
+        List<DTO.ChiTietRutTien> chiTietRutTiens;
+
         public ucQuanLyChiTietRutTien()
         {
             InitializeComponent();
+            chiTietRutTiens = hienThiBUS.GetAllChiTietRutTien();
         }
 
         private void ucQuanLyChiTietRutTien_Load(object sender, EventArgs e)
         {
-            populateItems();
+            populateItems(chiTietRutTiens);
         }
         private void dtpTuNgay_ValueChanged(object sender, EventArgs e)
         {
@@ -50,19 +53,17 @@ namespace GUI.DashboardApp
             }
         }
 
-        private void populateItems()
+        private void populateItems(List<DTO.ChiTietRutTien> ctrts)
         {
-            List<DTO.ChiTietRutTien> listItems = hienThiBUS.GetAllChiTietRutTien();
-
             flowLayoutPanel1.Controls.Clear();
 
-            foreach (var item in listItems)
+            foreach (var item in ctrts)
             {
                 ListItem listItem = new ListItem
                 {
                     Ten1 = item.SoTaiKhoanTienGoi,
                     Ten2 = item.NgayRut.ToString("dd/MM/yyyy"),
-                    Ten3 = formatSoTien(item.SoTienRut), 
+                    Ten3 = formatSoTien(item.SoTienRut),
                     Ten4 = "", // Nếu có dữ liệu khác cần hiển thị, bạn có thể gán ở đây
                     FormType = ObjectType.PhieuGoiTien,
                     IsButtonVisible = false // Ẩn nút nếu cần
@@ -189,7 +190,11 @@ namespace GUI.DashboardApp
                 MessageBox.Show("Đã xảy ra lỗi khi xuất báo cáo: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            populateItems(hienThiBUS.SearchChiTietRutTien(txtTimKiem.Text));
+        }
     }
-        
+
 }

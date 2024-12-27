@@ -15,14 +15,16 @@ namespace GUI.DashboardApp
     public partial class ucQuanLyChiTietGuiTien : UserControl
     {
         private HienThiChiTietGuiTienBUS hienThiBUS = new HienThiChiTietGuiTienBUS();
+        List<DTO.ChiTietGuiTien> chiTietGuiTiens;
         public ucQuanLyChiTietGuiTien()
         {
             InitializeComponent();
+            chiTietGuiTiens = hienThiBUS.GetAllChiTietGuiTien();
         }
 
         private void ucQuanLyChiTietGuiTien_Load(object sender, EventArgs e)
         {
-            populateItems();
+            populateItems(chiTietGuiTiens);
         }
         private void dtpTuNgay_ValueChanged(object sender, EventArgs e)
         {
@@ -50,23 +52,20 @@ namespace GUI.DashboardApp
             }
         }
 
-        private void populateItems()
+        private void populateItems(List<DTO.ChiTietGuiTien> chiTietGuiTienList)
         {
-            // Lấy dữ liệu từ BUS, đảm bảo kiểu trả về là List<DTO.ChiTietGuiTien>
-            List<DTO.ChiTietGuiTien> listItems = hienThiBUS.GetAllChiTietGuiTien();
-
             flowLayoutPanel1.Controls.Clear();
 
-            foreach (var item in listItems)
+            foreach (var item in chiTietGuiTienList)
             {
                 ListItem listItem = new ListItem
                 {
                     Ten1 = item.SoTaiKhoanTienGoi,
                     Ten2 = item.NgayGui.ToString("dd/MM/yyyy"),
-                    Ten3 = formatSoTien(item.SoTienGui), 
-                    Ten4 = "", 
+                    Ten3 = formatSoTien(item.SoTienGui),
+                    Ten4 = "",
                     FormType = ObjectType.PhieuGoiTien,
-                    IsButtonVisible = false 
+                    IsButtonVisible = false
                 };
 
                 flowLayoutPanel1.Controls.Add(listItem);
@@ -163,7 +162,7 @@ namespace GUI.DashboardApp
                             var customer = customerNames.FirstOrDefault(c => c.SoTaiKhoanTienGoi == item.SoTaiKhoanTienGoi);
 
                             worksheet.Cell(i + 2, 1).Value = item.SoTaiKhoanTienGoi;
-                            worksheet.Cell(i + 2, 2).Value = customer != null ? customer.TenKhachHang : "Không tìm thấy"; 
+                            worksheet.Cell(i + 2, 2).Value = customer != null ? customer.TenKhachHang : "Không tìm thấy";
                             worksheet.Cell(i + 2, 3).Value = item.NgayGui;
                             worksheet.Cell(i + 2, 4).Value = item.SoTienGui;
 
@@ -191,5 +190,9 @@ namespace GUI.DashboardApp
             }
         }
 
+        private void txtTimKiem_TextChanged_1(object sender, EventArgs e)
+        {
+            populateItems(hienThiBUS.SearchChiTietGuiTien(txtTimKiem.Text));
+        }
     }
 }
