@@ -62,7 +62,7 @@ namespace GUI.DashboardApp
                 {
                     Ten1 = item.SoTaiKhoanTienGoi,
                     Ten2 = item.NgayRut.ToString("dd/MM/yyyy"),
-                    Ten3 = item.SoTienRut.ToString("C"), 
+                    Ten3 = formatSoTien(item.SoTienRut), 
                     Ten4 = "", // Nếu có dữ liệu khác cần hiển thị, bạn có thể gán ở đây
                     FormType = ObjectType.PhieuGoiTien,
                     IsButtonVisible = false // Ẩn nút nếu cần
@@ -81,6 +81,19 @@ namespace GUI.DashboardApp
             };
 
         }
+        string formatSoTien(double sotien)
+        {
+            string formatedText;
+            if (sotien == 0)
+            {
+                formatedText = sotien + " VND";
+            }
+            else
+            {
+                formatedText = sotien.ToString("#,#.##") + " VND";
+            }
+            return formatedText;
+        }
         private void LocTheoNgay()
         {
             DateTime startDate = dtpTuNgay.Value.Date;
@@ -98,7 +111,7 @@ namespace GUI.DashboardApp
                 {
                     Ten1 = item.SoTaiKhoanTienGoi,
                     Ten2 = item.NgayRut.ToString("dd/MM/yyyy"),
-                    Ten3 = item.SoTienRut.ToString("C"),
+                    Ten3 = formatSoTien(item.SoTienRut),
                     Ten4 = "",
                     FormType = ObjectType.PhieuGoiTien,
                     IsButtonVisible = false
@@ -154,7 +167,7 @@ namespace GUI.DashboardApp
                             worksheet.Cell(i + 2, 4).Value = item.SoTienRut;
 
                             worksheet.Cell(i + 2, 3).Style.DateFormat.Format = "dd/MM/yyyy";
-                            worksheet.Cell(i + 2, 4).Style.NumberFormat.Format = "$#,##0.00";
+                            worksheet.Cell(i + 2, 4).Style.NumberFormat.Format = "#,##0.00";
                         }
 
                         var tableRange = worksheet.Range(1, 1, filteredItems.Count + 1, 4);
@@ -176,5 +189,7 @@ namespace GUI.DashboardApp
                 MessageBox.Show("Đã xảy ra lỗi khi xuất báo cáo: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        
     }
+        
 }

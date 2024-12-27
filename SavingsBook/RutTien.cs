@@ -83,6 +83,7 @@ namespace GUI
 
             string result = rutTienBUS.RutTien(soTaiKhoanTienGoi, ngayRut, soTienRut);
             MessageBox.Show(result);
+            Close();
         }
     }
 }

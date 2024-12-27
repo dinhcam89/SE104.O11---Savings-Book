@@ -31,16 +31,12 @@ namespace GUI
             ToolStripMenuItem menuItemChiTietRutTien = new ToolStripMenuItem("Chi tiết rút tiền");
             menuItemChiTietRutTien.Click += OpenDetailWithdrawalForm!;
 
-            ToolStripMenuItem menuItemXoa = new ToolStripMenuItem("Xóa");
-            menuItemXoa.Click += DeleteItem!;
-
             // Thêm các mục vào ContextMenuStrip
             this.Items.Add(menuItemQuanLy);
             this.Items.Add(menuItemGuiTien);
             this.Items.Add(menuItemChiTietGuiTien);
             this.Items.Add(menuItemRutTien);
             this.Items.Add(menuItemChiTietRutTien);
-            this.Items.Add(menuItemXoa);
         }
 
         private void OpenManagementForm(object sender, EventArgs e)
@@ -73,10 +69,5 @@ namespace GUI
             form.Show();
         }
 
-        private void DeleteItem(object sender, EventArgs e)
-        {
-            //thêm hàm xóa vào đây nhé Conal
-            MessageBox.Show("Item đã được xóa.");
-        }
     }
 }

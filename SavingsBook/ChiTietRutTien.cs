@@ -38,7 +38,7 @@ namespace GUI
             {
                 var hienthiBUS = new HienThiChiTietGuiTienBUS();
                 double tongTienGoc = hienthiBUS.GetTongTien(maPhieuGoiTien);
-                lblSoTienGoc.Text = $"{tongTienGoc:C}";
+                lblSoTienGocCopy.Text = formatSoTien(tongTienGoc);
             }
             catch (Exception ex)
             {
@@ -68,7 +68,7 @@ namespace GUI
                         var listItem = new ListItem
                         {
                             Ten1 = $"{item.NgayRut:dd/MM/yyyy}",
-                            Ten2 = $"{item.SoTienRut:C}",
+                            Ten2 = formatSoTien(item.SoTienRut),
                             Ten3 = "",
                             Ten4 = "",
                             FormType = ObjectType.PhieuGoiTien,
@@ -76,6 +76,7 @@ namespace GUI
 
                         };
 
+                        listItem.Width = flowLayoutPanel1.ClientSize.Width - 30;
                         flowLayoutPanel1.Controls.Add(listItem);
                     }
                 }
@@ -88,11 +89,27 @@ namespace GUI
             {
                 MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
+        }
+        string formatSoTien(double sotien)
+        {
+            string formatedText;
+            if (sotien == 0)
+            {
+                formatedText = sotien + " VND";
+            }
+            else
+            {
+                formatedText = sotien.ToString("#,#.##") + " VND";
+            }
+            return formatedText;
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTenKhachHang_Click(object sender, EventArgs e)
         {
 
         }

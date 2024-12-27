@@ -42,13 +42,6 @@ namespace GUI.DashboardApp
         private void PopulateItems(List<PhieuGoiTien> listPhieuGoiTien)
         {
             // Danh sách các đối tượng DTO để lưu dữ liệu từ database
-            
-            // Kiểm tra dữ liệu
-            if (listPhieuGoiTien == null || listPhieuGoiTien.Count == 0)
-            {
-                MessageBox.Show("Không có dữ liệu nào để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
 
             // Xóa các điều khiển cũ nếu cần
             flowLayoutPanel1.Controls.Clear();

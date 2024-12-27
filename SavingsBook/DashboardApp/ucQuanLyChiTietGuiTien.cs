@@ -63,7 +63,7 @@ namespace GUI.DashboardApp
                 {
                     Ten1 = item.SoTaiKhoanTienGoi,
                     Ten2 = item.NgayGui.ToString("dd/MM/yyyy"),
-                    Ten3 = item.SoTienGui.ToString("C"), 
+                    Ten3 = formatSoTien(item.SoTienGui), 
                     Ten4 = "", 
                     FormType = ObjectType.PhieuGoiTien,
                     IsButtonVisible = false 
@@ -80,6 +80,19 @@ namespace GUI.DashboardApp
                 }
             };
 
+        }
+        string formatSoTien(double sotien)
+        {
+            string formatedText;
+            if (sotien == 0)
+            {
+                formatedText = sotien + " VND";
+            }
+            else
+            {
+                formatedText = sotien.ToString("#,#.##") + " VND";
+            }
+            return formatedText;
         }
         private void LocTheoNgay()
         {
@@ -98,7 +111,7 @@ namespace GUI.DashboardApp
                 {
                     Ten1 = item.SoTaiKhoanTienGoi,
                     Ten2 = item.NgayGui.ToString("dd/MM/yyyy"),
-                    Ten3 = item.SoTienGui.ToString("C"),
+                    Ten3 = formatSoTien(item.SoTienGui),
                     Ten4 = "",
                     FormType = ObjectType.PhieuGoiTien,
                     IsButtonVisible = false
@@ -155,7 +168,7 @@ namespace GUI.DashboardApp
                             worksheet.Cell(i + 2, 4).Value = item.SoTienGui;
 
                             worksheet.Cell(i + 2, 3).Style.DateFormat.Format = "dd/MM/yyyy";
-                            worksheet.Cell(i + 2, 4).Style.NumberFormat.Format = "$#,##0.00";
+                            worksheet.Cell(i + 2, 4).Style.NumberFormat.Format = "#,##0.00";
                         }
 
                         var tableRange = worksheet.Range(1, 1, filteredItems.Count + 1, 4);

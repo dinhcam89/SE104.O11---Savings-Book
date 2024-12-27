@@ -24,5 +24,9 @@ namespace BUS
         {
             return khachHangDAO.ThemKhachHang(khachHang);
         }
+        public bool CapNhatKhachHang(KhachHang khachHang)
+        {
+            return khachHangDAO.CapNhatKhachHang(khachHang);
+        }
     }
 }

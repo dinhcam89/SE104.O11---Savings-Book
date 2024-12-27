@@ -32,12 +32,25 @@ namespace GUI
             {
                 var hienthiBUS = new HienThiChiTietGuiTienBUS();
                 double tongTienGoc = hienthiBUS.GetTongTien(maPhieu);
-                lblSoTienGoc.Text = tongTienGoc.ToString("#,#.##");
+                lblSoTienGocCopy.Text = formatSoTien(tongTienGoc);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi tải tổng tiền gốc: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        string formatSoTien(double sotien)
+        {
+            string formatedText;
+            if (sotien == 0)
+            {
+                formatedText = sotien + " VND";
+            }
+            else
+            {
+                formatedText = sotien.ToString("#,#.##") + " VND";
+            }
+            return formatedText;
         }
         private void populateItems(string maPhieu)
         {
@@ -58,14 +71,14 @@ namespace GUI
                         var listItem = new ListItem
                         {
                             Ten1 = $"{item.NgayGui:dd/MM/yyyy}",
-                            Ten2 = $"{item.SoTienGui:C}",
+                            Ten2 = formatSoTien(item.SoTienGui),
                             Ten3 = "",
                             Ten4 = "",
                             FormType = ObjectType.PhieuGoiTien,
                             IsButtonVisible = false
 
                         };
-
+                        listItem.Width = flowLayoutPanel1.ClientSize.Width - 30;
                         flowLayoutPanel1.Controls.Add(listItem);
                     }
                 }

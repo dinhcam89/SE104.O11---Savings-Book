@@ -112,12 +112,25 @@ namespace GUI.DashboardApp
 
                 // Lấy và hiển thị tổng số tiền gửi
                 decimal totalSavingsAmount = bieuDoBUS.GetTotalSavingsAmount();
-                lbl_TongTienGui.Text = totalSavingsAmount.ToString("C") + " VNĐ";
+                lbl_TongTienGui.Text = formatSoTien(((double)totalSavingsAmount));
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
+        }
+        string formatSoTien(double sotien)
+        {
+            string formatedText;
+            if (sotien == 0)
+            {
+                formatedText = sotien + " VND";
+            }
+            else
+            {
+                formatedText = sotien.ToString("#,#.##") + " VND";
+            }
+            return formatedText;
         }
 
         private void cbbox_TuyChonBieuDo_SelectedIndexChanged(object sender, EventArgs e)
@@ -186,11 +199,6 @@ namespace GUI.DashboardApp
             // Cập nhật biểu đồ
             chart_TongTienGuiTheoThang.Update();
         }
-
-
-
-
-
         private void chart_TienGuiNgayTheoKyHan_Load(object sender, EventArgs e)
         {
             DateTime thangDuocChon = DTP_BieuDoTongChi.Value; // Lấy giá trị tháng được chọn
@@ -278,9 +286,9 @@ namespace GUI.DashboardApp
             lb_SoPhieu3Thang.Text = bieuDoBUS.GetTotalSavingsAccountsByTerm("LTK0000001").ToString();
             lb_SoPhieu6Thang.Text = bieuDoBUS.GetTotalSavingsAccountsByTerm("LTK0000002").ToString();
 
-            lb_TongTienGui0KyHan.Text = bieuDoBUS.GetTotalSavingsAmountByTerm("LTK0000000").ToString("C") + " VNĐ"; // Gọi hàm với giá trị số kỳ hạn
-            lb_TongTienGui3Thang.Text = bieuDoBUS.GetTotalSavingsAmountByTerm("LTK0000001").ToString("C") + " VNĐ"; ; // Gọi hàm với giá trị số kỳ hạn
-            lb_TongTienGui6Thang.Text = bieuDoBUS.GetTotalSavingsAmountByTerm("LTK0000002").ToString("C") + " VNĐ"; ; // Gọi hàm với giá trị số kỳ hạn
+            lb_TongTienGui0KyHan.Text = formatSoTien((double)bieuDoBUS.GetTotalSavingsAmountByTerm("LTK0000000")); // Gọi hàm với giá trị số kỳ hạn
+            lb_TongTienGui3Thang.Text = formatSoTien((double)bieuDoBUS.GetTotalSavingsAmountByTerm("LTK0000001")); // Gọi hàm với giá trị số kỳ hạn
+            lb_TongTienGui6Thang.Text = formatSoTien((double)bieuDoBUS.GetTotalSavingsAmountByTerm("LTK0000002")); ; // Gọi hàm với giá trị số kỳ hạn
         }
         #endregion
 
@@ -293,15 +301,15 @@ namespace GUI.DashboardApp
         {
             // Lấy tổng số tiền đã chi
             float tongSoTienDaChi = bieuDoBUS.LayTongSoTienDaChi();
-            lb_TONGTIENRUT.Text = tongSoTienDaChi.ToString("C") + " VNĐ";
+            lb_TONGTIENRUT.Text = formatSoTien(tongSoTienDaChi);
 
             var withdrawalsByTerm = bieuDoBUS.GetWithdrawalsByTerm();
             decimal totalWithdrawal0Month = withdrawalsByTerm.ContainsKey(0) ? withdrawalsByTerm[0] : 0;
             decimal totalWithdrawal3Month = withdrawalsByTerm.ContainsKey(3) ? withdrawalsByTerm[3] : 0;
             decimal totalWithdrawal6Month = withdrawalsByTerm.ContainsKey(6) ? withdrawalsByTerm[6] : 0;
-            lb_TongChiKyHan0.Text = totalWithdrawal0Month.ToString("C") + " VNĐ";
-            lb_TongChiKyHan3Thang.Text = totalWithdrawal3Month.ToString("C") + " VNĐ";
-            lb_TongChiKyHan6Thang.Text = totalWithdrawal6Month.ToString("C") + " VNĐ";
+            lb_TongChiKyHan0.Text = formatSoTien((double)totalWithdrawal0Month);
+            lb_TongChiKyHan3Thang.Text = formatSoTien((double)totalWithdrawal3Month);
+            lb_TongChiKyHan6Thang.Text = formatSoTien((double)totalWithdrawal6Month);
         }
 
         private void HienThiDuLieuLenGunaChart(Guna.Charts.WinForms.GunaChart chart, Dictionary<string, float> duLieu)
@@ -337,126 +345,6 @@ namespace GUI.DashboardApp
         }
 
         #endregion
-
-        #region  CÁC HÀM XỬ LÝ XUẤT FILE BÁO CÁO
-        /////////////////////////////////////////////////////////////////
-        /**             CÁC HÀM XỬ LÝ XUẤT FILE BÁO CÁO           **/
-        /////////////////////////////////////////////////////////////////
-        // Hàm để lấy khoảng thời gian theo ngày, tháng, quý, và năm
-        public DateTime LayNgayBatDau(DateTime ngayKetThuc, string loaiBaoCao)
-        {
-            switch (loaiBaoCao)
-            {
-                case "Ngày":
-                    return ngayKetThuc.AddDays(-1); // Ngày hôm qua
-                case "Tháng":
-                    return new DateTime(ngayKetThuc.Year, ngayKetThuc.Month, 1); // Ngày đầu tháng
-                case "Quý":
-                    int thangQuy = ((ngayKetThuc.Month - 1) / 3) * 3 + 1; // Tháng đầu tiên của quý
-                    return new DateTime(ngayKetThuc.Year, thangQuy, 1); // Ngày đầu của quý
-                case "Năm":
-                    return new DateTime(ngayKetThuc.Year, 1, 1); // Ngày đầu năm
-                default:
-                    return ngayKetThuc;
-            }
-        }
-        private void btnTaoBaoCaoNgay_Click(object sender, EventArgs e)
-        {
-            DateTime ngayKetThuc = DateTime.Now; // Ngày hiện tại
-            DateTime ngayBatDau = LayNgayBatDau(ngayKetThuc, "Ngày");
-
-            // Lấy dữ liệu giao dịch trong khoảng thời gian từ ngayBatDau đến ngayKetThuc
-            var danhSachGiaoDich = baoCaoBUS.LayDanhSachGiaoDich(ngayBatDau, ngayKetThuc);
-
-            // Xuất báo cáo Excel hoặc PDF
-            XuatBaoCaoExcel(danhSachGiaoDich, "BaoCaoNgay.xlsx");
-            // hoặc XuatBaoCaoPdf(danhSachGiaoDich, "BaoCaoNgay.pdf");
-        }
-
-        private void btnTaoBaoCaoThang_Click(object sender, EventArgs e)
-        {
-            DateTime ngayKetThuc = DateTime.Now; // Ngày hiện tại
-            DateTime ngayBatDau = LayNgayBatDau(ngayKetThuc, "Tháng");
-
-            var danhSachGiaoDich = baoCaoBUS.LayDanhSachGiaoDich(ngayBatDau, ngayKetThuc);
-
-            XuatBaoCaoExcel(danhSachGiaoDich, "BaoCaoThang.xlsx");
-            // hoặc XuatBaoCaoPdf(danhSachGiaoDich, "BaoCaoThang.pdf");
-        }
-
-        private void btnTaoBaoCaoQuy_Click(object sender, EventArgs e)
-        {
-            DateTime ngayKetThuc = DateTime.Now; // Ngày hiện tại
-            DateTime ngayBatDau = LayNgayBatDau(ngayKetThuc, "Quý");
-
-            var danhSachGiaoDich = baoCaoBUS.LayDanhSachGiaoDich(ngayBatDau, ngayKetThuc);
-
-            XuatBaoCaoExcel(danhSachGiaoDich, "BaoCaoQuy.xlsx");
-            // hoặc XuatBaoCaoPdf(danhSachGiaoDich, "BaoCaoQuy.pdf");
-        }
-
-        private void btnTaoBaoCaoNam_Click(object sender, EventArgs e)
-        {
-            DateTime ngayKetThuc = DateTime.Now; // Ngày hiện tại
-            DateTime ngayBatDau = LayNgayBatDau(ngayKetThuc, "Năm");
-
-            var danhSachGiaoDich = baoCaoBUS.LayDanhSachGiaoDich(ngayBatDau, ngayKetThuc);
-
-            XuatBaoCaoExcel(danhSachGiaoDich, "BaoCaoNam.xlsx");
-            // hoặc XuatBaoCaoPdf(danhSachGiaoDich, "BaoCaoNam.pdf");
-        }
-        public void XuatBaoCaoExcel(List<BaoCaoGiaoDich> danhSachGiaoDich, string tenFile)
-        {
-            // Tạo và xuất báo cáo Excel bằng cách sử dụng thư viện như EPPlus hoặc ClosedXML
-            // Ví dụ sử dụng EPPlus để tạo Excel
-            using (var package = new ExcelPackage())
-            {
-                var worksheet = package.Workbook.Worksheets.Add("BaoCaoGiaoDich");
-
-                worksheet.Cells[1, 1].Value = "Tên Khách Hàng";
-                worksheet.Cells[1, 2].Value = "Mã Phiếu Gửi Tiền";
-                worksheet.Cells[1, 3].Value = "Số Tiền Gửi";
-                worksheet.Cells[1, 4].Value = "Loại Kỳ Hạn";
-                worksheet.Cells[1, 5].Value = "Ngày Tạo";
-
-                int row = 2;
-                foreach (var giaoDich in danhSachGiaoDich)
-                {
-                    worksheet.Cells[row, 1].Value = giaoDich.TenKhachHang;
-                    worksheet.Cells[row, 2].Value = giaoDich.SoTaiKhoanTienGoi;
-                    worksheet.Cells[row, 3].Value = giaoDich.SoTienGui;
-                    worksheet.Cells[row, 4].Value = giaoDich.LoaiKyHan;
-                    worksheet.Cells[row, 5].Value = giaoDich.NgayTao.ToString("yyyy-MM-dd");
-                    row++;
-                }
-
-                FileInfo file = new FileInfo(tenFile);
-                package.SaveAs(file);
-            }
-        }
-        private void CMS_LoaiBaoCao_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-            //switch (e.ClickedItem.Text)
-            //{
-            //    case "Tạo Báo cáo giao dịch gửi tiền":
-            //        XuatBaoCaoExcel(dgvBaoCaoGDGuiTien, "BaoCaoPhieuTietKiem");
-            //        break;
-
-            //    case "Tạo Báo cáo giao dịch rút tiền":
-            //        XuatBaoCaoExcel(dgvGuiThemTien, "BaoCaoGuiThemTien");
-            //        break;
-
-            //    case "Tạo Báo cáo doanh thu tạo phiếu":
-            //        XuatBaoCaoExcel(dgvRutTien, "BaoCaoRutTien");
-            //        break;
-
-            //    default:
-            //        MessageBox.Show("Tùy chọn không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //        break;
-            //}
-        }
-        #endregion
-
     }
 
 }

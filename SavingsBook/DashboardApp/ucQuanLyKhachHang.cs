@@ -49,7 +49,7 @@ namespace GUI.DashboardApp
                 {
                     Ten1 = kh.TenKhachHang,               // Tên khách hàng
                     Ten2 = kh.SoTaiKhoanThanhToan,       // Mã khách hàng
-                    Ten3 = kh.SoDuHienCo.ToString("C") + " VNĐ",  // Số dư (định dạng tiền tệ)
+                    Ten3 = formatSoTien(kh.SoDuHienCo),  // Số dư (định dạng tiền tệ)
                     Ten4 = kh.TongSoPhieuGoiTien.ToString() // Tổng số phiếu tiết kiệm
                 };
 
@@ -66,8 +66,19 @@ namespace GUI.DashboardApp
                 }
             };
         }
-
-
+        string formatSoTien(double sotien)
+        {
+            string formatedText;
+            if (sotien == 0)
+            {
+                formatedText = sotien + " VND";
+            }
+            else
+            {
+                formatedText = sotien.ToString("#,#.##") + " VND";
+            }
+            return formatedText;
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ThemKhachHang addSavingBooks = new ThemKhachHang();

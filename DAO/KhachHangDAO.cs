@@ -65,7 +65,6 @@ namespace DAO
 
             return danhSach;
         }
-
         public KhachHang? LayKhachHangTheoSoTaiKhoan(string soTaiKhoan)
         {
             try
@@ -100,7 +99,6 @@ namespace DAO
             }
             return null;
         }
-
         public bool ThemKhachHang(KhachHang khachHang)
         {
             try
@@ -135,8 +133,6 @@ namespace DAO
                 throw new Exception("Lỗi khi thêm khách hàng: " + ex.Message);
             }
         }
-
-
         private string GenerateUniqueSoTaiKhoan(SqlConnection conn, string loaiTaiKhoan)
         {
             Random rand = new Random();
@@ -179,6 +175,37 @@ namespace DAO
             }
 
             return soTaiKhoan;
+        }
+        public bool CapNhatKhachHang(KhachHang khachHang)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = @"UPDATE KhachHang 
+                                     SET TenKhachHang = @TenKhachHang, 
+                                         SoDienThoai = @SoDienThoai, 
+                                         CCCD = @CCCD, 
+                                         DiaChi = @DiaChi, 
+                                         NgaySinh = @NgaySinh, 
+                                         SoDuHienCo = @SoDuHienCo
+                                     WHERE SoTaiKhoanThanhToan = @SoTaiKhoanThanhToan";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@SoTaiKhoanThanhToan", khachHang.SoTaiKhoanThanhToan);
+                    cmd.Parameters.AddWithValue("@TenKhachHang", khachHang.TenKhachHang);
+                    cmd.Parameters.AddWithValue("@SoDienThoai", khachHang.SoDienThoai);
+                    cmd.Parameters.AddWithValue("@CCCD", khachHang.CCCD);
+                    cmd.Parameters.AddWithValue("@DiaChi", khachHang.DiaChi);
+                    cmd.Parameters.AddWithValue("@NgaySinh", khachHang.NgaySinh);
+                    cmd.Parameters.AddWithValue("@SoDuHienCo", khachHang.SoDuHienCo);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi cập nhật thông tin khách hàng: " + ex.Message);
+            }
         }
     }
 }

@@ -45,6 +45,7 @@ namespace GUI
                 ChiTietGuiTienBUS bus = new ChiTietGuiTienBUS();
                 string result = bus.GuiThemTien(soTaiKhoanTienGoi, soTienGuiThem, ngayGiaoDich);
 
+
                 MessageBox.Show(result, "Kết quả", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
