@@ -22,7 +22,6 @@ namespace GUI.DashboardApp
         private List<PhieuGoiTien> listPhieuGoiTien;
 
         // Lấy dữ liệu từ lớp BUS (nơi xử lý nghiệp vụ)
-        // Lấy dữ liệu từ lớp BUS (nơi xử lý nghiệp vụ)
         public ucQuanLyPhieu()
         {
             InitializeComponent();
@@ -36,6 +35,10 @@ namespace GUI.DashboardApp
         }
 
         private void ucManageSavingBooks_Load(object sender, EventArgs e)
+        {
+            PopulateItems(listPhieuGoiTien);
+        }
+        void reloadData()
         {
             PopulateItems(listPhieuGoiTien);
         }
@@ -53,14 +56,15 @@ namespace GUI.DashboardApp
             foreach (var phieuGoiTien in listPhieuGoiTien)
             {
                 if (phieuGoiTien.TongTienGoc == 0) continue;
-                var listItem = new ListItem
-                {
-                    Ten1 = phieuGoiTien.TenKhachHang,         // Tên khách hàng
-                    Ten2 = phieuGoiTien.SoTaiKhoanTienGoi,    // Số tài khoản tiền gửi
-                    Ten3 = phieuGoiTien.MaLoaiTietKiem,       // Mã loại tiết kiệm
-                    Ten4 = phieuGoiTien.NgayGoi.ToString("dd/MM/yyyy"), // Ngày gửi (format dd/MM/yyyy)
-                    FormType = ObjectType.PhieuGoiTien        // Loại đối tượng
-                };
+                //var listItem = new ListItem
+                //{
+                //    Ten1 = phieuGoiTien.TenKhachHang,         // Tên khách hàng
+                //    Ten2 = phieuGoiTien.SoTaiKhoanTienGoi,    // Số tài khoản tiền gửi
+                //    Ten3 = phieuGoiTien.MaLoaiTietKiem,       // Mã loại tiết kiệm
+                //    Ten4 = phieuGoiTien.NgayGoi.ToString("dd/MM/yyyy"), // Ngày gửi (format dd/MM/yyyy)
+                //    FormType = ObjectType.PhieuGoiTien        // Loại đối tượng
+                //};
+                var listItem = new ListItem(phieuGoiTien, reloadData);
 
                 // Gán sự kiện cho nút bấm nếu cần
                 listItem.ButtonClick += (s, e) =>

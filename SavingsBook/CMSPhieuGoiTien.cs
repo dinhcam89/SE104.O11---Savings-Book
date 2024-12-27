@@ -11,8 +11,8 @@ namespace GUI
     {
         public string maPhieu;
         public string tenKhachHang;
-
-        public CMSPhieuGoiTien()
+        private Action reload;
+        public CMSPhieuGoiTien(Action reload)
         {
             // Khởi tạo các mục menu
 

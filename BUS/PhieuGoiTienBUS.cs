@@ -46,6 +46,8 @@ namespace BUS
         }
         public bool ThemPhieuGoiTien(PhieuGoiTien phieu)
         {
+            phieu.LaiSuatApDung = Math.Round(phieu.LaiSuatApDung, 2);
+            phieu.LaiSuatPhatSinh = Math.Round(phieu.LaiSuatPhatSinh, 2);
             return phieuGoiTienDAO.ThemPhieuGoiTien(phieu);
         }
         public PhieuGoiTien? GetPhieuGoiTienBySoTaiKhoanTienGoi(string soTaiKhoanTienGoi)

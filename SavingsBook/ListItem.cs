@@ -26,11 +26,23 @@ namespace GUI
         public int clickCount = 0;
         private LoaiTietKiem _loaiTietKiem;
         private KhachHang _khachHang;
+        private PhieuGoiTien _phieuGoiTien;
         private Action reload;
 
         public ListItem()
         {
             InitializeComponent();
+        }
+        public ListItem(PhieuGoiTien pgt, Action reload)
+        {
+            InitializeComponent();
+            _phieuGoiTien = pgt;
+            Ten1 = pgt.SoTaiKhoanTienGoi.ToString();
+            Ten2 = pgt.TenKhachHang.ToString();
+            Ten3 = pgt.MaLoaiTietKiem;
+            Ten4 = pgt.NgayGoi.ToString();
+            FormType = ObjectType.PhieuGoiTien;
+            this.reload = reload;
         }
         public ListItem(KhachHang kh, Action reload)
         {
@@ -89,7 +101,7 @@ namespace GUI
                         cmsChiTietRutTien.Show(screenPoint);
                         break;
                     case ObjectType.PhieuGoiTien:
-                        CMSPhieuGoiTien cmsPhieuGoiTien = new CMSPhieuGoiTien();
+                        CMSPhieuGoiTien cmsPhieuGoiTien = new CMSPhieuGoiTien(reload);
                         string maPhieu = Ten2.ToString();
                         cmsPhieuGoiTien.maPhieu = maPhieu;
                         string tenKhachHang = Ten1.ToString();

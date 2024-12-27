@@ -83,6 +83,7 @@ namespace GUI.DashboardApp
         {
             // Cập nhật lại danh sách khách hàng
             // Ví dụ, reload lại dữ liệu từ cơ sở dữ liệu hoặc từ nguồn dữ liệu khác
+            khachHangs = khachHangBUS.GetAllKhachHangWithPhieuGoiTienCount();
             PopulateItems(khachHangs);
         }
 

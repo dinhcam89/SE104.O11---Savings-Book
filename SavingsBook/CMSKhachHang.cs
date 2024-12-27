@@ -31,7 +31,7 @@ namespace GUI
         private void AddSavingsBook(object sender, EventArgs e)
         {
             // Mở form hoặc xử lý logic để thêm phiếu gửi tiền
-            ThemPhieu formThemPhieu = new ThemPhieu(SoTaiKhoanThanhToan); // Sử dụng constructor để truyền mã
+            ThemPhieu formThemPhieu = new ThemPhieu(SoTaiKhoanThanhToan, _reload); // Sử dụng constructor để truyền mã
             formThemPhieu.Show();
             // Thông báo cho người dùng
         }

@@ -10,6 +10,7 @@ namespace GUI
     public partial class ThemPhieu : Form
     {
         private string soTaiKhoanThanhToan;
+        Action reload;
 
         public ThemPhieu()
         {
@@ -32,11 +33,12 @@ namespace GUI
             DTPNgayGoi.Value = DateTime.Now; //
         }
 
-        public ThemPhieu(string soTaiKhoanThanhToan) : this()
+        public ThemPhieu(string soTaiKhoanThanhToan, Action reload) : this()
         {
             this.soTaiKhoanThanhToan = soTaiKhoanThanhToan;
             txtMaKhachHang.Text = soTaiKhoanThanhToan; // Tự động điền số tài khoản thanh toán
             txtMaKhachHang.Enabled = false; // Không cho phép sửa
+            this.reload = reload;
         }
 
         private void LoadLoaiTietKiemToComboBox()
@@ -87,10 +89,12 @@ namespace GUI
                 }
 
                 dynamic selectedHinhThucGiaHan = cboxHinhThucGiaHan.SelectedItem;
-                int hinhThucGiaHan = selectedHinhThucGiaHan.Value;
+                int hinhThucGiaHan = selectedHinhThucGiaHan.Value + 1;
+
+                double soDuHienCo = new KhachHangBUS().LayKhachHangTheoSoTaiKhoan(soTaiKhoanThanhToan)!.SoDuHienCo;
 
                 DateTime ngayGoi = DTPNgayGoi.Value;
-                if (!double.TryParse(txtTongTienGoc.Text, out double tongTienGoc) || tongTienGoc < thamSo.SoTienBanDauToiThieu)
+                if (!double.TryParse(txtTongTienGoc.Text, out double tongTienGoc) || tongTienGoc < thamSo.SoTienBanDauToiThieu || tongTienGoc > soDuHienCo)
                 {
                     MessageBox.Show("Vui lòng nhập số tiền gửi hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -105,14 +109,27 @@ namespace GUI
                     HinhThucGiaHan = hinhThucGiaHan,
                     LaiSuatApDung = Convert.ToSingle(selectedLoaiTietKiem.LaiSuat),
                     LaiSuatPhatSinh = Convert.ToSingle(selectedLoaiTietKiem.LaiSuat),
-                    TongTienLaiPhatSinh = Convert.ToSingle(Math.Round(tongTienGoc * (1 + selectedLoaiTietKiem.LaiSuat / 100), 2))
+                    NgayDaoHanKeTiep = ngayGoi.AddMonths(selectedLoaiTietKiem.KyHan),
+                    TongTienLaiPhatSinh = 0
                 };
 
                 PhieuGoiTienBUS bus = new PhieuGoiTienBUS();
                 if (bus.ThemPhieuGoiTien(phieuGoiTien))
                 {
                     MessageBox.Show("Thêm phiếu gửi tiền thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close(); // Đóng form
+                    
+                    // Trừ số dư hiện có của khách hàng
+                    KhachHang khachHang = new KhachHangBUS().LayKhachHangTheoSoTaiKhoan(soTaiKhoanThanhToan)!;
+                    khachHang.SoDuHienCo -= tongTienGoc;
+                    bool res = new KhachHangBUS().CapNhatKhachHang(khachHang);
+
+                    if (!res)
+                    {
+                        MessageBox.Show("Cập nhật số dư của khách hàng thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    reload();
+                    this.Close(); // Đóng 
                 }
                 else
                 {
