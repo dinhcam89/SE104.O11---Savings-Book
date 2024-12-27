@@ -62,11 +62,12 @@
             btnTimKiem.ForeColor = Color.Transparent;
             btnTimKiem.Image = (Image)resources.GetObject("btnTimKiem.Image");
             btnTimKiem.ImageSize = new Size(30, 30);
-            btnTimKiem.Location = new Point(846, 13);
+            btnTimKiem.Location = new Point(967, 17);
+            btnTimKiem.Margin = new Padding(3, 4, 3, 4);
             btnTimKiem.Name = "btnTimKiem";
             btnTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges1;
             btnTimKiem.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            btnTimKiem.Size = new Size(50, 50);
+            btnTimKiem.Size = new Size(57, 67);
             btnTimKiem.TabIndex = 1;
             // 
             // txtTimKiem
@@ -84,14 +85,14 @@
             txtTimKiem.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTimKiem.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtTimKiem.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTimKiem.Location = new Point(28, 13);
-            txtTimKiem.Margin = new Padding(4);
+            txtTimKiem.Location = new Point(32, 17);
+            txtTimKiem.Margin = new Padding(5);
             txtTimKiem.Name = "txtTimKiem";
             txtTimKiem.PasswordChar = '\0';
             txtTimKiem.PlaceholderText = "";
             txtTimKiem.SelectedText = "";
             txtTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            txtTimKiem.Size = new Size(811, 50);
+            txtTimKiem.Size = new Size(927, 67);
             txtTimKiem.TabIndex = 0;
             txtTimKiem.TextOffset = new Point(10, 0);
             txtTimKiem.TextChanged += txtTimKiem_TextChanged;
@@ -105,10 +106,11 @@
             guna2Panel2.Controls.Add(txtTimKiem);
             guna2Panel2.Controls.Add(guna2Panel3);
             guna2Panel2.CustomizableEdges = customizableEdges6;
-            guna2Panel2.Location = new Point(20, 17);
+            guna2Panel2.Location = new Point(23, 23);
+            guna2Panel2.Margin = new Padding(3, 4, 3, 4);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges7;
-            guna2Panel2.Size = new Size(923, 599);
+            guna2Panel2.Size = new Size(1055, 799);
             guna2Panel2.TabIndex = 2;
             // 
             // flowLayoutPanel1
@@ -116,9 +118,10 @@
             flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.BackColor = Color.Transparent;
-            flowLayoutPanel1.Location = new Point(12, 129);
+            flowLayoutPanel1.Location = new Point(14, 172);
+            flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(898, 456);
+            flowLayoutPanel1.Size = new Size(1026, 608);
             flowLayoutPanel1.TabIndex = 19;
             // 
             // guna2Panel3
@@ -132,10 +135,11 @@
             guna2Panel3.Controls.Add(lblTenKhachHang0);
             guna2Panel3.CustomizableEdges = customizableEdges4;
             guna2Panel3.FillColor = Color.AliceBlue;
-            guna2Panel3.Location = new Point(28, 81);
+            guna2Panel3.Location = new Point(32, 108);
+            guna2Panel3.Margin = new Padding(3, 4, 3, 4);
             guna2Panel3.Name = "guna2Panel3";
             guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges5;
-            guna2Panel3.Size = new Size(868, 42);
+            guna2Panel3.Size = new Size(992, 56);
             guna2Panel3.TabIndex = 18;
             // 
             // label1
@@ -144,9 +148,9 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(37, 10, 128);
-            label1.Location = new Point(636, 10);
+            label1.Location = new Point(797, 13);
             label1.Name = "label1";
-            label1.Size = new Size(72, 20);
+            label1.Size = new Size(91, 25);
             label1.TabIndex = 6;
             label1.Text = "Ngày gởi";
             // 
@@ -156,9 +160,9 @@
             lblLoaiTietKiem0.BackColor = Color.Transparent;
             lblLoaiTietKiem0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblLoaiTietKiem0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblLoaiTietKiem0.Location = new Point(437, 10);
+            lblLoaiTietKiem0.Location = new Point(539, 13);
             lblLoaiTietKiem0.Name = "lblLoaiTietKiem0";
-            lblLoaiTietKiem0.Size = new Size(100, 20);
+            lblLoaiTietKiem0.Size = new Size(128, 25);
             lblLoaiTietKiem0.TabIndex = 4;
             lblLoaiTietKiem0.Text = "Loại tiết kiệm";
             // 
@@ -168,9 +172,9 @@
             lblMaPhieuTietKiem0.BackColor = Color.Transparent;
             lblMaPhieuTietKiem0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblMaPhieuTietKiem0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblMaPhieuTietKiem0.Location = new Point(205, 10);
+            lblMaPhieuTietKiem0.Location = new Point(254, 13);
             lblMaPhieuTietKiem0.Name = "lblMaPhieuTietKiem0";
-            lblMaPhieuTietKiem0.Size = new Size(150, 20);
+            lblMaPhieuTietKiem0.Size = new Size(189, 25);
             lblMaPhieuTietKiem0.TabIndex = 5;
             lblMaPhieuTietKiem0.Text = "Số tài khoản tiền gởi";
             // 
@@ -180,21 +184,22 @@
             lblTenKhachHang0.BackColor = Color.Transparent;
             lblTenKhachHang0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTenKhachHang0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblTenKhachHang0.Location = new Point(27, 10);
+            lblTenKhachHang0.Location = new Point(31, 13);
             lblTenKhachHang0.Name = "lblTenKhachHang0";
-            lblTenKhachHang0.Size = new Size(117, 20);
+            lblTenKhachHang0.Size = new Size(145, 25);
             lblTenKhachHang0.TabIndex = 4;
             lblTenKhachHang0.Text = "Tên khách hàng";
             // 
             // ucQuanLyPhieu
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             Controls.Add(guna2Panel2);
             ForeColor = Color.FromArgb(255, 87, 87);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "ucQuanLyPhieu";
-            Size = new Size(966, 634);
+            Size = new Size(1104, 845);
             Load += ucManageSavingBooks_Load;
             guna2Panel2.ResumeLayout(false);
             guna2Panel3.ResumeLayout(false);

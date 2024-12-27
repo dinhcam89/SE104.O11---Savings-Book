@@ -131,7 +131,7 @@
             lblLaiSuat0.BackColor = Color.Transparent;
             lblLaiSuat0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblLaiSuat0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblLaiSuat0.Location = new Point(504, 15);
+            lblLaiSuat0.Location = new Point(544, 15);
             lblLaiSuat0.Name = "lblLaiSuat0";
             lblLaiSuat0.Size = new Size(77, 25);
             lblLaiSuat0.TabIndex = 5;
@@ -143,7 +143,7 @@
             lblSoTienGoi0.BackColor = Color.Transparent;
             lblSoTienGoi0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSoTienGoi0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblSoTienGoi0.Location = new Point(267, 15);
+            lblSoTienGoi0.Location = new Point(287, 15);
             lblSoTienGoi0.Name = "lblSoTienGoi0";
             lblSoTienGoi0.Size = new Size(70, 25);
             lblSoTienGoi0.TabIndex = 4;

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             lblSoTienRut0 = new Label();
@@ -68,12 +68,12 @@
             guna2Panel3.BorderRadius = 10;
             guna2Panel3.Controls.Add(lblSoTienRut0);
             guna2Panel3.Controls.Add(lblNgayRut0);
-            guna2Panel3.CustomizableEdges = customizableEdges3;
+            guna2Panel3.CustomizableEdges = customizableEdges1;
             guna2Panel3.FillColor = Color.AliceBlue;
             guna2Panel3.Location = new Point(29, 176);
             guna2Panel3.Margin = new Padding(3, 4, 3, 4);
             guna2Panel3.Name = "guna2Panel3";
-            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Panel3.Size = new Size(1104, 56);
             guna2Panel3.TabIndex = 19;
             // 
@@ -83,7 +83,7 @@
             lblSoTienRut0.BackColor = Color.Transparent;
             lblSoTienRut0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSoTienRut0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblSoTienRut0.Location = new Point(264, 13);
+            lblSoTienRut0.Location = new Point(284, 13);
             lblSoTienRut0.Name = "lblSoTienRut0";
             lblSoTienRut0.Size = new Size(101, 25);
             lblSoTienRut0.TabIndex = 5;

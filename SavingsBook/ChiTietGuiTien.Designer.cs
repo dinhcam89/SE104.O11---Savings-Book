@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel1 = new Panel();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
@@ -80,12 +80,12 @@
             guna2Panel3.BorderRadius = 10;
             guna2Panel3.Controls.Add(lblSoTienGui0);
             guna2Panel3.Controls.Add(lblNgayGui0);
-            guna2Panel3.CustomizableEdges = customizableEdges3;
+            guna2Panel3.CustomizableEdges = customizableEdges1;
             guna2Panel3.FillColor = Color.AliceBlue;
             guna2Panel3.Location = new Point(29, 176);
             guna2Panel3.Margin = new Padding(3, 4, 3, 4);
             guna2Panel3.Name = "guna2Panel3";
-            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Panel3.Size = new Size(1112, 56);
             guna2Panel3.TabIndex = 19;
             // 
@@ -95,7 +95,7 @@
             lblSoTienGui0.BackColor = Color.Transparent;
             lblSoTienGui0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSoTienGui0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblSoTienGui0.Location = new Point(264, 13);
+            lblSoTienGui0.Location = new Point(284, 13);
             lblSoTienGui0.Name = "lblSoTienGui0";
             lblSoTienGui0.Size = new Size(104, 25);
             lblSoTienGui0.TabIndex = 5;

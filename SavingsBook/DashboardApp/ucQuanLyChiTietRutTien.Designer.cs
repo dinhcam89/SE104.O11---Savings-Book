@@ -253,7 +253,7 @@
             lblSoTienRut0.BackColor = Color.Transparent;
             lblSoTienRut0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSoTienRut0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblSoTienRut0.Location = new Point(499, 13);
+            lblSoTienRut0.Location = new Point(539, 13);
             lblSoTienRut0.Name = "lblSoTienRut0";
             lblSoTienRut0.Size = new Size(101, 25);
             lblSoTienRut0.TabIndex = 4;
@@ -265,7 +265,7 @@
             lblNgayRut0.BackColor = Color.Transparent;
             lblNgayRut0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNgayRut0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblNgayRut0.Location = new Point(262, 13);
+            lblNgayRut0.Location = new Point(282, 13);
             lblNgayRut0.Name = "lblNgayRut0";
             lblNgayRut0.Size = new Size(88, 25);
             lblNgayRut0.TabIndex = 5;

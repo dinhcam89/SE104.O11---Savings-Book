@@ -71,9 +71,10 @@
             guna2GradientPanel1.FillColor2 = Color.FromArgb(91, 185, 250);
             guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
             guna2GradientPanel1.Location = new Point(0, 0);
+            guna2GradientPanel1.Margin = new Padding(3, 4, 3, 4);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            guna2GradientPanel1.Size = new Size(521, 397);
+            guna2GradientPanel1.Size = new Size(595, 559);
             guna2GradientPanel1.TabIndex = 2;
             // 
             // guna2Panel1
@@ -94,10 +95,11 @@
             guna2Panel1.Controls.Add(lblLoaiKyHan0);
             guna2Panel1.Controls.Add(cboxQuyDinhTienRut);
             guna2Panel1.CustomizableEdges = customizableEdges11;
-            guna2Panel1.Location = new Point(12, 12);
+            guna2Panel1.Location = new Point(14, 16);
+            guna2Panel1.Margin = new Padding(3, 4, 3, 4);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2Panel1.Size = new Size(498, 373);
+            guna2Panel1.Size = new Size(569, 527);
             guna2Panel1.TabIndex = 47;
             // 
             // lblInputQuyDinhSoTienRut
@@ -105,9 +107,9 @@
             lblInputQuyDinhSoTienRut.BackColor = Color.Transparent;
             lblInputQuyDinhSoTienRut.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Italic);
             lblInputQuyDinhSoTienRut.ForeColor = Color.FromArgb(127, 111, 180);
-            lblInputQuyDinhSoTienRut.Location = new Point(180, 217);
+            lblInputQuyDinhSoTienRut.Location = new Point(206, 289);
             lblInputQuyDinhSoTienRut.Name = "lblInputQuyDinhSoTienRut";
-            lblInputQuyDinhSoTienRut.Size = new Size(289, 20);
+            lblInputQuyDinhSoTienRut.Size = new Size(330, 27);
             lblInputQuyDinhSoTienRut.TabIndex = 63;
             lblInputQuyDinhSoTienRut.Text = "500.000";
             lblInputQuyDinhSoTienRut.TextAlign = ContentAlignment.MiddleRight;
@@ -118,9 +120,9 @@
             lblQuyDinhSoTienRut.BackColor = Color.Transparent;
             lblQuyDinhSoTienRut.Font = new Font("Microsoft Sans Serif", 12F);
             lblQuyDinhSoTienRut.ForeColor = Color.FromArgb(135, 92, 254);
-            lblQuyDinhSoTienRut.Location = new Point(29, 217);
+            lblQuyDinhSoTienRut.Location = new Point(33, 289);
             lblQuyDinhSoTienRut.Name = "lblQuyDinhSoTienRut";
-            lblQuyDinhSoTienRut.Size = new Size(145, 20);
+            lblQuyDinhSoTienRut.Size = new Size(180, 25);
             lblQuyDinhSoTienRut.TabIndex = 61;
             lblQuyDinhSoTienRut.Text = "Quy định số tiền rút";
             // 
@@ -142,10 +144,11 @@
             btnDong.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnDong.ForeColor = Color.FromArgb(139, 84, 255);
             btnDong.ImeMode = ImeMode.Off;
-            btnDong.Location = new Point(29, 313);
+            btnDong.Location = new Point(33, 417);
+            btnDong.Margin = new Padding(3, 4, 3, 4);
             btnDong.Name = "btnDong";
             btnDong.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnDong.Size = new Size(121, 45);
+            btnDong.Size = new Size(138, 60);
             btnDong.TabIndex = 60;
             btnDong.Text = "Đóng";
             btnDong.Click += btnExit_Click;
@@ -155,9 +158,9 @@
             lblThoiGianGuiToiThieu.BackColor = Color.Transparent;
             lblThoiGianGuiToiThieu.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Italic);
             lblThoiGianGuiToiThieu.ForeColor = Color.FromArgb(127, 111, 180);
-            lblThoiGianGuiToiThieu.Location = new Point(294, 170);
+            lblThoiGianGuiToiThieu.Location = new Point(336, 227);
             lblThoiGianGuiToiThieu.Name = "lblThoiGianGuiToiThieu";
-            lblThoiGianGuiToiThieu.Size = new Size(175, 20);
+            lblThoiGianGuiToiThieu.Size = new Size(200, 27);
             lblThoiGianGuiToiThieu.TabIndex = 59;
             lblThoiGianGuiToiThieu.Text = "5";
             lblThoiGianGuiToiThieu.TextAlign = ContentAlignment.MiddleRight;
@@ -167,9 +170,9 @@
             lblLaiSuat.BackColor = Color.Transparent;
             lblLaiSuat.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Italic);
             lblLaiSuat.ForeColor = Color.FromArgb(127, 111, 180);
-            lblLaiSuat.Location = new Point(294, 115);
+            lblLaiSuat.Location = new Point(336, 153);
             lblLaiSuat.Name = "lblLaiSuat";
-            lblLaiSuat.Size = new Size(175, 21);
+            lblLaiSuat.Size = new Size(200, 28);
             lblLaiSuat.TabIndex = 58;
             lblLaiSuat.Text = "0.5";
             lblLaiSuat.TextAlign = ContentAlignment.MiddleRight;
@@ -189,14 +192,14 @@
             txtThoiGianGuiToiThieu.Font = new Font("Segoe UI", 9F);
             txtThoiGianGuiToiThieu.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtThoiGianGuiToiThieu.ImeMode = ImeMode.On;
-            txtThoiGianGuiToiThieu.Location = new Point(294, 149);
-            txtThoiGianGuiToiThieu.Margin = new Padding(3, 4, 3, 4);
+            txtThoiGianGuiToiThieu.Location = new Point(336, 199);
+            txtThoiGianGuiToiThieu.Margin = new Padding(3, 5, 3, 5);
             txtThoiGianGuiToiThieu.Name = "txtThoiGianGuiToiThieu";
             txtThoiGianGuiToiThieu.PasswordChar = '\0';
             txtThoiGianGuiToiThieu.PlaceholderText = "";
             txtThoiGianGuiToiThieu.SelectedText = "";
             txtThoiGianGuiToiThieu.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            txtThoiGianGuiToiThieu.Size = new Size(181, 41);
+            txtThoiGianGuiToiThieu.Size = new Size(207, 55);
             txtThoiGianGuiToiThieu.TabIndex = 55;
             txtThoiGianGuiToiThieu.Visible = false;
             // 
@@ -206,9 +209,9 @@
             lblThoiGianGuiToiThieu0.BackColor = Color.Transparent;
             lblThoiGianGuiToiThieu0.Font = new Font("Microsoft Sans Serif", 12F);
             lblThoiGianGuiToiThieu0.ForeColor = Color.FromArgb(135, 92, 254);
-            lblThoiGianGuiToiThieu0.Location = new Point(29, 170);
+            lblThoiGianGuiToiThieu0.Location = new Point(33, 227);
             lblThoiGianGuiToiThieu0.Name = "lblThoiGianGuiToiThieu0";
-            lblThoiGianGuiToiThieu0.Size = new Size(213, 20);
+            lblThoiGianGuiToiThieu0.Size = new Size(264, 25);
             lblThoiGianGuiToiThieu0.TabIndex = 54;
             lblThoiGianGuiToiThieu0.Text = "Thời gian gửi tối thiểu (tháng)";
             // 
@@ -227,14 +230,14 @@
             txtLaiSuat.Font = new Font("Segoe UI", 9F);
             txtLaiSuat.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtLaiSuat.ImeMode = ImeMode.On;
-            txtLaiSuat.Location = new Point(294, 94);
-            txtLaiSuat.Margin = new Padding(3, 4, 3, 4);
+            txtLaiSuat.Location = new Point(336, 125);
+            txtLaiSuat.Margin = new Padding(3, 5, 3, 5);
             txtLaiSuat.Name = "txtLaiSuat";
             txtLaiSuat.PasswordChar = '\0';
             txtLaiSuat.PlaceholderText = "";
             txtLaiSuat.SelectedText = "";
             txtLaiSuat.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            txtLaiSuat.Size = new Size(181, 41);
+            txtLaiSuat.Size = new Size(207, 55);
             txtLaiSuat.TabIndex = 53;
             txtLaiSuat.Visible = false;
             txtLaiSuat.TextChanged += txtAdjustRate_TextChanged;
@@ -245,9 +248,9 @@
             lblLaiSuat0.BackColor = Color.Transparent;
             lblLaiSuat0.Font = new Font("Microsoft Sans Serif", 12F);
             lblLaiSuat0.ForeColor = Color.FromArgb(135, 92, 254);
-            lblLaiSuat0.Location = new Point(29, 115);
+            lblLaiSuat0.Location = new Point(33, 153);
             lblLaiSuat0.Name = "lblLaiSuat0";
-            lblLaiSuat0.Size = new Size(93, 20);
+            lblLaiSuat0.Size = new Size(117, 25);
             lblLaiSuat0.TabIndex = 52;
             lblLaiSuat0.Text = "Lãi suất (%)";
             // 
@@ -266,10 +269,11 @@
             btnSua.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSua.ForeColor = Color.White;
             btnSua.ImeMode = ImeMode.Off;
-            btnSua.Location = new Point(354, 313);
+            btnSua.Location = new Point(405, 417);
+            btnSua.Margin = new Padding(3, 4, 3, 4);
             btnSua.Name = "btnSua";
             btnSua.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnSua.Size = new Size(121, 45);
+            btnSua.Size = new Size(138, 60);
             btnSua.TabIndex = 22;
             btnSua.Text = "Sửa";
             btnSua.Click += btnSua_Click;
@@ -279,9 +283,9 @@
             lblLoaiKyHan.BackColor = Color.Transparent;
             lblLoaiKyHan.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Italic);
             lblLoaiKyHan.ForeColor = Color.FromArgb(127, 111, 180);
-            lblLoaiKyHan.Location = new Point(301, 67);
+            lblLoaiKyHan.Location = new Point(344, 89);
             lblLoaiKyHan.Name = "lblLoaiKyHan";
-            lblLoaiKyHan.Size = new Size(168, 20);
+            lblLoaiKyHan.Size = new Size(192, 27);
             lblLoaiKyHan.TabIndex = 47;
             lblLoaiKyHan.Text = "Không kỳ hạn";
             lblLoaiKyHan.TextAlign = ContentAlignment.MiddleRight;
@@ -292,9 +296,9 @@
             lblTitle.BackColor = Color.Transparent;
             lblTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = Color.FromArgb(135, 92, 254);
-            lblTitle.Location = new Point(83, 11);
+            lblTitle.Location = new Point(95, 15);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(332, 32);
+            lblTitle.Size = new Size(415, 41);
             lblTitle.TabIndex = 46;
             lblTitle.Text = "CHỈNH SỬA LOẠI TIẾT KIỆM";
             // 
@@ -304,9 +308,9 @@
             lblLoaiKyHan0.BackColor = Color.Transparent;
             lblLoaiKyHan0.Font = new Font("Microsoft Sans Serif", 12F);
             lblLoaiKyHan0.ForeColor = Color.FromArgb(135, 92, 254);
-            lblLoaiKyHan0.Location = new Point(29, 67);
+            lblLoaiKyHan0.Location = new Point(33, 89);
             lblLoaiKyHan0.Name = "lblLoaiKyHan0";
-            lblLoaiKyHan0.Size = new Size(89, 20);
+            lblLoaiKyHan0.Size = new Size(112, 25);
             lblLoaiKyHan0.TabIndex = 36;
             lblLoaiKyHan0.Text = "Loại kỳ hạn";
             // 
@@ -325,21 +329,23 @@
             cboxQuyDinhTienRut.IntegralHeight = false;
             cboxQuyDinhTienRut.ItemHeight = 55;
             cboxQuyDinhTienRut.Items.AddRange(new object[] { "Toàn phần", "Một phần hoặc toàn phần" });
-            cboxQuyDinhTienRut.Location = new Point(294, 197);
+            cboxQuyDinhTienRut.Location = new Point(336, 263);
+            cboxQuyDinhTienRut.Margin = new Padding(3, 4, 3, 4);
             cboxQuyDinhTienRut.Name = "cboxQuyDinhTienRut";
             cboxQuyDinhTienRut.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            cboxQuyDinhTienRut.Size = new Size(183, 61);
+            cboxQuyDinhTienRut.Size = new Size(209, 61);
             cboxQuyDinhTienRut.TabIndex = 64;
             cboxQuyDinhTienRut.Visible = false;
             // 
             // ChinhSuaLoaiTietKiem
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(521, 397);
+            ClientSize = new Size(595, 559);
             ControlBox = false;
             Controls.Add(guna2GradientPanel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "ChinhSuaLoaiTietKiem";
             Text = "Chỉnh sửa loại tiết kiệm";
             guna2GradientPanel1.ResumeLayout(false);

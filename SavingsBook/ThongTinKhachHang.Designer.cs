@@ -89,9 +89,10 @@
             panel1.Controls.Add(lblTitle);
             panel1.Controls.Add(txtSTKThanhToan);
             panel1.Controls.Add(txtDiaChi);
-            panel1.Location = new Point(13, 14);
+            panel1.Location = new Point(15, 19);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(498, 522);
+            panel1.Size = new Size(569, 696);
             panel1.TabIndex = 88;
             // 
             // lblSDT
@@ -100,10 +101,10 @@
             lblSDT.BackColor = Color.Transparent;
             lblSDT.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblSDT.ForeColor = Color.FromArgb(127, 111, 180);
-            lblSDT.Location = new Point(326, 173);
+            lblSDT.Location = new Point(370, 229);
             lblSDT.Name = "lblSDT";
             lblSDT.RightToLeft = RightToLeft.Yes;
-            lblSDT.Size = new Size(154, 24);
+            lblSDT.Size = new Size(176, 32);
             lblSDT.TabIndex = 87;
             lblSDT.Text = "0987645324";
             lblSDT.TextAlign = ContentAlignment.MiddleLeft;
@@ -114,9 +115,9 @@
             lblSDT0.BackColor = Color.Transparent;
             lblSDT0.Font = new Font("Microsoft Sans Serif", 14.25F);
             lblSDT0.ForeColor = Color.FromArgb(135, 92, 254);
-            lblSDT0.Location = new Point(20, 173);
+            lblSDT0.Location = new Point(23, 231);
             lblSDT0.Name = "lblSDT0";
-            lblSDT0.Size = new Size(121, 24);
+            lblSDT0.Size = new Size(154, 29);
             lblSDT0.TabIndex = 86;
             lblSDT0.Text = "Số điện thoại";
             // 
@@ -137,10 +138,11 @@
             btnHuy.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnHuy.ForeColor = Color.FromArgb(139, 84, 255);
             btnHuy.ImeMode = ImeMode.Off;
-            btnHuy.Location = new Point(21, 463);
+            btnHuy.Location = new Point(24, 617);
+            btnHuy.Margin = new Padding(3, 4, 3, 4);
             btnHuy.Name = "btnHuy";
             btnHuy.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnHuy.Size = new Size(121, 45);
+            btnHuy.Size = new Size(138, 60);
             btnHuy.TabIndex = 81;
             btnHuy.Text = "Hủy";
             btnHuy.Click += btnHuy_Click;
@@ -152,11 +154,11 @@
             lblNgaySinh.BackColor = Color.Transparent;
             lblNgaySinh.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblNgaySinh.ForeColor = Color.FromArgb(127, 111, 180);
-            lblNgaySinh.Location = new Point(376, 263);
-            lblNgaySinh.Margin = new Padding(3, 0, 25, 0);
+            lblNgaySinh.Location = new Point(415, 351);
+            lblNgaySinh.Margin = new Padding(3, 0, 29, 0);
             lblNgaySinh.Name = "lblNgaySinh";
             lblNgaySinh.RightToLeft = RightToLeft.Yes;
-            lblNgaySinh.Size = new Size(100, 24);
+            lblNgaySinh.Size = new Size(131, 29);
             lblNgaySinh.TabIndex = 85;
             lblNgaySinh.Text = "10/10/2000";
             lblNgaySinh.TextAlign = ContentAlignment.MiddleLeft;
@@ -167,9 +169,9 @@
             lblNgaySinh0.BackColor = Color.Transparent;
             lblNgaySinh0.Font = new Font("Microsoft Sans Serif", 14.25F);
             lblNgaySinh0.ForeColor = Color.FromArgb(135, 92, 254);
-            lblNgaySinh0.Location = new Point(20, 263);
+            lblNgaySinh0.Location = new Point(23, 351);
             lblNgaySinh0.Name = "lblNgaySinh0";
-            lblNgaySinh0.Size = new Size(94, 24);
+            lblNgaySinh0.Size = new Size(119, 29);
             lblNgaySinh0.TabIndex = 84;
             lblNgaySinh0.Text = "Ngày sinh";
             // 
@@ -188,10 +190,11 @@
             btnSua.Font = new Font("Segoe UI Semibold", 13F, FontStyle.Bold);
             btnSua.ForeColor = Color.White;
             btnSua.ImeMode = ImeMode.Off;
-            btnSua.Location = new Point(359, 463);
+            btnSua.Location = new Point(410, 617);
+            btnSua.Margin = new Padding(3, 4, 3, 4);
             btnSua.Name = "btnSua";
             btnSua.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnSua.Size = new Size(121, 45);
+            btnSua.Size = new Size(138, 60);
             btnSua.TabIndex = 60;
             btnSua.Text = "Sửa";
             btnSua.Click += btnSua_Click;
@@ -202,10 +205,10 @@
             lblSoDuHienCo.BackColor = Color.Transparent;
             lblSoDuHienCo.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblSoDuHienCo.ForeColor = Color.FromArgb(127, 111, 180);
-            lblSoDuHienCo.Location = new Point(277, 415);
+            lblSoDuHienCo.Location = new Point(327, 551);
             lblSoDuHienCo.Name = "lblSoDuHienCo";
             lblSoDuHienCo.RightToLeft = RightToLeft.Yes;
-            lblSoDuHienCo.Size = new Size(192, 24);
+            lblSoDuHienCo.Size = new Size(219, 32);
             lblSoDuHienCo.TabIndex = 75;
             lblSoDuHienCo.Text = "1.000.000";
             lblSoDuHienCo.TextAlign = ContentAlignment.MiddleLeft;
@@ -216,9 +219,9 @@
             lblSoDuHienCo0.BackColor = Color.Transparent;
             lblSoDuHienCo0.Font = new Font("Microsoft Sans Serif", 14.25F);
             lblSoDuHienCo0.ForeColor = Color.FromArgb(135, 92, 254);
-            lblSoDuHienCo0.Location = new Point(21, 415);
+            lblSoDuHienCo0.Location = new Point(24, 553);
             lblSoDuHienCo0.Name = "lblSoDuHienCo0";
-            lblSoDuHienCo0.Size = new Size(128, 24);
+            lblSoDuHienCo0.Size = new Size(160, 29);
             lblSoDuHienCo0.TabIndex = 74;
             lblSoDuHienCo0.Text = "Số dư hiện có";
             // 
@@ -228,10 +231,10 @@
             lblSTKThanhToan.BackColor = Color.Transparent;
             lblSTKThanhToan.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblSTKThanhToan.ForeColor = Color.FromArgb(127, 111, 180);
-            lblSTKThanhToan.Location = new Point(243, 365);
+            lblSTKThanhToan.Location = new Point(278, 485);
             lblSTKThanhToan.Name = "lblSTKThanhToan";
             lblSTKThanhToan.RightToLeft = RightToLeft.Yes;
-            lblSTKThanhToan.Size = new Size(233, 24);
+            lblSTKThanhToan.Size = new Size(266, 32);
             lblSTKThanhToan.TabIndex = 71;
             lblSTKThanhToan.Text = "123456667";
             lblSTKThanhToan.TextAlign = ContentAlignment.MiddleLeft;
@@ -243,10 +246,10 @@
             lblDiaChi.BackColor = Color.Transparent;
             lblDiaChi.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblDiaChi.ForeColor = Color.FromArgb(127, 111, 180);
-            lblDiaChi.Location = new Point(163, 315);
+            lblDiaChi.Location = new Point(188, 418);
             lblDiaChi.Name = "lblDiaChi";
             lblDiaChi.RightToLeft = RightToLeft.Yes;
-            lblDiaChi.Size = new Size(313, 24);
+            lblDiaChi.Size = new Size(358, 32);
             lblDiaChi.TabIndex = 70;
             lblDiaChi.Text = "Phước Long B, TP Thủ Đức";
             lblDiaChi.TextAlign = ContentAlignment.MiddleLeft;
@@ -257,10 +260,10 @@
             lblCMND.BackColor = Color.Transparent;
             lblCMND.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblCMND.ForeColor = Color.FromArgb(127, 111, 180);
-            lblCMND.Location = new Point(326, 218);
+            lblCMND.Location = new Point(372, 289);
             lblCMND.Name = "lblCMND";
             lblCMND.RightToLeft = RightToLeft.Yes;
-            lblCMND.Size = new Size(152, 24);
+            lblCMND.Size = new Size(174, 32);
             lblCMND.TabIndex = 69;
             lblCMND.Text = "1245678";
             lblCMND.TextAlign = ContentAlignment.MiddleLeft;
@@ -271,13 +274,14 @@
             lblMaKhachHang.BackColor = Color.Transparent;
             lblMaKhachHang.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblMaKhachHang.ForeColor = Color.FromArgb(127, 111, 180);
-            lblMaKhachHang.Location = new Point(297, 127);
+            lblMaKhachHang.Location = new Point(337, 166);
             lblMaKhachHang.Name = "lblMaKhachHang";
             lblMaKhachHang.RightToLeft = RightToLeft.Yes;
-            lblMaKhachHang.Size = new Size(183, 24);
+            lblMaKhachHang.Size = new Size(209, 32);
             lblMaKhachHang.TabIndex = 68;
             lblMaKhachHang.Text = "1234566788";
             lblMaKhachHang.TextAlign = ContentAlignment.MiddleLeft;
+            lblMaKhachHang.Click += lblMaKhachHang_Click;
             // 
             // lblHoTen
             // 
@@ -285,10 +289,10 @@
             lblHoTen.BackColor = Color.Transparent;
             lblHoTen.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblHoTen.ForeColor = Color.FromArgb(127, 111, 180);
-            lblHoTen.Location = new Point(297, 77);
+            lblHoTen.Location = new Point(339, 103);
             lblHoTen.Name = "lblHoTen";
             lblHoTen.RightToLeft = RightToLeft.Yes;
-            lblHoTen.Size = new Size(181, 24);
+            lblHoTen.Size = new Size(207, 32);
             lblHoTen.TabIndex = 67;
             lblHoTen.Text = "Ten KH";
             lblHoTen.TextAlign = ContentAlignment.MiddleLeft;
@@ -299,9 +303,9 @@
             lblSTKThanhToan0.BackColor = Color.Transparent;
             lblSTKThanhToan0.Font = new Font("Microsoft Sans Serif", 14.25F);
             lblSTKThanhToan0.ForeColor = Color.FromArgb(135, 92, 254);
-            lblSTKThanhToan0.Location = new Point(21, 365);
+            lblSTKThanhToan0.Location = new Point(24, 487);
             lblSTKThanhToan0.Name = "lblSTKThanhToan0";
-            lblSTKThanhToan0.Size = new Size(206, 24);
+            lblSTKThanhToan0.Size = new Size(261, 29);
             lblSTKThanhToan0.TabIndex = 64;
             lblSTKThanhToan0.Text = "Số tài khoản thanh toán";
             // 
@@ -311,9 +315,9 @@
             lblDiaChi0.BackColor = Color.Transparent;
             lblDiaChi0.Font = new Font("Microsoft Sans Serif", 14.25F);
             lblDiaChi0.ForeColor = Color.FromArgb(135, 92, 254);
-            lblDiaChi0.Location = new Point(21, 315);
+            lblDiaChi0.Location = new Point(24, 420);
             lblDiaChi0.Name = "lblDiaChi0";
-            lblDiaChi0.Size = new Size(67, 24);
+            lblDiaChi0.Size = new Size(86, 29);
             lblDiaChi0.TabIndex = 63;
             lblDiaChi0.Text = "Địa chỉ";
             // 
@@ -323,9 +327,9 @@
             lblCMND0.BackColor = Color.Transparent;
             lblCMND0.Font = new Font("Microsoft Sans Serif", 14.25F);
             lblCMND0.ForeColor = Color.FromArgb(135, 92, 254);
-            lblCMND0.Location = new Point(20, 218);
+            lblCMND0.Location = new Point(23, 291);
             lblCMND0.Name = "lblCMND0";
-            lblCMND0.Size = new Size(123, 24);
+            lblCMND0.Size = new Size(160, 29);
             lblCMND0.TabIndex = 62;
             lblCMND0.Text = "CMND/CCCD";
             // 
@@ -335,9 +339,9 @@
             lblMaKhachHang0.BackColor = Color.Transparent;
             lblMaKhachHang0.Font = new Font("Microsoft Sans Serif", 14.25F);
             lblMaKhachHang0.ForeColor = Color.FromArgb(135, 92, 254);
-            lblMaKhachHang0.Location = new Point(20, 127);
+            lblMaKhachHang0.Location = new Point(23, 169);
             lblMaKhachHang0.Name = "lblMaKhachHang0";
-            lblMaKhachHang0.Size = new Size(140, 24);
+            lblMaKhachHang0.Size = new Size(174, 29);
             lblMaKhachHang0.TabIndex = 61;
             lblMaKhachHang0.Text = "Mã khách hàng";
             // 
@@ -347,9 +351,9 @@
             lblHoTen0.BackColor = Color.Transparent;
             lblHoTen0.Font = new Font("Microsoft Sans Serif", 14.25F);
             lblHoTen0.ForeColor = Color.FromArgb(135, 92, 254);
-            lblHoTen0.Location = new Point(20, 77);
+            lblHoTen0.Location = new Point(23, 103);
             lblHoTen0.Name = "lblHoTen0";
-            lblHoTen0.Size = new Size(90, 24);
+            lblHoTen0.Size = new Size(113, 29);
             lblHoTen0.TabIndex = 59;
             lblHoTen0.Text = "Họ và tên";
             // 
@@ -359,9 +363,9 @@
             lblTitle.BackColor = Color.Transparent;
             lblTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             lblTitle.ForeColor = Color.FromArgb(135, 92, 254);
-            lblTitle.Location = new Point(103, 18);
+            lblTitle.Location = new Point(118, 24);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(317, 32);
+            lblTitle.Size = new Size(397, 41);
             lblTitle.TabIndex = 58;
             lblTitle.Text = "THÔNG TIN KHÁCH HÀNG";
             // 
@@ -381,13 +385,14 @@
             txtSTKThanhToan.Font = new Font("Segoe UI", 9F);
             txtSTKThanhToan.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtSTKThanhToan.ImeMode = ImeMode.On;
-            txtSTKThanhToan.Location = new Point(243, 349);
+            txtSTKThanhToan.Location = new Point(278, 465);
+            txtSTKThanhToan.Margin = new Padding(3, 5, 3, 5);
             txtSTKThanhToan.Name = "txtSTKThanhToan";
             txtSTKThanhToan.PasswordChar = '\0';
             txtSTKThanhToan.PlaceholderText = "";
             txtSTKThanhToan.SelectedText = "";
             txtSTKThanhToan.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            txtSTKThanhToan.Size = new Size(237, 41);
+            txtSTKThanhToan.Size = new Size(271, 55);
             txtSTKThanhToan.TabIndex = 77;
             txtSTKThanhToan.Visible = false;
             // 
@@ -407,13 +412,14 @@
             txtDiaChi.Font = new Font("Segoe UI", 9F);
             txtDiaChi.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtDiaChi.ImeMode = ImeMode.On;
-            txtDiaChi.Location = new Point(243, 299);
+            txtDiaChi.Location = new Point(278, 399);
+            txtDiaChi.Margin = new Padding(3, 5, 3, 5);
             txtDiaChi.Name = "txtDiaChi";
             txtDiaChi.PasswordChar = '\0';
             txtDiaChi.PlaceholderText = "";
             txtDiaChi.SelectedText = "";
             txtDiaChi.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            txtDiaChi.Size = new Size(237, 41);
+            txtDiaChi.Size = new Size(271, 55);
             txtDiaChi.TabIndex = 78;
             txtDiaChi.Visible = false;
             // 
@@ -427,18 +433,20 @@
             guna2GradientPanel1.FillColor2 = Color.FromArgb(140, 82, 255);
             guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
             guna2GradientPanel1.Location = new Point(0, 0);
+            guna2GradientPanel1.Margin = new Padding(3, 4, 3, 4);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2GradientPanel1.Size = new Size(524, 548);
+            guna2GradientPanel1.Size = new Size(599, 731);
             guna2GradientPanel1.TabIndex = 28;
             // 
             // ThongTinKhachHang
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(524, 548);
+            ClientSize = new Size(599, 731);
             ControlBox = false;
             Controls.Add(guna2GradientPanel1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "ThongTinKhachHang";
             Text = "Thông tin khách hàng";
             panel1.ResumeLayout(false);

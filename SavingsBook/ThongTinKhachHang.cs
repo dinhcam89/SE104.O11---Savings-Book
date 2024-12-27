@@ -90,6 +90,9 @@ namespace GUI
             this.Close();
         }
 
+        private void lblMaKhachHang_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
