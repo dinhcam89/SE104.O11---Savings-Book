@@ -8,6 +8,7 @@ namespace GUI
         private LoaiTietKiemBUS _loaiTietKiemBUS = new LoaiTietKiemBUS();
         private LoaiTietKiem _loaiTietKiem;
         private Action reload;
+        public ChinhSuaLoaiTietKiem() { }
         public ChinhSuaLoaiTietKiem(LoaiTietKiem ltk, Action reload)
         {
             InitializeComponent();

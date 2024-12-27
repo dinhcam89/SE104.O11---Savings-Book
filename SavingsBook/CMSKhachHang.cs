@@ -13,7 +13,8 @@ namespace GUI
     public class CMSKhachHang : ContextMenuStrip
     {
         public string SoTaiKhoanThanhToan { get; set; } // Thuộc tính lưu mã khách hàng
-        public CMSKhachHang()
+        Action _reload;
+        public CMSKhachHang(Action reload)
         {
             // Khởi tạo các mục menu
             ToolStripMenuItem menuItemQuanLy = new ToolStripMenuItem("Chi tiết");
@@ -24,6 +25,7 @@ namespace GUI
             // Thêm các mục vào ContextMenuStrip
             this.Items.Add(menuItemQuanLy);
             this.Items.Add(menuItemThemPhieu);
+            _reload = reload;
 
         }
         private void AddSavingsBook(object sender, EventArgs e)
@@ -44,7 +46,7 @@ namespace GUI
                 if (khachHang != null)
                 {
                     // Mở form và hiển thị thông tin
-                    ThongTinKhachHang thongTinForm = new ThongTinKhachHang();
+                    ThongTinKhachHang thongTinForm = new ThongTinKhachHang(_reload);
                     thongTinForm.LoadThongTinKhachHang(khachHang);
                     thongTinForm.ShowDialog();
                 }

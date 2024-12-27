@@ -14,13 +14,13 @@ namespace DTO
         public string SoDienThoai { get; set; }
         public DateTime NgaySinh { get; set; }
         public string DiaChi { get; set; }
-        public float SoDuHienCo { get; set; }
+        public double SoDuHienCo { get; set; }
         public int TongSoPhieuGoiTien { get; set; }
         public KhachHang() { }
 
         // Constructor
         public KhachHang(string soTaiKhoanThanhToan, string tenKhachHang, string cccd, string soDienThoai, 
-            DateTime ngaySinh, string diaChi, float soDuHienCo, int tongSoPhieuTietKiem)
+            DateTime ngaySinh, string diaChi, double soDuHienCo, int tongSoPhieuTietKiem)
         {
             SoTaiKhoanThanhToan = soTaiKhoanThanhToan;
             TenKhachHang = tenKhachHang;

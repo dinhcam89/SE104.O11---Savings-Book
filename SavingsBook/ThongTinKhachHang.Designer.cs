@@ -38,6 +38,14 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             lblSDT = new Label();
             lblSDT0 = new Label();
@@ -50,16 +58,18 @@
             lblSTKThanhToan = new Label();
             lblDiaChi = new Label();
             lblCMND = new Label();
-            lblMaKhachHang = new Label();
             lblHoTen = new Label();
             lblSTKThanhToan0 = new Label();
             lblDiaChi0 = new Label();
             lblCMND0 = new Label();
-            lblMaKhachHang0 = new Label();
             lblHoTen0 = new Label();
             lblTitle = new Label();
-            txtSTKThanhToan = new Guna.UI2.WinForms.Guna2TextBox();
             txtDiaChi = new Guna.UI2.WinForms.Guna2TextBox();
+            txtCCCD = new Guna.UI2.WinForms.Guna2TextBox();
+            txtSoDuHienCo = new Guna.UI2.WinForms.Guna2TextBox();
+            txtSoDienThoai = new Guna.UI2.WinForms.Guna2TextBox();
+            txtHoTen = new Guna.UI2.WinForms.Guna2TextBox();
+            dtpNgaySinh = new Guna.UI2.WinForms.Guna2DateTimePicker();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             panel1.SuspendLayout();
             guna2GradientPanel1.SuspendLayout();
@@ -79,16 +89,18 @@
             panel1.Controls.Add(lblSTKThanhToan);
             panel1.Controls.Add(lblDiaChi);
             panel1.Controls.Add(lblCMND);
-            panel1.Controls.Add(lblMaKhachHang);
             panel1.Controls.Add(lblHoTen);
             panel1.Controls.Add(lblSTKThanhToan0);
             panel1.Controls.Add(lblDiaChi0);
             panel1.Controls.Add(lblCMND0);
-            panel1.Controls.Add(lblMaKhachHang0);
             panel1.Controls.Add(lblHoTen0);
             panel1.Controls.Add(lblTitle);
-            panel1.Controls.Add(txtSTKThanhToan);
             panel1.Controls.Add(txtDiaChi);
+            panel1.Controls.Add(txtCCCD);
+            panel1.Controls.Add(txtSoDuHienCo);
+            panel1.Controls.Add(txtSoDienThoai);
+            panel1.Controls.Add(txtHoTen);
+            panel1.Controls.Add(dtpNgaySinh);
             panel1.Location = new Point(15, 19);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
@@ -101,7 +113,7 @@
             lblSDT.BackColor = Color.Transparent;
             lblSDT.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblSDT.ForeColor = Color.FromArgb(127, 111, 180);
-            lblSDT.Location = new Point(370, 229);
+            lblSDT.Location = new Point(372, 160);
             lblSDT.Name = "lblSDT";
             lblSDT.RightToLeft = RightToLeft.Yes;
             lblSDT.Size = new Size(176, 32);
@@ -115,7 +127,7 @@
             lblSDT0.BackColor = Color.Transparent;
             lblSDT0.Font = new Font("Microsoft Sans Serif", 14.25F);
             lblSDT0.ForeColor = Color.FromArgb(135, 92, 254);
-            lblSDT0.Location = new Point(23, 231);
+            lblSDT0.Location = new Point(25, 162);
             lblSDT0.Name = "lblSDT0";
             lblSDT0.Size = new Size(154, 29);
             lblSDT0.TabIndex = 86;
@@ -154,7 +166,7 @@
             lblNgaySinh.BackColor = Color.Transparent;
             lblNgaySinh.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblNgaySinh.ForeColor = Color.FromArgb(127, 111, 180);
-            lblNgaySinh.Location = new Point(415, 351);
+            lblNgaySinh.Location = new Point(417, 282);
             lblNgaySinh.Margin = new Padding(3, 0, 29, 0);
             lblNgaySinh.Name = "lblNgaySinh";
             lblNgaySinh.RightToLeft = RightToLeft.Yes;
@@ -169,7 +181,7 @@
             lblNgaySinh0.BackColor = Color.Transparent;
             lblNgaySinh0.Font = new Font("Microsoft Sans Serif", 14.25F);
             lblNgaySinh0.ForeColor = Color.FromArgb(135, 92, 254);
-            lblNgaySinh0.Location = new Point(23, 351);
+            lblNgaySinh0.Location = new Point(25, 282);
             lblNgaySinh0.Name = "lblNgaySinh0";
             lblNgaySinh0.Size = new Size(119, 29);
             lblNgaySinh0.TabIndex = 84;
@@ -205,7 +217,7 @@
             lblSoDuHienCo.BackColor = Color.Transparent;
             lblSoDuHienCo.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblSoDuHienCo.ForeColor = Color.FromArgb(127, 111, 180);
-            lblSoDuHienCo.Location = new Point(327, 551);
+            lblSoDuHienCo.Location = new Point(329, 482);
             lblSoDuHienCo.Name = "lblSoDuHienCo";
             lblSoDuHienCo.RightToLeft = RightToLeft.Yes;
             lblSoDuHienCo.Size = new Size(219, 32);
@@ -219,7 +231,7 @@
             lblSoDuHienCo0.BackColor = Color.Transparent;
             lblSoDuHienCo0.Font = new Font("Microsoft Sans Serif", 14.25F);
             lblSoDuHienCo0.ForeColor = Color.FromArgb(135, 92, 254);
-            lblSoDuHienCo0.Location = new Point(24, 553);
+            lblSoDuHienCo0.Location = new Point(26, 484);
             lblSoDuHienCo0.Name = "lblSoDuHienCo0";
             lblSoDuHienCo0.Size = new Size(160, 29);
             lblSoDuHienCo0.TabIndex = 74;
@@ -231,7 +243,7 @@
             lblSTKThanhToan.BackColor = Color.Transparent;
             lblSTKThanhToan.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblSTKThanhToan.ForeColor = Color.FromArgb(127, 111, 180);
-            lblSTKThanhToan.Location = new Point(278, 485);
+            lblSTKThanhToan.Location = new Point(280, 416);
             lblSTKThanhToan.Name = "lblSTKThanhToan";
             lblSTKThanhToan.RightToLeft = RightToLeft.Yes;
             lblSTKThanhToan.Size = new Size(266, 32);
@@ -246,7 +258,7 @@
             lblDiaChi.BackColor = Color.Transparent;
             lblDiaChi.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblDiaChi.ForeColor = Color.FromArgb(127, 111, 180);
-            lblDiaChi.Location = new Point(188, 418);
+            lblDiaChi.Location = new Point(190, 349);
             lblDiaChi.Name = "lblDiaChi";
             lblDiaChi.RightToLeft = RightToLeft.Yes;
             lblDiaChi.Size = new Size(358, 32);
@@ -260,7 +272,7 @@
             lblCMND.BackColor = Color.Transparent;
             lblCMND.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblCMND.ForeColor = Color.FromArgb(127, 111, 180);
-            lblCMND.Location = new Point(372, 289);
+            lblCMND.Location = new Point(374, 220);
             lblCMND.Name = "lblCMND";
             lblCMND.RightToLeft = RightToLeft.Yes;
             lblCMND.Size = new Size(174, 32);
@@ -268,31 +280,16 @@
             lblCMND.Text = "1245678";
             lblCMND.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // lblMaKhachHang
-            // 
-            lblMaKhachHang.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblMaKhachHang.BackColor = Color.Transparent;
-            lblMaKhachHang.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
-            lblMaKhachHang.ForeColor = Color.FromArgb(127, 111, 180);
-            lblMaKhachHang.Location = new Point(337, 166);
-            lblMaKhachHang.Name = "lblMaKhachHang";
-            lblMaKhachHang.RightToLeft = RightToLeft.Yes;
-            lblMaKhachHang.Size = new Size(209, 32);
-            lblMaKhachHang.TabIndex = 68;
-            lblMaKhachHang.Text = "1234566788";
-            lblMaKhachHang.TextAlign = ContentAlignment.MiddleLeft;
-            lblMaKhachHang.Click += lblMaKhachHang_Click;
-            // 
             // lblHoTen
             // 
             lblHoTen.Anchor = AnchorStyles.Right;
             lblHoTen.BackColor = Color.Transparent;
             lblHoTen.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Italic);
             lblHoTen.ForeColor = Color.FromArgb(127, 111, 180);
-            lblHoTen.Location = new Point(339, 103);
+            lblHoTen.Location = new Point(226, 103);
             lblHoTen.Name = "lblHoTen";
             lblHoTen.RightToLeft = RightToLeft.Yes;
-            lblHoTen.Size = new Size(207, 32);
+            lblHoTen.Size = new Size(320, 32);
             lblHoTen.TabIndex = 67;
             lblHoTen.Text = "Ten KH";
             lblHoTen.TextAlign = ContentAlignment.MiddleLeft;
@@ -303,7 +300,7 @@
             lblSTKThanhToan0.BackColor = Color.Transparent;
             lblSTKThanhToan0.Font = new Font("Microsoft Sans Serif", 14.25F);
             lblSTKThanhToan0.ForeColor = Color.FromArgb(135, 92, 254);
-            lblSTKThanhToan0.Location = new Point(24, 487);
+            lblSTKThanhToan0.Location = new Point(26, 418);
             lblSTKThanhToan0.Name = "lblSTKThanhToan0";
             lblSTKThanhToan0.Size = new Size(261, 29);
             lblSTKThanhToan0.TabIndex = 64;
@@ -315,7 +312,7 @@
             lblDiaChi0.BackColor = Color.Transparent;
             lblDiaChi0.Font = new Font("Microsoft Sans Serif", 14.25F);
             lblDiaChi0.ForeColor = Color.FromArgb(135, 92, 254);
-            lblDiaChi0.Location = new Point(24, 420);
+            lblDiaChi0.Location = new Point(26, 351);
             lblDiaChi0.Name = "lblDiaChi0";
             lblDiaChi0.Size = new Size(86, 29);
             lblDiaChi0.TabIndex = 63;
@@ -327,23 +324,11 @@
             lblCMND0.BackColor = Color.Transparent;
             lblCMND0.Font = new Font("Microsoft Sans Serif", 14.25F);
             lblCMND0.ForeColor = Color.FromArgb(135, 92, 254);
-            lblCMND0.Location = new Point(23, 291);
+            lblCMND0.Location = new Point(25, 222);
             lblCMND0.Name = "lblCMND0";
-            lblCMND0.Size = new Size(160, 29);
+            lblCMND0.Size = new Size(81, 29);
             lblCMND0.TabIndex = 62;
-            lblCMND0.Text = "CMND/CCCD";
-            // 
-            // lblMaKhachHang0
-            // 
-            lblMaKhachHang0.AutoSize = true;
-            lblMaKhachHang0.BackColor = Color.Transparent;
-            lblMaKhachHang0.Font = new Font("Microsoft Sans Serif", 14.25F);
-            lblMaKhachHang0.ForeColor = Color.FromArgb(135, 92, 254);
-            lblMaKhachHang0.Location = new Point(23, 169);
-            lblMaKhachHang0.Name = "lblMaKhachHang0";
-            lblMaKhachHang0.Size = new Size(174, 29);
-            lblMaKhachHang0.TabIndex = 61;
-            lblMaKhachHang0.Text = "Mã khách hàng";
+            lblCMND0.Text = "CCCD";
             // 
             // lblHoTen0
             // 
@@ -369,40 +354,13 @@
             lblTitle.TabIndex = 58;
             lblTitle.Text = "THÔNG TIN KHÁCH HÀNG";
             // 
-            // txtSTKThanhToan
-            // 
-            txtSTKThanhToan.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtSTKThanhToan.BackColor = Color.Transparent;
-            txtSTKThanhToan.BorderColor = Color.FromArgb(61, 66, 250);
-            txtSTKThanhToan.BorderRadius = 10;
-            txtSTKThanhToan.CustomizableEdges = customizableEdges5;
-            txtSTKThanhToan.DefaultText = "";
-            txtSTKThanhToan.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtSTKThanhToan.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtSTKThanhToan.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtSTKThanhToan.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtSTKThanhToan.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtSTKThanhToan.Font = new Font("Segoe UI", 9F);
-            txtSTKThanhToan.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtSTKThanhToan.ImeMode = ImeMode.On;
-            txtSTKThanhToan.Location = new Point(278, 465);
-            txtSTKThanhToan.Margin = new Padding(3, 5, 3, 5);
-            txtSTKThanhToan.Name = "txtSTKThanhToan";
-            txtSTKThanhToan.PasswordChar = '\0';
-            txtSTKThanhToan.PlaceholderText = "";
-            txtSTKThanhToan.SelectedText = "";
-            txtSTKThanhToan.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            txtSTKThanhToan.Size = new Size(271, 55);
-            txtSTKThanhToan.TabIndex = 77;
-            txtSTKThanhToan.Visible = false;
-            // 
             // txtDiaChi
             // 
             txtDiaChi.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             txtDiaChi.BackColor = Color.Transparent;
             txtDiaChi.BorderColor = Color.FromArgb(61, 66, 250);
             txtDiaChi.BorderRadius = 10;
-            txtDiaChi.CustomizableEdges = customizableEdges7;
+            txtDiaChi.CustomizableEdges = customizableEdges5;
             txtDiaChi.DefaultText = "";
             txtDiaChi.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtDiaChi.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -412,22 +370,150 @@
             txtDiaChi.Font = new Font("Segoe UI", 9F);
             txtDiaChi.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtDiaChi.ImeMode = ImeMode.On;
-            txtDiaChi.Location = new Point(278, 399);
+            txtDiaChi.Location = new Point(280, 330);
             txtDiaChi.Margin = new Padding(3, 5, 3, 5);
             txtDiaChi.Name = "txtDiaChi";
             txtDiaChi.PasswordChar = '\0';
             txtDiaChi.PlaceholderText = "";
             txtDiaChi.SelectedText = "";
-            txtDiaChi.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            txtDiaChi.ShadowDecoration.CustomizableEdges = customizableEdges6;
             txtDiaChi.Size = new Size(271, 55);
             txtDiaChi.TabIndex = 78;
             txtDiaChi.Visible = false;
+            // 
+            // txtCCCD
+            // 
+            txtCCCD.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtCCCD.BackColor = Color.Transparent;
+            txtCCCD.BorderColor = Color.FromArgb(61, 66, 250);
+            txtCCCD.BorderRadius = 10;
+            txtCCCD.CustomizableEdges = customizableEdges7;
+            txtCCCD.DefaultText = "";
+            txtCCCD.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtCCCD.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtCCCD.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtCCCD.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtCCCD.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtCCCD.Font = new Font("Segoe UI", 9F);
+            txtCCCD.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtCCCD.ImeMode = ImeMode.On;
+            txtCCCD.Location = new Point(280, 203);
+            txtCCCD.Margin = new Padding(3, 5, 3, 5);
+            txtCCCD.Name = "txtCCCD";
+            txtCCCD.PasswordChar = '\0';
+            txtCCCD.PlaceholderText = "";
+            txtCCCD.SelectedText = "";
+            txtCCCD.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            txtCCCD.Size = new Size(271, 55);
+            txtCCCD.TabIndex = 89;
+            txtCCCD.Visible = false;
+            // 
+            // txtSoDuHienCo
+            // 
+            txtSoDuHienCo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtSoDuHienCo.BackColor = Color.Transparent;
+            txtSoDuHienCo.BorderColor = Color.FromArgb(61, 66, 250);
+            txtSoDuHienCo.BorderRadius = 10;
+            txtSoDuHienCo.CustomizableEdges = customizableEdges9;
+            txtSoDuHienCo.DefaultText = "";
+            txtSoDuHienCo.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtSoDuHienCo.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtSoDuHienCo.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtSoDuHienCo.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtSoDuHienCo.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtSoDuHienCo.Font = new Font("Segoe UI", 9F);
+            txtSoDuHienCo.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtSoDuHienCo.ImeMode = ImeMode.On;
+            txtSoDuHienCo.Location = new Point(280, 466);
+            txtSoDuHienCo.Margin = new Padding(3, 5, 3, 5);
+            txtSoDuHienCo.Name = "txtSoDuHienCo";
+            txtSoDuHienCo.PasswordChar = '\0';
+            txtSoDuHienCo.PlaceholderText = "";
+            txtSoDuHienCo.SelectedText = "";
+            txtSoDuHienCo.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            txtSoDuHienCo.Size = new Size(271, 55);
+            txtSoDuHienCo.TabIndex = 90;
+            txtSoDuHienCo.Visible = false;
+            // 
+            // txtSoDienThoai
+            // 
+            txtSoDienThoai.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtSoDienThoai.BackColor = Color.Transparent;
+            txtSoDienThoai.BorderColor = Color.FromArgb(61, 66, 250);
+            txtSoDienThoai.BorderRadius = 10;
+            txtSoDienThoai.CustomizableEdges = customizableEdges11;
+            txtSoDienThoai.DefaultText = "";
+            txtSoDienThoai.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtSoDienThoai.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtSoDienThoai.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtSoDienThoai.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtSoDienThoai.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtSoDienThoai.Font = new Font("Segoe UI", 9F);
+            txtSoDienThoai.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtSoDienThoai.ImeMode = ImeMode.On;
+            txtSoDienThoai.Location = new Point(280, 141);
+            txtSoDienThoai.Margin = new Padding(3, 5, 3, 5);
+            txtSoDienThoai.Name = "txtSoDienThoai";
+            txtSoDienThoai.PasswordChar = '\0';
+            txtSoDienThoai.PlaceholderText = "";
+            txtSoDienThoai.SelectedText = "";
+            txtSoDienThoai.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            txtSoDienThoai.Size = new Size(271, 55);
+            txtSoDienThoai.TabIndex = 91;
+            txtSoDienThoai.Visible = false;
+            // 
+            // txtHoTen
+            // 
+            txtHoTen.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtHoTen.BackColor = Color.Transparent;
+            txtHoTen.BorderColor = Color.FromArgb(61, 66, 250);
+            txtHoTen.BorderRadius = 10;
+            txtHoTen.CustomizableEdges = customizableEdges13;
+            txtHoTen.DefaultText = "";
+            txtHoTen.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtHoTen.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtHoTen.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtHoTen.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtHoTen.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtHoTen.Font = new Font("Segoe UI", 9F);
+            txtHoTen.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtHoTen.ImeMode = ImeMode.On;
+            txtHoTen.Location = new Point(280, 80);
+            txtHoTen.Margin = new Padding(3, 5, 3, 5);
+            txtHoTen.Name = "txtHoTen";
+            txtHoTen.PasswordChar = '\0';
+            txtHoTen.PlaceholderText = "";
+            txtHoTen.SelectedText = "";
+            txtHoTen.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            txtHoTen.Size = new Size(271, 55);
+            txtHoTen.TabIndex = 92;
+            txtHoTen.Visible = false;
+            // 
+            // dtpNgaySinh
+            // 
+            dtpNgaySinh.BorderColor = Color.FromArgb(98, 171, 251);
+            dtpNgaySinh.Checked = true;
+            dtpNgaySinh.CustomizableEdges = customizableEdges15;
+            dtpNgaySinh.FillColor = Color.FromArgb(98, 171, 251);
+            dtpNgaySinh.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dtpNgaySinh.ForeColor = Color.White;
+            dtpNgaySinh.Format = DateTimePickerFormat.Short;
+            dtpNgaySinh.Location = new Point(280, 270);
+            dtpNgaySinh.Margin = new Padding(3, 4, 3, 4);
+            dtpNgaySinh.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            dtpNgaySinh.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            dtpNgaySinh.Name = "dtpNgaySinh";
+            dtpNgaySinh.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            dtpNgaySinh.Size = new Size(271, 48);
+            dtpNgaySinh.TabIndex = 93;
+            dtpNgaySinh.Value = new DateTime(2024, 12, 1, 3, 15, 49, 556);
+            dtpNgaySinh.Visible = false;
             // 
             // guna2GradientPanel1
             // 
             guna2GradientPanel1.BackColor = Color.Transparent;
             guna2GradientPanel1.Controls.Add(panel1);
-            guna2GradientPanel1.CustomizableEdges = customizableEdges9;
+            guna2GradientPanel1.CustomizableEdges = customizableEdges17;
             guna2GradientPanel1.Dock = DockStyle.Fill;
             guna2GradientPanel1.FillColor = Color.FromArgb(91, 185, 250);
             guna2GradientPanel1.FillColor2 = Color.FromArgb(140, 82, 255);
@@ -435,7 +521,7 @@
             guna2GradientPanel1.Location = new Point(0, 0);
             guna2GradientPanel1.Margin = new Padding(3, 4, 3, 4);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
-            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges18;
             guna2GradientPanel1.Size = new Size(599, 731);
             guna2GradientPanel1.TabIndex = 28;
             // 
@@ -467,18 +553,20 @@
         private Label lblSTKThanhToan;
         private Label lblDiaChi;
         private Label lblCMND;
-        private Label lblMaKhachHang;
         private Label lblHoTen;
         private Label lblSTKThanhToan0;
         private Label lblDiaChi0;
         private Label lblCMND0;
-        private Label lblMaKhachHang0;
         private Label lblHoTen0;
         private Label lblTitle;
-        private Guna.UI2.WinForms.Guna2TextBox txtSTKThanhToan;
         private Guna.UI2.WinForms.Guna2TextBox txtDiaChi;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Label lblSDT;
         private Label lblSDT0;
+        private Guna.UI2.WinForms.Guna2TextBox txtCCCD;
+        private Guna.UI2.WinForms.Guna2TextBox txtSoDuHienCo;
+        private Guna.UI2.WinForms.Guna2TextBox txtSoDienThoai;
+        private Guna.UI2.WinForms.Guna2TextBox txtHoTen;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpNgaySinh;
     }
 }

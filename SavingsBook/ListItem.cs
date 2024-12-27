@@ -25,11 +25,23 @@ namespace GUI
         public event EventHandler ButtonClick;
         public int clickCount = 0;
         private LoaiTietKiem _loaiTietKiem;
+        private KhachHang _khachHang;
         private Action reload;
 
         public ListItem()
         {
             InitializeComponent();
+        }
+        public ListItem(KhachHang kh, Action reload)
+        {
+            InitializeComponent();
+            _khachHang = kh;
+            Ten1 = kh.TenKhachHang.ToString();
+            Ten2 = kh.SoTaiKhoanThanhToan.ToString();
+            Ten3 = formatSoTien(kh.SoDuHienCo);
+            Ten4 = kh.TongSoPhieuGoiTien.ToString();
+            FormType = ObjectType.KhachHang;
+            this.reload = reload;
         }
         public ListItem(LoaiTietKiem ltk, Action reload)
         {
@@ -62,7 +74,7 @@ namespace GUI
                 switch (_formType)
                 {
                     case ObjectType.KhachHang:
-                        CMSKhachHang cmsKhachHang = new CMSKhachHang();
+                        CMSKhachHang cmsKhachHang = new CMSKhachHang(reload);
                         // Lấy số tài khoản thanh toán từ Ten2
                         string soTaiKhoanThanhToan = Ten2.Replace("Số tài khoản: ", "").Trim();
                         if (!string.IsNullOrEmpty(soTaiKhoanThanhToan))
@@ -145,6 +157,19 @@ namespace GUI
         {
             get { return btnTuyChon.Visible; }
             set { btnTuyChon.Visible = value; }
+        }
+        string formatSoTien(double sotien)
+        {
+            string formatedText;
+            if (sotien == 0)
+            {
+                formatedText = sotien + " VND";
+            }
+            else
+            {
+                formatedText = sotien.ToString("#,#.##") + " VND";
+            }
+            return formatedText;
         }
 
     }

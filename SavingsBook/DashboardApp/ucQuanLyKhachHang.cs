@@ -33,25 +33,23 @@ namespace GUI.DashboardApp
             var khachHangBUS = new KhachHangBUS();
             List<KhachHang> danhSachKhachHang = khachHangBUS.GetAllKhachHangWithPhieuGoiTienCount();
 
-            if (danhSachKhachHang == null || danhSachKhachHang.Count == 0)
-            {
-                MessageBox.Show("Không có dữ liệu khách hàng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
             // Xóa các điều khiển cũ
             flowLayoutPanel1.Controls.Clear();
 
             // Tạo và thêm các ListItem
             foreach (var kh in danhSachKhachHang)
             {
-                var listItem = new ListItem
-                {
-                    Ten1 = kh.TenKhachHang,               // Tên khách hàng
-                    Ten2 = kh.SoTaiKhoanThanhToan,       // Mã khách hàng
-                    Ten3 = formatSoTien(kh.SoDuHienCo),  // Số dư (định dạng tiền tệ)
-                    Ten4 = kh.TongSoPhieuGoiTien.ToString() // Tổng số phiếu tiết kiệm
-                };
+                //var listItem = new ListItem
+                //{
+                //    Ten1 = kh.TenKhachHang,               // Tên khách hàng
+                //    Ten2 = kh.SoTaiKhoanThanhToan,       // Mã khách hàng
+                //    Ten3 = formatSoTien(kh.SoDuHienCo),  // Số dư (định dạng tiền tệ)
+                //    Ten4 = kh.TongSoPhieuGoiTien.ToString() // Tổng số phiếu tiết kiệm
+                //};
+
+                var listItem = new ListItem(kh, ReloadDanhSachKhachHang);
+
+
 
                 // Thêm vào FlowLayoutPanel
                 flowLayoutPanel1.Controls.Add(listItem);
@@ -88,7 +86,7 @@ namespace GUI.DashboardApp
 
         private void btn_Click(object sender, EventArgs e)
         {
-            ThongTinKhachHang customerInfor = new ThongTinKhachHang();
+            ThongTinKhachHang customerInfor = new ThongTinKhachHang(PopulateItems);
             customerInfor.Show();
         }
         private void ReloadDanhSachKhachHang()
