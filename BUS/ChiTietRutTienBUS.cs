@@ -42,7 +42,9 @@ namespace BUS
             }
             else
             {
-                if (ngayRut < PhieuGoiTien.NgayDaoHanKeTiep)
+                int kyHan = new LoaiTietKiemBUS().getLoaiTietKiem(PhieuGoiTien.MaLoaiTietKiem).KyHan;
+
+                if (ngayRut < PhieuGoiTien.NgayGoi.AddMonths(kyHan))
                     return "Sổ tiết kiệm có kỳ hạn chỉ được rút khi đã quá kỳ hạn.";
 
                 if (!rutTienDAO.UpdatePhieuGoiTienToZero(soTaiKhoanTienGoi))
