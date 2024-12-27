@@ -236,6 +236,7 @@
             txtTimKiem.Size = new Size(931, 67);
             txtTimKiem.TabIndex = 18;
             txtTimKiem.TextOffset = new Point(10, 0);
+            txtTimKiem.TextChanged += txtTimKiem_TextChanged;
             // 
             // ucQuanLyKhachHang
             // 

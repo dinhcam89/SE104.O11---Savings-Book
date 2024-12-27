@@ -15,41 +15,31 @@ namespace GUI.DashboardApp
 {
     public partial class ucQuanLyKhachHang : UserControl
     {
+        List<KhachHang> khachHangs;
+        KhachHangBUS khachHangBUS = new KhachHangBUS();
         public ucQuanLyKhachHang()
         {
             InitializeComponent();
+            khachHangs = khachHangBUS.GetAllKhachHangWithPhieuGoiTienCount();
         }
 
 
         private void ucManageCustomers_Load(object sender, EventArgs e)
         {
-            PopulateItems();
+            PopulateItems(khachHangs);
 
         }
 
-        private void PopulateItems()
+        private void PopulateItems(List<KhachHang> khachHangList)
         {
-            // Lấy dữ liệu từ lớp BUS
-            var khachHangBUS = new KhachHangBUS();
-            List<KhachHang> danhSachKhachHang = khachHangBUS.GetAllKhachHangWithPhieuGoiTienCount();
 
             // Xóa các điều khiển cũ
             flowLayoutPanel1.Controls.Clear();
 
             // Tạo và thêm các ListItem
-            foreach (var kh in danhSachKhachHang)
+            foreach (var kh in khachHangList)
             {
-                //var listItem = new ListItem
-                //{
-                //    Ten1 = kh.TenKhachHang,               // Tên khách hàng
-                //    Ten2 = kh.SoTaiKhoanThanhToan,       // Mã khách hàng
-                //    Ten3 = formatSoTien(kh.SoDuHienCo),  // Số dư (định dạng tiền tệ)
-                //    Ten4 = kh.TongSoPhieuGoiTien.ToString() // Tổng số phiếu tiết kiệm
-                //};
-
                 var listItem = new ListItem(kh, ReloadDanhSachKhachHang);
-
-
 
                 // Thêm vào FlowLayoutPanel
                 flowLayoutPanel1.Controls.Add(listItem);
@@ -86,14 +76,22 @@ namespace GUI.DashboardApp
 
         private void btn_Click(object sender, EventArgs e)
         {
-            ThongTinKhachHang customerInfor = new ThongTinKhachHang(PopulateItems);
+            ThongTinKhachHang customerInfor = new ThongTinKhachHang(ReloadDanhSachKhachHang);
             customerInfor.Show();
         }
         private void ReloadDanhSachKhachHang()
         {
             // Cập nhật lại danh sách khách hàng
             // Ví dụ, reload lại dữ liệu từ cơ sở dữ liệu hoặc từ nguồn dữ liệu khác
-            PopulateItems();
+            PopulateItems(khachHangs);
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = txtTimKiem.Text.Trim();
+            var searchKhachHang = khachHangBUS.SearchKhachHang(searchText);
+
+            PopulateItems(searchKhachHang);
         }
     }
 }

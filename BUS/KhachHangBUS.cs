@@ -28,5 +28,9 @@ namespace BUS
         {
             return khachHangDAO.CapNhatKhachHang(khachHang);
         }
+        public List<KhachHang> SearchKhachHang(string searchText)
+        {
+            return khachHangDAO.SearchKhachHang(searchText);
+        }
     }
 }

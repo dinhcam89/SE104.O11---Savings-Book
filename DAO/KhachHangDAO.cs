@@ -207,5 +207,107 @@ namespace DAO
                 throw new Exception("Lỗi khi cập nhật thông tin khách hàng: " + ex.Message);
             }
         }
+        public List<KhachHang> SearchKhachHang(string searchText)
+
+        {
+
+            var danhSach = new List<KhachHang>();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+
+            {
+
+                string query = @"
+
+        SELECT 
+
+            Kh.SoTaiKhoanThanhToan, 
+
+            Kh.TenKhachHang, 
+
+            Kh.CCCD, 
+
+            Kh.SoDienThoai, 
+
+            Kh.NgaySinh, 
+
+            Kh.DiaChi, 
+
+            Kh.SoDuHienCo,
+
+            COUNT(PGT.SoTaiKhoanTienGoi) AS TongSoPhieuGoiTien
+
+        FROM 
+
+            KhachHang Kh
+
+        LEFT JOIN 
+
+            PhieuGoiTien PGT ON Kh.SoTaiKhoanThanhToan = PGT.SoTaiKhoanThanhToan
+
+        WHERE 
+
+            Kh.TenKhachHang LIKE @SearchText
+
+            OR Kh.SoTaiKhoanThanhToan LIKE @SearchText
+
+        GROUP BY 
+
+            Kh.SoTaiKhoanThanhToan, 
+
+            Kh.TenKhachHang, 
+
+            Kh.CCCD, 
+
+            Kh.SoDienThoai, 
+
+            Kh.NgaySinh, 
+
+            Kh.DiaChi, 
+
+            Kh.SoDuHienCo";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                cmd.Parameters.AddWithValue("@SearchText", "%" + searchText + "%");
+
+                conn.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+
+                {
+
+                    danhSach.Add(new KhachHang
+
+                    {
+
+                        SoTaiKhoanThanhToan = reader.GetString(0),
+
+                        TenKhachHang = reader.GetString(1),
+
+                        CCCD = reader.GetString(2),
+
+                        SoDienThoai = reader.GetString(3),
+
+                        NgaySinh = reader.GetDateTime(4),
+
+                        DiaChi = reader.GetString(5),
+
+                        SoDuHienCo = (float)reader.GetDouble(6),
+
+                        TongSoPhieuGoiTien = reader.GetInt32(7) // Thêm thông tin tổng số phiếu gửi tiền
+
+                    });
+
+                }
+
+            }
+
+            return danhSach;
+
+        }
+
     }
 }
