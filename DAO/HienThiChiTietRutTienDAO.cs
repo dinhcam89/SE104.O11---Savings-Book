@@ -209,7 +209,7 @@ namespace DAO
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT * FROM ChiTietRutTien WHERE SoTaiKhoanTienGoi LIKE @SearchText";
+                string query = "SELECT * FROM ChiTietRutTien WHERE SoTaiKhoanTienGoi LIKE @SearchText OR MaChiTietRutTien LIKE @SearchText";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@SearchText", "%" + searchText + "%");
 

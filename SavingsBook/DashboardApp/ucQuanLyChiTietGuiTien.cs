@@ -60,10 +60,10 @@ namespace GUI.DashboardApp
             {
                 ListItem listItem = new ListItem
                 {
-                    Ten1 = item.SoTaiKhoanTienGoi,
-                    Ten2 = item.NgayGui.ToString("dd/MM/yyyy"),
-                    Ten3 = formatSoTien(item.SoTienGui),
-                    Ten4 = "",
+                    Ten1 = item.MaChiTietGuiTien,
+                    Ten2 = item.SoTaiKhoanTienGoi,
+                    Ten3 = item.NgayGui.ToString("dd/MM/yyyy"),
+                    Ten4 = formatSoTien(item.SoTienGui),
                     FormType = ObjectType.PhieuGoiTien,
                     IsButtonVisible = false
                 };
@@ -108,10 +108,10 @@ namespace GUI.DashboardApp
             {
                 ListItem listItem = new ListItem
                 {
-                    Ten1 = item.SoTaiKhoanTienGoi,
-                    Ten2 = item.NgayGui.ToString("dd/MM/yyyy"),
-                    Ten3 = formatSoTien(item.SoTienGui),
-                    Ten4 = "",
+                    Ten1 = item.MaChiTietGuiTien,
+                    Ten2 = item.SoTaiKhoanTienGoi,
+                    Ten3 = item.NgayGui.ToString("dd/MM/yyyy"),
+                    Ten4 = formatSoTien(item.SoTienGui),
                     FormType = ObjectType.PhieuGoiTien,
                     IsButtonVisible = false
                 };

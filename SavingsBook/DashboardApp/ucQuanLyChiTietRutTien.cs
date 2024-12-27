@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
+using DocumentFormat.OpenXml.Spreadsheet;
 
 namespace GUI.DashboardApp
 {
@@ -61,10 +62,10 @@ namespace GUI.DashboardApp
             {
                 ListItem listItem = new ListItem
                 {
-                    Ten1 = item.SoTaiKhoanTienGoi,
-                    Ten2 = item.NgayRut.ToString("dd/MM/yyyy"),
-                    Ten3 = formatSoTien(item.SoTienRut),
-                    Ten4 = "", // Nếu có dữ liệu khác cần hiển thị, bạn có thể gán ở đây
+                    Ten1 = item.MaChiTietRutTien,
+                    Ten2 = item.SoTaiKhoanTienGoi,
+                    Ten3 = item.NgayRut.ToString("dd/MM/yyyy"),
+                    Ten4 = formatSoTien(item.SoTienRut),
                     FormType = ObjectType.PhieuGoiTien,
                     IsButtonVisible = false // Ẩn nút nếu cần
                 };
@@ -110,10 +111,10 @@ namespace GUI.DashboardApp
             {
                 ListItem listItem = new ListItem
                 {
-                    Ten1 = item.SoTaiKhoanTienGoi,
-                    Ten2 = item.NgayRut.ToString("dd/MM/yyyy"),
-                    Ten3 = formatSoTien(item.SoTienRut),
-                    Ten4 = "",
+                    Ten1 = item.MaChiTietRutTien,
+                    Ten2 = item.SoTaiKhoanTienGoi,
+                    Ten3 = item.NgayRut.ToString("dd/MM/yyyy"),
+                    Ten4 = formatSoTien(item.SoTienRut),
                     FormType = ObjectType.PhieuGoiTien,
                     IsButtonVisible = false
                 };

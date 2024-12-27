@@ -52,6 +52,7 @@
             btnXuatBaoCao = new Guna.UI2.WinForms.Guna2GradientButton();
             flowLayoutPanel1 = new FlowLayoutPanel();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            label1 = new Label();
             lblSoTienRut0 = new Label();
             lblNgayRut0 = new Label();
             lblMaPhieu0 = new Label();
@@ -236,6 +237,7 @@
             guna2Panel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             guna2Panel3.BorderColor = Color.Transparent;
             guna2Panel3.BorderRadius = 10;
+            guna2Panel3.Controls.Add(label1);
             guna2Panel3.Controls.Add(lblSoTienRut0);
             guna2Panel3.Controls.Add(lblNgayRut0);
             guna2Panel3.Controls.Add(lblMaPhieu0);
@@ -248,13 +250,25 @@
             guna2Panel3.Size = new Size(992, 56);
             guna2Panel3.TabIndex = 18;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(37, 10, 128);
+            label1.Location = new Point(17, 15);
+            label1.Name = "label1";
+            label1.Size = new Size(172, 25);
+            label1.TabIndex = 6;
+            label1.Text = "Mã chi tiết rút tiền";
+            // 
             // lblSoTienRut0
             // 
             lblSoTienRut0.AutoSize = true;
             lblSoTienRut0.BackColor = Color.Transparent;
             lblSoTienRut0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSoTienRut0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblSoTienRut0.Location = new Point(539, 13);
+            lblSoTienRut0.Location = new Point(792, 15);
             lblSoTienRut0.Name = "lblSoTienRut0";
             lblSoTienRut0.Size = new Size(101, 25);
             lblSoTienRut0.TabIndex = 4;
@@ -266,7 +280,7 @@
             lblNgayRut0.BackColor = Color.Transparent;
             lblNgayRut0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNgayRut0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblNgayRut0.Location = new Point(282, 13);
+            lblNgayRut0.Location = new Point(535, 15);
             lblNgayRut0.Name = "lblNgayRut0";
             lblNgayRut0.Size = new Size(88, 25);
             lblNgayRut0.TabIndex = 5;
@@ -278,11 +292,11 @@
             lblMaPhieu0.BackColor = Color.Transparent;
             lblMaPhieu0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblMaPhieu0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblMaPhieu0.Location = new Point(31, 13);
+            lblMaPhieu0.Location = new Point(284, 15);
             lblMaPhieu0.Name = "lblMaPhieu0";
-            lblMaPhieu0.Size = new Size(93, 25);
+            lblMaPhieu0.Size = new Size(164, 25);
             lblMaPhieu0.TabIndex = 4;
-            lblMaPhieu0.Text = "Mã phiếu";
+            lblMaPhieu0.Text = "Mã phiếu gởi tiền";
             // 
             // ucQuanLyChiTietRutTien
             // 
@@ -316,5 +330,6 @@
         private Label lblTuNgay;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpTuNgay;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpDenNgay;
+        private Label label1;
     }
 }
