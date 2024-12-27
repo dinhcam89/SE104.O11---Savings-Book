@@ -210,13 +210,6 @@ namespace GUI.DashboardApp
             // Lấy dữ liệu tổng tiền gửi theo ngày và kỳ hạn
             var savingsData = bieuDoBUS.GetSavingsByDateAndTerm(selectedDate);
 
-            // Kiểm tra xem savingsData có dữ liệu không
-            if (savingsData == null || savingsData.Count == 0)
-            {
-                MessageBox.Show("Không có dữ liệu cho tháng này.");
-                return;
-            }
-
             // Danh sách các kỳ hạn: 0 kỳ hạn, 3 tháng, 6 tháng
             var kyHanList = new List<int> { 0, 3, 6 };
 
