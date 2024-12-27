@@ -102,9 +102,9 @@ namespace GUI
                         break;
                     case ObjectType.PhieuGoiTien:
                         CMSPhieuGoiTien cmsPhieuGoiTien = new CMSPhieuGoiTien(reload);
-                        string maPhieu = Ten2.ToString();
+                        string maPhieu = Ten1.ToString();
                         cmsPhieuGoiTien.maPhieu = maPhieu;
-                        string tenKhachHang = Ten1.ToString();
+                        string tenKhachHang = Ten2.ToString();
                         cmsPhieuGoiTien.tenKhachHang = tenKhachHang;
 
                         cmsPhieuGoiTien.Show(screenPoint);
