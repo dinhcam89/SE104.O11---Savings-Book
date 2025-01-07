@@ -26,6 +26,8 @@ namespace GUI
         public Dashboard()
         {
             InitializeComponent();
+            this.panelMenuActive.Location = new Point(btnQuanLyPhieu.Location.X, btnQuanLyPhieu.Location.Y);
+            this.tongglepanelMain("manageSavingBooks");
         }
 
         private void btnResetColor()

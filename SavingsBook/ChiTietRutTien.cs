@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,42 +13,104 @@ namespace GUI
 {
     public partial class ChiTietRutTien : Form
     {
-        public ChiTietRutTien()
+        private string maPhieuGoiTien;
+        private string tenKhachHang;
+        public ChiTietRutTien(string maPhieuGoiTien, string tenKhachHang)
+
         {
             InitializeComponent();
+            this.maPhieuGoiTien = maPhieuGoiTien;
+            this.tenKhachHang = tenKhachHang;
+        }
+        public ChiTietRutTien(string maPhieuGoiTien)
+        {
+            this.maPhieuGoiTien = maPhieuGoiTien;
+            // Tự động điền số tài khoản thanh toán
+
         }
 
         private void ChiTietRutTien_Load(object sender, EventArgs e)
         {
-            populateItems();
+            populateItems(maPhieuGoiTien, tenKhachHang);
+            lbMaPhieu.Text = maPhieuGoiTien;
+            lblTenKhachHang.Text = tenKhachHang;
+            try
+            {
+                var hienthiBUS = new HienThiChiTietGuiTienBUS();
+                double tongTienGoc = hienthiBUS.GetTongTien(maPhieuGoiTien);
+                lblSoTienGocCopy.Text = formatSoTien(tongTienGoc);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải tổng tiền gốc: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void populateItems()
+        private void populateItems(string maPhieu, string tenKhachHang)
         {
-            ListItem[] listItems = new ListItem[20];
+            flowLayoutPanel1.Controls.Clear();
 
-            for (int i = 0; i < listItems.Length; i++)
+            //List<DTO.ChiTietRutTien> chiTiet;
+
+            try
             {
-                listItems[i] = new ListItem();
-                listItems[i].Ten1 = "Ngày rút " + i;
-                listItems[i].Ten2 = "Số tiền " + i;
-                listItems[i].Ten3 = "";
-                listItems[i].Ten4 = "";
-                    
-                listItems[i].FormType = ObjectType.PhieuGoiTien;
+                // Tạo đối tượng BUS
+                var hienthiBUS = new HienThiChiTietRutTienBUS();
 
-                listItems[i].IsButtonVisible = false; // Ẩn nút
+                // Kiểm tra và lấy thông tin theo mã phiếu
+                var chiTiet = hienthiBUS.GetChiTietRutTienByMaPhieu(maPhieu);
+                //listChiTiet = chiTiet != null ? new List<DTO.ChiTietRutTien> { chiTiet } : new List<DTO.ChiTietRutTien>();
 
-                flowLayoutPanel1.Controls.Add(listItems[i]);
-            }
-
-            flowLayoutPanel1.Resize += (s, e) =>
-            {
-                foreach (ListItem item in flowLayoutPanel1.Controls)
+                if (chiTiet.Count > 0)
                 {
-                    item.Width = flowLayoutPanel1.ClientSize.Width;
+                    foreach (var item in chiTiet)
+                    {
+                        var listItem = new ListItem
+                        {
+                            Ten1 = $"{item.NgayRut:dd/MM/yyyy}",
+                            Ten2 = formatSoTien(item.SoTienRut),
+                            Ten3 = "",
+                            Ten4 = "",
+                            FormType = ObjectType.PhieuGoiTien,
+                            IsButtonVisible = false
+
+                        };
+
+                        listItem.Width = flowLayoutPanel1.ClientSize.Width - 30;
+                        flowLayoutPanel1.Controls.Add(listItem);
+                    }
                 }
-            };
+                else
+                {
+                    MessageBox.Show("Không tìm thấy dữ liệu phù hợp.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        string formatSoTien(double sotien)
+        {
+            string formatedText;
+            if (sotien == 0)
+            {
+                formatedText = sotien + " VND";
+            }
+            else
+            {
+                formatedText = sotien.ToString("#,#.##") + " VND";
+            }
+            return formatedText;
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTenKhachHang_Click(object sender, EventArgs e)
+        {
 
         }
     }

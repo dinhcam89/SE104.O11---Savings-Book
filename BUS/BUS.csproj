@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+
+    <PackageReference Include="ClosedXML" Version="0.104.2" />
+
     <PackageReference Include="EPPlus" Version="7.5.2" />
     <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
   </ItemGroup>

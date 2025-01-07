@@ -63,9 +63,10 @@
             guna2Panel1.CustomizableEdges = customizableEdges10;
             guna2Panel1.Dock = DockStyle.Fill;
             guna2Panel1.Location = new Point(0, 0);
+            guna2Panel1.Margin = new Padding(3, 4, 3, 4);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges11;
-            guna2Panel1.Size = new Size(966, 634);
+            guna2Panel1.Size = new Size(1104, 845);
             guna2Panel1.TabIndex = 0;
             // 
             // guna2Panel2
@@ -78,10 +79,11 @@
             guna2Panel2.Controls.Add(btnTimKiem);
             guna2Panel2.Controls.Add(txtTimKiem);
             guna2Panel2.CustomizableEdges = customizableEdges8;
-            guna2Panel2.Location = new Point(17, 15);
+            guna2Panel2.Location = new Point(19, 20);
+            guna2Panel2.Margin = new Padding(3, 4, 3, 4);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges9;
-            guna2Panel2.Size = new Size(929, 603);
+            guna2Panel2.Size = new Size(1062, 804);
             guna2Panel2.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -89,9 +91,10 @@
             flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.BackColor = Color.Transparent;
-            flowLayoutPanel1.Location = new Point(19, 132);
+            flowLayoutPanel1.Location = new Point(22, 176);
+            flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(894, 407);
+            flowLayoutPanel1.Size = new Size(1022, 543);
             flowLayoutPanel1.TabIndex = 24;
             // 
             // btnAdd
@@ -111,10 +114,11 @@
             btnAdd.Image = (Image)resources.GetObject("btnAdd.Image");
             btnAdd.ImageOffset = new Point(40, 0);
             btnAdd.ImageSize = new Size(30, 30);
-            btnAdd.Location = new Point(29, 545);
+            btnAdd.Location = new Point(33, 727);
+            btnAdd.Margin = new Padding(3, 4, 3, 4);
             btnAdd.Name = "btnAdd";
             btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnAdd.Size = new Size(872, 43);
+            btnAdd.Size = new Size(997, 57);
             btnAdd.TabIndex = 22;
             btnAdd.Text = "Thêm mới";
             btnAdd.TextOffset = new Point(-20, 0);
@@ -131,10 +135,11 @@
             guna2Panel5.Controls.Add(lbltenKhachHang0);
             guna2Panel5.CustomizableEdges = customizableEdges3;
             guna2Panel5.FillColor = Color.AliceBlue;
-            guna2Panel5.Location = new Point(29, 84);
+            guna2Panel5.Location = new Point(33, 112);
+            guna2Panel5.Margin = new Padding(3, 4, 3, 4);
             guna2Panel5.Name = "guna2Panel5";
             guna2Panel5.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Panel5.Size = new Size(872, 42);
+            guna2Panel5.Size = new Size(997, 56);
             guna2Panel5.TabIndex = 20;
             // 
             // label1
@@ -143,9 +148,9 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(37, 10, 128);
-            label1.Location = new Point(638, 11);
+            label1.Location = new Point(799, 15);
             label1.Name = "label1";
-            label1.Size = new Size(132, 20);
+            label1.Size = new Size(167, 25);
             label1.TabIndex = 6;
             label1.Text = "Số phiếu tiết kiệm";
             // 
@@ -155,9 +160,9 @@
             lblLoaiTietKiem0.BackColor = Color.Transparent;
             lblLoaiTietKiem0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblLoaiTietKiem0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblLoaiTietKiem0.Location = new Point(441, 11);
+            lblLoaiTietKiem0.Location = new Point(544, 15);
             lblLoaiTietKiem0.Name = "lblLoaiTietKiem0";
-            lblLoaiTietKiem0.Size = new Size(48, 20);
+            lblLoaiTietKiem0.Size = new Size(61, 25);
             lblLoaiTietKiem0.TabIndex = 4;
             lblLoaiTietKiem0.Text = "Số dư";
             // 
@@ -167,9 +172,9 @@
             lblMaPhieuTietKiem0.BackColor = Color.Transparent;
             lblMaPhieuTietKiem0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblMaPhieuTietKiem0.ForeColor = Color.FromArgb(37, 10, 128);
-            lblMaPhieuTietKiem0.Location = new Point(237, 11);
+            lblMaPhieuTietKiem0.Location = new Point(291, 15);
             lblMaPhieuTietKiem0.Name = "lblMaPhieuTietKiem0";
-            lblMaPhieuTietKiem0.Size = new Size(115, 20);
+            lblMaPhieuTietKiem0.Size = new Size(144, 25);
             lblMaPhieuTietKiem0.TabIndex = 5;
             lblMaPhieuTietKiem0.Text = "Mã khách hàng";
             // 
@@ -179,9 +184,9 @@
             lbltenKhachHang0.BackColor = Color.Transparent;
             lbltenKhachHang0.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbltenKhachHang0.ForeColor = Color.FromArgb(37, 10, 128);
-            lbltenKhachHang0.Location = new Point(28, 11);
+            lbltenKhachHang0.Location = new Point(32, 15);
             lbltenKhachHang0.Name = "lbltenKhachHang0";
-            lbltenKhachHang0.Size = new Size(117, 20);
+            lbltenKhachHang0.Size = new Size(145, 25);
             lbltenKhachHang0.TabIndex = 4;
             lbltenKhachHang0.Text = "Tên khách hàng";
             // 
@@ -198,11 +203,12 @@
             btnTimKiem.ForeColor = Color.Transparent;
             btnTimKiem.Image = (Image)resources.GetObject("btnTimKiem.Image");
             btnTimKiem.ImageSize = new Size(30, 30);
-            btnTimKiem.Location = new Point(851, 14);
+            btnTimKiem.Location = new Point(973, 19);
+            btnTimKiem.Margin = new Padding(3, 4, 3, 4);
             btnTimKiem.Name = "btnTimKiem";
             btnTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges5;
             btnTimKiem.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            btnTimKiem.Size = new Size(50, 50);
+            btnTimKiem.Size = new Size(57, 67);
             btnTimKiem.TabIndex = 19;
             // 
             // txtTimKiem
@@ -220,24 +226,26 @@
             txtTimKiem.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTimKiem.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtTimKiem.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTimKiem.Location = new Point(29, 14);
-            txtTimKiem.Margin = new Padding(4);
+            txtTimKiem.Location = new Point(33, 19);
+            txtTimKiem.Margin = new Padding(5);
             txtTimKiem.Name = "txtTimKiem";
             txtTimKiem.PasswordChar = '\0';
             txtTimKiem.PlaceholderText = "";
             txtTimKiem.SelectedText = "";
             txtTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges7;
-            txtTimKiem.Size = new Size(815, 50);
+            txtTimKiem.Size = new Size(931, 67);
             txtTimKiem.TabIndex = 18;
             txtTimKiem.TextOffset = new Point(10, 0);
+            txtTimKiem.TextChanged += txtTimKiem_TextChanged;
             // 
             // ucQuanLyKhachHang
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(guna2Panel1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "ucQuanLyKhachHang";
-            Size = new Size(966, 634);
+            Size = new Size(1104, 845);
             Load += ucManageCustomers_Load;
             guna2Panel1.ResumeLayout(false);
             guna2Panel2.ResumeLayout(false);

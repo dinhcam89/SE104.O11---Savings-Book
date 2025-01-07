@@ -8,6 +8,7 @@ namespace GUI
         private LoaiTietKiemBUS _loaiTietKiemBUS = new LoaiTietKiemBUS();
         private LoaiTietKiem _loaiTietKiem;
         private Action reload;
+        public ChinhSuaLoaiTietKiem() { }
         public ChinhSuaLoaiTietKiem(LoaiTietKiem ltk, Action reload)
         {
             InitializeComponent();
@@ -147,6 +148,9 @@ namespace GUI
                 {
                     formatedQuyDinhTienRut = "<=";
                 }
+
+                double laiSuatCu = _loaiTietKiem.LaiSuat;
+
                 bool response = _loaiTietKiemBUS.updateLoaiTietKiem(new LoaiTietKiem()
                 {
                     MaLoaiTietKiem = _loaiTietKiem.MaLoaiTietKiem,
@@ -158,6 +162,26 @@ namespace GUI
                 if (response)
                 {
                     MessageBox.Show("Cập nhật thành công");
+
+                    // Nếu lãi suất cũ khác lãi suất mới thì cập nhật lãi suất phát sinh của phiếu gởi tiền
+                    if (laiSuatCu != double.Parse(txtLaiSuat.Text))
+                    {
+                        PhieuGoiTienBUS _phieuGoiTienBUS = new();
+                        List<PhieuGoiTien> pgts = timPhieuGoiTienTheoMaLoaiTietKiem(_loaiTietKiem.MaLoaiTietKiem);
+                        foreach (PhieuGoiTien pgt in pgts)
+                        {
+                            // Nếu phiếu gởi tiền không gia hạn thì không cập nhật
+                            if (pgt.HinhThucGiaHan == 1) continue;
+                            pgt.LaiSuatPhatSinh = double.Parse(txtLaiSuat.Text);
+                            bool res = _phieuGoiTienBUS.UpdatePhieuGoiTien(pgt);
+                            if (!res)
+                            {
+                                MessageBox.Show("Cập nhật lãi suất phát sinh thất bại. Số tài khoản tiền gởi: " + pgt.SoTaiKhoanTienGoi);
+                                return;
+                            }
+                        }
+                        MessageBox.Show("Cập nhật lãi suất phát sinh thành công");
+                    }
                     reload();
                     Close();
                 }
@@ -190,6 +214,25 @@ namespace GUI
         private void txtAdjustRate_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private List<PhieuGoiTien> timPhieuGoiTienTheoMaLoaiTietKiem(string maLoaiTietKiem)
+        {
+            // Lấy tất cả phiếu gởi tiền hiện có
+            PhieuGoiTienBUS _phieuGoiTienBUS = new PhieuGoiTienBUS();
+            List<PhieuGoiTien> pgts = _phieuGoiTienBUS.GetPhieuGoiTien();
+
+            // Lọc ra các phiếu gởi tiền theo mã loại tiết kiệm
+            List<PhieuGoiTien> result = new List<PhieuGoiTien>();
+            foreach (PhieuGoiTien pgt in pgts)
+            {
+                if (pgt.MaLoaiTietKiem == maLoaiTietKiem)
+                {
+                    result.Add(pgt);
+                }
+            }
+
+            return result;
         }
     }
 }

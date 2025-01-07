@@ -1,4 +1,6 @@
-﻿using SavingsBook;
+﻿using BUS;
+using DTO;
+using SavingsBook;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,33 +15,37 @@ namespace GUI.DashboardApp
 {
     public partial class ucQuanLyKhachHang : UserControl
     {
+        List<KhachHang> khachHangs;
+        KhachHangBUS khachHangBUS = new KhachHangBUS();
         public ucQuanLyKhachHang()
         {
             InitializeComponent();
+            khachHangs = khachHangBUS.GetAllKhachHangWithPhieuGoiTienCount();
         }
 
 
         private void ucManageCustomers_Load(object sender, EventArgs e)
         {
-            populateItems();
+            PopulateItems(khachHangs);
 
         }
 
-        private void populateItems()
+        private void PopulateItems(List<KhachHang> khachHangList)
         {
-            ListItem[] listItems = new ListItem[10];
 
-            for (int i = 0; i < listItems.Length; i++)
+            // Xóa các điều khiển cũ
+            flowLayoutPanel1.Controls.Clear();
+
+            // Tạo và thêm các ListItem
+            foreach (var kh in khachHangList)
             {
-                listItems[i] = new ListItem();
-                listItems[i].Ten1 = "Tên khách hàng " + i;
-                listItems[i].Ten2 = "Mã khách hàng " + i;
-                listItems[i].Ten3 = "Số dư " + i;
-                listItems[i].Ten4 = "Số phiếu tiết kiệm " + i;
+                var listItem = new ListItem(kh, ReloadDanhSachKhachHang);
 
-                flowLayoutPanel1.Controls.Add(listItems[i]);
-
+                // Thêm vào FlowLayoutPanel
+                flowLayoutPanel1.Controls.Add(listItem);
             }
+
+            // Điều chỉnh kích thước các ListItem khi thay đổi kích thước FlowLayoutPanel
             flowLayoutPanel1.Resize += (s, e) =>
             {
                 foreach (ListItem item in flowLayoutPanel1.Controls)
@@ -48,17 +54,45 @@ namespace GUI.DashboardApp
                 }
             };
         }
-
+        string formatSoTien(double sotien)
+        {
+            string formatedText;
+            if (sotien == 0)
+            {
+                formatedText = sotien + " VND";
+            }
+            else
+            {
+                formatedText = sotien.ToString("#,#.##") + " VND";
+            }
+            return formatedText;
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ThemKhachHang addSavingBooks = new ThemKhachHang();
+            addSavingBooks.OnKhachHangAdded += ReloadDanhSachKhachHang;
             addSavingBooks.Show();
         }
 
         private void btn_Click(object sender, EventArgs e)
         {
-            ThongTinKhachHang customerInfor = new ThongTinKhachHang();
+            ThongTinKhachHang customerInfor = new ThongTinKhachHang(ReloadDanhSachKhachHang);
             customerInfor.Show();
+        }
+        private void ReloadDanhSachKhachHang()
+        {
+            // Cập nhật lại danh sách khách hàng
+            // Ví dụ, reload lại dữ liệu từ cơ sở dữ liệu hoặc từ nguồn dữ liệu khác
+            khachHangs = khachHangBUS.GetAllKhachHangWithPhieuGoiTienCount();
+            PopulateItems(khachHangs);
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = txtTimKiem.Text.Trim();
+            var searchKhachHang = khachHangBUS.SearchKhachHang(searchText);
+
+            PopulateItems(searchKhachHang);
         }
     }
 }

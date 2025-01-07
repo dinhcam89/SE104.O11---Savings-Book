@@ -74,7 +74,7 @@
             guna2GradientPanel1.Margin = new Padding(3, 4, 3, 4);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            guna2GradientPanel1.Size = new Size(595, 529);
+            guna2GradientPanel1.Size = new Size(595, 559);
             guna2GradientPanel1.TabIndex = 2;
             // 
             // guna2Panel1
@@ -99,20 +99,20 @@
             guna2Panel1.Margin = new Padding(3, 4, 3, 4);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2Panel1.Size = new Size(569, 497);
+            guna2Panel1.Size = new Size(569, 527);
             guna2Panel1.TabIndex = 47;
             // 
             // lblInputQuyDinhSoTienRut
             // 
-            lblInputQuyDinhSoTienRut.AutoSize = true;
             lblInputQuyDinhSoTienRut.BackColor = Color.Transparent;
             lblInputQuyDinhSoTienRut.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Italic);
             lblInputQuyDinhSoTienRut.ForeColor = Color.FromArgb(127, 111, 180);
-            lblInputQuyDinhSoTienRut.Location = new Point(459, 289);
+            lblInputQuyDinhSoTienRut.Location = new Point(206, 289);
             lblInputQuyDinhSoTienRut.Name = "lblInputQuyDinhSoTienRut";
-            lblInputQuyDinhSoTienRut.Size = new Size(83, 25);
+            lblInputQuyDinhSoTienRut.Size = new Size(330, 27);
             lblInputQuyDinhSoTienRut.TabIndex = 63;
             lblInputQuyDinhSoTienRut.Text = "500.000";
+            lblInputQuyDinhSoTienRut.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblQuyDinhSoTienRut
             // 
@@ -155,27 +155,27 @@
             // 
             // lblThoiGianGuiToiThieu
             // 
-            lblThoiGianGuiToiThieu.AutoSize = true;
             lblThoiGianGuiToiThieu.BackColor = Color.Transparent;
             lblThoiGianGuiToiThieu.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Italic);
             lblThoiGianGuiToiThieu.ForeColor = Color.FromArgb(127, 111, 180);
-            lblThoiGianGuiToiThieu.Location = new Point(522, 227);
+            lblThoiGianGuiToiThieu.Location = new Point(336, 227);
             lblThoiGianGuiToiThieu.Name = "lblThoiGianGuiToiThieu";
-            lblThoiGianGuiToiThieu.Size = new Size(23, 25);
+            lblThoiGianGuiToiThieu.Size = new Size(200, 27);
             lblThoiGianGuiToiThieu.TabIndex = 59;
             lblThoiGianGuiToiThieu.Text = "5";
+            lblThoiGianGuiToiThieu.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblLaiSuat
             // 
-            lblLaiSuat.AutoSize = true;
             lblLaiSuat.BackColor = Color.Transparent;
             lblLaiSuat.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Italic);
             lblLaiSuat.ForeColor = Color.FromArgb(127, 111, 180);
-            lblLaiSuat.Location = new Point(505, 153);
+            lblLaiSuat.Location = new Point(336, 153);
             lblLaiSuat.Name = "lblLaiSuat";
-            lblLaiSuat.Size = new Size(39, 25);
+            lblLaiSuat.Size = new Size(200, 28);
             lblLaiSuat.TabIndex = 58;
             lblLaiSuat.Text = "0.5";
+            lblLaiSuat.TextAlign = ContentAlignment.MiddleRight;
             // 
             // txtThoiGianGuiToiThieu
             // 
@@ -280,15 +280,15 @@
             // 
             // lblLoaiKyHan
             // 
-            lblLoaiKyHan.AutoSize = true;
             lblLoaiKyHan.BackColor = Color.Transparent;
             lblLoaiKyHan.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Italic);
             lblLoaiKyHan.ForeColor = Color.FromArgb(127, 111, 180);
-            lblLoaiKyHan.Location = new Point(423, 89);
+            lblLoaiKyHan.Location = new Point(344, 89);
             lblLoaiKyHan.Name = "lblLoaiKyHan";
-            lblLoaiKyHan.Size = new Size(133, 25);
+            lblLoaiKyHan.Size = new Size(192, 27);
             lblLoaiKyHan.TabIndex = 47;
             lblLoaiKyHan.Text = "Không kỳ hạn";
+            lblLoaiKyHan.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblTitle
             // 
@@ -341,7 +341,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(595, 529);
+            ClientSize = new Size(595, 559);
             ControlBox = false;
             Controls.Add(guna2GradientPanel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;

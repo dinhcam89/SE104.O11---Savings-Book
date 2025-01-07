@@ -25,11 +25,35 @@ namespace GUI
         public event EventHandler ButtonClick;
         public int clickCount = 0;
         private LoaiTietKiem _loaiTietKiem;
+        private KhachHang _khachHang;
+        private PhieuGoiTien _phieuGoiTien;
         private Action reload;
 
         public ListItem()
         {
             InitializeComponent();
+        }
+        public ListItem(PhieuGoiTien pgt, Action reload)
+        {
+            InitializeComponent();
+            _phieuGoiTien = pgt;
+            Ten1 = pgt.SoTaiKhoanTienGoi.ToString();
+            Ten2 = pgt.TenKhachHang.ToString();
+            Ten3 = pgt.MaLoaiTietKiem;
+            Ten4 = pgt.NgayGoi.ToString();
+            FormType = ObjectType.PhieuGoiTien;
+            this.reload = reload;
+        }
+        public ListItem(KhachHang kh, Action reload)
+        {
+            InitializeComponent();
+            _khachHang = kh;
+            Ten1 = kh.TenKhachHang.ToString();
+            Ten2 = kh.SoTaiKhoanThanhToan.ToString();
+            Ten3 = formatSoTien(kh.SoDuHienCo);
+            Ten4 = kh.TongSoPhieuGoiTien.ToString();
+            FormType = ObjectType.KhachHang;
+            this.reload = reload;
         }
         public ListItem(LoaiTietKiem ltk, Action reload)
         {
@@ -62,7 +86,14 @@ namespace GUI
                 switch (_formType)
                 {
                     case ObjectType.KhachHang:
-                        CMSKhachHang cmsKhachHang = new CMSKhachHang();
+                        CMSKhachHang cmsKhachHang = new CMSKhachHang(reload);
+                        // Lấy số tài khoản thanh toán từ Ten2
+                        string soTaiKhoanThanhToan = Ten2.Replace("Số tài khoản: ", "").Trim();
+                        if (!string.IsNullOrEmpty(soTaiKhoanThanhToan))
+                        {
+                            cmsKhachHang.SoTaiKhoanThanhToan = soTaiKhoanThanhToan; // Gán số tài khoản thanh toán
+                        }
+
                         cmsKhachHang.Show(screenPoint);
                         break;
                     case ObjectType.ChiTietRutTien:
@@ -70,7 +101,12 @@ namespace GUI
                         cmsChiTietRutTien.Show(screenPoint);
                         break;
                     case ObjectType.PhieuGoiTien:
-                        CMSPhieuGoiTien cmsPhieuGoiTien = new CMSPhieuGoiTien();
+                        CMSPhieuGoiTien cmsPhieuGoiTien = new CMSPhieuGoiTien(reload);
+                        string maPhieu = Ten1.ToString();
+                        cmsPhieuGoiTien.maPhieu = maPhieu;
+                        string tenKhachHang = Ten2.ToString();
+                        cmsPhieuGoiTien.tenKhachHang = tenKhachHang;
+
                         cmsPhieuGoiTien.Show(screenPoint);
                         break;
                     case ObjectType.LoaiTietKiem:
@@ -133,6 +169,19 @@ namespace GUI
         {
             get { return btnTuyChon.Visible; }
             set { btnTuyChon.Visible = value; }
+        }
+        string formatSoTien(double sotien)
+        {
+            string formatedText;
+            if (sotien == 0)
+            {
+                formatedText = sotien + " VND";
+            }
+            else
+            {
+                formatedText = sotien.ToString("#,#.##") + " VND";
+            }
+            return formatedText;
         }
 
     }

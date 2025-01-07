@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,42 +13,84 @@ namespace GUI
 {
     public partial class ChiTietGuiTien : Form
     {
-        public ChiTietGuiTien()
+        private string maPhieu;
+        private string tenKhachHang;
+
+        public ChiTietGuiTien(string maPhieu, string tenKhachHang)
         {
             InitializeComponent();
+            this.maPhieu = maPhieu;
+            this.tenKhachHang = tenKhachHang;
         }
 
         private void ChiTietGuiTien_Load(object sender, EventArgs e)
         {
-            populateItems();
-        }
-
-        private void populateItems()
-        {
-            ListItem[] listItems = new ListItem[20];
-
-            for (int i = 0; i < listItems.Length; i++)
+            populateItems(maPhieu);
+            lbMaPhieu.Text = maPhieu;
+            lblTenKhachHang.Text = tenKhachHang;
+            try
             {
-                listItems[i] = new ListItem();
-                listItems[i].Ten1 = "Ngày gửi " + i;
-                listItems[i].Ten2 = "Số tiền gửi " + i;
-                listItems[i].Ten3 = "";
-                listItems[i].Ten4 = "";
-
-                listItems[i].FormType = ObjectType.PhieuGoiTien;
-
-                listItems[i].IsButtonVisible = false; // Ẩn nút
-
-                flowLayoutPanel1.Controls.Add(listItems[i]);
+                var hienthiBUS = new HienThiChiTietGuiTienBUS();
+                double tongTienGoc = hienthiBUS.GetTongTien(maPhieu);
+                lblSoTienGocCopy.Text = formatSoTien(tongTienGoc);
             }
-
-            flowLayoutPanel1.Resize += (s, e) =>
+            catch (Exception ex)
             {
-                foreach (ListItem item in flowLayoutPanel1.Controls)
+                MessageBox.Show("Lỗi khi tải tổng tiền gốc: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        string formatSoTien(double sotien)
+        {
+            string formatedText;
+            if (sotien == 0)
+            {
+                formatedText = sotien + " VND";
+            }
+            else
+            {
+                formatedText = sotien.ToString("#,#.##") + " VND";
+            }
+            return formatedText;
+        }
+        private void populateItems(string maPhieu)
+        {
+            flowLayoutPanel1.Controls.Clear();
+
+            try
+            {
+                // Tạo đối tượng BUS
+                var hienthiBUS = new HienThiChiTietGuiTienBUS();
+
+                // Kiểm tra và lấy thông tin theo mã phiếu
+                var chiTiet = hienthiBUS.GetChiTietGuiTienByMaPhieu(maPhieu);
+
+                if (chiTiet.Count > 0)
                 {
-                    item.Width = flowLayoutPanel1.ClientSize.Width;
+                    foreach (var item in chiTiet)
+                    {
+                        var listItem = new ListItem
+                        {
+                            Ten1 = $"{item.NgayGui:dd/MM/yyyy}",
+                            Ten2 = formatSoTien(item.SoTienGui),
+                            Ten3 = "",
+                            Ten4 = "",
+                            FormType = ObjectType.PhieuGoiTien,
+                            IsButtonVisible = false
+
+                        };
+                        listItem.Width = flowLayoutPanel1.ClientSize.Width - 30;
+                        flowLayoutPanel1.Controls.Add(listItem);
+                    }
                 }
-            };
+                else
+                {
+                    MessageBox.Show("Không tìm thấy dữ liệu phù hợp.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
     }

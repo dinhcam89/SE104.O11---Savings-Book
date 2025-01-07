@@ -42,20 +42,50 @@ namespace GUI.DashboardApp
 
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
+            if (thamSo == null)
+            {
+                MessageBox.Show("Không thể lấy thông tin quy định từ cơ sở dữ liệu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (tbSoTienBanDauToiThieu.Text == "" || tbSoTienGoiThemToiThieu.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            _thamSoBUS.updateThamSo(new ThamSo(double.Parse(tbSoTienBanDauToiThieu.Text), double.Parse(tbSoTienGoiThemToiThieu.Text)));
-            loadThamSo();
+            bool res = _thamSoBUS.updateThamSo(new ThamSo(thamSo.MaThamSo, double.Parse(tbSoTienBanDauToiThieu.Text), double.Parse(tbSoTienGoiThemToiThieu.Text)));
+            if (res) {
+                MessageBox.Show("Cập nhật quy định thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadThamSo();
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật quy định thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnDatLai_Click(object sender, EventArgs e)
         {
-            ThamSo defaultThamSo = new ThamSo(100000, 0);
-            _thamSoBUS.updateThamSo(defaultThamSo);
-            loadThamSo();
+            if (thamSo == null)
+            {
+                MessageBox.Show("Không thể lấy thông tin quy định từ cơ sở dữ liệu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            ThamSo? defaultThamSo = _thamSoBUS.getDefaultThamSo();
+            if (defaultThamSo == null)
+            {
+                MessageBox.Show("Không thể lấy thông tin quy định mặc định từ cơ sở dữ liệu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            bool res = _thamSoBUS.updateThamSo(new ThamSo(thamSo.MaThamSo, defaultThamSo.SoTienBanDauToiThieu, defaultThamSo.SoTienGoiThemToiThieu));
+            if (!res)
+            {
+                MessageBox.Show("Đặt lại quy định thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("Đặt lại quy định thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadThamSo();
+            }
         }
     }
 }

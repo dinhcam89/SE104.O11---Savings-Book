@@ -18,6 +18,10 @@ namespace BUS
         {
             return _thamSoDAO.getThamSo();
         }
+        public DTO.ThamSo? getDefaultThamSo()
+        {
+            return _thamSoDAO.getDefaultThamSo();
+        }
         public bool updateThamSo(DTO.ThamSo thamSo)
         {
             return _thamSoDAO.updateThamSo(thamSo);

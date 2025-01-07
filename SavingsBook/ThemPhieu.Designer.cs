@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -50,8 +50,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
@@ -66,14 +64,12 @@
             lblTitle = new Label();
             DTPNgayGoi = new Guna.UI2.WinForms.Guna2DateTimePicker();
             lblLaiSuatApDung0 = new Label();
-            lblLaiSuatPhatSinh0 = new Label();
             lblSTKThanhToan = new Label();
             txtMaKhachHang = new Guna.UI2.WinForms.Guna2TextBox();
             txtTongTienGoc = new Guna.UI2.WinForms.Guna2TextBox();
             lblNgayGoi0 = new Label();
             lblTongTienGoc0 = new Label();
             txtLaiSuatApDung = new Guna.UI2.WinForms.Guna2TextBox();
-            txtLaiSuatPhatSinh = new Guna.UI2.WinForms.Guna2TextBox();
             guna2GradientPanel1.SuspendLayout();
             guna2Panel1.SuspendLayout();
             guna2GradientPanel2.SuspendLayout();
@@ -85,14 +81,14 @@
             // 
             guna2GradientPanel1.BackColor = Color.Transparent;
             guna2GradientPanel1.Controls.Add(guna2Panel1);
-            guna2GradientPanel1.CustomizableEdges = customizableEdges23;
+            guna2GradientPanel1.CustomizableEdges = customizableEdges21;
             guna2GradientPanel1.Dock = DockStyle.Fill;
             guna2GradientPanel1.FillColor = Color.FromArgb(91, 185, 250);
             guna2GradientPanel1.FillColor2 = Color.FromArgb(140, 82, 255);
             guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             guna2GradientPanel1.Location = new Point(0, 0);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
-            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges22;
             guna2GradientPanel1.Size = new Size(503, 506);
             guna2GradientPanel1.TabIndex = 29;
             // 
@@ -101,11 +97,11 @@
             guna2Panel1.BackColor = Color.White;
             guna2Panel1.BorderRadius = 30;
             guna2Panel1.Controls.Add(guna2GradientPanel2);
-            guna2Panel1.CustomizableEdges = customizableEdges21;
+            guna2Panel1.CustomizableEdges = customizableEdges19;
             guna2Panel1.Dock = DockStyle.Fill;
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges20;
             guna2Panel1.Size = new Size(503, 506);
             guna2Panel1.TabIndex = 2;
             // 
@@ -115,14 +111,14 @@
             guna2GradientPanel2.BackColor = Color.Transparent;
             guna2GradientPanel2.Controls.Add(panel2);
             guna2GradientPanel2.Controls.Add(panel1);
-            guna2GradientPanel2.CustomizableEdges = customizableEdges19;
+            guna2GradientPanel2.CustomizableEdges = customizableEdges17;
             guna2GradientPanel2.Dock = DockStyle.Fill;
             guna2GradientPanel2.FillColor = Color.FromArgb(91, 184, 250);
             guna2GradientPanel2.FillColor2 = Color.FromArgb(139, 84, 255);
             guna2GradientPanel2.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             guna2GradientPanel2.Location = new Point(0, 0);
             guna2GradientPanel2.Name = "guna2GradientPanel2";
-            guna2GradientPanel2.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            guna2GradientPanel2.ShadowDecoration.CustomizableEdges = customizableEdges18;
             guna2GradientPanel2.Size = new Size(503, 506);
             guna2GradientPanel2.TabIndex = 27;
             // 
@@ -187,14 +183,12 @@
             panel1.Controls.Add(lblTitle);
             panel1.Controls.Add(DTPNgayGoi);
             panel1.Controls.Add(lblLaiSuatApDung0);
-            panel1.Controls.Add(lblLaiSuatPhatSinh0);
             panel1.Controls.Add(lblSTKThanhToan);
             panel1.Controls.Add(txtMaKhachHang);
             panel1.Controls.Add(txtTongTienGoc);
             panel1.Controls.Add(lblNgayGoi0);
             panel1.Controls.Add(lblTongTienGoc0);
             panel1.Controls.Add(txtLaiSuatApDung);
-            panel1.Controls.Add(txtLaiSuatPhatSinh);
             panel1.Location = new Point(12, 12);
             panel1.Name = "panel1";
             panel1.Size = new Size(478, 429);
@@ -240,7 +234,7 @@
             cboxHinhThucGiaHan.Font = new Font("Segoe UI", 10F);
             cboxHinhThucGiaHan.ForeColor = Color.FromArgb(68, 88, 112);
             cboxHinhThucGiaHan.ItemHeight = 30;
-            cboxHinhThucGiaHan.Location = new Point(22, 528);
+            cboxHinhThucGiaHan.Location = new Point(22, 462);
             cboxHinhThucGiaHan.Name = "cboxHinhThucGiaHan";
             cboxHinhThucGiaHan.ShadowDecoration.CustomizableEdges = customizableEdges8;
             cboxHinhThucGiaHan.Size = new Size(422, 36);
@@ -252,7 +246,7 @@
             lblHinhThucGiaHan0.BackColor = Color.Transparent;
             lblHinhThucGiaHan0.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             lblHinhThucGiaHan0.ForeColor = Color.FromArgb(123, 103, 245);
-            lblHinhThucGiaHan0.Location = new Point(22, 505);
+            lblHinhThucGiaHan0.Location = new Point(22, 439);
             lblHinhThucGiaHan0.Name = "lblHinhThucGiaHan0";
             lblHinhThucGiaHan0.Size = new Size(133, 20);
             lblHinhThucGiaHan0.TabIndex = 42;
@@ -265,7 +259,7 @@
             lblTitle.BackColor = Color.Transparent;
             lblTitle.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             lblTitle.ForeColor = Color.FromArgb(123, 103, 245);
-            lblTitle.Location = new Point(153, 10);
+            lblTitle.Location = new Point(130, 10);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(148, 30);
             lblTitle.TabIndex = 35;
@@ -281,7 +275,7 @@
             DTPNgayGoi.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DTPNgayGoi.ForeColor = Color.FromArgb(123, 103, 245);
             DTPNgayGoi.Format = DateTimePickerFormat.Short;
-            DTPNgayGoi.Location = new Point(22, 381);
+            DTPNgayGoi.Location = new Point(22, 315);
             DTPNgayGoi.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DTPNgayGoi.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DTPNgayGoi.Name = "DTPNgayGoi";
@@ -301,18 +295,6 @@
             lblLaiSuatApDung0.Size = new Size(124, 20);
             lblLaiSuatApDung0.TabIndex = 20;
             lblLaiSuatApDung0.Text = "Lãi suất áp dụng";
-            // 
-            // lblLaiSuatPhatSinh0
-            // 
-            lblLaiSuatPhatSinh0.AutoSize = true;
-            lblLaiSuatPhatSinh0.BackColor = Color.Transparent;
-            lblLaiSuatPhatSinh0.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            lblLaiSuatPhatSinh0.ForeColor = Color.FromArgb(123, 103, 245);
-            lblLaiSuatPhatSinh0.Location = new Point(22, 279);
-            lblLaiSuatPhatSinh0.Name = "lblLaiSuatPhatSinh0";
-            lblLaiSuatPhatSinh0.Size = new Size(132, 20);
-            lblLaiSuatPhatSinh0.TabIndex = 22;
-            lblLaiSuatPhatSinh0.Text = "Lãi suất phát sinh";
             // 
             // lblSTKThanhToan
             // 
@@ -365,7 +347,7 @@
             txtTongTienGoc.Font = new Font("Segoe UI", 9F);
             txtTongTienGoc.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTongTienGoc.ImeMode = ImeMode.On;
-            txtTongTienGoc.Location = new Point(22, 453);
+            txtTongTienGoc.Location = new Point(22, 387);
             txtTongTienGoc.Name = "txtTongTienGoc";
             txtTongTienGoc.PasswordChar = '\0';
             txtTongTienGoc.PlaceholderText = "";
@@ -380,7 +362,7 @@
             lblNgayGoi0.BackColor = Color.Transparent;
             lblNgayGoi0.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             lblNgayGoi0.ForeColor = Color.FromArgb(123, 103, 245);
-            lblNgayGoi0.Location = new Point(22, 352);
+            lblNgayGoi0.Location = new Point(22, 286);
             lblNgayGoi0.Name = "lblNgayGoi0";
             lblNgayGoi0.Size = new Size(72, 20);
             lblNgayGoi0.TabIndex = 24;
@@ -392,7 +374,7 @@
             lblTongTienGoc0.BackColor = Color.Transparent;
             lblTongTienGoc0.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             lblTongTienGoc0.ForeColor = Color.FromArgb(123, 103, 245);
-            lblTongTienGoc0.Location = new Point(22, 430);
+            lblTongTienGoc0.Location = new Point(22, 364);
             lblTongTienGoc0.Name = "lblTongTienGoc0";
             lblTongTienGoc0.Size = new Size(105, 20);
             lblTongTienGoc0.TabIndex = 32;
@@ -403,6 +385,7 @@
             txtLaiSuatApDung.BackColor = Color.Transparent;
             txtLaiSuatApDung.BorderColor = Color.FromArgb(123, 103, 245);
             txtLaiSuatApDung.BorderRadius = 10;
+            txtLaiSuatApDung.Cursor = Cursors.No;
             txtLaiSuatApDung.CustomizableEdges = customizableEdges15;
             txtLaiSuatApDung.DefaultText = "";
             txtLaiSuatApDung.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -410,41 +393,18 @@
             txtLaiSuatApDung.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtLaiSuatApDung.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtLaiSuatApDung.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtLaiSuatApDung.Font = new Font("Segoe UI", 9F);
+            txtLaiSuatApDung.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtLaiSuatApDung.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtLaiSuatApDung.ImeMode = ImeMode.On;
             txtLaiSuatApDung.Location = new Point(22, 227);
             txtLaiSuatApDung.Name = "txtLaiSuatApDung";
             txtLaiSuatApDung.PasswordChar = '\0';
             txtLaiSuatApDung.PlaceholderText = "";
+            txtLaiSuatApDung.ReadOnly = true;
             txtLaiSuatApDung.SelectedText = "";
             txtLaiSuatApDung.ShadowDecoration.CustomizableEdges = customizableEdges16;
             txtLaiSuatApDung.Size = new Size(422, 41);
             txtLaiSuatApDung.TabIndex = 21;
-            // 
-            // txtLaiSuatPhatSinh
-            // 
-            txtLaiSuatPhatSinh.BackColor = Color.Transparent;
-            txtLaiSuatPhatSinh.BorderColor = Color.FromArgb(123, 103, 245);
-            txtLaiSuatPhatSinh.BorderRadius = 10;
-            txtLaiSuatPhatSinh.CustomizableEdges = customizableEdges17;
-            txtLaiSuatPhatSinh.DefaultText = "";
-            txtLaiSuatPhatSinh.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtLaiSuatPhatSinh.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtLaiSuatPhatSinh.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtLaiSuatPhatSinh.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtLaiSuatPhatSinh.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtLaiSuatPhatSinh.Font = new Font("Segoe UI", 9F);
-            txtLaiSuatPhatSinh.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtLaiSuatPhatSinh.ImeMode = ImeMode.On;
-            txtLaiSuatPhatSinh.Location = new Point(22, 302);
-            txtLaiSuatPhatSinh.Name = "txtLaiSuatPhatSinh";
-            txtLaiSuatPhatSinh.PasswordChar = '\0';
-            txtLaiSuatPhatSinh.PlaceholderText = "";
-            txtLaiSuatPhatSinh.SelectedText = "";
-            txtLaiSuatPhatSinh.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            txtLaiSuatPhatSinh.Size = new Size(422, 41);
-            txtLaiSuatPhatSinh.TabIndex = 23;
             // 
             // ThemPhieu
             // 
@@ -476,14 +436,12 @@
         private Guna.UI2.WinForms.Guna2TextBox txtTongTienGoc;
         private Label lblTongTienGoc0;
         private Guna.UI2.WinForms.Guna2Button btnTao;
-        private Guna.UI2.WinForms.Guna2TextBox txtLaiSuatPhatSinh;
         private Label lblTenKhachHang0;
         private Guna.UI2.WinForms.Guna2TextBox txtLaiSuatApDung;
         private Label lblNgayGoi0;
         private Guna.UI2.WinForms.Guna2TextBox txtTenKhachHang;
         private Guna.UI2.WinForms.Guna2TextBox txtMaKhachHang;
         private Label lblSTKThanhToan;
-        private Label lblLaiSuatPhatSinh0;
         private Label lblLaiSuatApDung0;
         private Guna.UI2.WinForms.Guna2DateTimePicker DTPNgayGoi;
         private Panel panel1;

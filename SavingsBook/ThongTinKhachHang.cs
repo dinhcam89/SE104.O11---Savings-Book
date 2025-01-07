@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DTO;
+using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,13 +14,25 @@ namespace GUI
 {
     public partial class ThongTinKhachHang : Form
     {
-        public ThongTinKhachHang()
+        private Action _reload;
+        public ThongTinKhachHang(Action reload)
         {
             InitializeComponent();
             //customizeDesign();
             // Thiết lập không cho phép thay đổi kích thước Form
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            _reload = reload;
 
+        }
+        public void LoadThongTinKhachHang(KhachHang khachHang)
+        {
+            lblHoTen.Text = khachHang.TenKhachHang;
+            lblSDT.Text = khachHang.SoDienThoai;
+            lblCMND.Text = khachHang.CCCD;
+            lblNgaySinh.Text = khachHang.NgaySinh.ToString("dd/MM/yyyy") ?? "Chưa cập nhật";
+            lblDiaChi.Text = khachHang.DiaChi ?? "Chưa cập nhật";
+            lblSTKThanhToan.Text = khachHang.SoTaiKhoanThanhToan;
+            lblSoDuHienCo.Text = khachHang.SoDuHienCo.ToString("N0");
         }
 
         private void ToggleToEditMode(Label lbl, Control editor)
@@ -60,15 +74,46 @@ namespace GUI
 
             if (btnSua.Text == "Sửa")
             {
-                ToggleToEditMode(lblSTKThanhToan, txtSTKThanhToan);
-                ToggleToEditMode(lblDiaChi, txtDiaChi); ;
+                ToggleToEditMode(lblHoTen, txtHoTen);
+                ToggleToEditMode(lblSDT, txtSoDienThoai);
+                ToggleToEditMode(lblCMND, txtCCCD);
+                ToggleToEditMode(lblNgaySinh, dtpNgaySinh);
+                ToggleToEditMode(lblDiaChi, txtDiaChi);
+                ToggleToEditMode(lblSoDuHienCo, txtSoDuHienCo);
 
                 btnSua.Text = "Cập nhật";
             }
             else
             {
-                SaveFromEditor(lblSTKThanhToan, txtSTKThanhToan);
+                SaveFromEditor(lblHoTen, txtHoTen);
+                SaveFromEditor(lblSDT, txtSoDienThoai);
+                SaveFromEditor(lblCMND, txtCCCD);
+                SaveFromEditor(lblNgaySinh, dtpNgaySinh);
                 SaveFromEditor(lblDiaChi, txtDiaChi);
+                SaveFromEditor(lblSoDuHienCo, txtSoDuHienCo);
+
+                // Cập nhật thông tin khách hàng vào db
+                bool res = new KhachHangBUS().CapNhatKhachHang(new KhachHang
+                {
+                    SoTaiKhoanThanhToan = lblSTKThanhToan.Text,
+                    TenKhachHang = lblHoTen.Text,
+                    SoDienThoai = lblSDT.Text,
+                    CCCD = lblCMND.Text,
+                    NgaySinh = DateTime.Parse(lblNgaySinh.Text),
+                    DiaChi = lblDiaChi.Text,
+                    SoDuHienCo = double.Parse(lblSoDuHienCo.Text)
+                });
+
+                if (res)
+                {
+                    MessageBox.Show("Cập nhật thông tin khách hàng thành công");
+                    _reload();
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật thông tin khách hàng thất bại");
+                }
 
                 btnSua.Text = "Sửa";
             }
@@ -79,6 +124,9 @@ namespace GUI
             this.Close();
         }
 
-        
+        private void lblMaKhachHang_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

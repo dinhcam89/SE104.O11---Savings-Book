@@ -7,38 +7,68 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS;
+using DTO;
 
 namespace GUI.DashboardApp
 {
     public partial class ucQuanLyChiTietGuiTien : UserControl
     {
+        private HienThiChiTietGuiTienBUS hienThiBUS = new HienThiChiTietGuiTienBUS();
+        List<DTO.ChiTietGuiTien> chiTietGuiTiens;
         public ucQuanLyChiTietGuiTien()
         {
             InitializeComponent();
+            chiTietGuiTiens = hienThiBUS.GetAllChiTietGuiTien();
         }
 
         private void ucQuanLyChiTietGuiTien_Load(object sender, EventArgs e)
         {
-            populateItems();
+            populateItems(chiTietGuiTiens);
+        }
+        private void dtpTuNgay_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpTuNgay.Value.Date > dtpDenNgay.Value.Date)
+            {
+                MessageBox.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpTuNgay.Value = dtpDenNgay.Value;
+            }
+            else
+            {
+                LocTheoNgay();
+            }
         }
 
-        private void populateItems()
+        private void dtpDenNgay_ValueChanged(object sender, EventArgs e)
         {
-            ListItem[] listItems = new ListItem[20];
-
-            for (int i = 0; i < listItems.Length; i++)
+            if (dtpDenNgay.Value.Date < dtpTuNgay.Value.Date)
             {
-                listItems[i] = new ListItem();
-                listItems[i].Ten1 = "Mã phiếu " + i;
-                listItems[i].Ten2 = "Ngày gửi " + i;
-                listItems[i].Ten3 = "Số tiền gửi " + i;
-                listItems[i].Ten4 = "";
+                MessageBox.Show("Ngày kết thúc không được nhỏ hơn ngày bắt đầu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpDenNgay.Value = dtpTuNgay.Value;
+            }
+            else
+            {
+                LocTheoNgay();
+            }
+        }
 
-                listItems[i].FormType = ObjectType.PhieuGoiTien;
+        private void populateItems(List<DTO.ChiTietGuiTien> chiTietGuiTienList)
+        {
+            flowLayoutPanel1.Controls.Clear();
 
-                listItems[i].IsButtonVisible = false; // Ẩn nút
+            foreach (var item in chiTietGuiTienList)
+            {
+                ListItem listItem = new ListItem
+                {
+                    Ten1 = item.MaChiTietGuiTien,
+                    Ten2 = item.SoTaiKhoanTienGoi,
+                    Ten3 = item.NgayGui.ToString("dd/MM/yyyy"),
+                    Ten4 = formatSoTien(item.SoTienGui),
+                    FormType = ObjectType.PhieuGoiTien,
+                    IsButtonVisible = false
+                };
 
-                flowLayoutPanel1.Controls.Add(listItems[i]);
+                flowLayoutPanel1.Controls.Add(listItem);
             }
 
             flowLayoutPanel1.Resize += (s, e) =>
@@ -49,6 +79,120 @@ namespace GUI.DashboardApp
                 }
             };
 
+        }
+        string formatSoTien(double sotien)
+        {
+            string formatedText;
+            if (sotien == 0)
+            {
+                formatedText = sotien + " VND";
+            }
+            else
+            {
+                formatedText = sotien.ToString("#,#.##") + " VND";
+            }
+            return formatedText;
+        }
+        private void LocTheoNgay()
+        {
+            DateTime startDate = dtpTuNgay.Value.Date;
+            DateTime endDate = dtpDenNgay.Value.Date;
+
+            // Lấy danh sách phiếu trong khoảng thời gian
+            List<DTO.ChiTietGuiTien> filteredItems = hienThiBUS.GetNgay(startDate, endDate);
+
+            // Cập nhật giao diện
+            flowLayoutPanel1.Controls.Clear();
+
+            foreach (var item in filteredItems)
+            {
+                ListItem listItem = new ListItem
+                {
+                    Ten1 = item.MaChiTietGuiTien,
+                    Ten2 = item.SoTaiKhoanTienGoi,
+                    Ten3 = item.NgayGui.ToString("dd/MM/yyyy"),
+                    Ten4 = formatSoTien(item.SoTienGui),
+                    FormType = ObjectType.PhieuGoiTien,
+                    IsButtonVisible = false
+                };
+
+                flowLayoutPanel1.Controls.Add(listItem);
+            }
+        }
+
+        private void btnXuatBaoCao_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog
+                {
+                    Filter = "Excel files (*.xlsx)|*.xlsx",
+                    FileName = "BaoCaoChiTietGuiTien.xlsx"
+                };
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    DateTime tuNgay = dtpTuNgay.Value.Date;
+                    DateTime denNgay = dtpDenNgay.Value.Date;
+
+                    // Lấy danh sách ChiTietGuiTien đã lọc theo ngày
+                    List<DTO.ChiTietGuiTien> filteredItems = hienThiBUS.GetNgay(tuNgay, denNgay);
+
+                    // Lấy danh sách tên khách hàng
+                    List<DTO.ChiTietGuiTien> customerNames = hienThiBUS.GetTenKhachHang();
+
+                    using (var workbook = new ClosedXML.Excel.XLWorkbook())
+                    {
+                        var worksheet = workbook.Worksheets.Add("ChiTietGuiTien");
+
+                        // Tiêu đề cột
+                        worksheet.Cell(1, 1).Value = "Số Tài Khoản";
+                        worksheet.Cell(1, 2).Value = "Tên Khách Hàng";
+                        worksheet.Cell(1, 3).Value = "Ngày Gửi";
+                        worksheet.Cell(1, 4).Value = "Số Tiền Gửi";
+
+                        var headerRange = worksheet.Range(1, 1, 1, 4);
+                        headerRange.Style.Font.Bold = true;
+                        headerRange.Style.Alignment.Horizontal = ClosedXML.Excel.XLAlignmentHorizontalValues.Center;
+
+                        for (int i = 0; i < filteredItems.Count; i++)
+                        {
+                            var item = filteredItems[i];
+
+                            var customer = customerNames.FirstOrDefault(c => c.SoTaiKhoanTienGoi == item.SoTaiKhoanTienGoi);
+
+                            worksheet.Cell(i + 2, 1).Value = item.SoTaiKhoanTienGoi;
+                            worksheet.Cell(i + 2, 2).Value = customer != null ? customer.TenKhachHang : "Không tìm thấy";
+                            worksheet.Cell(i + 2, 3).Value = item.NgayGui;
+                            worksheet.Cell(i + 2, 4).Value = item.SoTienGui;
+
+                            worksheet.Cell(i + 2, 3).Style.DateFormat.Format = "dd/MM/yyyy";
+                            worksheet.Cell(i + 2, 4).Style.NumberFormat.Format = "#,##0.00";
+                        }
+
+                        var tableRange = worksheet.Range(1, 1, filteredItems.Count + 1, 4);
+                        tableRange.Style.Border.OutsideBorder = ClosedXML.Excel.XLBorderStyleValues.Thin;
+                        tableRange.Style.Border.InsideBorder = ClosedXML.Excel.XLBorderStyleValues.Thin;
+
+                        // Tự động căn chỉnh độ rộng cột
+                        worksheet.Columns().AdjustToContents();
+
+                        // Lưu file
+                        workbook.SaveAs(saveFileDialog.FileName);
+                    }
+
+                    MessageBox.Show("Xuất báo cáo thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi khi xuất báo cáo: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtTimKiem_TextChanged_1(object sender, EventArgs e)
+        {
+            populateItems(hienThiBUS.SearchChiTietGuiTien(txtTimKiem.Text));
         }
     }
 }
